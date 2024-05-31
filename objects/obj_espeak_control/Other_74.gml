@@ -1,0 +1,1 @@
+espeak_get_async(0)

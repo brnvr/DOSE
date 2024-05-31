@@ -1,0 +1,1 @@
+ui_update(menu_items, style);

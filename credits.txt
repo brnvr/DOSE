@@ -1,0 +1,19 @@
+Fog Overlay - https://www.vecteezy.com/ - Apisit Suwannaka
+
+https://sketchfab.com/3d-models/blue-sofa-ps1-low-poly-315b8551f71b4677afb1279e5863f1f1
+https://www.freepik.com/free-photo/postcode-lockers-blue-plate-with-identification-number_22884817.htm#query=building%20mailboxes&position=2&from_view=search&track=ais&uuid=aa458b6c-2e14-4e0f-b8f7-3507da5f6698
+https://downloadfree3d.com/3d-models/electronics/audio/prop-instrument-keyboard-ultra-low-poly/ (Maxime66410)
+
+Sound effects
+
+https://freesound.org/people/klankbeeld
+https://github.com/fuhton/piano-mp3
+
+Soundtrack
+
+Unheard Music Concepts - Unrealed
+
+Libraries and APIs
+
+cpp-base64 by Rene Nyffenegger
+

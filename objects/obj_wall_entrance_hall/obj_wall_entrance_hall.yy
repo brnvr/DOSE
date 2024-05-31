@@ -1,0 +1,42 @@
+{
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_wall_entrance_hall",
+  "eventList": [
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+  ],
+  "managed": true,
+  "overriddenProperties": [
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_actor_3d_generic","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"propertyId":{"name":"fade_with_distance","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"value":"False",},
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_actor_3d_generic","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"propertyId":{"name":"color_levels","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"value":"8",},
+  ],
+  "parent": {
+    "name": "entrance hall",
+    "path": "folders/Objects/areas/custom/entrance hall.yy",
+  },
+  "parentObjectId": {
+    "name": "obj_wall_generic",
+    "path": "objects/obj_wall_generic/obj_wall_generic.yy",
+  },
+  "persistent": false,
+  "physicsAngularDamping": 0.1,
+  "physicsDensity": 0.5,
+  "physicsFriction": 0.2,
+  "physicsGroup": 1,
+  "physicsKinematic": false,
+  "physicsLinearDamping": 0.1,
+  "physicsObject": false,
+  "physicsRestitution": 0.1,
+  "physicsSensor": false,
+  "physicsShape": 1,
+  "physicsShapePoints": [],
+  "physicsStartAwake": true,
+  "properties": [],
+  "solid": false,
+  "spriteId": {
+    "name": "spr_icon_wall",
+    "path": "sprites/spr_icon_wall/spr_icon_wall.yy",
+  },
+  "spriteMaskId": null,
+  "visible": true,
+}

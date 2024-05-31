@@ -1,0 +1,1 @@
+camera_set_view_mat(camera, view_mat);

@@ -1,0 +1,1 @@
+event_perform_object(obj_wall_random_generic, ev_draw, ev_draw_normal);

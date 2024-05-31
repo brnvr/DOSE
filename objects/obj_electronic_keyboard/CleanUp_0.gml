@@ -1,0 +1,6 @@
+time_source_destroy(ts_init)
+time_source_destroy(ts_restart)
+time_source_destroy(ts_success)
+time_source_destroy(ts_play_score_note)
+
+event_inherited()
