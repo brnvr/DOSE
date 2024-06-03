@@ -59,9 +59,9 @@ raycaster = instance_create_depth(0, 0, 0, obj_raycaster, {
 	max_distance: SIGHT_RANGE,
 	jump: 4,
 	target: obj_interactable_generic,
-	x_func: function() { return obj_player.x },
-	y_func: function() { return obj_player.y },
-	z_func: function() { return obj_player.z-obj_player.eye_height },
+	x_func: function() { return obj_player.camera.x },
+	y_func: function() { return obj_player.camera.y },
+	z_func: function() { return obj_player.camera.z+16 },
 	yaw_func: function() { return obj_player.camera.yaw },
 	pitch_func: function() { return obj_player.camera.pitch },
 	callback: function(inst) { obj_player.actor_hover = inst }
@@ -269,59 +269,79 @@ get_hints_descriptions = function() {
 	return descriptions
 }
 
-inventory_add_item = function(item) {
+inventory_add_item = function(item, use_animation = true, index = -1) {
 	var spr
 	
-	var item_name = object_get_name(item.object_index);
-	var inventory_item = undefined; 
-	var n_items = array_length(inventory);
+	var item_name = object_get_name(item.object_index)
+	var inventory_item = undefined
+	var n_items = array_length(inventory)
 	
 	for (var i = 0; i < n_items; i++) {
 		if (inventory[i].object_name == item_name) {
-			inventory_item = inventory[i];
-			index = i;
-			break;
+			inventory_item = inventory[i]
+			index = i
+			break
 		}
 	}
 	
-	obj_hud.inventory_temp = [];
+	obj_hud.inventory_temp = []
 		
 	for (var i = 0; i < n_items; i++) {
-		array_push(obj_hud.inventory_temp, struct_duplicate(inventory[i]));
-	}
-	
-	var spr_w = sprite_get_width(item.sprite_index);
-	var spr_h = sprite_get_height(item.sprite_index);
-	
-	var spr_original = sprite_part_copy(item.sprite_index, 0, 0, 0, spr_w, spr_h, spr_w*.5, spr_h*.5)
-	
-	if (spr_w == INVENTORY_ITEM_SIZE) {
-		spr = spr_original
-	} else {
-		var scale = INVENTORY_ITEM_SIZE/spr_w
-		
-		var spr_scaled = sprite_get_scaled(item.sprite_index, scale, scale)
-		
-		spr = sprite_part_copy(spr_scaled, 0, 0, 0, spr_w * scale, spr_h * scale, spr_w*.5 * scale, spr_h*.5 * scale)
+		array_push(obj_hud.inventory_temp, struct_duplicate(inventory[i]))
 	}
 	
 	if (is_undefined(inventory_item)) {	
+		var spr_w = sprite_get_width(item.sprite_index)
+		var spr_h = sprite_get_height(item.sprite_index)
+		var spr_original = sprite_part_copy(item.sprite_index, 0, 0, 0, spr_w, spr_h, spr_w*.5, spr_h*.5)
+	
+		if (spr_w == INVENTORY_ITEM_SIZE) {
+			spr = spr_original
+		} else {
+			var scale = INVENTORY_ITEM_SIZE/spr_w
+		
+			var spr_scaled = sprite_get_scaled(item.sprite_index, scale, scale)
+		
+			spr = sprite_part_copy(spr_scaled, 0, 0, 0, spr_w * scale, spr_h * scale, spr_w*.5 * scale, spr_h*.5 * scale)
+		}
+		
+		index = index >= 0 ? index : array_length(inventory)
+	
 		inventory_item = {
 			"object_name": item_name,
 			"object": item.object_index,
 			"number": 1,
+			"index": index,
 			"name": item.name,
 			"sprite": spr,
-			"sprite_original": spr_original
+			"sprite_original": spr_original,
+			"can_combine": item.can_combine,
+			"on_select": item.on_select,
+			"on_unselect": item.on_unselect
 		}
 		
-		array_push(inventory, inventory_item);
-		var index = array_length(inventory)-1;
+		array_insert(inventory, index, inventory_item)
 	} else {
-		inventory_item.number++;
+		inventory_item.number++
 	}
 	
-	obj_hud.set_item_picked(index, inventory_item.sprite, item.name);
+	if (use_animation) {
+		obj_hud.set_item_picked(index, inventory_item.sprite, item.name)	
+	} else {
+		receive_item(inventory_item)	
+	}
+}
+	
+inventory_find_item = function(object) {
+	var index = array_find_index(inventory, method({ object: object }, function(item) {
+		return item.object == object	
+	}))
+	
+	if (index >= 0) {
+		return inventory[index]	
+	}
+	
+	return noone
 }
 
 inventory_remove_item = function(item) {
@@ -341,6 +361,12 @@ inventory_remove_item = function(item) {
 	if (inventory[index].number > 1) {
 		inventory[index].number--	
 	} else {
+		if (inventory[index].sprite != inventory[index].sprite_original) {
+			sprite_delete(inventory[index].sprite_original)	
+		}
+		
+		sprite_delete(inventory[index].sprite)
+		
 		array_delete(inventory, index, 1)
 		
 		if (is_selected && inventory_item_selected_index > 0) {
@@ -361,7 +387,6 @@ pick_item = function(item) {
 	actor_hover = noone
 	raycaster_clear(raycaster)
 	instance_destroy(item)
-	
 }
 	
 get_hinted_door = function() {

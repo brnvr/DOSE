@@ -13,6 +13,10 @@ Soundtrack
 
 Unheard Music Concepts - Unrealed
 
+SFX
+
+Christopher R. Cote
+
 Libraries and APIs
 
 cpp-base64 by Rene Nyffenegger

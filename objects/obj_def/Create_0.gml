@@ -146,6 +146,7 @@ globalvar	menu_stylesheet,
 			custom_areas,
 			custom_areas_door_numbers,
 			names,
+			photo_count,
 			cursor_x,
 			cursor_y,
 			camera_2d,
@@ -168,6 +169,7 @@ event_user(4)
 event_user(5)
 event_user(6)
 event_user(7)
+event_user(8)
 
 spr_spider_ceiling = sprite_create_transformed(spr_spider, 1, -1, 0)
 

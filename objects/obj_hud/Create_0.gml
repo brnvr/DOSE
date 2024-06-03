@@ -84,7 +84,7 @@ scale_inventory_item_selected = function() {
 }
 
 set_item_picked = function(index, sprite, name) {
-	obj_hud.item_picked = {
+	item_picked = {
 		"sprite": sprite,
 		"x": cursor_x + sprite_get_draw_center_x(sprite, ITEM_PICKED_INITIAL_SCALE),
 		"y": cursor_y + sprite_get_draw_center_y(sprite, ITEM_PICKED_INITIAL_SCALE),

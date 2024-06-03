@@ -30,12 +30,14 @@ if (inventory_item_selected == noone) {
 
 	var scale_factor = INVENTORY_ITEM_SIZE / sprite_get_width(inventory_item_selected.sprite_original)
 	
-	if (actor_hover == noone) {
-		obj_cursor.scale = smooth_interpolation(obj_cursor.scale, 4 * scale_factor, 0.2);
-		obj_cursor.yoffset = smooth_interpolation(obj_cursor.yoffset, center_y+125, 0.2);
-	} else {
-		obj_cursor.scale = smooth_interpolation(obj_cursor.scale, 2 * scale_factor, 0.2)
-		obj_cursor.yoffset = smooth_interpolation(obj_cursor.yoffset, center_y, 0.2);
+	if (inventory_item_selected.can_combine) {
+		if (actor_hover == noone) {
+			obj_cursor.scale = smooth_interpolation(obj_cursor.scale, 4 * scale_factor, 0.2);
+			obj_cursor.yoffset = smooth_interpolation(obj_cursor.yoffset, center_y+97, 0.2);
+		} else {
+			obj_cursor.scale = smooth_interpolation(obj_cursor.scale, 2 * scale_factor, 0.2)
+			obj_cursor.yoffset = smooth_interpolation(obj_cursor.yoffset, center_y, 0.2);
+		}
 	}
 }
 
@@ -43,13 +45,13 @@ if (inventory_item_selected == noone) {
 if (inventory_length > 0 && can_interact) {
 	mouse_click(mb_right, function() {
 		inventory_item_selected = inventory[inventory_item_selected_index];
-		obj_cursor.draw_as_gui = false;
-		cursor_set_to_item_selected();
+
+		inventory_item_selected.on_select()
 	})
 	
 	if (mouse_check_button_released(mb_right) && inventory_item_selected != noone) {
-		obj_cursor.sprite_index = -1;
-		obj_cursor.draw_as_gui = true;
+		inventory_item_selected.on_unselect()
+		
 		inventory_item_selected = noone;	
 	}
 }
