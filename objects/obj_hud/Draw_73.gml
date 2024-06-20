@@ -1,6 +1,6 @@
 if (view_current == views.view_2d) {
 	if (annotations_offset <= 40) {
-		draw_sprite(spr_annotations_paper, 0, 0, annotations_offset+25)
+		draw_sprite(spr_annotations_paper, 0, 0, annotations_offset)
 		draw_set_color(c_black)
 		draw_set_halign(fa_center)
 		draw_set_valign(fa_top)

@@ -310,7 +310,7 @@ inventory_add_item = function(item, use_animation = true, index = -1) {
 		inventory_item = {
 			"object_name": item_name,
 			"object": item.object_index,
-			"number": 1,
+			"number": item.quantity,
 			"index": index,
 			"name": item.name,
 			"sprite": spr,
@@ -322,17 +322,21 @@ inventory_add_item = function(item, use_animation = true, index = -1) {
 		
 		array_insert(inventory, index, inventory_item)
 	} else {
-		inventory_item.number++
+		inventory_item.number += item.quantity
 	}
 	
 	if (use_animation) {
 		obj_hud.set_item_picked(index, inventory_item.sprite, item.name)	
 	} else {
-		receive_item(inventory_item)	
+		obj_hud.inventory_temp = inventory
 	}
+	
+	return inventory_item
 }
 	
 inventory_find_item = function(object) {
+	object = object_get_index(object)
+	
 	var index = array_find_index(inventory, method({ object: object }, function(item) {
 		return item.object == object	
 	}))
@@ -344,8 +348,23 @@ inventory_find_item = function(object) {
 	return noone
 }
 
-inventory_remove_item = function(item) {
-	var obj_item = instance_number(item) == 0 ? item : item.object_index
+inventory_set_item = function(item) {
+	item = object_get_index(item)
+	
+	var inventory_item = inventory_find_item(item)
+	
+	if (inventory_item == noone) {
+		throw "Item not found in inventory"	
+	}
+	
+	inventory_item_selected = inventory_item
+	inventory_item_selected_index = inventory_item.index
+	
+	obj_hud.scale_inventory_item_selected()
+}
+
+inventory_remove_item = function(item, unselect = true) {
+	var obj_item = object_get_index(item)
 	
 	var index = array_find_index(inventory, method({ obj_item: obj_item }, function(inventory_item) {
 		return inventory_item.object == obj_item
@@ -356,6 +375,7 @@ inventory_remove_item = function(item) {
 		return
 	}
 	
+	var count = inventory[index].number - 1
 	var is_selected = inventory_item_selected != noone && inventory_item_selected.object == obj_item
 	
 	if (inventory[index].number > 1) {
@@ -371,19 +391,26 @@ inventory_remove_item = function(item) {
 		
 		if (is_selected && inventory_item_selected_index > 0) {
 			inventory_item_selected_index--
+			
 		}
 	}
 	
 	if (is_selected) {
 		obj_cursor.sprite_index = -1
 		obj_cursor.draw_as_gui = true
-		inventory_item_selected = noone
+		
+		if (unselect) {
+			inventory_item_selected = noone
+		}
 	}
+	
+	return count
 }
 
 pick_item = function(item) {
 	inventory_add_item(item)
 	item.active = false
+	item.on_picked();
 	actor_hover = noone
 	raycaster_clear(raycaster)
 	instance_destroy(item)

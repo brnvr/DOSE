@@ -1,4 +1,5 @@
 time_source_destroy(ts_open_shutter)
+time_source_destroy(ts_stow_camera)
 
 obj_cursor.visible = true
 obj_player.camera.fov_y = camera_fov_y_original

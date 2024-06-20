@@ -21,7 +21,13 @@ if (is_shooting) {
 	mouse_click(mb_left, function() {
 		is_shooting = true
 		
-		var sprite = sprite_create_from_screen(game_view_center_x-100, game_view_center_y-100, 200, 200, 100, 100)
+		var sprite = sprite_create_from_screen(
+			game_view_center_x-instant_photograph_width*.5,
+			game_view_center_y-instant_photograph_height*.5,
+			instant_photograph_width,
+			instant_photograph_height,
+			instant_photograph_width*.5,
+			instant_photograph_height*.5)
 		
 		sprite_save(sprite, 0, $"photographs/{photo_count++}.png")
 		sprite_delete(sprite)
@@ -31,8 +37,16 @@ if (is_shooting) {
 			var obj_photographs = instance_create_layer(0, 0, "Abstract", obj_instant_photographs)
 			
 			photographs = obj_player.inventory_add_item(obj_photographs, false)
+			
+			instance_destroy(obj_photographs)
 		} else {
 			photographs.number++	
+		}
+		
+		var n_shots = obj_player.inventory_remove_item(obj_instant_camera, camera.number == 1)
+		
+		if (n_shots <= 0) {
+			time_source_start(ts_stow_camera)
 		}
 	})
 }	

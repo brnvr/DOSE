@@ -1,12 +1,16 @@
-camera_control = noone
+photographs = noone
 
 on_select = function() {
-	camera_control = instance_create_layer(0, 0, "Abstract", obj_instant_camera_control)
+	photographs = instance_create_layer(0, 0, "Abstract", obj_instant_photographs_control)
 }
 
 on_unselect = function() {
-	instance_destroy(camera_control)
+	if (photographs != noone) {
+		instance_destroy(photographs)
+	}
 }
+
+quantity = photo_count
 
 event_inherited();
 

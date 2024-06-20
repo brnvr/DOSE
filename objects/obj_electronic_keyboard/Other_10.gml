@@ -18,6 +18,7 @@ var dsin_rot = dsin(zrotation)
 
 obj_player.move_to(obj_player.x - dcos_rot * 24, obj_player.y - dsin_rot * 24, obj_player.WALK_SPEED/2, function() {
 	obj_player.can_move = true	
+	obj_player.lock_move = false
 	is_player_moving_away = false
 	obj_cursor.visible = true
 	cursor_set_sprite(interactable_get_hover_sprite(obj_player.actor_hover))

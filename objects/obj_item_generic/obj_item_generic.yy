@@ -50,6 +50,8 @@
     {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"name_article","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"a","varType":2,},
     {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"on_select","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"item_on_select","varType":0,},
     {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"on_unselect","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"item_on_unselect","varType":0,},
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"quantity","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"1","varType":0,},
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"on_picked","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"do_nothing","varType":0,},
   ],
   "solid": false,
   "spriteId": null,

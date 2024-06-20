@@ -9,6 +9,7 @@
   "overriddenProperties": [
     {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_interactable_generic","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"propertyId":{"name":"name","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"value":"\"camera\"",},
     {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_item_generic","path":"objects/obj_item_generic/obj_item_generic.yy",},"propertyId":{"name":"can_combine","path":"objects/obj_item_generic/obj_item_generic.yy",},"value":"False",},
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_item_generic","path":"objects/obj_item_generic/obj_item_generic.yy",},"propertyId":{"name":"quantity","path":"objects/obj_item_generic/obj_item_generic.yy",},"value":"10",},
   ],
   "parent": {
     "name": "items",

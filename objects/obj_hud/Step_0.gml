@@ -34,7 +34,6 @@ if (is_speaking && !audio_is_playing(obj_espeak_control.audio_buffer)) {
 }
 
 if (display_annotations) {
-
 	if (annotations_offset > 0) {
 		annotations_offset = smooth_interpolation(annotations_offset, 0);
 	}
@@ -43,3 +42,4 @@ if (display_annotations) {
 		annotations_offset += 10
 	}
 }
+

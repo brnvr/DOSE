@@ -10,6 +10,9 @@
 #macro wall_passage_width 80
 #macro door_order_length 5
 
+#macro instant_photograph_width 200
+#macro instant_photograph_height 200
+
 #macro game_view_x 16
 #macro game_view_y 16
 #macro game_view_width 512

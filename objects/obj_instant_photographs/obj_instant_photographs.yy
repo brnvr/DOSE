@@ -34,8 +34,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_sheet_music_0",
-    "path": "sprites/spr_sheet_music_0/spr_sheet_music_0.yy",
+    "name": "spr_instant_photographs",
+    "path": "sprites/spr_instant_photographs/spr_instant_photographs.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -64,7 +64,8 @@ draw_inventory_item = function(xpos, ypos, item_index, draw_number=true, scale=1
 		number = inventory_temp[item_index].number;
 		
 		if (number > 1) {
-			draw_text_border_ext_transformed(xpos+10, ypos+17, $"x{number}", 0, -1, 1, 1, c_black);
+			draw_set_halign(fa_right)
+			draw_text_border_ext_transformed(xpos+29, ypos+17, $"x{number}", 0, -1, 1, 1, c_black);
 		}
 	}
 }

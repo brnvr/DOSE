@@ -43,16 +43,18 @@ if (inventory_item_selected == noone) {
 
 
 if (inventory_length > 0 && can_interact) {
-	mouse_click(mb_right, function() {
-		inventory_item_selected = inventory[inventory_item_selected_index];
+	if (inventory_item_selected == noone) {
+		mouse_click(mb_right, function() {
+			inventory_item_selected = inventory[inventory_item_selected_index];
 
-		inventory_item_selected.on_select()
-	})
-	
-	if (mouse_check_button_released(mb_right) && inventory_item_selected != noone) {
-		inventory_item_selected.on_unselect()
+			inventory_item_selected.on_select()
+		})
+	} else {
+		mouse_click(mb_right, function() {
+			inventory_item_selected.on_unselect()
 		
-		inventory_item_selected = noone;	
+			inventory_item_selected = noone		
+		})
 	}
 }
 

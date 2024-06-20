@@ -4,7 +4,7 @@ with (obj_control) {
 
 obj_control.current_area = custom_areas[ca.entrance_hall]
 
-camera_2d = instance_create_layer(0, -27, "Abstract", obj_camera_2d_generic)
+camera_2d = instance_create_layer(0, -25, "Abstract", obj_camera_2d_generic)
 camera_3d = obj_player.camera
 
 instance_create_layer(0, 0, "Abstract", obj_fog_overlay)
