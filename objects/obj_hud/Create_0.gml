@@ -53,7 +53,7 @@ show_speech = function(s, hide_timeout=false, timeout_period=-1) {
 draw_inventory_item = function(xpos, ypos, item_index, draw_number=true, scale=1, saturation=1, pixel_size = 0) {
 	var sprite = inventory_temp[item_index].sprite;
 	
-	shader_set_ui(saturation, 5, pixel_size, sprite);
+	shader_set_ui(saturation, 5, undefined, pixel_size, sprite);
 	draw_sprite_ext(sprite, 0,
 	xpos + sprite_get_draw_center_x(sprite, scale),
 	ypos + sprite_get_draw_center_y(sprite, scale), scale, scale, 0, c_white, 1);	

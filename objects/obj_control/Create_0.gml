@@ -1,4 +1,4 @@
-light_direction = [.74, .87, 3]
+light_direction = [.74, .93, 3]
 light_hue = [1, 1, 1]
 shadow_color = color_get_normalized(c_black)
 paused = false
@@ -36,7 +36,7 @@ goto_thisside = function(remap) {
 	var darker_color = make_color_rgb(12, 16, 11)
 	
 	tracking_error_variation_factor = 1
-	saturation = 0.75
+	saturation = 0.65
 	current_realm = realms.thisside
 	fog_start = 1000
 	fog_end = 2000

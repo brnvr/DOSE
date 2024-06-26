@@ -11,9 +11,9 @@ if (view_current == views.view_2d) {
 			instant_photograph_width*.5+10,
 			instant_photograph_height*.5+25+yoffset, false)
 			
-		draw_sprite(photographs[0], 0, 0, -15+yoffset)	
+		draw_sprite(photographs[photo_index], 0, 0, -15+yoffset)	
 		
-		draw_sprite_ext(spr_selection_arrow, 0, instant_photograph_width*.5+34, 0, 1, 1, 0, c_white, arrows_alpha)
-		draw_sprite_ext(spr_selection_arrow, 0, -(instant_photograph_width*.5+34), 0, 1, 1, 180, c_white, arrows_alpha)
+		draw_sprite_ext(spr_selection_arrow, 0, arrows_xdist, 0, 1, 1, 0, c_white, arrows_alpha[1])
+		draw_sprite_ext(spr_selection_arrow, 0, -arrows_xdist, 0, 1, 1, 180, c_white, arrows_alpha[0])
 	}	
 }
