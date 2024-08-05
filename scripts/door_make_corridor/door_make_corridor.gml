@@ -21,9 +21,7 @@ function door_make_corridor(dir) {
 	
 	for (var i = 0; i < array_length(dest_area.cells_used); i++) {
 		if (array_compare(dest_area.cells_used[i], door_coord)) {
-			var first_cell_used;
-			
-			first_cell_used = dest_area.cells_used[0];
+			var first_cell_used = dest_area.cells_used[0];
 			
 			dest_area.cells_used[0] = door_coord;
 			dest_area.cells_used[i] = first_cell_used;

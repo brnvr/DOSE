@@ -18,7 +18,7 @@
   "exportToGame": true,
   "extensionVersion": "0.0.1",
   "files": [
-    {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"","constants":[],"copyToTargets":64,"filename":"libespeak-ng.dll","final":"espeakGM_Terminate","functions":[
+    {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"libespeak-ng.dll","constants":[],"copyToTargets":64,"filename":"libespeak-ng.dll","final":"espeakGM_Terminate","functions":[
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"espeakGM_Initialize","argCount":0,"args":[],"documentation":"","externalName":"espeakGM_Initialize","help":"espeakGM_Initialize()","hidden":true,"kind":1,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"espeakGM_Terminate","argCount":0,"args":[],"documentation":"","externalName":"espeakGM_Terminate","help":"espeakGM_Terminate()","hidden":true,"kind":1,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"espeakGM_Synth","argCount":0,"args":[
@@ -88,7 +88,7 @@
         {"name":"espeakGM_SetTextSize","path":"extensions/espeak_ngm/espeak_ngm.yy",},
         {"name":"espeakGM_GetTextSize","path":"extensions/espeak_ngm/espeak_ngm.yy",},
       ],"origname":"","ProxyFiles":[],"uncompress":false,"usesRunnerInterface":false,},
-    {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"","constants":[],"copyToTargets":-1,"filename":"mbrola.dll","final":"","functions":[],"init":"","kind":1,"order":[],"origname":"","ProxyFiles":[],"uncompress":false,"usesRunnerInterface":false,},
+    {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"mbrola.dll","constants":[],"copyToTargets":-1,"filename":"mbrola.dll","final":"","functions":[],"init":"","kind":1,"order":[],"origname":"","ProxyFiles":[],"uncompress":false,"usesRunnerInterface":false,},
   ],
   "gradleinject": "",
   "hasConvertedCodeInjection": true,

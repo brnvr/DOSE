@@ -4,9 +4,7 @@ function tex_array_create(list) {
 	length = array_length(list);
 	
 	for (var i = 0; i < length; i++) {
-		var item;
-		
-		item = list[i];
+		var item = list[i];
 		
 		repeat(item[1]) {
 			array_push(arr, item[0]);	

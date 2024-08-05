@@ -6,9 +6,7 @@ function sprite_get_first_opaque_row(sprite, subimage) {
 	min_value = -1;
 	
 	for (var i = 0; i < n_columns; i++) {
-		var value;
-		
-		value = sprite_get_first_opaque_pixel_in_column(sprite, subimage, i);
+		var value = sprite_get_first_opaque_pixel_in_column(sprite, subimage, i);
 		
 		if (min_value == -1 || min_value > value) {
 			min_value = value;	

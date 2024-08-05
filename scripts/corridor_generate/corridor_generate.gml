@@ -342,7 +342,7 @@ function corridor_generate(corridor, xstart=-1, ystart=-1, direction=undefined, 
 		cont = take_chance(corridor.prob_cont);
 		
 		if (follow) {
-			var end_position;
+			var end_position = [];
 			
 			repeat (n_segments) {
 				end_position = build_segment(corridor, xi, yi, doors_side, direction);
@@ -358,13 +358,11 @@ function corridor_generate(corridor, xstart=-1, ystart=-1, direction=undefined, 
 			
 			follow = take_chance(corridor.prob_follow);
 		} else {
-			var intersect_forward, intersect_leftward, intersect_rightward, intersection_data;
+			var intersect_forward = take_chance(corridor.prob_intersect);
+			var intersect_leftward = take_chance(corridor.prob_intersect);
+			var intersect_rightward = take_chance(corridor.prob_intersect);
 			
-			intersect_forward = take_chance(corridor.prob_intersect);
-			intersect_leftward = take_chance(corridor.prob_intersect);
-			intersect_rightward = take_chance(corridor.prob_intersect);
-			
-			intersection_data = build_intersection(corridor, xi, yi, direction, intersect_forward, intersect_leftward, intersect_rightward)
+			var intersection_data = build_intersection(corridor, xi, yi, direction, intersect_forward, intersect_leftward, intersect_rightward)
 			
 			if (is_undefined(intersection_data)) {
 				cont = false;			

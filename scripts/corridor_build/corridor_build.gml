@@ -1,12 +1,10 @@
 function corridor_build(corridor, seed_group, block_size, door_passage_side_width) {
-	var wall, door, lamp, n_cells, cell_start, cell_end;
-	
-	wall = array_choose(seed_group[sg.walls]);
-	door = array_choose(seed_group[sg.doors]);
-	lamp = array_choose(seed_group[sg.lamps]);
-	n_cells = array_length(corridor.cells_used);
-	cell_start = corridor.cell_processing;
-	cell_end = corridor.cell_processing+corridor.cells_to_process_per_step;
+	var wall = array_choose(seed_group[sg.walls]);
+	var door = array_choose(seed_group[sg.doors]);
+	var lamp = array_choose(seed_group[sg.lamps]);
+	var n_cells = array_length(corridor.cells_used);
+	var cell_start = corridor.cell_processing;
+	var cell_end = corridor.cell_processing+corridor.cells_to_process_per_step;
 	corridor.started_building = true;
 	
 	static staircase_get_direction = function(other_end) {
@@ -18,15 +16,13 @@ function corridor_build(corridor, seed_group, block_size, door_passage_side_widt
 	}
 	
 	for (var i = cell_start; i < min(n_cells, cell_end); i++) {
-		var cell_coord, cell, xpos, ypos;
-		
 		corridor.cell_processing++;
 		
-		cell_coord = corridor.cells_used[i];
-		cell = corridor.grid[# cell_coord[0], cell_coord[1]];
+		var cell_coord = corridor.cells_used[i];
+		var cell = corridor.grid[# cell_coord[0], cell_coord[1]];
 		
-		xpos = corridor.x + block_size*cell_coord[0];
-		ypos = corridor.y + block_size*cell_coord[1];
+		var xpos = corridor.x + block_size*cell_coord[0];
+		var ypos = corridor.y + block_size*cell_coord[1];
 		
 		if (cell[corridor_cell_prop.door_east] >= 0 ||
 			cell[corridor_cell_prop.door_west] >= 0 ||
@@ -40,10 +36,8 @@ function corridor_build(corridor, seed_group, block_size, door_passage_side_widt
 		}
 		
 		if (cell[corridor_cell_prop.wall_east] == 2 && !obj_player.has_finished_tasks) {
-			var other_end, stairs_dir;
-			
-			other_end = cell[corridor_cell_prop.other_ends][cardinal.east]
-			stairs_dir = staircase_get_direction(other_end)
+			var other_end = cell[corridor_cell_prop.other_ends][cardinal.east]
+			var stairs_dir = staircase_get_direction(other_end)
 			
 			area_add_actor_3d(corridor, xpos+block_size, ypos, corridor.z, obj_staircase_generic, {
 				zrotation: 0,
@@ -89,10 +83,8 @@ function corridor_build(corridor, seed_group, block_size, door_passage_side_widt
 		}
 		
 		if (cell[corridor_cell_prop.wall_west] == 2 && !obj_player.has_finished_tasks) {
-			var other_end, stairs_dir;
-			
-			other_end = cell[corridor_cell_prop.other_ends][cardinal.west]
-			stairs_dir = staircase_get_direction(other_end)
+			var other_end = cell[corridor_cell_prop.other_ends][cardinal.west]
+			var stairs_dir = staircase_get_direction(other_end)
 			
 			area_add_actor_3d(corridor, xpos, ypos+block_size, corridor.z, obj_staircase_generic, {
 				zrotation: 180,
@@ -138,10 +130,8 @@ function corridor_build(corridor, seed_group, block_size, door_passage_side_widt
 		}
 		
 		if (cell[corridor_cell_prop.wall_north] == 2 && !obj_player.has_finished_tasks) {
-			var other_end, stairs_dir;
-			
-			other_end = cell[corridor_cell_prop.other_ends][cardinal.north]
-			stairs_dir = staircase_get_direction(other_end)
+			var other_end = cell[corridor_cell_prop.other_ends][cardinal.north]
+			var stairs_dir = staircase_get_direction(other_end)
 			
 			area_add_actor_3d(corridor, xpos, ypos, corridor.z, obj_staircase_generic, {
 				zrotation: 90,
@@ -188,10 +178,8 @@ function corridor_build(corridor, seed_group, block_size, door_passage_side_widt
 		}
 		
 		if (cell[corridor_cell_prop.wall_south] == 2 && !obj_player.has_finished_tasks) {
-			var other_end, stairs_dir;
-			
-			other_end = cell[corridor_cell_prop.other_ends][cardinal.south]
-			stairs_dir = staircase_get_direction(other_end)
+			var other_end = cell[corridor_cell_prop.other_ends][cardinal.south]
+			var stairs_dir = staircase_get_direction(other_end)
 			
 			area_add_actor_3d(corridor, xpos+block_size, ypos+block_size, corridor.z, obj_staircase_generic, {
 				zrotation: 270,
@@ -319,9 +307,9 @@ function corridor_build(corridor, seed_group, block_size, door_passage_side_widt
 			var index = array_find(obj_control.door_numbers_avaliable, preferred_number)
 		
 			if (index != -1 && array_length(corridor.doors) > 0) {
-				var door = array_choose(corridor.doors)
+				var door_sel = array_choose(corridor.doors)
 				
-				door_change_number_index(door, index)
+				door_change_number_index(door_sel, index)
 			}
 			
 			if (use_destination) {

@@ -7,13 +7,13 @@ function corridor_populate(corridor, seed_group, block_size) {
 		}
 		
 		for (var i = 0; i < number; i++) {
-			var cell_selected_coord, cell_selected, actor_selected, no_empty_space;
+			var cell_selected_coord, cell_selected
 		
 			if (array_length(arr) == 0) {
 				break;	
 			}
 			
-			no_empty_space = false;
+			var no_empty_space = false;
 		
 			do {
 				if (array_length(cells_used) == 0) {
@@ -28,7 +28,7 @@ function corridor_populate(corridor, seed_group, block_size) {
 		
 			if (no_empty_space) break;
 		
-			actor_selected = array_choose(arr, !allow_repeated);
+			var actor_selected = array_choose(arr, !allow_repeated);
 
 			if (cell_selected[corridor_cell_prop.orientation] == alignment.vertical) {
 				area_add_actor_3d_ext(	corridor,

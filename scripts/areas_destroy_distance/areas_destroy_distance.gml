@@ -6,9 +6,7 @@ function areas_destroy_distance(area_start, max_dist_nodes, dist=0, caller=noone
 	n_neighbors = array_length(area_start.neighbors);
 	
 	for (var i = 0; i < n_neighbors; i++) {
-		var neighbor;
-		
-		neighbor = area_start.neighbors[i];
+		var neighbor = area_start.neighbors[i];
 		
 		if (neighbor == caller || neighbor == -1) continue;
 		

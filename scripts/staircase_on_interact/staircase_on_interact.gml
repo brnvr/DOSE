@@ -36,9 +36,6 @@ function staircase_on_interact() {
 		on_completed: method({ staircase: id }, function() {
 			static resolve_hint = function(staircase) {
 				var hint_resolved = obj_player.resolve_hint(hint_types.go_to_another_floor, obj_control.current_floor)
-				
-				show_debug_message("asdaksjdkasjd")
-				show_debug_message(obj_player.active_hints)
 					
 				if (!is_undefined(hint_resolved)) {
 					staircase.other_end.revert_hint = true

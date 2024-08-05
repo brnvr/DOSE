@@ -12,10 +12,8 @@ function sprite_get_first_opaque_pixel_in_row(sprite, subimage, row) {
 	surface_reset_target();
 	
 	for (var i = 0; i < width; i++) {
-		var pixel, alpha;
-		
-		pixel = surface_getpixel_ext(surf, i, row);
-		alpha = (pixel >> 24) & 255;
+		var pixel = surface_getpixel_ext(surf, i, row);
+		var alpha = (pixel >> 24) & 255;
 		
 		if (alpha != 0) {
 			surface_free(surf);

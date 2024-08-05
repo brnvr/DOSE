@@ -6,19 +6,15 @@ function texture_group_create(base) {
 	n_keys = array_length(keys);
 	
 	for (var i = 0; i < n_keys; i++) {
-		var n_items, arr, texture_subgroup;
+		var arr = variable_struct_get(base, keys[i]);
+		var n_items = array_length(arr);
 		
-		arr = variable_struct_get(base, keys[i]);
-		n_items = array_length(arr);
-		
-		texture_subgroup = [];
+		var texture_subgroup = [];
 		
 		variable_struct_set(texture_group, keys[i], []);
 		
 		for (var j = 0; j < n_items; j++) {
-			var item;
-			
-			item = arr[j];
+			var item = arr[j];
 			
 			repeat (item.chance) {
 				array_push(texture_subgroup, item.texture);	

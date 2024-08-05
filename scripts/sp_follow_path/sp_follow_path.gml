@@ -24,9 +24,7 @@ function sp_follow_path(path, spd) {
 		
 	if (path.target_index == -1) {
 		for (var i = 0; i <  n_cells; i++) {
-			var cell;
-			
-			cell = cells[i];
+			var cell = cells[i];
 			
 			if (!sp_grid_is_point_meeting_cell(path.grid, x, y, cell[0], cell[1])) {
 				continue;

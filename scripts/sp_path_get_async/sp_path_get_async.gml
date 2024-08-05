@@ -16,10 +16,8 @@ function sp_path_get_async(path) {
 		n_items = buffer_get_size(buffer)/8;
 
 		repeat(n_items) {
-			var xx, yy;
-		
-			xx = buffer_read(buffer, buffer_s32);
-			yy = buffer_read(buffer, buffer_s32);
+			var xx = buffer_read(buffer, buffer_s32);
+			var yy = buffer_read(buffer, buffer_s32);
 		
 			array_push(items, [xx, yy]);
 		}

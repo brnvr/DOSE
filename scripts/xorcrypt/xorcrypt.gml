@@ -10,9 +10,7 @@ function xorcrypt(str, key) {
 	var result = "";
 	
 	for (var i = 1; i <= str_length; i+=1) {
-	    var code;
-    
-	    code = ord(string_char_at(str, i)) ^ ord(string_char_at(key, 1 + i mod key_length));
+	    var code = ord(string_char_at(str, i)) ^ ord(string_char_at(key, 1 + i mod key_length));
 	    result = string_insert(chr(code), result, i);
 	}
 

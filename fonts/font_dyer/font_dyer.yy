@@ -116,6 +116,7 @@
   "italic": false,
   "kerningPairs": [],
   "last": 0,
+  "lineHeight": 0,
   "maintainGms1Font": false,
   "parent": {
     "name": "Fonts",
@@ -128,6 +129,7 @@
   ],
   "regenerateBitmap": false,
   "sampleText": "123456",
+  "sdfSpread": 8,
   "size": 10.0,
   "styleName": "Normal",
   "textureGroupId": {
@@ -135,4 +137,5 @@
     "path": "texturegroups/Default",
   },
   "TTFName": "",
+  "usesSDF": false,
 }

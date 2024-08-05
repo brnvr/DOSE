@@ -4,12 +4,11 @@ function bbox_create_from_buffer(buffer, vertex_size) {
 	buffer_size = buffer_get_size(buffer);
 	
 	for (var i = 0; i < buffer_size; i+=vertex_size) {
-		var vertex_x, vertex_y, vertex_z;
-		
 		buffer_seek(buffer, buffer_seek_start, i);
-		vertex_x = buffer_read(buffer, buffer_f32);
-		vertex_y = buffer_read(buffer, buffer_f32);
-		vertex_z = buffer_read(buffer, buffer_f32);
+		
+		var vertex_x = buffer_read(buffer, buffer_f32);
+		var vertex_y = buffer_read(buffer, buffer_f32);
+		var vertex_z = buffer_read(buffer, buffer_f32);
 		
 		min_x = i == 0 ? vertex_x : min(min_x, vertex_x);
 		min_y = i == 0 ? vertex_y : min(min_y, vertex_y);

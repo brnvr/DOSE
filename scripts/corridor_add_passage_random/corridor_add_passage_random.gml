@@ -5,9 +5,8 @@ function corridor_add_passage_random(corridor, direction) {
 	cells_used_length = array_length(corridor.cells_used);
 	
 	for (var i = 0; i < cells_used_length; i++) {
-		var cell, wall;
-		
-		cell = corridor.grid[# corridor.cells_used[i][0], corridor.cells_used[i][1]];
+		var wall = -1;	
+		var cell = corridor.grid[# corridor.cells_used[i][0], corridor.cells_used[i][1]];
 		
 		switch (direction) {
 			case cardinal.north:

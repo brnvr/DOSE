@@ -24,8 +24,11 @@ clock_index = array_find_index(obj_control.current_area.instances, function(item
 		draw_sprite_ext(spr_wallclock, 2, clock_xpos, clock_ypos, 1, 1, -minutes_angle, c_white, 1);
 		draw_sprite_ext(spr_wallclock, 3, clock_xpos, clock_ypos, 1, 1, -hours_angle, c_white, 1);
 		surface_reset_target();
-
-		sprite_delete(sprite_index);
+		
+		if (sprite_index >= 0) {
+			sprite_delete(sprite_index);
+		}
+		
 		sprite_index = sprite_create_from_surface(surface, 0, 0, texture_size, texture_size, false, false, 0, 0);
 	
 		surface_free(surface);	

@@ -690,7 +690,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.4.0.84",
+    "IDEVersion": "2023.11.1.129",
   },
   "resources": [
     {"id":{"name":"string_capitalize_first_letter","path":"scripts/string_capitalize_first_letter/string_capitalize_first_letter.yy",},},
@@ -1135,6 +1135,7 @@
     {"roomId":{"name":"room_init","path":"rooms/room_init/room_init.yy",},},
     {"roomId":{"name":"room_game","path":"rooms/room_game/room_game.yy",},},
   ],
+  "templateType": null,
   "TextureGroups": [
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},
   ],

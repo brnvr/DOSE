@@ -6,9 +6,7 @@ function struct_select(struct, condition, first = false) {
 	arr = [];
 	
 	for (var i = 0; i < n_keys; i++) {
-		var key;
-		
-		key = keys[i];
+		var key = keys[i];
 		
 		if (condition(key)) {
 			if (first) return key;

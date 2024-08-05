@@ -135,15 +135,13 @@ talk_to = function(npc) {
 		npc.dialogue = array_choose(default_dialogues.miscelaneous)
 	}
 	
-	if (!audio_is_playing(obj_espeak_control.audio_buffer)) {
+	//if (!audio_is_playing(obj_espeak_control.audio_buffer)) {
 		npc_speak(npc)
-	}
+	//}
 }	
 
 receive_hint = function(hint_type, args) {
 	array_push(active_hints[hint_type], args)
-	
-	show_debug_message(active_hints)
 }
 
 resolve_hint = function(hint_type, comparer) {

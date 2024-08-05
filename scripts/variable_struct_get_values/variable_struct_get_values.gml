@@ -6,10 +6,8 @@ function variable_struct_get_values(struct) {
 	values = [];
 	
 	for (var i = 0; i < n_keys; i++) {
-		var key, value;
-		
-		key = keys[i];
-		value = variable_struct_get(struct, key);
+		var key = keys[i];
+		var value = variable_struct_get(struct, key);
 		array_push(values, value);
 	}
 	

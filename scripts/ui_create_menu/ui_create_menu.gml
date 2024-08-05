@@ -8,9 +8,9 @@ function ui_create_menu(xpos, ypos, menu_options, stylesheet=menu_stylesheet, ho
 	n_options = array_length(menu_options);
 
 	for (var i = 0; i < n_options; i++) {
-		var option, class_name;
+		var class_name = "";
 		
-		option = menu_options[i];
+		var option = menu_options[i];
 		
 		if (array_length(option) > 2 && !option[2]) {
 			class_name = "option_container_disabled";

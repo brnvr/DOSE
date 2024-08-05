@@ -13,9 +13,7 @@ function instance_raycast(xx, yy, zz, target, yaw, pitch, maxdist, jump, obstacl
 	}
 	
 	for (var i = 0; i < array_length(obstacle_arr); i++) {
-		var obstacle;
-		
-		obstacle = obstacle_arr[i];
+		var obstacle = obstacle_arr[i];
 		
 		with(obstacle) {
 			if (collidable) {
@@ -35,9 +33,7 @@ function instance_raycast(xx, yy, zz, target, yaw, pitch, maxdist, jump, obstacl
 		zz -= jump*dsin(pitch);
 		
 		for (var i = 0; i < n_obstacles; i++) {
-			var inst;
-			
-			inst = obstacles_surrounding[i];
+			var inst = obstacles_surrounding[i];
 			
 			ii = actor_3d_position(xx, yy, zz, inst);
 			
@@ -47,9 +43,7 @@ function instance_raycast(xx, yy, zz, target, yaw, pitch, maxdist, jump, obstacl
 		}
 		
 		for (var i = 0; i < n_targets; i++) {
-			var inst;
-			
-			inst = targets_surrounding[i];
+			var inst = targets_surrounding[i];
 			
 			ii = actor_3d_position(xx, yy, zz, inst, false);
 		

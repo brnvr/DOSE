@@ -7,10 +7,8 @@ function espeak_list_voices() {
 	arr_result = [];
 
 	for (var i = 0; i < n_voices; i++) {
-		var arr_voice, hash_pos;
-
-		arr_voice = string_split(arr_voices[i], " ")
-		hash_pos = string_pos("\\", arr_voice[0]);
+		var arr_voice = string_split(arr_voices[i], " ")
+		var hash_pos = string_pos("\\", arr_voice[0]);
 	
 		if (hash_pos > 0) {
 			arr_voice[0] = string_copy(arr_voice[0], hash_pos+1, string_length(arr_voice[0])-hash_pos);
