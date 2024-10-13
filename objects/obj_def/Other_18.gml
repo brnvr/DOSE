@@ -4,7 +4,7 @@ if (directory_exists("photographs")) {
 	var filename = file_find_first("photographs/*.png", fa_none)
 	
 	if (filename == "") {
-		photo_count = 0
+		global.photo_count = 0
 		
 		return
 	}
@@ -23,7 +23,7 @@ if (directory_exists("photographs")) {
 		max_number = max(number, max_number)
 	}
 	
-	photo_count = max_number+1
+	global.photo_count = max_number+1
 } else {
-	photo_count = 0
+	global.photo_count = 0
 }

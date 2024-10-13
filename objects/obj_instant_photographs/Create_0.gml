@@ -10,7 +10,7 @@ on_unselect = function() {
 	}
 }
 
-quantity = photo_count
+quantity = global.photo_count
 
 event_inherited();
 

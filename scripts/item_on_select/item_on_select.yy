@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "item_on_select",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "item",
-    "path": "folders/Scripts/item.yy",
+  "$GMScript":"v1",
+  "%Name":"item_on_select",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"item_on_select",
+  "parent":{
+    "name":"item",
+    "path":"folders/Scripts/item.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

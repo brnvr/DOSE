@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "door_random_on_interact",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "doors",
-    "path": "folders/Scripts/doors.yy",
+  "$GMScript":"v1",
+  "%Name":"door_random_on_interact",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"door_random_on_interact",
+  "parent":{
+    "name":"doors",
+    "path":"folders/Scripts/doors.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "room_add_passage_random",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "rooms",
-    "path": "folders/Scripts/areas/rooms.yy",
+  "$GMScript":"v1",
+  "%Name":"room_add_passage_random",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"room_add_passage_random",
+  "parent":{
+    "name":"rooms",
+    "path":"folders/Scripts/areas/rooms.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

@@ -29,7 +29,7 @@ if (is_shooting) {
 			instant_photograph_width*.5,
 			instant_photograph_height*.5)
 		
-		sprite_save(sprite, 0, $"photographs/{photo_count++}.png")
+		sprite_save(sprite, 0, $"photographs/{global.photo_count++}.png")
 		sprite_delete(sprite)
 		audio_play_sound(snd_shutter, 10, false)
 		

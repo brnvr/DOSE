@@ -9,5 +9,6 @@ yup = 0
 zup = 0
 
 proj_mat = matrix_build_projection_perspective_fov(fov_y, aspect, znear, zfar)
+view_mat = []
 
 event_inherited()

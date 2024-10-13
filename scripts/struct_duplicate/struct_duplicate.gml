@@ -1,4 +1,4 @@
-function struct_duplicate(struct, filter = pointer_null) {
+function struct_duplicate(struct, filter = undefined) {
 	var new_struct;
 	
 	new_struct = {};

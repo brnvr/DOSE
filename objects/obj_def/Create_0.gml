@@ -138,32 +138,6 @@ enum ca {
 	entrance_hall,
 	players_room
 }
-
-globalvar	menu_stylesheet,	
-			screen_width,
-			screen_height,
-			window_width,
-			window_height,
-			seed_groups,
-			vertex_format,
-			custom_areas,
-			custom_areas_door_numbers,
-			names,
-			photo_count,
-			cursor_x,
-			cursor_y,
-			camera_2d,
-			camera_3d,
-			piano_scores,
-			default_dialogues,
-			current_realm,
-			hint_types_list,
-			npc_events,
-			area_events,
-			corridor_events,
-			spr_door_numbers,
-			spr_spider_ceiling,
-			spr_door_numbers_flipped
 			
 event_user(0)
 event_user(1)
@@ -174,9 +148,9 @@ event_user(6)
 event_user(7)
 event_user(8)
 
-spr_spider_ceiling = sprite_create_transformed(spr_spider, 1, -1, 0)
+global.spr_spider_ceiling = sprite_create_transformed(spr_spider, 1, -1, 0)
 
-hint_types_list = [
+global.hint_types_list = [
 	hint_types.talk_to_someone,
 	hint_types.go_to_room,
 	hint_types.fulfill_quest,

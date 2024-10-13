@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "mouse_click",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "mouse",
-    "path": "folders/Scripts/mouse.yy",
+  "$GMScript":"v1",
+  "%Name":"mouse_click",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"mouse_click",
+  "parent":{
+    "name":"mouse",
+    "path":"folders/Scripts/mouse.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

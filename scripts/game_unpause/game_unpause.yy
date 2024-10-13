@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "game_unpause",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "game",
-    "path": "folders/Scripts/game.yy",
+  "$GMScript":"v1",
+  "%Name":"game_unpause",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"game_unpause",
+  "parent":{
+    "name":"game",
+    "path":"folders/Scripts/game.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

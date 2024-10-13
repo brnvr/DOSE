@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "pawpr_mouse_x",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "mouse",
-    "path": "folders/Scripts/pawpr/mouse.yy",
+  "$GMScript":"v1",
+  "%Name":"pawpr_mouse_x",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"pawpr_mouse_x",
+  "parent":{
+    "name":"mouse",
+    "path":"folders/Scripts/pawpr/mouse.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

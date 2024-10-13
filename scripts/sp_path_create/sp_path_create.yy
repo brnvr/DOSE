@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "sp_path_create",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "path",
-    "path": "folders/Scripts/SharpPath/path.yy",
+  "$GMScript":"v1",
+  "%Name":"sp_path_create",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sp_path_create",
+  "parent":{
+    "name":"path",
+    "path":"folders/Scripts/SharpPath/path.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

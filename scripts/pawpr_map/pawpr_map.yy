@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "pawpr_map",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "map",
-    "path": "folders/Scripts/pawpr/map.yy",
+  "$GMScript":"v1",
+  "%Name":"pawpr_map",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"pawpr_map",
+  "parent":{
+    "name":"map",
+    "path":"folders/Scripts/pawpr/map.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

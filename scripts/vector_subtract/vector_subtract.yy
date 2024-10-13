@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "vector_subtract",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "vector",
-    "path": "folders/Scripts/math/vector.yy",
+  "$GMScript":"v1",
+  "%Name":"vector_subtract",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"vector_subtract",
+  "parent":{
+    "name":"vector",
+    "path":"folders/Scripts/math/vector.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

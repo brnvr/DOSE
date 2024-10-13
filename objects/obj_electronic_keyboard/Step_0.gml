@@ -69,5 +69,3 @@ if (countdown > 0) {
 if (is_player_moving_away) {
 	obj_player.camera.pitch += 1
 }
-
-event_inherited()

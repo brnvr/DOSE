@@ -7,7 +7,8 @@ function corridor_populate(corridor, seed_group, block_size) {
 		}
 		
 		for (var i = 0; i < number; i++) {
-			var cell_selected_coord, cell_selected
+			var cell_selected_coord = undefined
+			var cell_selected = undefined
 		
 			if (array_length(arr) == 0) {
 				break;	
@@ -46,7 +47,7 @@ function corridor_populate(corridor, seed_group, block_size) {
 		}
 	}
 	
-	var arr_ev = array_concat(area_events, corridor_events)
+	var arr_ev = array_concat(global.area_events, global.corridor_events)
 	
 	while (take_chance(corridor.prob_event) && array_length(arr_ev) > 0) {
 		var ev = array_choose(arr_ev, true)

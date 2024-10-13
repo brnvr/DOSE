@@ -1,7 +1,5 @@
 function pawpr_style_get_index(property_name, throw_not_found_exception=true) {
-	var pawpr_property_values, value;
-	
-	pawpr_property_values = {
+	var pawpr_property_values = {
 		"padding": pawpr.padding,
 	    "padding_left": pawpr.padding_left,
 	    "padding_top": pawpr.padding_top,
@@ -38,7 +36,7 @@ function pawpr_style_get_index(property_name, throw_not_found_exception=true) {
 		"yoffset": pawpr.yoffset
 	}
 	
-	value = variable_struct_get(pawpr_property_values, property_name);
+	var value = variable_struct_get(pawpr_property_values, property_name);
 	
 	if (is_undefined(value)) {
 		if (!is_undefined(pawpr_selector_get_index(property_name, false))) return -1;

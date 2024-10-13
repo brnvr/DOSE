@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "corridor_get_door_coords_random",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "corridors",
-    "path": "folders/Scripts/areas/corridors.yy",
+  "$GMScript":"v1",
+  "%Name":"corridor_get_door_coords_random",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"corridor_get_door_coords_random",
+  "parent":{
+    "name":"corridors",
+    "path":"folders/Scripts/areas/corridors.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

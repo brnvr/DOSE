@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "espeak_buffer_create",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "espeak_ngm",
-    "path": "folders/Scripts/espeak_ngm.yy",
+  "$GMScript":"v1",
+  "%Name":"espeak_buffer_create",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"espeak_buffer_create",
+  "parent":{
+    "name":"espeak_ngm",
+    "path":"folders/Scripts/espeak_ngm.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

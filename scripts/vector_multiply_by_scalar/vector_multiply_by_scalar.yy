@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "vector_multiply_by_scalar",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "vector",
-    "path": "folders/Scripts/math/vector.yy",
+  "$GMScript":"v1",
+  "%Name":"vector_multiply_by_scalar",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"vector_multiply_by_scalar",
+  "parent":{
+    "name":"vector",
+    "path":"folders/Scripts/math/vector.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

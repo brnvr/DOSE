@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "npc_transform_into_another",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "npc",
-    "path": "folders/Scripts/npc.yy",
+  "$GMScript":"v1",
+  "%Name":"npc_transform_into_another",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"npc_transform_into_another",
+  "parent":{
+    "name":"npc",
+    "path":"folders/Scripts/npc.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

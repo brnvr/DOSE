@@ -7,8 +7,8 @@ if (item_picked != noone) {
 	
 	var item_picked_new_position = vector_move_point([item_picked.x, item_picked.y], [x_dest, y_dest], ITEM_PICKED_SPEED)
 	
-	item_picked.x = item_picked_new_position[0];
-	item_picked.y = item_picked_new_position[1];
+	item_picked.x = item_picked_new_position[0]
+	item_picked.y = item_picked_new_position[1]
 	
 	var limit = ITEM_PICKED_SPEED+(array_length(obj_player.inventory) == 1 ? 0 : 25)
 	
@@ -22,13 +22,17 @@ if (inventory_item_selected_scale > 1) {
 	inventory_item_selected_scale = linear_interpolation(inventory_item_selected_scale, 1, 0.05);
 }
 
+if (!instance_exists(npc_speaking)) {
+	npc_speaking = noone	
+}
+
 if (npc_speaking != noone && speech != "" && audio_is_playing(npc_speaking.sound_3d.sound)) {
-	is_npc_speaking = true;
+	is_npc_speaking = true
 }
 
 if (is_npc_speaking && (npc_speaking == noone || (npc_speaking != noone && !audio_is_playing(npc_speaking.sound_3d.sound)))) {
-	is_npc_speaking = false;
-	speech = "";
+	is_npc_speaking = false
+	speech = ""
 }
 
 if (display_annotations) {

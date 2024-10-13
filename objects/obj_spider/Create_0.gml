@@ -1,7 +1,7 @@
 on_ceiling = choose(true, false);
 
 if (on_ceiling) {
-	sprite_index = spr_spider_ceiling;
+	sprite_index = global.spr_spider_ceiling;
 	z += default_block_size;
 }
 

@@ -204,7 +204,7 @@ function door_random_on_interact() {
 		}
 			
 		if (door_number != -1) {
-			var custom_area = custom_areas_door_numbers[door_number]
+			var custom_area = global.custom_areas_door_numbers[door_number]
 				
 			if (custom_area != -1) {
 				var door_area = custom_area.main_door

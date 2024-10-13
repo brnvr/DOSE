@@ -1,4 +1,4 @@
 if (sync_cursor) {
-	cursor_x = window_mouse_get_x();
-	cursor_y = window_mouse_get_y();
+	global.cursor_x = window_mouse_get_x();
+	global.cursor_y = window_mouse_get_y();
 }

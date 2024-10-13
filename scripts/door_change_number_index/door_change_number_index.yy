@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "door_change_number_index",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "doors",
-    "path": "folders/Scripts/doors.yy",
+  "$GMScript":"v1",
+  "%Name":"door_change_number_index",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"door_change_number_index",
+  "parent":{
+    "name":"doors",
+    "path":"folders/Scripts/doors.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

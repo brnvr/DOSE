@@ -1,11 +1,9 @@
 function pawpr_ui(x, y, stylesheet={}, horizontal_align=pawpr_align.at_start, vertical_align=pawpr_align.at_start, template=undefined) {
-	var ui;
-	
 	if (is_undefined(template)) template = pawpr_template();
 	if (!is_struct(template)) throw "Invalid template";
 	if (!is_struct(stylesheet)) throw "Invalid stylesheet";
 	
-	ui = [];
+	var ui = [];
 	ui[pawpr_attr.x] = x;
 	ui[pawpr_attr.y] = y;
 	ui[pawpr_attr.horizontal_align] = horizontal_align;

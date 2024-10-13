@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "instance_follow",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "instance",
-    "path": "folders/Scripts/instance.yy",
+  "$GMScript":"v1",
+  "%Name":"instance_follow",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"instance_follow",
+  "parent":{
+    "name":"instance",
+    "path":"folders/Scripts/instance.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "instance_get_rectangle",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "instance",
-    "path": "folders/Scripts/instance.yy",
+  "$GMScript":"v1",
+  "%Name":"instance_get_rectangle",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"instance_get_rectangle",
+  "parent":{
+    "name":"instance",
+    "path":"folders/Scripts/instance.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

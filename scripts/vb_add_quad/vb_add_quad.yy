@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "vb_add_quad",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "vertex_buffers",
-    "path": "folders/Scripts/vertex_buffers.yy",
+  "$GMScript":"v1",
+  "%Name":"vb_add_quad",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"vb_add_quad",
+  "parent":{
+    "name":"vertex_buffers",
+    "path":"folders/Scripts/vertex_buffers.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

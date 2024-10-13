@@ -1,19 +1,21 @@
 function pawpr_element_get_bounding_rect(element) {
-	var xbase, ybase, expansion, xoffset, yoffset, bounding_rect;
+	var expansion = pawpr_element_get_style(element, pawpr.expansion, 1, false);
+	var bounding_rect = [];
 	
-	expansion = pawpr_element_get_style(element, pawpr.expansion, 1, false);
-	bounding_rect = [];
+	var xoffset = undefined
+	var yoffset = undefined
 	
 	if (expansion != 1) {
-		var scale;
-		
-		scale = pawpr_element_get_style(element, pawpr.scale, 1, false);	
+		var scale = pawpr_element_get_style(element, pawpr.scale, 1, false);	
 		xoffset = element[pawpr_attr.width]*(expansion-scale)*.5;
 		yoffset = element[pawpr_attr.height]*(expansion-scale)*.5;
 	} else {
 		xoffset = 0;
 		yoffset = 0;
 	}
+	
+	var xbase = undefined
+	var ybase = undefined
 	
 	switch (element[pawpr_attr.ui][pawpr_attr.horizontal_align]) {
 		case pawpr_align.at_center:

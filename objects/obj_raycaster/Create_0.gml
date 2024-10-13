@@ -25,9 +25,7 @@ __raycast__ = function() {
 	}
 	
 	for (var i = 0; i < array_length(obstacles); i++) {
-		var obstacle;
-		
-		obstacle = obstacles[i];
+		var obstacle = obstacles[i];
 		
 		with(obstacle) {
 			if (collidable) {
@@ -53,10 +51,8 @@ __raycast__ = function() {
 		y -= jump*dsin(yaw)*dcos(pitch);
 		z -= jump*dsin(pitch);
 		
-		for (var i = 0; i < n_obstacles; i++) {
-			var inst;
-			
-			inst = obstacles_surrounding[i];
+		for (var i = 0; i < n_obstacles; i++) {	
+			var inst = obstacles_surrounding[i];
 			
 			ii = actor_3d_position(x, y, z, inst);
 			
@@ -67,9 +63,7 @@ __raycast__ = function() {
 		}
 		
 		for (var i = 0; i < n_targets; i++) {
-			var inst;
-			
-			inst = targets_surrounding[i];
+			var inst = targets_surrounding[i];
 			
 			ii = actor_3d_position(x, y, z, inst, false);
 		

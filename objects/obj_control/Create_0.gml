@@ -1,4 +1,4 @@
-light_direction = [.74, .93, 3]
+light_direction = [.81, 1, 3.7]
 light_hue = [1, 1, 1]
 shadow_color = color_get_normalized(c_black)
 paused = false
@@ -14,37 +14,40 @@ ts_stop_music_track = time_source_create(time_source_global, 0, time_source_unit
 tracking_error_alpha = 0.2
 tracking_error_distance = 0.1
 depth = -89
+fog_start = 0
+fog_end = 1300
 
 goto_otherside = function() {
 	var darker_color = make_color_rgb(33, 21, 21)
 	
 	saturation = 0.5
 	tracking_error_variation_factor = 4
-	current_realm = realms.otherside
+	global.current_realm = realms.otherside
 	fog_start = 0
 	fog_end = 1300
 	fog_color = darker_color
 	shadow_color = darker_color
 	background_set_color(darker_color)
 	obj_fog_overlay.visible = true
-	seed_group = seed_groups[realms.otherside]
+	seed_group = global.seed_groups[realms.otherside]
 	area_remap(current_area, seed_group)
 	areas_destroy_distance(current_area, 0)
 }
 
-goto_thisside = function(remap) {
-	var darker_color = make_color_rgb(12, 16, 11)
+goto_thisside = function(remap=false) {
+	//var darker_color = make_color_rgb(12, 16, 11)
+	var darker_color = make_color_rgb(3, 5, 2)
 	
 	tracking_error_variation_factor = 1
-	saturation = 0.65
-	current_realm = realms.thisside
+	saturation = 0.75
+	global.current_realm = realms.thisside
 	fog_start = 1000
 	fog_end = 2000
 	fog_color = darker_color
 	shadow_color = darker_color
 	background_set_color(darker_color)
 	obj_fog_overlay.visible = false
-	seed_group = seed_groups[realms.thisside]
+	seed_group = global.seed_groups[realms.thisside]
 	
 	if (remap) {
 		area_remap(current_area, seed_group)

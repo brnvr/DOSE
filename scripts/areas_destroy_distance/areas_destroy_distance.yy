@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "areas_destroy_distance",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "areas",
-    "path": "folders/Scripts/areas.yy",
+  "$GMScript":"v1",
+  "%Name":"areas_destroy_distance",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"areas_destroy_distance",
+  "parent":{
+    "name":"areas",
+    "path":"folders/Scripts/areas.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

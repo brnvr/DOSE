@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "staircase_on_interact",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "staircase",
-    "path": "folders/Scripts/staircase.yy",
+  "$GMScript":"v1",
+  "%Name":"staircase_on_interact",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"staircase_on_interact",
+  "parent":{
+    "name":"staircase",
+    "path":"folders/Scripts/staircase.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

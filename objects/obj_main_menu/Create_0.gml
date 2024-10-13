@@ -37,4 +37,4 @@ menu_options = [
 	["Exit to Windows", game_end]
 ];
 
-ui = ui_create_menu(game_view_center_x, 180, menu_options, menu_stylesheet, pawpr_align.at_center, pawpr_align.at_start);
+ui = ui_create_menu(game_view_center_x, 180, menu_options, global.menu_stylesheet, pawpr_align.at_center, pawpr_align.at_start);

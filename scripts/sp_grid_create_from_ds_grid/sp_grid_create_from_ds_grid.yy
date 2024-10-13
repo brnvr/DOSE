@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "sp_grid_create_from_ds_grid",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "grid",
-    "path": "folders/Scripts/SharpPath/grid.yy",
+  "$GMScript":"v1",
+  "%Name":"sp_grid_create_from_ds_grid",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sp_grid_create_from_ds_grid",
+  "parent":{
+    "name":"grid",
+    "path":"folders/Scripts/SharpPath/grid.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

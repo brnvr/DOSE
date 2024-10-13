@@ -15,7 +15,10 @@ function sp_grid_iterate(grid, callback) {
 		}
 			
 		var is_obstacle = buffer_read(buffer, buffer_bool);
-			
-		callback(sp_grid_get_cell_xstart(grid, hcell), sp_grid_get_cell_ystart(grid, vcell), is_obstacle, hcell, vcell);
+		
+		var cell_xstart = sp_grid_get_cell_xstart(grid, hcell)
+		var cell_ystart = sp_grid_get_cell_ystart(grid, vcell)
+		
+		callback(cell_xstart, cell_ystart, is_obstacle, hcell, vcell);
 	}
 }

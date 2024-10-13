@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "raycaster_stop",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "raycaster",
-    "path": "folders/Scripts/raycaster.yy",
+  "$GMScript":"v1",
+  "%Name":"raycaster_stop",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"raycaster_stop",
+  "parent":{
+    "name":"raycaster",
+    "path":"folders/Scripts/raycaster.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

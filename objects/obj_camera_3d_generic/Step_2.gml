@@ -1,5 +1,3 @@
-var yawcos, yawsin, pitchcos, pitchsin, rollcos, rollsin
-
 if (limit_yaw) {
 	yaw = clamp(yaw, yaw_min, yaw_max)
 }
@@ -12,12 +10,12 @@ if (limit_roll) {
 	roll = clamp(roll, roll_min, roll_max)
 }
 
-yawcos = dcos(yaw)
-yawsin = dsin(yaw)
-pitchsin = dsin(pitch)
-pitchcos = dcos(pitch)
-rollsin = dsin(roll)
-rollcos = dcos(roll)
+var yawcos = dcos(yaw)
+var yawsin = dsin(yaw)
+var pitchsin = dsin(pitch)
+var pitchcos = dcos(pitch)
+var rollsin = dsin(roll)
+var rollcos = dcos(roll)
 
 xfrom = x+xoffset
 yfrom = y+yoffset

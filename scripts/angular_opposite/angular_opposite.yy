@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "angular_opposite",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "math",
-    "path": "folders/Scripts/math.yy",
+  "$GMScript":"v1",
+  "%Name":"angular_opposite",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"angular_opposite",
+  "parent":{
+    "name":"math",
+    "path":"folders/Scripts/math.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

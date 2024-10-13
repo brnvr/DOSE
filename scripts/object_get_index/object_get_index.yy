@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "object_get_index",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "utils",
-    "path": "folders/Scripts/utils.yy",
+  "$GMScript":"v1",
+  "%Name":"object_get_index",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"object_get_index",
+  "parent":{
+    "name":"utils",
+    "path":"folders/Scripts/utils.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

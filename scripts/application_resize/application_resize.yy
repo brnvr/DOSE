@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "application_resize",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "application",
-    "path": "folders/Scripts/application.yy",
+  "$GMScript":"v1",
+  "%Name":"application_resize",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"application_resize",
+  "parent":{
+    "name":"application",
+    "path":"folders/Scripts/application.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

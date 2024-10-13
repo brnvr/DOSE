@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "cardinal_opposite",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "math",
-    "path": "folders/Scripts/math.yy",
+  "$GMScript":"v1",
+  "%Name":"cardinal_opposite",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"cardinal_opposite",
+  "parent":{
+    "name":"math",
+    "path":"folders/Scripts/math.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

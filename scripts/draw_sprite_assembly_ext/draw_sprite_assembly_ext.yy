@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "draw_sprite_assembly_ext",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "draw",
-    "path": "folders/Scripts/draw.yy",
+  "$GMScript":"v1",
+  "%Name":"draw_sprite_assembly_ext",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"draw_sprite_assembly_ext",
+  "parent":{
+    "name":"draw",
+    "path":"folders/Scripts/draw.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

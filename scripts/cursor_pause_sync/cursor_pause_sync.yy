@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "cursor_pause_sync",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "cursor",
-    "path": "folders/Scripts/mouse/cursor.yy",
+  "$GMScript":"v1",
+  "%Name":"cursor_pause_sync",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"cursor_pause_sync",
+  "parent":{
+    "name":"cursor",
+    "path":"folders/Scripts/mouse/cursor.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

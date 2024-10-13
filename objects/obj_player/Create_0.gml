@@ -128,11 +128,11 @@ talk_to = function(npc) {
 		var give_hint = take_chance(probability_give_hint)
 	
 		if (give_hint) {
-			npc_give_hint(npc, array_choose(hint_types_list))
+			npc_give_hint(npc, array_choose(global.hint_types_list))
 			return;
 		} 
 	
-		npc.dialogue = array_choose(default_dialogues.miscelaneous)
+		npc.dialogue = array_choose(global.default_dialogues.miscelaneous)
 	}
 	
 	//if (!audio_is_playing(obj_espeak_control.audio_buffer)) {
@@ -253,7 +253,7 @@ get_hint_description = function(hint_type, arg) {
 get_hints_descriptions = function() {
 	var descriptions = []
 	
-	array_foreach(hint_types_list, method({ descriptions: descriptions }, function(hint_type) {
+	array_foreach(global.hint_types_list, method({ descriptions: descriptions }, function(hint_type) {
 		var state = {
 			descriptions: descriptions,
 			hint_type: hint_type
@@ -478,7 +478,7 @@ stand = function() {
 	camera.pitch_max = 80
 }
 
-array_foreach(hint_types_list, function(hint_type) {
+array_foreach(global.hint_types_list, function(hint_type) {
 	array_push(active_hints, [])		
 })
 

@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "room_occupy_cell",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "rooms",
-    "path": "folders/Scripts/areas/rooms.yy",
+  "$GMScript":"v1",
+  "%Name":"room_occupy_cell",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"room_occupy_cell",
+  "parent":{
+    "name":"rooms",
+    "path":"folders/Scripts/areas/rooms.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

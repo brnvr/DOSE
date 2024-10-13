@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "position_3d_get_projected",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "actor_3d",
-    "path": "folders/Scripts/actor_3d.yy",
+  "$GMScript":"v1",
+  "%Name":"position_3d_get_projected",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"position_3d_get_projected",
+  "parent":{
+    "name":"actor_3d",
+    "path":"folders/Scripts/actor_3d.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

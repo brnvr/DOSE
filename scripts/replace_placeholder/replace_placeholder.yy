@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "replace_placeholder",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "utils",
-    "path": "folders/Scripts/utils.yy",
+  "$GMScript":"v1",
+  "%Name":"replace_placeholder",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"replace_placeholder",
+  "parent":{
+    "name":"utils",
+    "path":"folders/Scripts/utils.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

@@ -1,2 +1,3 @@
 instance_destroy(sound_3d)
-event_inherited()
+
+buffer_delete(espeak_buffer)

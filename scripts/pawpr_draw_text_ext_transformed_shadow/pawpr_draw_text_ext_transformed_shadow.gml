@@ -1,8 +1,6 @@
 function pawpr_draw_text_ext_transformed_shadow(x, y, str, sep, w, xscale, yscale, angle, shadow_color, shadow_alpha, shadow_xdist, shadow_ydist) {
-	var color_previous, alpha_previous;
-	
-	color_previous = draw_get_color();
-	alpha_previous = draw_get_alpha();
+	var color_previous = draw_get_color();
+	var alpha_previous = draw_get_alpha();
 	
 	if (shadow_alpha > 0) {
 		draw_set_color(shadow_color);

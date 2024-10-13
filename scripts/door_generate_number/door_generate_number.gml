@@ -19,9 +19,9 @@ function door_generate_number(side=undefined) {
 	}
 	
 	if (number_side == cardinal.north || number_side == cardinal.east) {
-		spr_door_number = spr_door_numbers[door_number];	
+		spr_door_number = global.spr_door_numbers[door_number];	
 	} else {
-		spr_door_number = spr_door_numbers_flipped[door_number]	
+		spr_door_number = global.spr_door_numbers_flipped[door_number]	
 	}
 	
 	array_push(texture_list, sprite_get_texture(spr_door_number, 0));

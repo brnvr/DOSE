@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "vertex_copy_buffer",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "vertex_buffers",
-    "path": "folders/Scripts/vertex_buffers.yy",
+  "$GMScript":"v1",
+  "%Name":"vertex_copy_buffer",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"vertex_copy_buffer",
+  "parent":{
+    "name":"vertex_buffers",
+    "path":"folders/Scripts/vertex_buffers.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

@@ -1,17 +1,14 @@
 function pawpr_element_get_xoffset_default(element) {		
 	if (is_undefined(element[pawpr_attr.parent])) return 0;
 	
-	var parent_direction, parent_align, parent_padding, parent_padding_left, parent_padding_right,
-		margin, margin_left, xoffset;
-	
-	parent_padding = pawpr_element_get_style(element[pawpr_attr.parent], pawpr.padding, 0);
-	parent_padding_left = pawpr_element_get_style(element[pawpr_attr.parent], pawpr.padding_left, parent_padding);
-	parent_padding_right = pawpr_element_get_style(element[pawpr_attr.parent], pawpr.padding_right, parent_padding);
-	parent_direction = pawpr_element_get_style(element[pawpr_attr.parent], pawpr.direction, pawpr_direction.row);
-	parent_align = pawpr_element_get_style(element[pawpr_attr.parent], pawpr.align, pawpr_align.at_start);
-	margin = pawpr_element_get_style(element, pawpr.margin, 0);
-	margin_left = pawpr_element_get_style(element, pawpr.margin_left, margin);
-	xoffset = pawpr_element_get_style(element, pawpr.xoffset, 0);
+	var parent_padding = pawpr_element_get_style(element[pawpr_attr.parent], pawpr.padding, 0);
+	var parent_padding_left = pawpr_element_get_style(element[pawpr_attr.parent], pawpr.padding_left, parent_padding);
+	var parent_padding_right = pawpr_element_get_style(element[pawpr_attr.parent], pawpr.padding_right, parent_padding);
+	var parent_direction = pawpr_element_get_style(element[pawpr_attr.parent], pawpr.direction, pawpr_direction.row);
+	var parent_align = pawpr_element_get_style(element[pawpr_attr.parent], pawpr.align, pawpr_align.at_start);
+	var margin = pawpr_element_get_style(element, pawpr.margin, 0);
+	var margin_left = pawpr_element_get_style(element, pawpr.margin_left, margin);
+	var xoffset = pawpr_element_get_style(element, pawpr.xoffset, 0);
 	
 	switch (parent_direction) {
 		case pawpr_direction.row:

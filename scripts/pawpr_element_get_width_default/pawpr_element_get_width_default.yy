@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "pawpr_element_get_width_default",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "elements",
-    "path": "folders/Scripts/pawpr/elements.yy",
+  "$GMScript":"v1",
+  "%Name":"pawpr_element_get_width_default",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"pawpr_element_get_width_default",
+  "parent":{
+    "name":"elements",
+    "path":"folders/Scripts/pawpr/elements.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

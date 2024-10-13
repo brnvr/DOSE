@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "door_number_create_sprite",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "utils",
-    "path": "folders/Scripts/utils.yy",
+  "$GMScript":"v1",
+  "%Name":"door_number_create_sprite",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"door_number_create_sprite",
+  "parent":{
+    "name":"utils",
+    "path":"folders/Scripts/utils.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

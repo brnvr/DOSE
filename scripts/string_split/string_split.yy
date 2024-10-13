@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "string_split",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "string",
-    "path": "folders/Scripts/string.yy",
+  "$GMScript":"v1",
+  "%Name":"string_split",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"string_split",
+  "parent":{
+    "name":"string",
+    "path":"folders/Scripts/string.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

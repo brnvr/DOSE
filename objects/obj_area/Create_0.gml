@@ -4,8 +4,8 @@ depth = -1
 started_building = false
 finished_building = false
 
-if (is_undefined(is_building)) {
-	is_building = function() {
+if (is_undefined(get_is_building)) {
+	get_is_building = function() {
 		return false;	
 	}
 }

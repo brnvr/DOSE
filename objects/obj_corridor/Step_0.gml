@@ -1,4 +1,4 @@
-if (is_building()) {
+if (get_is_building()) {
 	var args;
 	
 	args = building_queue[0];

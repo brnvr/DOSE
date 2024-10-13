@@ -1,4 +1,4 @@
-function ui_create_menu(xpos, ypos, menu_options, stylesheet=menu_stylesheet, hor_align=pawpr_align.at_center, vert_align=pawpr_align.at_center) {
+function ui_create_menu(xpos, ypos, menu_options, stylesheet=global.menu_stylesheet, hor_align=pawpr_align.at_center, vert_align=pawpr_align.at_center) {
 	var ui, menu_content, n_options;
 	
 	ui = pawpr_ui(xpos, ypos, stylesheet, hor_align, vert_align);

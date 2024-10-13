@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "pawpr_style_get_index",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "styles",
-    "path": "folders/Scripts/pawpr/styles.yy",
+  "$GMScript":"v1",
+  "%Name":"pawpr_style_get_index",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"pawpr_style_get_index",
+  "parent":{
+    "name":"styles",
+    "path":"folders/Scripts/pawpr/styles.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

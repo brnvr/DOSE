@@ -1,9 +1,7 @@
 function pawpr_element(params) {
-	var element;
-	
 	if (!variable_struct_exists(params, "content")) throw "Element must have a content.";
 	
-	element = [];
+	var element = [];
 	
 	if (variable_struct_exists(params, "type")) {
 		element[pawpr_attr.type] = params.type;	

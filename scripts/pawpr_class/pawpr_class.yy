@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "pawpr_class",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "class",
-    "path": "folders/Scripts/pawpr/class.yy",
+  "$GMScript":"v1",
+  "%Name":"pawpr_class",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"pawpr_class",
+  "parent":{
+    "name":"class",
+    "path":"folders/Scripts/pawpr/class.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

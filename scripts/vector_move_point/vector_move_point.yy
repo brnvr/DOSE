@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "vector_move_point",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "vector",
-    "path": "folders/Scripts/math/vector.yy",
+  "$GMScript":"v1",
+  "%Name":"vector_move_point",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"vector_move_point",
+  "parent":{
+    "name":"vector",
+    "path":"folders/Scripts/math/vector.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

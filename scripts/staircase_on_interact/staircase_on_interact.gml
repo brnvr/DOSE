@@ -66,12 +66,10 @@ function staircase_on_interact() {
 			}))
 			
 			if (staircase.other_end == noone) {
-				var staircase_coords, new_staircase_direction
-				
 				corridor_generate(corridor)
 			
-				new_staircase_direction = cardinal_opposite(staircase.cardinal_direction)
-				staircase_coords = corridor_get_staircase_random(corridor, new_staircase_direction)
+				var new_staircase_direction = cardinal_opposite(staircase.cardinal_direction)
+				var staircase_coords = corridor_get_staircase_random(corridor, new_staircase_direction)
 				
 				if (is_undefined(staircase_coords)) {
 					staircase_coords = corridor_add_staircase_random(corridor, new_staircase_direction)
@@ -116,7 +114,7 @@ function staircase_on_interact() {
 				obj_player.y = other_end.y + yoffset
 			}
 			
-			camera_3d.yaw = staircase.zrotation
+			global.camera_3d.yaw = staircase.zrotation
 			
 			obj_control.current_area = corridor
 				

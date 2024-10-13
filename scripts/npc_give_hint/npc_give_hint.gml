@@ -1,6 +1,6 @@
 function npc_give_hint(npc, hint_type) {
 	static go_to_room_hint = function() {
-		var door_number, dialogue
+		var door_number = undefined
 		
 		if (array_length(obj_player.active_hints[hint_types.go_to_room]) == 0) {
 			door_number = array_choose(obj_control.door_numbers_avaliable)
@@ -9,7 +9,7 @@ function npc_give_hint(npc, hint_type) {
 			door_number = obj_player.active_hints[hint_types.go_to_room][0]
 		}
 		
-		dialogue = array_choose(default_dialogues.hints[hint_types.go_to_room])
+		var dialogue = array_choose(global.default_dialogues.hints[hint_types.go_to_room])
 		dialogue = replace_placeholder(dialogue, "door_number", string(door_number))
 		
 		return dialogue;
@@ -27,19 +27,20 @@ function npc_give_hint(npc, hint_type) {
 		obj_player.last_door_passed.revert_hint = true
 		obj_player.last_door_passed.revert_hint_opposite_area = obj_control.current_area
 
-		return array_choose(default_dialogues.hints[hint_types.go_back_one_room])
+		return array_choose(global.default_dialogues.hints[hint_types.go_back_one_room])
 	}
 	
 	static talk_to_someone_hint = function(npc) {
-		var dialogue, npc_other_name, arr_hints
+		var dialogue = ""
+		var npc_other_name = ""
+		var npc_other_pronouns = undefined
 		
-		arr_hints = obj_player.active_hints[hint_types.talk_to_someone]
+		var arr_hints = obj_player.active_hints[hint_types.talk_to_someone]
 		
 		if (array_length(arr_hints) == 0) {
-			var npc_other_obj, npc_other_pronouns, n_characters, characters
-			
-			characters = obj_control.seed_group[sg.characters]
-			n_characters = array_length(characters)
+			var npc_other_obj = noone
+			var characters = obj_control.seed_group[sg.characters]
+			var n_characters = array_length(characters)
 
 			if (n_characters > 2) {
 				do {
@@ -58,8 +59,8 @@ function npc_give_hint(npc, hint_type) {
 				throw "No characters avaliable in the seed group."		
 			}
 		
-			npc_other_name = names[npc_other_obj][0]
-			npc_other_pronouns = names[npc_other_obj][1]
+			npc_other_name = global.names[npc_other_obj][0]
+			npc_other_pronouns = global.names[npc_other_obj][1]
 			
 			obj_player.receive_hint(hint_types.talk_to_someone, [npc_other_name, npc_other_pronouns])
 		}
@@ -68,7 +69,7 @@ function npc_give_hint(npc, hint_type) {
 			npc_other_pronouns = arr_hints[0][1]
 		}
 		
-		dialogue = array_choose(default_dialogues.hints[hint_types.talk_to_someone])
+		dialogue = array_choose(global.default_dialogues.hints[hint_types.talk_to_someone])
 		dialogue = replace_placeholder(dialogue, "name", string(npc_other_name))
 		dialogue = replace_placeholder(dialogue, "s_pronoun", string(npc_other_pronouns[0]))
 		dialogue = replace_placeholder(dialogue, "o_pronoun", string(npc_other_pronouns[1]))
@@ -77,14 +78,12 @@ function npc_give_hint(npc, hint_type) {
 	}
 		
 	static find_item_hint = function() {
-		var items, arr_hints, item, n_hints, item_name, name_article, dialogue, inventory_length
-		
-		items = obj_control.seed_group[sg.items]
-		item = array_choose(items)
-		arr_hints = obj_player.active_hints[hint_types.find_item]
-		n_hints = array_length(arr_hints)
-		inventory_length = array_length(obj_player.inventory)
-		item_name = names[item][0]
+		var items = obj_control.seed_group[sg.items]
+		var item = array_choose(items)
+		var arr_hints = obj_player.active_hints[hint_types.find_item]
+		var n_hints = array_length(arr_hints)
+		var inventory_length = array_length(obj_player.inventory)
+		var item_name = global.names[item][0]
 		
 		for (var i = 0; i < inventory_length; i++) {
 			var inventory_item = obj_player.inventory[i]
@@ -102,11 +101,11 @@ function npc_give_hint(npc, hint_type) {
 			}
 		}
 
-		name_article = names[item][1]
+		var name_article = global.names[item][1]
 
 		obj_player.receive_hint(hint_types.find_item, [item_name, name_article])
 		
-		dialogue = array_choose(default_dialogues.hints[hint_types.find_item])
+		var dialogue = array_choose(global.default_dialogues.hints[hint_types.find_item])
 		dialogue = replace_placeholder(dialogue, "name", string(item_name))
 		dialogue = replace_placeholder(dialogue, "article", string(name_article))
 		
@@ -114,20 +113,18 @@ function npc_give_hint(npc, hint_type) {
 	}
 		
 	static fulfill_quest_hint = function(npc) {
-		var quest, n_quests, arr_hints, hints_state
-		
-		n_quests = array_length(npc.quests)
+		var n_quests = array_length(npc.quests)
 		
 		if (n_quests == 0) {
 			return "..."	
 		}
 		
-		hints_state = {
+		var hints_state = {
 			npc: npc,
 			npc_quest: noone
 		}
 		
-		arr_hints = obj_player.active_hints[hint_types.fulfill_quest]
+		var arr_hints = obj_player.active_hints[hint_types.fulfill_quest]
 		
 		array_foreach(arr_hints, method(hints_state, function(item) {
 			if (item[1] == npc) {
@@ -140,7 +137,7 @@ function npc_give_hint(npc, hint_type) {
 			return hints_state.npc_quest[quest_props.npc_dialogue]
 		}
 		
-		quest = array_choose(npc.quests, false)
+		var quest = array_choose(npc.quests, false)
 		
 		quest[quest_props.action]()
 		obj_player.receive_hint(hint_types.fulfill_quest, [quest, npc])
@@ -149,10 +146,9 @@ function npc_give_hint(npc, hint_type) {
 	}
 	
 	static go_to_another_floor_hint = function() {
-		var dir, dialogue, arr_hints
-		
-		dialogue = array_choose(default_dialogues.hints[hint_types.go_to_another_floor])	
-		arr_hints = obj_player.active_hints[hint_types.go_to_another_floor]
+		var dir = undefined
+		var dialogue = array_choose(global.default_dialogues.hints[hint_types.go_to_another_floor])	
+		var arr_hints = obj_player.active_hints[hint_types.go_to_another_floor]
 		
 		if (array_length(arr_hints) == 0) {
 			dir = choose(stairs_directions.up, stairs_directions.down)
@@ -178,15 +174,15 @@ function npc_give_hint(npc, hint_type) {
 	
 	switch (hint_type) {
 		case hint_types.find_item:
-			npc.dialogue = find_item_hint(npc)
+			npc.dialogue = find_item_hint()
 			break
 			
 		case hint_types.go_to_room:
-			npc.dialogue = go_to_room_hint(npc)
+			npc.dialogue = go_to_room_hint()
 			break
 				
 		case hint_types.go_back_one_room:
-			npc.dialogue = go_back_one_room_hint(npc)	
+			npc.dialogue = go_back_one_room_hint()	
 			break
 			
 		case hint_types.talk_to_someone:
@@ -194,7 +190,7 @@ function npc_give_hint(npc, hint_type) {
 			break
 			
 		case hint_types.go_to_another_floor:
-			npc.dialogue = go_to_another_floor_hint(npc)
+			npc.dialogue = go_to_another_floor_hint()
 			break
 			
 		case hint_types.fulfill_quest:

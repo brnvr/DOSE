@@ -1,4 +1,4 @@
-function struct_copy(struct_src, struct_dest, filter = pointer_null) {
+function struct_copy(struct_src, struct_dest, filter = undefined) {
 	var keys, n_keys;
 	
 	keys = variable_struct_get_names(struct_src);
@@ -8,7 +8,7 @@ function struct_copy(struct_src, struct_dest, filter = pointer_null) {
 		var key = keys[i];
 		var value = variable_struct_get(struct_src, key);
 	
-		if (filter != pointer_null) {
+		if (!is_undefined(filter)) {
 			if (!is_array(filter)) show_error("Filter must be an array", true);
 			
 			var skip = false;

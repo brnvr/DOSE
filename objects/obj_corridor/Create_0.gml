@@ -8,7 +8,7 @@ add_to_building_queue = function(seed_group, block_size, door_passage_side_width
 	array_push(building_queue, [seed_group, block_size, door_passage_side_width]);
 }
 
-is_building = function() {
+get_is_building = function() {
 	return started_building && array_length(building_queue) > 0;	
 }
 

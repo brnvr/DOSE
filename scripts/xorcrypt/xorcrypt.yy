@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "xorcrypt",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "utils",
-    "path": "folders/Scripts/utils.yy",
+  "$GMScript":"v1",
+  "%Name":"xorcrypt",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"xorcrypt",
+  "parent":{
+    "name":"utils",
+    "path":"folders/Scripts/utils.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

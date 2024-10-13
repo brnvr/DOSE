@@ -1,8 +1,6 @@
 function pawpr_build(ui, element=ui) {
-	var type_template;
-	
 	if (is_undefined(element[pawpr_attr.type])) element[pawpr_attr.type] = "container";
-	type_template = variable_struct_get(ui[pawpr_attr.template], element[pawpr_attr.type]);
+	var type_template = variable_struct_get(ui[pawpr_attr.template], element[pawpr_attr.type]);
 
 	if (is_undefined(type_template)) throw "Element type not found in template";
 	
@@ -28,16 +26,12 @@ function pawpr_build(ui, element=ui) {
 	}
 	
 	if (element[pawpr_attr.type] == "container") {
-		var content_length;
-		
 		if (!is_array(element[pawpr_attr.content])) throw "The content of a container element must be an array";
 		
-		content_length = array_length(element[pawpr_attr.content]);
+		var content_length = array_length(element[pawpr_attr.content]);
 		
 		for (var i = 0; i < content_length; i++) {
-			var element_current;
-			
-			element_current = element[pawpr_attr.content][i];
+			var element_current = element[pawpr_attr.content][i];
 			if (is_undefined(element_current)) break;
 			element_current[pawpr_attr.parent] = element;
 			element_current[pawpr_attr.previous] = (i == 0) ? undefined : element[pawpr_attr.content][i-1];
@@ -49,16 +43,12 @@ function pawpr_build(ui, element=ui) {
 	element[pawpr_attr.height] = type_template.get_height(element);
 	
 	if (ui == element) {
-		var buffer_length;
-		
 		ui[pawpr_attr.mouse_x] = pawpr_mouse_x(ui);
 		ui[pawpr_attr.mouse_y] = pawpr_mouse_y(ui);
-		buffer_length = array_length(ui[pawpr_attr.elements]);
+		var buffer_length = array_length(ui[pawpr_attr.elements]);
 	
 		for (var i = 0; i < buffer_length; i++) {
-			var element_current;
-		
-			element_current = ui[pawpr_attr.elements][i];
+			var element_current = ui[pawpr_attr.elements][i];
 			element_current[pawpr_attr.xoffset] = type_template.get_xoffset(element_current);
 			element_current[pawpr_attr.yoffset] = type_template.get_yoffset(element_current);
 		}

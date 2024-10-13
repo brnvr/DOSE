@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "sp_find_path",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "find_path",
-    "path": "folders/Scripts/SharpPath/path/find_path.yy",
+  "$GMScript":"v1",
+  "%Name":"sp_find_path",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sp_find_path",
+  "parent":{
+    "name":"find_path",
+    "path":"folders/Scripts/SharpPath/path/find_path.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

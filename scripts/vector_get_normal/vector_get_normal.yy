@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "vector_get_normal",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "vector",
-    "path": "folders/Scripts/math/vector.yy",
+  "$GMScript":"v1",
+  "%Name":"vector_get_normal",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"vector_get_normal",
+  "parent":{
+    "name":"vector",
+    "path":"folders/Scripts/math/vector.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

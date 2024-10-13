@@ -25,7 +25,7 @@ hints[hint_types.find_item] = [
 	"Find {article} {name}."
 ]
 
-default_dialogues = {
+global.default_dialogues = {
 	"miscelaneous": [
 		"Time's dance echoes forgotten dreams in the cosmic corridors.",
 		"Surreal clock hands mock linearity in a timeless waltz.",

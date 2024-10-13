@@ -26,18 +26,13 @@ function npc_speak(npc, show_subtitle=true, end_conversation=true) {
 		obj_hud.show_speech(speech)	
 	}
 	
-	/*
-	obj_espeak_control.sound_3d.x = npc.x
-	obj_espeak_control.sound_3d.y = npc.y
-	obj_espeak_control.sound_3d.z = npc.z - default_block_size/2*/
-	
 	obj_espeak_control.npc_current = npc
 	
 	if (end_conversation) {
 		//npc.dialogue = "..."	
 	}
 	
-	espeak_synth(obj_espeak_control.espeak_buffer, speech)
+	espeak_synth(npc.espeak_buffer, speech)
 	
 	return true
 }

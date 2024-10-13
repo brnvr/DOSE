@@ -1,4 +1,4 @@
-function vb_load(filepath, freeze = true, format = vertex_format) {
+function vb_load(filepath, freeze = true, format = global.vertex_format) {
 	var buffer, vertex_buffer, model;
 	
 	static loaded_models = {};

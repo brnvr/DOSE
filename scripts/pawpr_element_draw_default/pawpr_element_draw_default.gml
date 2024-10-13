@@ -1,24 +1,20 @@
 function pawpr_element_draw_default(element, draw_func) {
-	var bg_alpha, padding, padding_left, padding_top, padding_right, padding_bottom, bounding_rect, border_alpha, previous_color, previous_alpha;
+	var bounding_rect = pawpr_element_get_bounding_rect(element);
 	
-	bounding_rect = pawpr_element_get_bounding_rect(element);
+	var padding = pawpr_element_get_style(element, pawpr.padding, 0);
+	var padding_left = pawpr_element_get_style(element, pawpr.padding_left, padding);
+	var padding_top = pawpr_element_get_style(element, pawpr.padding_right, padding);
+	var padding_right = pawpr_element_get_style(element, pawpr.padding_right, padding);
+	var padding_bottom = pawpr_element_get_style(element, pawpr.padding_bottom, padding);	
+	var bg_alpha = pawpr_element_get_style(element, pawpr.background_alpha, 0);
+	var border_alpha = pawpr_element_get_style(element, pawpr.border_alpha, 0);
 	
-	padding = pawpr_element_get_style(element, pawpr.padding, 0);
-	padding_left = pawpr_element_get_style(element, pawpr.padding_left, padding);
-	padding_top = pawpr_element_get_style(element, pawpr.padding_right, padding);
-	padding_right = pawpr_element_get_style(element, pawpr.padding_right, padding);
-	padding_bottom = pawpr_element_get_style(element, pawpr.padding_bottom, padding);	
-	bg_alpha = pawpr_element_get_style(element, pawpr.background_alpha, 0);
-	border_alpha = pawpr_element_get_style(element, pawpr.border_alpha, 0);
-	
-	previous_color = draw_get_color();
-	previous_alpha = draw_get_alpha();
+	var previous_color = draw_get_color();
+	var previous_alpha = draw_get_alpha();
 
 	if (bg_alpha > 0) {
-		var bg_color, border_radius;
-		
-		bg_color = pawpr_element_get_style(element, pawpr.background_color, c_black);
-		border_radius = pawpr_element_get_style(element, pawpr.border_radius, 0);
+		var bg_color = pawpr_element_get_style(element, pawpr.background_color, c_black);
+		var border_radius = pawpr_element_get_style(element, pawpr.border_radius, 0);
 		
 		draw_set_color(bg_color);
 		draw_set_alpha(bg_alpha);
@@ -27,9 +23,8 @@ function pawpr_element_draw_default(element, draw_func) {
 	}
 	
 	if (border_alpha > 0) {
-		var border_color;
-		
-		border_color = pawpr_element_get_style(element, pawpr.border_color, c_white);
+		var border_color = pawpr_element_get_style(element, pawpr.border_color, c_white);
+		var border_radius = pawpr_element_get_style(element, pawpr.border_radius, 0);
 		
 		draw_set_color(border_color);
 		draw_set_alpha(border_alpha);

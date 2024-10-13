@@ -1,6 +1,6 @@
 /// @description Sets stylesheets
 
-menu_stylesheet = pawpr_stylesheet({
+global.menu_stylesheet = pawpr_stylesheet({
 	"menu": {
 		"direction": pawpr_direction.column,
 		"font": font_dark_dream

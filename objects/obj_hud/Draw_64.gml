@@ -4,13 +4,13 @@ draw_set_alpha(1)
 
 draw_set_color(c_black)
 draw_set_alpha(1)
-draw_rectangle(screen_width-89, 0, screen_width, screen_height, false)
+draw_rectangle(global.screen_width-89, 0, global.screen_width, global.screen_height, false)
 
 if (display_overlay_0) {
 	draw_overlay()
 }
 
-shader_set_ui(obj_control.saturation, 5)
+shader_set_ui(obj_control.saturation, 8)
 
 if (display_inventory && array_length(inventory_temp) > 0) {
 	draw_set_font(font_dark_dream)
@@ -48,7 +48,7 @@ if (display_inventory && array_length(inventory_temp) > 0) {
 	}	
 }
 
-shader_set_ui(obj_control.saturation, 7)
+shader_set_ui(obj_control.saturation, 8)
 
 draw_sprite(hud_panel, 0, 0, 0)
 
@@ -58,7 +58,7 @@ if (instance_exists(obj_eyes)) {
 	draw_sprite_ext(eyes.sprite_index, eyes.image_index, eyes.x, eyes.y, 1, 1, 0, c_white, 1)
 }
 
-shader_set_ui(obj_control.saturation, 7)
+shader_set_ui(obj_control.saturation, 8)
 
 if (display_inventory) {
 	if (inventory_button_up_selected) {
@@ -74,13 +74,13 @@ if (display_inventory) {
 	}
 }
 
-shader_set_ui(obj_control.saturation, 5)
+shader_set_ui(obj_control.saturation, 8)
 
 if (item_picked != noone) {
 	draw_sprite_ext(item_picked.sprite, 0, item_picked.x, item_picked.y, item_picked.scale, item_picked.scale, 0, c_white, 1)
 }
 
-shader_set_ui(obj_control.saturation, 7)
+shader_set_ui(obj_control.saturation, 8)
 
 if (speech != "") {
 	draw_set_halign(fa_center);
@@ -88,7 +88,7 @@ if (speech != "") {
 	
 	draw_set_color(c_white);
 	draw_set_alpha(1);
-	draw_text_ext_transformed(game_view_center_x, screen_height-43, speech, 16, 500, .75, .75, 0);
+	draw_text_ext_transformed(game_view_center_x, global.screen_height-43, speech, 16, 500, .75, .75, 0);
 } else if (obj_player.can_interact) {
 	if (obj_player.actor_hover != noone && instance_exists(obj_player.actor_hover)) {
 		var msg, action;
@@ -115,11 +115,11 @@ if (speech != "") {
 		
 		draw_set_color(c_white)
 		draw_set_alpha(1)
-		draw_text_ext_transformed(game_view_center_x, screen_height-43, msg, 16, 500, .75, .75, 0)
+		draw_text_ext_transformed(game_view_center_x, global.screen_height-43, msg, 16, 500, .75, .75, 0)
 		
 		draw_set_color(c_yellow)
 		draw_set_alpha(.5)
-		draw_text_transformed(game_view_center_x, screen_height-29, action, .5, .5, 0)
+		draw_text_transformed(game_view_center_x, global.screen_height-29, action, .5, .5, 0)
 		draw_set_alpha(1)
 	}
 }

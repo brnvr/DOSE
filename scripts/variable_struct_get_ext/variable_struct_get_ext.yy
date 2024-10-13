@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "variable_struct_get_ext",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "struct",
-    "path": "folders/Scripts/struct.yy",
+  "$GMScript":"v1",
+  "%Name":"variable_struct_get_ext",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"variable_struct_get_ext",
+  "parent":{
+    "name":"struct",
+    "path":"folders/Scripts/struct.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

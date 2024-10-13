@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "pawpr_selector_get_index",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "selectors",
-    "path": "folders/Scripts/pawpr/selectors.yy",
+  "$GMScript":"v1",
+  "%Name":"pawpr_selector_get_index",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"pawpr_selector_get_index",
+  "parent":{
+    "name":"selectors",
+    "path":"folders/Scripts/pawpr/selectors.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

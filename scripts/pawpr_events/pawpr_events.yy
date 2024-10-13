@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "pawpr_events",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "events",
-    "path": "folders/Scripts/pawpr/events.yy",
+  "$GMScript":"v1",
+  "%Name":"pawpr_events",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"pawpr_events",
+  "parent":{
+    "name":"events",
+    "path":"folders/Scripts/pawpr/events.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

@@ -9,10 +9,10 @@ function application_resize(aspect) {
 		screen_height = 360;
 	}*/
 
-	screen_height = 360;
-	screen_width = screen_height*aspect;
+	global.screen_height = 360;
+	global.screen_width = global.screen_height*aspect;
 	
-	surface_resize(application_surface, screen_width, screen_height);
+	surface_resize(application_surface, global.screen_width, global.screen_height);
 
 	cursor_center();
 

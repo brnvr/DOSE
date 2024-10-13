@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "area_add_actor_3d",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "areas",
-    "path": "folders/Scripts/areas.yy",
+  "$GMScript":"v1",
+  "%Name":"area_add_actor_3d",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"area_add_actor_3d",
+  "parent":{
+    "name":"areas",
+    "path":"folders/Scripts/areas.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

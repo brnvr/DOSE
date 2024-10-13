@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "instance_raycast",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "collision",
-    "path": "folders/Scripts/collision.yy",
+  "$GMScript":"v1",
+  "%Name":"instance_raycast",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"instance_raycast",
+  "parent":{
+    "name":"collision",
+    "path":"folders/Scripts/collision.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

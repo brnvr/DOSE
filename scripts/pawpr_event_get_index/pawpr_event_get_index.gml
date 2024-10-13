@@ -1,7 +1,5 @@
 function pawpr_event_get_index(event_name, throw_not_found_exception=true) {
-	var pawpr_event_values, value;
-	
-	pawpr_event_values = {
+	var pawpr_event_values = {
 		"on_mouse_over": pawpr_ev.mouse_over,
 		"on_mouse_out": pawpr_ev.mouse_out,
 		"on_mouse_enter": pawpr_ev.mouse_enter,
@@ -11,7 +9,7 @@ function pawpr_event_get_index(event_name, throw_not_found_exception=true) {
 		"on_update": pawpr_ev.update
 	}
 	
-	value = variable_struct_get(pawpr_event_values, event_name);
+	var value = variable_struct_get(pawpr_event_values, event_name);
 	
 	if (throw_not_found_exception && is_undefined(value)) throw $"Event not found: {event_name}";	
 	return value;

@@ -26,9 +26,7 @@ if (!paused) {
 		}
 		
 		if (deactivate_with_distance) {
-			var threshold;
-
-			threshold = other.fog_end*2;
+			var threshold = other.fog_end*2;
 
 			if (x < obj_player.x-threshold ||
 				x > obj_player.x+threshold ||
@@ -45,15 +43,15 @@ if (!paused) {
 	instance_activate_object(obj_camera_3d_generic);
 }
 
-if (camera_3d != noone) {
-	audio_listener_position(camera_3d.x, camera_3d.y, camera_3d.z);
+if (global.camera_3d != noone) {
+	audio_listener_position(global.camera_3d.x, global.camera_3d.y, global.camera_3d.z);
 
 	audio_listener_orientation(
-		camera_3d.xfrom-camera_3d.xto,
-		camera_3d.yfrom-camera_3d.yto,
-		camera_3d.zfrom-camera_3d.zto,
-		camera_3d.xup,
-		camera_3d.yup,
-		camera_3d.zup
+		global.camera_3d.xfrom-global.camera_3d.xto,
+		global.camera_3d.yfrom-global.camera_3d.yto,
+		global.camera_3d.zfrom-global.camera_3d.zto,
+		global.camera_3d.xup,
+		global.camera_3d.yup,
+		global.camera_3d.zup
 	);
 }

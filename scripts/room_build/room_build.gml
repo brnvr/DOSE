@@ -1,16 +1,12 @@
 function room_build(room, seed_group, block_size, door_passage_side_width) {
-	var wall, door, lamp;
-	
-	wall = array_choose(seed_group[sg.walls]);
-	door = array_choose(seed_group[sg.doors]);
-	lamp = array_choose(seed_group[sg.lamps]);
+	var wall = array_choose(seed_group[sg.walls]);
+	var door = array_choose(seed_group[sg.doors]);
+	var lamp = array_choose(seed_group[sg.lamps]);
 	
 	room.started_building = true;
 
 	for (var i = 0; i < room.hlength; i++) {
-		var xpos;
-		
-		xpos = room.x + i*block_size;
+		var xpos = room.x + i*block_size;
 		
 		area_add_actor_3d(room, xpos, room.y, room.z, obj_wall_random_generic, {
 			zrotation: 90,
@@ -50,9 +46,7 @@ function room_build(room, seed_group, block_size, door_passage_side_width) {
 	}
 	
 	for (var i = 0; i < room.vlength; i++) {
-		var ypos;
-		
-		ypos = room.y + i*block_size;
+		var ypos = room.y + i*block_size;
 		
 		area_add_actor_3d(room, room.x+room.hlength*block_size, ypos, room.z, obj_wall_random_generic, {
 			zrotation: 0,

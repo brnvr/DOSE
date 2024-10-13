@@ -6,7 +6,7 @@ function draw_overlay(color=c_black, alpha=.35) {
 	
 	draw_set_color(color);
 	draw_set_alpha(alpha);
-	draw_rectangle(0, 0, screen_width, screen_height, false);
+	draw_rectangle(0, 0, global.screen_width, global.screen_height, false);
 	draw_set_color(previous_color);
 	draw_set_alpha(previous_alpha);
 }

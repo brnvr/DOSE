@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "camera_3d_update_projection",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "camera_3d",
-    "path": "folders/Scripts/camera_3d.yy",
+  "$GMScript":"v1",
+  "%Name":"camera_3d_update_projection",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"camera_3d_update_projection",
+  "parent":{
+    "name":"camera_3d",
+    "path":"folders/Scripts/camera_3d.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

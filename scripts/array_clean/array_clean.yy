@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "array_clean",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "arrays",
-    "path": "folders/Scripts/arrays.yy",
+  "$GMScript":"v1",
+  "%Name":"array_clean",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"array_clean",
+  "parent":{
+    "name":"arrays",
+    "path":"folders/Scripts/arrays.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "pawpr_template",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "templates",
-    "path": "folders/Scripts/pawpr/templates.yy",
+  "$GMScript":"v1",
+  "%Name":"pawpr_template",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"pawpr_template",
+  "parent":{
+    "name":"templates",
+    "path":"folders/Scripts/pawpr/templates.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

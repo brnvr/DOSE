@@ -17,9 +17,7 @@ array_foreach(instances, function(instance) {
 	
 	if (object_is_ancestor(instance.object_index, obj_door_generic)) {
 		with (instance) {
-			var cardinal_direction
-
-			cardinal_direction = get_cardinal_direction(zrotation)
+			var cardinal_direction = get_cardinal_direction(zrotation)
 
 			areas[cardinal_opposite(cardinal_direction)] = other.id	
 		}

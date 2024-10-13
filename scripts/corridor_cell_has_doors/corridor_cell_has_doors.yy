@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "corridor_cell_has_doors",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "corridors",
-    "path": "folders/Scripts/areas/corridors.yy",
+  "$GMScript":"v1",
+  "%Name":"corridor_cell_has_doors",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"corridor_cell_has_doors",
+  "parent":{
+    "name":"corridors",
+    "path":"folders/Scripts/areas/corridors.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

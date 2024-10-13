@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "umod",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "math",
-    "path": "folders/Scripts/math.yy",
+  "$GMScript":"v1",
+  "%Name":"umod",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"umod",
+  "parent":{
+    "name":"math",
+    "path":"folders/Scripts/math.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

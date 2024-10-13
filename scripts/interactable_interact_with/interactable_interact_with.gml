@@ -6,7 +6,7 @@ function interactable_interact_with(interactable, obj_item, def=do_nothing, arg=
 	}))
 	
 	if (interaction_index == -1) {
-		return def(arg)
+		return def()
 	}
 	
 	return interactions_list[interaction_index][1](interactable, arg)

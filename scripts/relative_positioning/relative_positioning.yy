@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "relative_positioning",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "math",
-    "path": "folders/Scripts/math.yy",
+  "$GMScript":"v1",
+  "%Name":"relative_positioning",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"relative_positioning",
+  "parent":{
+    "name":"math",
+    "path":"folders/Scripts/math.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }
