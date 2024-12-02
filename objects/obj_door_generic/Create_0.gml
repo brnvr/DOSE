@@ -19,4 +19,14 @@ if (is_struct(areas)) {
 	areas = areas_arr;
 }
 
+snd_open = instance_create_layer(x, y, "Abstract", obj_sound_emitter_3d, {
+	z,
+	sound: snd_open_door
+})
+
+snd_close = instance_create_layer(x, y, "Abstract", obj_sound_emitter_3d, {
+	z,
+	sound: snd_close_door
+})
+
 event_inherited();

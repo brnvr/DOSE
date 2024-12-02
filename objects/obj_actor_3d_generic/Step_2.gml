@@ -2,7 +2,7 @@ if (billboard) {
 	zrotation = obj_player.camera.yaw;
 
 	if (array_length(vbuff_list) == 0) {
-		vbuff_list = [vbuff_billboard];
+		vbuff_list = [global.vbuff_billboard];
 	}
 }
 

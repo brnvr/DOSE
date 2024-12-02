@@ -1,5 +1,5 @@
-function npc_speak(npc, show_subtitle=true, end_conversation=true) {
-	if (audio_is_playing(npc.sound_3d.sound)) {
+function npc_speak(npc, show_subtitle=true) {
+	if (audio_is_playing(npc.sound_emitter.sound)) {
 		return false
 	}
 	
@@ -27,10 +27,6 @@ function npc_speak(npc, show_subtitle=true, end_conversation=true) {
 	}
 	
 	obj_espeak_control.npc_current = npc
-	
-	if (end_conversation) {
-		//npc.dialogue = "..."	
-	}
 	
 	espeak_synth(npc.espeak_buffer, speech)
 	

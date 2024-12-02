@@ -36,7 +36,7 @@ ts_success = time_source_create(time_source_global, 1.73, time_source_units_seco
 	instance_destroy(sheet_music)
 	sheet_music = noone
 	event_user(0)
-	obj_hud.add_message("melody flawlessly performed", c_ltgreen)
+	obj_hud.add_message("melody flawlessly performed")
 })
 
 ts_play_score_note = time_source_create(time_source_global, 1, time_source_units_frames, do_nothing)

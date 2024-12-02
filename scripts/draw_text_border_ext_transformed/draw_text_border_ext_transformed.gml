@@ -1,7 +1,5 @@
 function draw_text_border_ext_transformed(xx, yy, str, sep, w, xscale, yscale, border_color) {
-	var previous_color;
-	
-	previous_color = draw_get_color();
+	var previous_color = draw_get_color();
 		
 	draw_set_color(border_color);
 	

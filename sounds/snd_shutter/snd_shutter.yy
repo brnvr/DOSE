@@ -2,8 +2,8 @@
   "$GMSound":"",
   "%Name":"snd_shutter",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"ag_game_effects",
+    "path":"audiogroups/ag_game_effects",
   },
   "bitDepth":1,
   "bitRate":128,

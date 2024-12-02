@@ -7,6 +7,7 @@ if (auto_bbox) {
 }
 
 bbox_transformed_list = []
+transformation_matrix = []
 
 actor_3d_update_bbox()
 actor_3d_retrive_previous_properties()

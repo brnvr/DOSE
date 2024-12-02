@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_close_door",
+  "audioGroupId":{
+    "name":"ag_game_effects",
+    "path":"audiogroups/ag_game_effects",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.535011,
+  "name":"snd_close_door",
+  "parent":{
+    "name":"effects",
+    "path":"folders/Sounds/effects.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_close_door.ogg",
+  "type":0,
+  "volume":0.45,
+}

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"instances_foreach",
   "parent":{
-    "name":"utils",
-    "path":"folders/Scripts/utils.yy",
+    "name":"instance",
+    "path":"folders/Scripts/instance.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

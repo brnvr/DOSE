@@ -1,27 +1,27 @@
 /// @description Sets default dialogues
 
-var hints = [];
+var tasks = [];
 
-hints[hint_types.go_to_room] = [
+tasks[task_types.go_to_room] = [
 	"Go to room {door_number}."
 ]
 
-hints[hint_types.go_back_one_room] = [
+tasks[task_types.go_back_one_room] = [
 	"You're cold. Go back one room.",
 	"Wrong direction. Go back the way you came."
 ]
 
-hints[hint_types.go_to_another_floor] = [
+tasks[task_types.go_to_another_floor] = [
 	"Go {direction}stairs.",
 	"Go {direction} one floor."
 ]
 
-hints[hint_types.talk_to_someone] = [
-	 "Talk to {name}. {s_pronoun}'s got a hint for you.",
+tasks[task_types.talk_to_someone] = [
+	 "Talk to {name}. {s_pronoun}'s got a task for you.",
 	 "I've heard {name} knows something. Why don't you talk to {o_pronoun}?"
 ]
 
-hints[hint_types.find_item] = [
+tasks[task_types.find_item] = [
 	"Find {article} {name}."
 ]
 
@@ -49,5 +49,5 @@ global.default_dialogues = {
 		"Shadows, transient companions, whisper truths in the cosmic dance."
 	],
 	
-	"hints": hints
+	"tasks": tasks
 }

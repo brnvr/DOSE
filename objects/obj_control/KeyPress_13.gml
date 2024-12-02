@@ -8,6 +8,8 @@ view_set_wport(views.view_3d, global.screen_width);
 view_set_hport(views.view_3d, global.screen_height);
 view_set_wport(views.view_2d, global.screen_width);
 view_set_hport(views.view_2d, global.screen_height);
+
+show_message(global.screen_height)
 	
 with(obj_hud) {
 	//event_user(0);

@@ -1,3 +1,4 @@
+doors = []
 instances = []
 neighbors = []
 depth = -1
@@ -10,9 +11,9 @@ if (is_undefined(get_is_building)) {
 	}
 }
 
-ts_on_built = time_source_create(time_source_global, 1, time_source_units_frames, function() {
-	if (!is_undefined(on_built)) {
-		on_built(id)
+ts_on_build = time_source_create(time_source_global, 1, time_source_units_frames, function() {
+	if (!is_undefined(on_build)) {
+		on_build(id)
 	}
 })
 

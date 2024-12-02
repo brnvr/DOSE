@@ -55,3 +55,29 @@ if (global.camera_3d != noone) {
 		global.camera_3d.zup
 	);
 }
+
+if (obj_player.envenoming > 0) {
+	if (wave_amount < 0.4 * obj_player.envenoming) {
+		wave_amount += 0.0001 * obj_player.envenoming
+	}
+	
+	if (gameview_xscale < 1 + 0.8 * obj_player.envenoming) {
+		gameview_xscale += 0.0002 * obj_player.envenoming
+	}
+	
+	wave_offset = (wave_offset + 0.001) mod 1
+}
+
+if (reseting_wave) {
+	var wave_spd = 0.001
+	var scale_spd = wave_spd * 2
+	
+	if (abs(wave_amount) < wave_spd && abs(gameview_xscale) < 1 - scale_spd) {
+		wave_amount = 0
+		gameview_xscale = 1
+		reseting_wave = false
+	}
+	
+	wave_amount = linear_interpolation(wave_amount, 0, wave_spd)
+	gameview_xscale = linear_interpolation(gameview_xscale, 1, scale_spd)
+}

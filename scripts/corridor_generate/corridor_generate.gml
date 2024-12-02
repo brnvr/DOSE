@@ -26,15 +26,13 @@ function corridor_generate(corridor, xstart=-1, ystart=-1, direction=undefined, 
 	}
 	
 	static build_intersection = function(corridor, xstart, ystart, direction, intersect_forward, intersect_leftward, intersect_rightward) {
-		var new_cell, grid_size;
-		
-		grid_size = ds_grid_width(corridor.grid);
+		var grid_size = ds_grid_width(corridor.grid);
 		
 		if (xstart < 0 || xstart >= grid_size || ystart < 0 || ystart >= grid_size) {
 			return undefined;	
 		}
 
-		new_cell = [1, -1, -1, false, -1, -1, -1, -1, -1, -1, -1, -1, [noone, noone, noone, noone]];
+		var new_cell = [1, -1, -1, false, -1, -1, -1, -1, -1, -1, -1, -1, [noone, noone, noone, noone]];
 		
 		switch (direction) {
 			case cardinal.south:
@@ -110,9 +108,8 @@ function corridor_generate(corridor, xstart=-1, ystart=-1, direction=undefined, 
 	}
 	
 	static build_segment = function(corridor, xstart, ystart, doors_side, direction) {
-		var pos, build_door, build_staircase, grid_size;
-		
-		grid_size = ds_grid_width(corridor.grid);
+		var pos = []
+		var grid_size = ds_grid_width(corridor.grid)
 		
 		if (xstart < 3 || xstart >= grid_size-3 || ystart < 3 || ystart >= grid_size-3) {
 			return undefined;	
@@ -165,8 +162,8 @@ function corridor_generate(corridor, xstart=-1, ystart=-1, direction=undefined, 
 			array_push(corridor.cells_used, [pos[i][0], pos[i][1]]);
 		}
 		
-		build_staircase = take_chance(corridor.prob_staircase);
-		build_door = build_staircase ? false : take_chance(corridor.prob_door_seg);
+		var build_staircase = take_chance(corridor.prob_staircase);
+		var build_door = build_staircase ? false : take_chance(corridor.prob_door_seg);
 
 		if (direction == cardinal.west || direction == cardinal.east) {
 			corridor.grid[# pos[0][0], pos[0][1]][corridor_cell_prop.wall_north] = 0;
@@ -236,9 +233,7 @@ function corridor_generate(corridor, xstart=-1, ystart=-1, direction=undefined, 
 			}
 			
 			if (build_staircase) {
-				var side;
-				
-				side = choose(0, 1);
+				var side = choose(0, 1);
 				
 				if (side == 0) {
 					corridor.grid[# pos[1][0], pos[1][1]][corridor_cell_prop.wall_west] = 2;
@@ -258,9 +253,7 @@ function corridor_generate(corridor, xstart=-1, ystart=-1, direction=undefined, 
 	}
 	
 	static set_wall_or_passage = function(corridor, xpos, ypos, prob_door, direction) {
-		var is_door;
-		
-		is_door = take_chance(prob_door);
+		var is_door = take_chance(prob_door);
 		
 		switch (direction) {
 			case cardinal.north:

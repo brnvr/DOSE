@@ -49,6 +49,10 @@ if (focus == noone) {
 	} else {
 		if (inventory_item_selected == noone) {
 			cursor_set_sprite(interactable_get_hover_sprite(noone));
+		}  else if (inventory_item_selected_enabled) {
+			mouse_click(mb_left, function() {
+				interactable_interact_with(id, inventory_item_selected.object)
+			});
 		}
 	}
 }

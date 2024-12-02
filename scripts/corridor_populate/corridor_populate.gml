@@ -1,6 +1,4 @@
 function corridor_populate(corridor, seed_group, block_size) {
-	var n_characters, n_items, _cells_used;
-
 	static create_actors = function(corridor, block_size, number, cells_used, arr, allow_repeated=true) {
 		if (!allow_repeated) {
 			arr = array_create_copy(arr);		
@@ -47,7 +45,11 @@ function corridor_populate(corridor, seed_group, block_size) {
 		}
 	}
 	
-	var arr_ev = array_concat(global.area_events, global.corridor_events)
+	var ev = global.corridor_events[ev_corridor.spider]
+	
+	ev(corridor, block_size, create_actors)
+	
+	/*var arr_ev = array_concat(global.area_events, global.corridor_events)
 	
 	while (take_chance(corridor.prob_event) && array_length(arr_ev) > 0) {
 		var ev = array_choose(arr_ev, true)
@@ -55,15 +57,17 @@ function corridor_populate(corridor, seed_group, block_size) {
 		if (ev(corridor, block_size, create_actors)) {
 			return
 		}
-	}
+	}*/
 	
-	n_characters = 0;
-	n_items = 0;
+	var n_characters = 0
+	var n_items = 0
 
 	repeat(corridor.n_segments) {
 		while (take_chance(corridor.prob_character)) n_characters++;
 		while (take_chance(corridor.prob_item)) n_items++;
 	}
+	
+	var _cells_used
 	
 	if (n_characters > 0 || n_items > 0) {
 		_cells_used = array_create_copy(corridor.cells_used);

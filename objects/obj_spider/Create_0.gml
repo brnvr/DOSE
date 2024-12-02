@@ -1,16 +1,25 @@
-on_ceiling = choose(true, false);
+area = obj_control.current_area
+moving_away = false
+on_ceiling = choose(true, false)
 
 if (on_ceiling) {
-	sprite_index = global.spr_spider_ceiling;
-	z += default_block_size;
+	sprite_index = global.spr_spider_ceiling
+	z += default_block_size
 }
 
 if (object_is_ancestor(obj_control.current_area.object_index, obj_path_area)) {
-	obj_control.current_area.begin_pathfinding();
-	path = sp_path_create(obj_control.current_area.sp_grid);
+	obj_control.current_area.begin_pathfinding()
+	path = sp_path_create(obj_control.current_area.sp_grid)
 } else {
-	path = undefined;	
+	path = undefined	
 }
 
-event_inherited();
+ts_restart_attack = time_source_create(time_source_global, irandom_range(10, 20), time_source_units_frames, function() {
+	moving_away = false
+})
 
+sound_emitter.sound = snd_spider_walking
+sound_emitter.loops = true
+sound_emitter_3d_play(sound_emitter)
+
+event_inherited()

@@ -1,21 +1,22 @@
-current_area = obj_control.current_area;
-image_speed = 0.25;
-has_teleported = false;
-is_moving = false;
-is_moving_to_door = false;
-use_pathfinding = false;
-process_events = false;
-door_destination = noone;
-coords_destination = undefined;
-path = undefined;
-dialogue = "You don't belong here";
+current_area = obj_control.current_area
+image_speed = 0.25
+has_teleported = false
+is_moving = false
+is_moving_to_door = false
+use_pathfinding = false
+process_events = false
+door_destination = noone
+coords_destination = undefined
+path = undefined
+dialogue = "You don't belong here"
+move_speed = 0
 
 ts_set_image = time_source_create(time_source_global, 15, time_source_units_frames, function() {
 	image_index = random(sprite_get_number(sprite_index));
 }, [], -1);
 
-ts_speak = time_source_create(time_source_global, 180, time_source_units_frames, function() {
-	npc_speak(id, false, false);
+ts_speak = time_source_create(time_source_global, 181, time_source_units_frames, function() {
+	npc_speak(id, false);
 	show_debug_message(obj_waiter.dialogue)
 }, [], -1);
 
@@ -32,11 +33,11 @@ ts_send_to_otherside = time_source_create(time_source_global, 35, time_source_un
 	area_destroy_instance(obj_control.current_area, id);
 });
 
-ts_move_to_door = time_source_create(time_source_global, 0, time_source_units_frames, function() {});
+ts_move_to_door = time_source_create(time_source_global, 1, time_source_units_frames, function() {});
 
-ts_close_door = time_source_create(time_source_global, 0, time_source_units_frames, function() {});
+ts_close_door = time_source_create(time_source_global, 1, time_source_units_frames, function() {});
 
-ts_process_events = time_source_create(time_source_global, 30, time_source_units_frames, function() {
+ts_process_events = time_source_create(time_source_global, 31, time_source_units_frames, function() {
 	process_events = true;
 }, [], -1);
 

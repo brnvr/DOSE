@@ -7,13 +7,13 @@ shutter_yoffset = MAX_SHUTTER_YOFFSET
 camera = obj_player.inventory_find_item(obj_instant_camera)
 photographs = obj_player.inventory_find_item(obj_instant_photographs)
 
-ts_open_shutter = time_source_create(time_source_global, 10, time_source_units_frames, function() {
+ts_open_shutter = time_source_create(time_source_global, 11, time_source_units_frames, function() {
 	shutter_dir = 1	
 })
 
-ts_stow_camera = time_source_create(time_source_global, 20, time_source_units_frames, function() {
+ts_stow_camera = time_source_create(time_source_global, 21, time_source_units_frames, function() {
 	instance_destroy()
-	obj_hud.add_message("You're out of film.", c_yellow)
+	obj_hud.add_message("You're out of film.")
 })
 
 obj_cursor.visible = false

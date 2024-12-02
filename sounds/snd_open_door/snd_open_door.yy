@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_open_door",
+  "audioGroupId":{
+    "name":"ag_game_effects",
+    "path":"audiogroups/ag_game_effects",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.822517,
+  "name":"snd_open_door",
+  "parent":{
+    "name":"effects",
+    "path":"folders/Sounds/effects.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_open_door.ogg",
+  "type":0,
+  "volume":1.0,
+}

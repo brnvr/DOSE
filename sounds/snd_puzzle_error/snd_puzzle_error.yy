@@ -2,8 +2,8 @@
   "$GMSound":"",
   "%Name":"snd_puzzle_error",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"ag_ui_effects",
+    "path":"audiogroups/ag_ui_effects",
   },
   "bitDepth":1,
   "bitRate":128,

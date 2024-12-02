@@ -1,3 +1,3 @@
-instance_destroy(sound_3d)
-
+npc_free_sound_emitter(id)
+instance_destroy(sound_emitter)
 buffer_delete(espeak_buffer)

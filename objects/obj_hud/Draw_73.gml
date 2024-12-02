@@ -6,7 +6,7 @@ if (view_current == views.view_2d) {
 		draw_set_valign(fa_top)
 		shader_reset()
 	
-		var descriptions = obj_player.get_hints_descriptions()
+		var descriptions = obj_player.get_tasks_descriptions()
 	
 		array_foreach(descriptions, function(description, index) {
 			draw_text_transformed(0, annotations_offset+index*18-40, "- " + description, .7, .7, 0)

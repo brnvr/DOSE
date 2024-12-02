@@ -6,4 +6,5 @@ if (door_number != -1) {
 	}
 }
 
-obj_player.fail_hint(hint_types.go_back_one_room, id)
+obj_player.fail_task(task_types.go_back_one_room, id)
+event_inherited()

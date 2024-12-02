@@ -1,7 +1,9 @@
-revert_hint = false
-revert_hint_opposite_area = noone
+revert_task = false
+revert_task_opposite_area = noone
 has_been_opened = false
-on_interact = door_random_on_interact
+on_interact = function() {
+	door_random_on_interact(id)	
+}
 texture_list = [sprite_get_texture(sprite_index, 0)]
 
 on_hover = function() {
@@ -15,7 +17,7 @@ on_hover = function() {
 }
 
 if (number_side != -1) {
-	door_generate_number(undefined)
+	door_generate_number(id, undefined)
 }
 
 event_inherited()

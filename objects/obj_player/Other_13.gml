@@ -1,8 +1,6 @@
 /// @description inventory
 
-var inventory_length;
-
-inventory_length = array_length(inventory);
+var inventory_length = array_length(inventory)
 
 if (inventory_item_selected == noone) {
 	if (mouse_wheel_up()) {
@@ -21,13 +19,10 @@ if (inventory_item_selected == noone) {
 	cursor_wave.speed = 0;
 	cursor_wave.x = 0;
 } else {
-	var center_y;
-	
 	cursor_wave.speed = 0.4;
 	obj_cursor.rotation = cursor_wave.y;	
 	
-	center_y = sprite_get_draw_center_y(obj_cursor.sprite_index, 4);
-
+	var center_y = sprite_get_draw_center_y(obj_cursor.sprite_index, 4);
 	var scale_factor = INVENTORY_ITEM_SIZE / sprite_get_width(inventory_item_selected.sprite_original)
 	
 	if (inventory_item_selected.can_combine) {

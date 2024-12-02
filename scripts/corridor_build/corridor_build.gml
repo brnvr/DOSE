@@ -300,7 +300,7 @@ function corridor_build(corridor, seed_group, block_size, door_passage_side_widt
 		if (use_destination) {
 			preferred_number = obj_control.door_number_destination
 		} else {
-			preferred_number = obj_player.get_hinted_door()
+			preferred_number = obj_player.get_tasked_door()
 		}
 
 		if (!is_undefined(preferred_number)) {

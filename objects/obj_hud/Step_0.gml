@@ -26,11 +26,11 @@ if (!instance_exists(npc_speaking)) {
 	npc_speaking = noone	
 }
 
-if (npc_speaking != noone && speech != "" && audio_is_playing(npc_speaking.sound_3d.sound)) {
+if (npc_speaking != noone && speech != "" && audio_is_playing(npc_speaking.sound_emitter.sound)) {
 	is_npc_speaking = true
 }
 
-if (is_npc_speaking && (npc_speaking == noone || (npc_speaking != noone && !audio_is_playing(npc_speaking.sound_3d.sound)))) {
+if (is_npc_speaking && (npc_speaking == noone || (npc_speaking != noone && !audio_is_playing(npc_speaking.sound_emitter.sound)))) {
 	is_npc_speaking = false
 	speech = ""
 }

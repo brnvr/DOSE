@@ -1,9 +1,9 @@
 #macro ev_very_common 50
 #macro ev_common 40
-//#macro ev_regular 30
-//#macro ev_rare 20
-//#macro ev_very_rare 10
-//#macro ev_anomaly 1
+#macro ev_regular 30
+#macro ev_rare 20
+#macro ev_very_rare 10
+#macro ev_anomaly 1
 
 #macro aspect_ratio 16/9
 #macro default_block_size 256
@@ -40,13 +40,6 @@
 #macro u_mesh_fog_enabled shader_get_uniform(sh_3d_mesh, "fog_enabled")
 #macro u_mesh_fog_color shader_get_uniform(sh_3d_mesh, "fog_color")
 #macro u_mesh_color_levels shader_get_uniform(sh_3d_mesh, "color_levels")
-
-#macro u_vhs_tracking_error_alpha shader_get_uniform(sh_vhs_filter, "tracking_error_alpha")
-#macro u_vhs_shadow_color shader_get_uniform(sh_vhs_filter, "shadow_color")
-#macro u_vhs_saturation shader_get_uniform(sh_vhs_filter, "saturation")
-#macro u_vhs_tracking_lines shader_get_sampler_index(sh_vhs_filter, "tracking_lines")
-#macro u_vhs_tracking_error_distance shader_get_uniform(sh_vhs_filter, "tracking_error_distance")
-#macro u_vhs_tracking_error_variation shader_get_uniform(sh_vhs_filter, "tracking_error_variation")
 
 enum views {
 	view_3d,
@@ -107,10 +100,10 @@ enum amount {
 	highest
 }
 	
-enum hint_types {
+enum task_types {
 	talk_to_someone,
 	go_to_room,
-	fulfill_quest,
+	complete_quest,
 	find_item,
 	go_to_another_floor,
 	go_back_one_room
@@ -139,22 +132,24 @@ enum ca {
 	players_room
 }
 			
-event_user(0)
-event_user(1)
-event_user(2)
-event_user(4)
-event_user(5)
-event_user(6)
-event_user(7)
-event_user(8)
+for (var i = 0; i < 16; i++) {
+	event_user(i)	
+}
 
 global.spr_spider_ceiling = sprite_create_transformed(spr_spider, 1, -1, 0)
 
-global.hint_types_list = [
-	hint_types.talk_to_someone,
-	hint_types.go_to_room,
-	hint_types.fulfill_quest,
-	hint_types.find_item,
-	hint_types.go_to_another_floor,
-	hint_types.go_back_one_room
+global.task_types_list = [
+	task_types.talk_to_someone,
+	task_types.go_to_room,
+	task_types.complete_quest,
+	task_types.find_item,
+	task_types.go_to_another_floor,
+	task_types.go_back_one_room
+]
+
+global.progressive_task_types = [
+	task_types.go_to_room,
+	task_types.complete_quest,
+	task_types.go_back_one_room,
+	task_types.go_to_another_floor
 ]

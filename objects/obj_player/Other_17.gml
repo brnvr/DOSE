@@ -4,7 +4,6 @@ repeat(200) {
 	var inst_meeting = actor_3d_place(x, y, z, obj_actor_3d_generic);
 	
 	if (inst_meeting == noone) break;
-	
 
 	var point_dir = point_direction(x, y, inst_meeting.x, inst_meeting.y);
 	var xspeed = dcos(inst_meeting.zrotation);

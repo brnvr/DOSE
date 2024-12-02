@@ -6,7 +6,9 @@ time_source_destroy(ts_move_to_door);
 time_source_destroy(ts_close_door);
 
 if (obj_player.focus == id) {
-	obj_player.focus = noone;	
+	obj_player.focus = noone
 }
+
+sp_path_delete(path)
 
 event_inherited();

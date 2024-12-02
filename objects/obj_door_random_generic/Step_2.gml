@@ -4,10 +4,10 @@ if (is_open) {
 		event_user(1);
 	}
 } else {
-	door_update_cullmode()
+	door_update_cullmode(id)
 }
 
-door_update_number_side()
+door_update_number_side(id)
 
 if (opening != 0) {
 	cullmode = cull_noculling;	

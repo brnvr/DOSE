@@ -1,7 +1,6 @@
 is_disappearing = false
 is_transforming = false
 espeak_buffer = espeak_buffer_create()
-sound_3d = instance_create_layer(x, y, "Abstract", obj_sound_3d, { z: z-height })
 
 if (height == -1) {
 	var center_x = sprite_get_width(sprite_index)*.5

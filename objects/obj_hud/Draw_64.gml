@@ -10,7 +10,7 @@ if (display_overlay_0) {
 	draw_overlay()
 }
 
-shader_set_ui(obj_control.saturation, 8)
+shader_set_2d()
 
 if (display_inventory && array_length(inventory_temp) > 0) {
 	draw_set_font(font_dark_dream)
@@ -42,23 +42,17 @@ if (display_inventory && array_length(inventory_temp) > 0) {
 		}
 		
 		if (n_items >= 2) {
-			draw_inventory_item(xpos, ypos + INVENTORY_ITEM_SIZE, index_next, false, .5, obj_control.saturation*.5, 2)
-			draw_inventory_item(xpos, ypos - INVENTORY_ITEM_SIZE, index_previous, false, .5, obj_control.saturation*.5, 2)
+			draw_inventory_item(xpos, ypos + INVENTORY_ITEM_SIZE, index_next, false, .5, obj_control.saturation*.5)
+			draw_inventory_item(xpos, ypos - INVENTORY_ITEM_SIZE, index_previous, false, .5, obj_control.saturation*.5)
 		}
 	}	
 }
 
-shader_set_ui(obj_control.saturation, 8)
-
 draw_sprite(hud_panel, 0, 0, 0)
-
-shader_set_ui(obj_control.saturation, 3)
 
 if (instance_exists(obj_eyes)) {
 	draw_sprite_ext(eyes.sprite_index, eyes.image_index, eyes.x, eyes.y, 1, 1, 0, c_white, 1)
 }
-
-shader_set_ui(obj_control.saturation, 8)
 
 if (display_inventory) {
 	if (inventory_button_up_selected) {
@@ -74,13 +68,9 @@ if (display_inventory) {
 	}
 }
 
-shader_set_ui(obj_control.saturation, 8)
-
 if (item_picked != noone) {
 	draw_sprite_ext(item_picked.sprite, 0, item_picked.x, item_picked.y, item_picked.scale, item_picked.scale, 0, c_white, 1)
 }
-
-shader_set_ui(obj_control.saturation, 8)
 
 if (speech != "") {
 	draw_set_halign(fa_center);
@@ -91,7 +81,8 @@ if (speech != "") {
 	draw_text_ext_transformed(game_view_center_x, global.screen_height-43, speech, 16, 500, .75, .75, 0);
 } else if (obj_player.can_interact) {
 	if (obj_player.actor_hover != noone && instance_exists(obj_player.actor_hover)) {
-		var msg, action;
+		var msg = ""
+		var action = ""
 		
 		if (obj_player.inventory_item_selected != noone) {
 			if (obj_player.inventory_item_selected.can_combine) {
@@ -100,11 +91,7 @@ if (speech != "") {
 				} else {
 					msg = $"use {obj_player.inventory_item_selected.name} with {obj_player.actor_hover.name}"
 				}	
-			} else {
-				msg = ""	
 			}
-			
-			action = ""
 		} else {
 			msg = obj_player.actor_hover.name
 			action = obj_player.actor_hover.action_description
@@ -124,11 +111,9 @@ if (speech != "") {
 	}
 }
 
-shader_reset()
-
 for (var i = 0; i < instance_number(obj_hud_message); i++) {
 	var obj_message = instance_find(obj_hud_message, i)
-	
+	shader_reset()
 	draw_set_color(obj_message.color)
 	draw_set_halign(fa_right)
 	draw_set_valign(fa_top)
@@ -143,3 +128,4 @@ if (display_overlay_1) {
 
 draw_set_alpha(1)
 draw_set_color(c_white)
+shader_reset()

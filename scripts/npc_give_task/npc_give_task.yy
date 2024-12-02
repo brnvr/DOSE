@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"npc_give_task",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"npc_give_task",
+  "parent":{
+    "name":"npc",
+    "path":"folders/Scripts/npc.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

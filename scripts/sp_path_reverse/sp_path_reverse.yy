@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sp_path_reverse",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sp_path_reverse",
+  "parent":{
+    "name":"path",
+    "path":"folders/Scripts/SharpPath/path.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,6 +1,5 @@
 function game_pause() {
-	var screen;
-	screen = sprite_create_from_screen();
+	var screen = sprite_create_from_screen();
 	
 	with (obj_control) {
 		paused = true;
@@ -8,7 +7,9 @@ function game_pause() {
 		instance_deactivate_all(true);
 	}
 	
-	instance_create_depth(0, 0, 0, obj_pause_screen, {background: screen});
+	var ctx = {background: screen}
+	
+	instance_create_depth(0, 0, 0, obj_pause_screen, ctx);
 	instance_activate_object(obj_cursor);
 	instance_activate_object(obj_settings);
 	instance_activate_object(obj_def);

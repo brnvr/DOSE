@@ -185,6 +185,7 @@
     {"$GMObjectProperty":"v1","%Name":"event","filters":[],"listItems":[],"multiselect":false,"name":"event","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"undefined","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"prob_event","filters":[],"listItems":[],"multiselect":false,"name":"prob_event","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":".15","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"is_transforming","filters":[],"listItems":[],"multiselect":false,"name":"is_transforming","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":3,},
+    {"$GMObjectProperty":"v1","%Name":"sound_emitter","filters":[],"listItems":[],"multiselect":false,"name":"sound_emitter","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"instance_create_layer(x, y, \"Abstract\", obj_sound_emitter_3d, { z: z - height } )","varType":4,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

@@ -1,0 +1,2 @@
+instance_destroy(snd_open)
+instance_destroy(snd_close)

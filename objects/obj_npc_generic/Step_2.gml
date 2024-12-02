@@ -1,6 +1,6 @@
-sound_3d.x = x
-sound_3d.y = y
-sound_3d.z = z - height
+sound_emitter.x = x
+sound_emitter.y = y
+sound_emitter.z = z - height
 
 if (is_disappearing) {
 	if (alpha > 0) {

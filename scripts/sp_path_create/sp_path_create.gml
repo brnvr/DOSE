@@ -1,7 +1,5 @@
 function sp_path_create(grid) {
-	var path;
-	
-	path = {
+	var path = {
 		array : [],
 		target_index: -1,
 		timer: 0,

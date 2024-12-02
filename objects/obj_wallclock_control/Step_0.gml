@@ -1,9 +1,7 @@
-var clock_index;
-
-clock_index = array_find_index(obj_control.current_area.instances, function(item) {
+/*var clock_index = array_find_index(obj_control.current_area.instances, function(item) {
 	if (!instance_exists(item)) return false;
 	return item.object_index == obj_wallclock;
-});
+});*/
 
 
 	if (obj_control.fog_end == 1300) {

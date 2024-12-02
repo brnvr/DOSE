@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"corridor_on_reset",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"corridor_on_reset",
+  "parent":{
+    "name":"corridors",
+    "path":"folders/Scripts/areas/corridors.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

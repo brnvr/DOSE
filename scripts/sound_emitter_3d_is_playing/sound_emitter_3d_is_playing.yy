@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sound_emitter_3d_is_playing",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sound_emitter_3d_is_playing",
+  "parent":{
+    "name":"sound_emitter_3d",
+    "path":"folders/Scripts/sound_emitter_3d.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

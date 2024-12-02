@@ -3,5 +3,5 @@ on_interact = function() {
 		game_set_music_track(snd_uncertain, .8)
 	}
 	
-	door_random_on_interact()
+	door_random_on_interact(id)
 }

@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "instances_destroy",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "DOSE",
-    "path": "DOSE.yyp",
+  "$GMScript":"v1",
+  "%Name":"instances_destroy",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"instances_destroy",
+  "parent":{
+    "name":"instance",
+    "path":"folders/Scripts/instance.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

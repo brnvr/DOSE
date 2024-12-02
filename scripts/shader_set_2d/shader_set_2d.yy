@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"shader_set_2d",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"shader_set_2d",
+  "parent":{
+    "name":"shader",
+    "path":"folders/Scripts/shader.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
