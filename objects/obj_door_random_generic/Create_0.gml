@@ -16,7 +16,7 @@ on_hover = function() {
 	}	
 }
 
-if (number_side != -1) {
+if (numbered && number_side != -1) {
 	door_generate_number(id, undefined)
 }
 

@@ -13,7 +13,9 @@ if (array_length(bbox_list) == 0) {
 }
 
 if (take_chance(prob_event)) {
-	event = array_choose(global.npc_events)
+	var npc_events_in_realm = events_in_realm(global.npc_events, global.current_realm)
+	
+	event = array_choose(npc_events_in_realm)
 }
 
 array_push(interactions_list, [obj_currant_syrup, function() {

@@ -137,6 +137,7 @@ for (var i = 0; i < 16; i++) {
 }
 
 global.spr_spider_ceiling = sprite_create_transformed(spr_spider, 1, -1, 0)
+global.spr_key_0_mirrored = sprite_create_transformed(spr_key_0, -1, -1, 0)
 
 global.task_types_list = [
 	task_types.talk_to_someone,

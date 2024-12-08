@@ -1,4 +1,4 @@
-/// @description Sets photo count
+/// @description photo count
 
 if (directory_exists("photographs")) {
 	var filename = file_find_first("photographs/*.png", fa_none)

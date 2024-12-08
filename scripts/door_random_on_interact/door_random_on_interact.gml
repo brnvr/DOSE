@@ -182,7 +182,7 @@ function door_random_on_interact(door) {
 		}
 	
 		if (locked) {
-			obj_hud.show_speech("Locked.", true)	
+			obj_hud.show_caption("Locked.", true)	
 		} else {
 			if (obj_control.current_area.object_index == obj_custom_area) {
 				var area = obj_control.current_area

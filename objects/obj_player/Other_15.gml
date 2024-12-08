@@ -4,7 +4,7 @@ if (is_moving_auto) {
 	can_move = false;
 	can_look = false;
 	can_interact = false;
-	obj_cursor.sprite_index = -1;
+	obj_cursor.sprite_index = noone;
 	
 	move(function(offset, move_speed) {
 		if (x > move_auto_coord[0]) {

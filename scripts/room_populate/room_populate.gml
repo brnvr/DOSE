@@ -1,4 +1,4 @@
-function room_populate(room, seed_group, block_size, base_area=4) {
+function room_populate(room, seed_group, block_size, base_area=4, realm = global.current_realm, area_events = global.area_events) {
 	var area, n_props, n_items, n_characters;
 	
 	area = room.hlength*room.vlength;
@@ -60,7 +60,9 @@ function room_populate(room, seed_group, block_size, base_area=4) {
 		}
 	}
 	
-	var arr_ev = array_concat(global.area_events, [])
+	var area_events_in_realm = events_in_realm(area_events, realm)
+	
+	var arr_ev = events_get_functions(array_concat(area_events_in_realm, []))
 	
 	while (take_chance(room.prob_event) && array_length(arr_ev) > 0) {
 		var ev = array_choose(arr_ev, true)

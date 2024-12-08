@@ -14,7 +14,7 @@ if (object_is_ancestor(obj_control.current_area.object_index, obj_path_area)) {
 	path = undefined	
 }
 
-ts_restart_attack = time_source_create(time_source_global, irandom_range(10, 20), time_source_units_frames, function() {
+ts_restart_attack = time_source_create(time_source_global, irandom_range(25, 50), time_source_units_frames, function() {
 	moving_away = false
 })
 

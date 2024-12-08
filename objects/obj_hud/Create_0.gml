@@ -9,9 +9,7 @@ display_overlay_1 = false
 display_inventory = true
 display_annotations = false
 annotations_offset = 0
-speech = ""
-npc_speaking = noone
-is_npc_speaking = false
+caption = ""
 item_picked = noone
 inventory_temp = noone
 inventory_item_selected_scale = 1
@@ -25,11 +23,11 @@ ts_unselect_inventory_button = time_source_create(time_source_global, 2, time_so
 });
 ts_hide_speech = time_source_create(time_source_global, 1, time_source_units_frames, function() { });
 
-show_speech = function(s, hide_timeout=false, timeout_period=-1) {
+show_caption = function(s, hide_timeout=false, timeout_period=-1) {
 	if (is_array(s)) {
-		speech = array_choose(s)
+		caption = array_choose(s)
 	} else if (is_string(s)) {
-		speech = s
+		caption = s
 	} else {
 		show_error("'s' should be a string or an array", true);	
 	}
@@ -44,7 +42,7 @@ show_speech = function(s, hide_timeout=false, timeout_period=-1) {
 		}
 	
 		time_source_reconfigure(ts_hide_speech, period, time_source_units_frames, function() {
-			speech = ""	
+			caption = ""	
 		});
 	
 		time_source_start(ts_hide_speech)

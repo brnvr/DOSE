@@ -7,7 +7,7 @@ function staircase_on_interact(target) {
 		var next_song = array_choose(obj_control.seed_group[sg.music])
 	
 		game_set_music_track(next_song, 1, 2000)
-		cursor_set_sprite(-1)
+		cursor_set_sprite(noone)
 	
 		with (obj_waiter) {
 			instance_destroy();

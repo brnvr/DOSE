@@ -1,0 +1,1 @@
+time_source_destroy(ts_continue_dialogue)

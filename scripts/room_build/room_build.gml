@@ -21,9 +21,8 @@ function room_build(room, seed_group, block_size, door_passage_side_width) {
 		});
 		
 		if (room.walls.north[i] == 2) {
-			array_push(room.doors, area_add_actor_3d(room, xpos+door_passage_side_width, room.y, room.z, obj_door_hinged_random_generic, {
+			array_push(room.doors, area_add_actor_3d(room, xpos+door_passage_side_width, room.y, room.z, door, {
 				zrotation: 90,
-				sprite_index: door,
 				opening_direction: angular.clockwise,
 				locked: take_chance(room.prob_door_locked),
 				areas: {
@@ -33,9 +32,8 @@ function room_build(room, seed_group, block_size, door_passage_side_width) {
 		}
 
 		if (room.walls.south[i] == 2) {
-			array_push(room.doors, area_add_actor_3d(room, xpos+door_passage_side_width, room.y+room.vlength*block_size, room.z, obj_door_hinged_random_generic, {
+			array_push(room.doors, area_add_actor_3d(room, xpos+door_passage_side_width, room.y+room.vlength*block_size, room.z, door, {
 				zrotation: 90,
-				sprite_index: door,
 				opening_direction: angular.counterclockwise,
 				locked: take_chance(room.prob_door_locked),
 				areas: {
@@ -61,9 +59,8 @@ function room_build(room, seed_group, block_size, door_passage_side_width) {
 		});
 		
 		if (room.walls.east[i] == 2) {
-			array_push(room.doors, area_add_actor_3d(room, room.x+room.hlength*block_size, ypos+door_passage_side_width, room.z, obj_door_hinged_random_generic, {
+			array_push(room.doors, area_add_actor_3d(room, room.x+room.hlength*block_size, ypos+door_passage_side_width, room.z, door, {
 				zrotation: 0,
-				sprite_index: door,
 				opening_direction: angular.clockwise,
 				locked: take_chance(room.prob_door_locked),
 				areas: {
@@ -73,9 +70,8 @@ function room_build(room, seed_group, block_size, door_passage_side_width) {
 		}
 		
 		if (room.walls.west[i] == 2) {
-			array_push(room.doors, area_add_actor_3d(room, room.x, ypos+door_passage_side_width, room.z, obj_door_hinged_random_generic, {
+			array_push(room.doors, area_add_actor_3d(room, room.x, ypos+door_passage_side_width, room.z, door, {
 				zrotation: 0,
-				sprite_index: door,
 				opening_direction: angular.counterclockwise,
 				locked: take_chance(room.prob_door_locked),
 				areas: {

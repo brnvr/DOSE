@@ -72,7 +72,7 @@ if (reseting_wave) {
 	var wave_spd = 0.001
 	var scale_spd = wave_spd * 2
 	
-	if (abs(wave_amount) < wave_spd && abs(gameview_xscale) < 1 - scale_spd) {
+	if (abs(wave_amount) < wave_spd && abs(gameview_xscale) < 1 + scale_spd) {
 		wave_amount = 0
 		gameview_xscale = 1
 		reseting_wave = false

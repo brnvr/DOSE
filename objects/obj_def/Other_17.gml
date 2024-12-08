@@ -1,4 +1,4 @@
-/// @description Sets piano scores (0: key, 1: ticks)
+/// @description piano scores (0: key, 1: ticks)
 
 global.piano_scores[0][0] = [
 	[38, 6],

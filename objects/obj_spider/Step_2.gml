@@ -23,6 +23,16 @@ if (moving_away) {
 			moving_away = true
 			time_source_start(ts_restart_attack)
 			obj_player.get_envenomated()
+			
+			var snd_attack = choose(
+				snd_spider_attacking_0,
+				snd_spider_attacking_1,
+				snd_spider_attacking_2,
+				snd_spider_attacking_3,
+				snd_spider_attacking_4
+			)
+			
+			audio_play_sound(snd_attack, false, false)
 		}
 	}	
 }

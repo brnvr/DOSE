@@ -1,4 +1,4 @@
-/// @description Sets color palettes
+/// @description color palettes
 
 var _game_view_palette = [
 	make_color_rgb(7, 8, 9),         // #000000

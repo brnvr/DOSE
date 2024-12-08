@@ -12,8 +12,8 @@
     "path":"folders/Objects/areas/custom/entrance hall.yy",
   },
   "parentObjectId":{
-    "name":"obj_door_hinged_random_generic",
-    "path":"objects/obj_door_hinged_random_generic/obj_door_hinged_random_generic.yy",
+    "name":"obj_door_random_hinged_generic",
+    "path":"objects/obj_door_random_hinged_generic/obj_door_random_hinged_generic.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

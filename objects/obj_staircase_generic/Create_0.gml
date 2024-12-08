@@ -8,9 +8,9 @@ if (other_end != noone) {
 }
 
 if (dir == stairs_directions.up) {
-	vbuff_list = [vb_load("3d models/staircase_up.buf", false)]
+	vbuff_list = [vb_load("3d_models/staircase_up.buf", false)]
 } else {
-	vbuff_list = [vb_load("3d models/staircase_down.buf", false)]
+	vbuff_list = [vb_load("3d_models/staircase_down.buf", false)]
 }
 
 event_inherited()

@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_spider_attacking_2",
+  "audioGroupId":{
+    "name":"ag_game_effects",
+    "path":"audiogroups/ag_game_effects",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":1.387483,
+  "name":"snd_spider_attacking_2",
+  "parent":{
+    "name":"spider_attack",
+    "path":"folders/Sounds/effects/spider_attack.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_spider_attacking_2.ogg",
+  "type":0,
+  "volume":1.0,
+}

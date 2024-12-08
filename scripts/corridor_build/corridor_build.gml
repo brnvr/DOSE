@@ -225,9 +225,8 @@ function corridor_build(corridor, seed_group, block_size, door_passage_side_widt
 		}
 		
 		if (cell[corridor_cell_prop.door_east] == 0) {
-			array_push(corridor.doors, area_add_actor_3d(corridor, xpos+block_size, ypos+door_passage_side_width, corridor.z, obj_door_hinged_random_generic, {
+			array_push(corridor.doors, area_add_actor_3d(corridor, xpos+block_size, ypos+door_passage_side_width, corridor.z, door, {
 				zrotation: 0,
-				sprite_index: door,
 				opening_direction: angular.counterclockwise,
 				locked: take_chance(corridor.prob_door_locked),
 				number_side: cardinal.east,
@@ -238,9 +237,8 @@ function corridor_build(corridor, seed_group, block_size, door_passage_side_widt
 		}
 		
 		if (cell[corridor_cell_prop.door_west] == 0) {
-			array_push(corridor.doors, area_add_actor_3d(corridor, xpos, ypos+door_passage_side_width, corridor.z, obj_door_hinged_random_generic, {
+			array_push(corridor.doors, area_add_actor_3d(corridor, xpos, ypos+door_passage_side_width, corridor.z, door, {
 				zrotation: 0,
-				sprite_index: door,
 				opening_direction: angular.clockwise,
 				locked: take_chance(corridor.prob_door_locked),
 				number_side: cardinal.west,
@@ -251,9 +249,8 @@ function corridor_build(corridor, seed_group, block_size, door_passage_side_widt
 		}
 		
 		if (cell[corridor_cell_prop.door_north] == 0) {
-			array_push(corridor.doors, area_add_actor_3d(corridor, xpos+door_passage_side_width, ypos, corridor.z, obj_door_hinged_random_generic, {
+			array_push(corridor.doors, area_add_actor_3d(corridor, xpos+door_passage_side_width, ypos, corridor.z, door, {
 				zrotation: 90,
-				sprite_index: door,
 				opening_direction: angular.counterclockwise,
 				locked: take_chance(corridor.prob_door_locked),
 				number_side: cardinal.north,
@@ -264,9 +261,8 @@ function corridor_build(corridor, seed_group, block_size, door_passage_side_widt
 		}
 		
 		if (cell[corridor_cell_prop.door_south] == 0) {
-			array_push(corridor.doors, area_add_actor_3d(corridor, xpos+door_passage_side_width, ypos+block_size, corridor.z, obj_door_hinged_random_generic, {
+			array_push(corridor.doors, area_add_actor_3d(corridor, xpos+door_passage_side_width, ypos+block_size, corridor.z, door, {
 				zrotation: 90,
-				sprite_index: door,
 				opening_direction: angular.clockwise,
 				locked: take_chance(corridor.prob_door_locked),
 				number_side: cardinal.south,

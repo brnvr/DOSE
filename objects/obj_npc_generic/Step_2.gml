@@ -11,7 +11,7 @@ if (is_disappearing) {
 }
 
 if (!is_undefined(event)) {
-	event(id, default_block_size)	
+	event[1](id, default_block_size)	
 }
 
 event_inherited();

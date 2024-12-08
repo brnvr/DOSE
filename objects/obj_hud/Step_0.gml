@@ -22,19 +22,6 @@ if (inventory_item_selected_scale > 1) {
 	inventory_item_selected_scale = linear_interpolation(inventory_item_selected_scale, 1, 0.05);
 }
 
-if (!instance_exists(npc_speaking)) {
-	npc_speaking = noone	
-}
-
-if (npc_speaking != noone && speech != "" && audio_is_playing(npc_speaking.sound_emitter.sound)) {
-	is_npc_speaking = true
-}
-
-if (is_npc_speaking && (npc_speaking == noone || (npc_speaking != noone && !audio_is_playing(npc_speaking.sound_emitter.sound)))) {
-	is_npc_speaking = false
-	speech = ""
-}
-
 if (display_annotations) {
 	if (annotations_offset > 0) {
 		annotations_offset = smooth_interpolation(annotations_offset, 0)

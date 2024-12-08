@@ -1,4 +1,4 @@
-/// @description Sets vertex format
+/// @description vertex format
 
 vertex_format_begin();
 vertex_format_add_position_3d();

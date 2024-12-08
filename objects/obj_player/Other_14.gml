@@ -1,7 +1,7 @@
 /// @description focusing
 
 if (focus != noone) {
-	camera_3d_smooth_point_at(camera, focus.x, focus.y, focus.z-focus.height+11);
+	camera_3d_smooth_point_at(camera, focus.x, focus.y, focus.z-focus.height+33);
 }
 
 /*if (point_distance(x, y, focus.x, focus.y) < SIGHT_RANGE-3) {

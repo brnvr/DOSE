@@ -45,6 +45,7 @@ sitting_place = undefined
 is_standing_up = false
 stop_focusing_auto = false
 use_collision_overflow_correction = true
+npcs_met = []
 
 camera = actor_3d_create(x, y, z-eye_height, obj_camera_3d_generic, {
 	limit_pitch: true,
@@ -71,8 +72,15 @@ raycaster = instance_create_depth(0, 0, 0, obj_raycaster, {
 
 interactions_list = [
 	[obj_antivenom, function() {
+		if (envenoming == 0) {
+			obj_hud.add_message("You don't need it right now.")
+			
+			return
+		}
+		
 		take_antivenom()
 		inventory_remove_item(obj_antivenom)
+		obj_hud.add_message("Received antivenom. You'll be fine soon.")
 	}]
 ]
 
@@ -137,6 +145,17 @@ move = function(callback, move_speed) {
 	
 talk_to = function(npc) {
 	resolve_task(task_types.talk_to_someone, npc.name);
+	
+	if (npc.keep_focus) {
+		focus = npc
+		can_move = false
+		can_interact = false
+		cursor_set_sprite(noone)
+	}
+	
+	if (!has_met_npc(npc)) {
+		array_push(npcs_met, npc.object_index)	
+	}
 	
 	if (string_length(npc.dialogue) == 0) {
 		var probability_give_task = 1/6 * npc.helpfulness
@@ -310,10 +329,12 @@ inventory_add_item = function(item, use_animation = true, index = -1) {
 	if (is_undefined(inventory_item)) {	
 		var spr_w = sprite_get_width(item.sprite_index)
 		var spr_h = sprite_get_height(item.sprite_index)
-		var spr_original = sprite_part_copy(item.sprite_index, 0, 0, 0, spr_w, spr_h, spr_w*.5, spr_h*.5)
+		var spr_held = sprite_part_copy(item.sprite_held == noone ? item.sprite_index : item.sprite_held, 0, 0, 0, spr_w, spr_h, spr_w*.5, spr_h*.5)
+		
+		
 	
 		if (spr_w == INVENTORY_ITEM_SIZE) {
-			spr = spr_original
+			spr = sprite_part_copy(item.sprite_index, 0, 0, 0, spr_w, spr_h, spr_w*.5, spr_h*.5)
 		} else {
 			var scale = INVENTORY_ITEM_SIZE/spr_w
 		
@@ -331,7 +352,7 @@ inventory_add_item = function(item, use_animation = true, index = -1) {
 			"index": index,
 			"name": item.name,
 			"sprite": spr,
-			"sprite_original": spr_original,
+			"sprite_held": spr_held,
 			"can_combine": item.can_combine,
 			"on_select": item.on_select,
 			"on_unselect": item.on_unselect
@@ -398,8 +419,8 @@ inventory_remove_item = function(item, unselect = true) {
 	if (inventory[index].number > 1) {
 		inventory[index].number--	
 	} else {
-		if (inventory[index].sprite != inventory[index].sprite_original) {
-			sprite_delete(inventory[index].sprite_original)	
+		if (inventory[index].sprite != inventory[index].sprite_held) {
+			sprite_delete(inventory[index].sprite_held)	
 		}
 		
 		sprite_delete(inventory[index].sprite)
@@ -413,7 +434,7 @@ inventory_remove_item = function(item, unselect = true) {
 	}
 	
 	if (is_selected) {
-		obj_cursor.sprite_index = -1
+		obj_cursor.sprite_index = noone
 		obj_cursor.draw_as_gui = true
 		
 		if (unselect) {
@@ -444,7 +465,7 @@ get_tasked_door = function() {
 cursor_set_to_item_selected = function(enabled=true, reenable_period=1) {
 	var xoffset, yoffset, sprite, scale, scale_factor;
 	
-	sprite = inventory_item_selected.sprite_original;
+	sprite = inventory_item_selected.sprite_held;
 	scale_factor = INVENTORY_ITEM_SIZE / sprite_get_width(sprite)
 	scale = (enabled ? 4 : 1.5) * scale_factor;
 	scale = 0.5;
@@ -509,6 +530,10 @@ get_envenomated = function() {
 take_antivenom = function() {
 	envenoming = 0
 	obj_control.reset_wave()
+}
+
+has_met_npc = function(npc) {
+	return array_contains(npcs_met, npc.object_index)
 }
 
 array_foreach(global.task_types_list, function(task_type) {

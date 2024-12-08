@@ -1,4 +1,4 @@
-/// @description Sets door number sprites
+/// @description door number sprites
 
 global.spr_door_numbers = [];
 global.spr_door_numbers_flipped = [];

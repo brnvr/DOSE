@@ -1,0 +1,1 @@
+array_remove(obj_control.current_area.instances, id)

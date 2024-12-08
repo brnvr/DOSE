@@ -3,7 +3,7 @@ orientation = cardinal_get_orientation(get_cardinal_direction(zrotation))
 if (is_undefined(on_interact)) {
 	on_interact = function() {
 		if (locked) {
-			obj_hud.show_speech("Locked.", true);
+			obj_hud.show_caption("Locked.", true);
 		}
 	}
 }
@@ -21,12 +21,12 @@ if (is_struct(areas)) {
 
 snd_open = instance_create_layer(x, y, "Abstract", obj_sound_emitter_3d, {
 	z,
-	sound: snd_open_door
+	sound: sound_open
 })
 
 snd_close = instance_create_layer(x, y, "Abstract", obj_sound_emitter_3d, {
 	z,
-	sound: snd_close_door
+	sound: sound_close
 })
 
 event_inherited();

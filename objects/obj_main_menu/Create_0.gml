@@ -17,7 +17,7 @@ pitch_wave = instance_create_depth(0, 0, 0, obj_wave, {
 start_game = function() {
 	game_starting = true;
 	game_set_music_track(-1);
-	obj_cursor.sprite_index = -1;
+	obj_cursor.sprite_index = noone;
 }
 
 obj_player.can_move = false;

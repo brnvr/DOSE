@@ -1,6 +1,6 @@
-/// @description Sets events
+/// @description events
 
-global.area_events[ev_area.blinking] = function(area) {
+global.area_events[ev_area.blinking] = [all, function(area) {
 	var blinking = instance_create_layer(0, 0, "Abstract", obj_light_blinking_overlay, {
 		parent_area: area
 	})
@@ -8,21 +8,21 @@ global.area_events[ev_area.blinking] = function(area) {
 	area_append_instance(area, blinking)
 	
 	return false	
-}
+}]
 
-global.corridor_events[ev_corridor.spider] = function(corridor, block_size, create_actors) {
+global.corridor_events[ev_corridor.spider] = [realms.thisside, function(corridor, block_size, create_actors) {
 	create_actors(corridor, block_size, 1, array_create_copy(corridor.cells_used), [obj_spider], false)
 		
 	return true
-}
+}]
 
-global.npc_events[ev_npc.disappear_on_distance] = function(npc, block_size) {
+global.npc_events[ev_npc.disappear_on_distance] = [all, function(npc, block_size) {
 	if (point_distance(npc.x, npc.y, obj_player.x, obj_player.y) < block_size*2) {
 		instance_destroy(npc)	
 	}
-}
+}]
 
-global.npc_events[ev_npc.transform_into_waiter] = function(npc, block_size) {
+global.npc_events[ev_npc.transform_into_waiter] = [realms.thisside, function(npc, block_size) {
 	if (!instance_exists(obj_waiter)) {
 		if (point_distance(npc.x, npc.y, obj_player.x, obj_player.y) < block_size*2) {
 			var position_2d = position_3d_get_projected(npc.x, npc.y, npc.z)
@@ -41,4 +41,4 @@ global.npc_events[ev_npc.transform_into_waiter] = function(npc, block_size) {
 			}	
 		}
 	}
-}
+}]

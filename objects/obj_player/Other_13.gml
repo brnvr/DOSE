@@ -3,16 +3,16 @@
 var inventory_length = array_length(inventory)
 
 if (inventory_item_selected == noone) {
-	if (mouse_wheel_up()) {
+	if (mouse_wheel_down()) {
 		if (inventory_length > 1) inventory_item_selected_index = (inventory_item_selected_index+1) mod inventory_length;
 		obj_hud.scale_inventory_item_selected();
-		obj_hud.inventory_button_up_set_selected();
+		obj_hud.inventory_button_down_set_selected();
 	}
 
-	if (mouse_wheel_down()) {
-		if (inventory_length > 1) inventory_item_selected_index = (inventory_length-inventory_item_selected_index-1) mod inventory_length;
+	if (mouse_wheel_up()) {
+		if (inventory_length > 1) inventory_item_selected_index = (inventory_item_selected_index - 1 + inventory_length) mod inventory_length;
 		obj_hud.scale_inventory_item_selected();
-		obj_hud.inventory_button_down_set_selected();
+		obj_hud.inventory_button_up_set_selected();
 	}
 	
 	obj_cursor.rotation = 0;
@@ -23,7 +23,7 @@ if (inventory_item_selected == noone) {
 	obj_cursor.rotation = cursor_wave.y;	
 	
 	var center_y = sprite_get_draw_center_y(obj_cursor.sprite_index, 4);
-	var scale_factor = INVENTORY_ITEM_SIZE / sprite_get_width(inventory_item_selected.sprite_original)
+	var scale_factor = INVENTORY_ITEM_SIZE / sprite_get_width(inventory_item_selected.sprite_held)
 	
 	if (inventory_item_selected.can_combine) {
 		if (actor_hover == noone) {

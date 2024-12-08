@@ -9,7 +9,7 @@
   "name":"obj_door_generic",
   "overriddenProperties":[
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_actor_3d_generic","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"propertyId":{"name":"zrotation","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"image_angle+90",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_actor_3d_generic","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"propertyId":{"name":"vbuff_list","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"[vb_load(\"3d models/door.buf\")]",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_actor_3d_generic","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"propertyId":{"name":"vbuff_list","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"[vb_load(\"3d_models/door.buf\")]",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_actor_3d_generic","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"propertyId":{"name":"bbox_list","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"[global.bbox_door]",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_actor_3d_generic","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"propertyId":{"name":"collidable","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"True",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_actor_3d_generic","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"propertyId":{"name":"dynamic","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"True",},
@@ -46,6 +46,12 @@
     {"$GMObjectProperty":"v1","%Name":"opening_speed","filters":[],"listItems":[],"multiselect":false,"name":"opening_speed","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"3","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"on_interact","filters":[],"listItems":[],"multiselect":false,"name":"on_interact","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"undefined","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"areas","filters":[],"listItems":[],"multiselect":false,"name":"areas","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[noone, noone, noone, noone]","varType":4,},
+    {"$GMObjectProperty":"v1","%Name":"sound_open","filters":[
+        "GMSound",
+      ],"listItems":[],"multiselect":false,"name":"sound_open","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"snd_open_door","path":"sounds/snd_open_door/snd_open_door.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"snd_open_door","varType":5,},
+    {"$GMObjectProperty":"v1","%Name":"sound_close","filters":[
+        "GMSound",
+      ],"listItems":[],"multiselect":false,"name":"sound_close","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"snd_close_door","path":"sounds/snd_close_door/snd_close_door.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"snd_close_door","varType":5,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

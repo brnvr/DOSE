@@ -52,6 +52,7 @@
     {"$GMObjectProperty":"v1","%Name":"on_unselect","filters":[],"listItems":[],"multiselect":false,"name":"on_unselect","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"item_on_unselect","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"quantity","filters":[],"listItems":[],"multiselect":false,"name":"quantity","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"on_picked","filters":[],"listItems":[],"multiselect":false,"name":"on_picked","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"do_nothing","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"sprite_held","filters":[],"listItems":[],"multiselect":false,"name":"sprite_held","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"noone","varType":5,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

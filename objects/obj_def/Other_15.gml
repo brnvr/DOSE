@@ -1,4 +1,4 @@
-/// @description Sets default dialogues
+/// @description default dialogues
 
 var tasks = [];
 

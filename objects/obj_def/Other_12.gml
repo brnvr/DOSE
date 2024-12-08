@@ -1,4 +1,4 @@
-/// @description Sets stylesheets
+/// @descriptions stylesheets
 
 global.menu_stylesheet = pawpr_stylesheet({
 	"menu": {

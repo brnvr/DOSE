@@ -72,13 +72,13 @@ if (item_picked != noone) {
 	draw_sprite_ext(item_picked.sprite, 0, item_picked.x, item_picked.y, item_picked.scale, item_picked.scale, 0, c_white, 1)
 }
 
-if (speech != "") {
+if (caption != "") {
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_top);
 	
 	draw_set_color(c_white);
 	draw_set_alpha(1);
-	draw_text_ext_transformed(game_view_center_x, global.screen_height-43, speech, 16, 500, .75, .75, 0);
+	draw_text_ext_transformed(game_view_center_x, global.screen_height-43, caption, 16, 500, .75, .75, 0);
 } else if (obj_player.can_interact) {
 	if (obj_player.actor_hover != noone && instance_exists(obj_player.actor_hover)) {
 		var msg = ""
