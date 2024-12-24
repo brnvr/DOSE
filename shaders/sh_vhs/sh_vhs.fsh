@@ -12,6 +12,7 @@ uniform vec3 palette[64];
 uniform sampler2D wave_gradient;
 uniform float wave_amount;
 uniform float wave_offset;
+uniform sampler2D dither_map;
 
 vec4 set_shadow_color(vec4 color, vec3 shadow_color) {
 	vec4 color1 = vec4(vec3(color) + shadow_color, color.a);
@@ -45,6 +46,24 @@ vec4 set_palette(vec4 ref_color, vec3 palette[64]) {
     return vec4(closest_color.xyz, ref_color.a);
 }
 
+vec4 set_dithering(vec4 color, vec2 texcoord) {
+	vec2 screensize = vec2(1920, 1080);
+	vec2 PixelScale = vec2(2, 2);
+	
+    texcoord.x *= screensize.x / 128.0 / PixelScale.x;
+    texcoord.y *= screensize.y / 128.0 / PixelScale.y;
+    
+    float ditherValue = 2.0 * texture2D(dither_map, texcoord).r - 1.0;
+	
+	float gamma = 1.2;
+	float dspread = 20.0;
+    color.rgb = pow(color.rgb, vec3(1.0/gamma));
+    color += ditherValue/dspread;
+    color = clamp(color,0.001,0.999);
+	
+	return color;
+}
+
 
 void main()
 {
@@ -68,6 +87,8 @@ void main()
 	
 	vec4 color = (color0 - (color1 - color2) * tracking_error_alpha) * v_vColour;
 	color = color + vec4(0.0, tracking_lines_color.r*.1, tracking_lines_color.r*.2, 0.0);
+	
+	color = set_dithering(color, texcoord);
 	
 	//color = get_nearest_color_range(color, 5.0, shadow_color);
 	color = set_palette(color, palette);

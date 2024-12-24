@@ -16,6 +16,7 @@ function shader_set_vhs(tracking_error_xdistance, tracking_error_ydistance, trac
 	var tracking_error_variation = [tracking_error_xvariation, tracking_error_yvariation]
 	var tracking_lines_texture = sprite_get_texture(spr_vhs_tracking_lines, tracking_lines_image)
 	var wave_gradient_texture = sprite_get_texture(spr_wave_gradient, 0)
+	var dithering_map_texture = sprite_get_texture(spr_DitherPattern, 0)
 	var scale = [xscale, yscale]
 	
 	tracking_lines_image = (tracking_lines_image + .5) mod sprite_get_number(spr_vhs_tracking_lines)
@@ -30,4 +31,5 @@ function shader_set_vhs(tracking_error_xdistance, tracking_error_ydistance, trac
 	shader_set_uniform_f_array(shader_get_uniform(sh_vhs, "tracking_error_distance"), tracking_error_distance)
 	shader_set_uniform_f_array(shader_get_uniform(sh_vhs, "tracking_error_variation"), tracking_error_variation)
 	shader_set_uniform_matrix_array(shader_get_uniform(sh_vhs, "palette"), palette)
+	texture_set_stage(shader_get_sampler_index(sh_vhs, "dither_map"), dithering_map_texture)
 }
