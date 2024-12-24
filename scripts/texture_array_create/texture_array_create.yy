@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"view_set_camera_obj",
+  "%Name":"texture_array_create",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"view_set_camera_obj",
+  "name":"texture_array_create",
   "parent":{
-    "name":"views",
-    "path":"folders/Scripts/views.yy",
+    "name":"utils",
+    "path":"folders/Scripts/utils.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

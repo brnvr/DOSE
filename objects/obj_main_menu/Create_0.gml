@@ -25,7 +25,7 @@ obj_player.can_interact = false;
 obj_player.can_look = false;
 
 cursor_set_sprite(spr_cursor_arrow);
-alarm[0] = 2;
+game_set_music_track(snd_unrealed);
 instance_deactivate_object(obj_eyes);
 
 menu_options = [

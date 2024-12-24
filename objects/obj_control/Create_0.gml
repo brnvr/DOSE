@@ -34,7 +34,10 @@ goto_otherside = function() {
 	seed_group = global.seed_groups[realms.otherside]
 	area_remap(current_area, seed_group)
 	areas_destroy_distance(current_area, 0)
+	instance_destroy(obj_npc_generic)
 }
+
+show_debug_overlay(true)
 
 goto_thisside = function(remap=false) {
 	//var darker_color = make_color_rgb(12, 16, 11)
@@ -45,6 +48,7 @@ goto_thisside = function(remap=false) {
 	global.current_realm = realms.thisside
 	fog_start = 1000
 	fog_end = 2000
+	//fog_end = 50000
 	fog_color = darker_color
 	background_set_color(darker_color)
 	obj_fog_overlay.visible = false

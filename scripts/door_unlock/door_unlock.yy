@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"tex_array_create",
+  "%Name":"door_unlock",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"tex_array_create",
+  "name":"door_unlock",
   "parent":{
-    "name":"utils",
-    "path":"folders/Scripts/utils.yy",
+    "name":"doors",
+    "path":"folders/Scripts/doors.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

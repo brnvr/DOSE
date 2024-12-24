@@ -5,3 +5,7 @@ on_interact = function() {
 	
 	door_random_on_interact(id)
 }
+
+array_push(interactions_list, [obj_key_0, function() {
+	door_unlock(id, obj_key_0)
+}])

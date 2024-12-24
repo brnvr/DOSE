@@ -12,7 +12,7 @@ function game_pause() {
 	instance_create_depth(0, 0, 0, obj_pause_screen, ctx);
 	instance_activate_object(obj_cursor);
 	instance_activate_object(obj_settings);
-	instance_activate_object(obj_def);
+	instance_activate_object(obj_init);
 	
 	cursor_set_sprite(spr_cursor_arrow);
 }

@@ -49,4 +49,23 @@ if (is_shooting) {
 			time_source_start(ts_stow_camera)
 		}
 	})
-}	
+}
+
+
+
+obj_hud.caption = ""
+
+object_apply(obj_camera_subject_generic, function(subject) {
+	var dist = point_distance(obj_player.x, obj_player.y, subject.x, subject.y)
+	
+	if (interactable_is_in_view(subject, 230, 120, 230, 120)) {
+		if (dist < 500) {
+			obj_hud.caption = "Too close from the subject"
+		} else if (dist > 950) {
+			obj_hud.caption = "Too far from the subject"
+		} else {
+			obj_hud.caption = "Perfect!"
+		}
+	}
+})
+

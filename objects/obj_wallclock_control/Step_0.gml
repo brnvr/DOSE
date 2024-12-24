@@ -5,9 +5,9 @@
 
 
 	if (obj_control.fog_end == 1300) {
-		event_user(1);
+		//event_user(1);
 	} else {
-		event_user(0);
+		//event_user(0);
 	}
 	
 	if (changed) {

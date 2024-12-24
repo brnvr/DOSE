@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"position_3d_get_projected",
+  "%Name":"object_apply",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"position_3d_get_projected",
+  "name":"object_apply",
   "parent":{
-    "name":"utils",
-    "path":"folders/Scripts/utils.yy",
+    "name":"object",
+    "path":"folders/Scripts/object.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

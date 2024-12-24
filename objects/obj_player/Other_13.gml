@@ -22,7 +22,7 @@ if (inventory_item_selected == noone) {
 	cursor_wave.speed = 0.4;
 	obj_cursor.rotation = cursor_wave.y;	
 	
-	var center_y = sprite_get_draw_center_y(obj_cursor.sprite_index, 4);
+	var center_y = obj_cursor.sprite_index == noone ? 0 : sprite_get_draw_center_y(obj_cursor.sprite_index, 4);
 	var scale_factor = INVENTORY_ITEM_SIZE / sprite_get_width(inventory_item_selected.sprite_held)
 	
 	if (inventory_item_selected.can_combine) {

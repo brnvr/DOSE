@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"door_number_create_sprite",
   "parent":{
-    "name":"utils",
-    "path":"folders/Scripts/utils.yy",
+    "name":"doors",
+    "path":"folders/Scripts/doors.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

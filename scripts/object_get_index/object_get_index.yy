@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"object_get_index",
   "parent":{
-    "name":"utils",
-    "path":"folders/Scripts/utils.yy",
+    "name":"object",
+    "path":"folders/Scripts/object.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

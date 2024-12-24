@@ -8,7 +8,7 @@ uniform vec2 tracking_error_distance;
 uniform vec2 tracking_error_variation;
 uniform float tracking_error_alpha;
 uniform sampler2D tracking_lines;
-uniform vec3 palette[16];
+uniform vec3 palette[64];
 uniform sampler2D wave_gradient;
 uniform float wave_amount;
 uniform float wave_offset;
@@ -29,11 +29,11 @@ vec4 set_saturation(vec4 color, float value) {
 	return vec4(grayscale + delta*value, color.a);
 }
 
-vec4 set_palette(vec4 ref_color, vec3 palette[16]) {
+vec4 set_palette(vec4 ref_color, vec3 palette[64]) {
     float min_distance = 1e10;
     vec3 closest_color = vec3(0.0);
 
-    for (int i = 0; i < 16; i++) {
+    for (int i = 0; i < 64; i++) {
         float distance = dot(ref_color.xyz - palette[i], ref_color.xyz - palette[i]);
 
         if (distance < min_distance) {

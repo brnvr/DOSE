@@ -1,4 +1,4 @@
-function tex_array_create(list) {
+function texture_array_create(list) {
 	var arr, length;
 	
 	length = array_length(list);

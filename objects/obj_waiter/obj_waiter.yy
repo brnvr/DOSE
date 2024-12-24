@@ -20,6 +20,7 @@
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_interactable_generic","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"propertyId":{"name":"name","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"The Waiter",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_npc_generic","path":"objects/obj_npc_generic/obj_npc_generic.yy",},"propertyId":{"name":"voice_variant","path":"objects/obj_npc_generic/obj_npc_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"Demonic\"",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_npc_generic","path":"objects/obj_npc_generic/obj_npc_generic.yy",},"propertyId":{"name":"prob_event","path":"objects/obj_npc_generic/obj_npc_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_npc_generic","path":"objects/obj_npc_generic/obj_npc_generic.yy",},"propertyId":{"name":"voice_range","path":"objects/obj_npc_generic/obj_npc_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"8",},
   ],
   "parent":{
     "name":"npcs",

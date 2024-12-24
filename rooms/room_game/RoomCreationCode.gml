@@ -13,7 +13,7 @@ instance_create_layer(0, 0, "Abstract", obj_main_menu)
 
 view_set_visible(views.view_2d, true)
 view_set_visible(views.view_3d, true)
-view_set_camera_obj(views.view_2d, global.camera_2d)
-view_set_camera_obj(views.view_3d, global.camera_3d)
+view_set_camera_object(views.view_2d, global.camera_2d)
+view_set_camera_object(views.view_3d, global.camera_3d)
 
 obj_control.goto_thisside()

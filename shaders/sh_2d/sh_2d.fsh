@@ -5,7 +5,7 @@ uniform float color_range;
 uniform float pixel_size;
 uniform vec2 texture_dimentions;
 uniform vec3 shadow_color;
-uniform vec3 palette[16];
+uniform vec3 palette[64];
 
 vec4 set_saturation(vec4 color, float value) {
 	float mean;
@@ -53,11 +53,11 @@ vec4 get_frag_color(sampler2D texture, vec2 texcoord, float pixel_size) {
 	return texture2D(texture, new_texcoord);	
 }
 
-vec4 set_palette(vec4 ref_color, vec3 palette[16]) {
+vec4 set_palette(vec4 ref_color, vec3 palette[64]) {
     float min_distance = 1e10;
     vec3 closest_color = vec3(0.0);
 
-    for (int i = 0; i < 16; i++) {
+    for (int i = 0; i < 64; i++) {
         float distance = dot(ref_color.xyz - palette[i], ref_color.xyz - palette[i]);
 
         if (distance < min_distance) {

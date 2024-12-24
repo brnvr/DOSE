@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"move_towards_point_3d",
   "parent":{
-    "name":"actor_3d",
-    "path":"folders/Scripts/actor_3d.yy",
+    "name":"utils",
+    "path":"folders/Scripts/utils.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

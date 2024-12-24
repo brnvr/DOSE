@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"position_3d_get_projected",
+  "%Name":"view_set_camera_object",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"position_3d_get_projected",
+  "name":"view_set_camera_object",
   "parent":{
-    "name":"utils",
-    "path":"folders/Scripts/utils.yy",
+    "name":"views",
+    "path":"folders/Scripts/views.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
