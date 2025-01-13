@@ -36,8 +36,19 @@ if (inventory_item_selected == noone) {
 	}
 }
 
-
-if (inventory_length > 0 && can_interact) {
+if (is_answering) {
+	mouse_click(mb_right, function() {
+		cursor_center()
+		cursor_pause_sync(1)
+		is_answering = false
+		can_move = true
+		can_look = true
+		npc_hide_options()
+		instance_activate_object(raycaster)
+		cursor_set_sprite(interactable_get_hover_sprite(focus))
+		focus = noone
+	})
+} else if (inventory_length > 0 && can_interact) {
 	if (inventory_item_selected == noone) {
 		mouse_click(mb_right, function() {
 			inventory_item_selected = inventory[inventory_item_selected_index];
@@ -50,7 +61,7 @@ if (inventory_length > 0 && can_interact) {
 		
 			inventory_item_selected = noone		
 		})
-	}
+	}	
 }
 
 var can_show_annotations = can_interact

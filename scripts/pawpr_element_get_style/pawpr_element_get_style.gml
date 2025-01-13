@@ -5,9 +5,7 @@ function pawpr_element_get_style(element, property, default_value=undefined, use
 		var selectors = element[pawpr_attr.style][pawpr.selectors];
 		
 		if (!is_undefined(selectors)) {
-			var n_selectors;
-			
-			n_selectors = array_length(selectors);
+			var n_selectors = array_length(selectors);
 			
 			for (var i = 0; i < n_selectors; i++) {
 				if is_undefined(selectors[i]) break;

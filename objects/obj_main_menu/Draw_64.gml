@@ -1,1 +1,0 @@
-pawpr_draw(ui);

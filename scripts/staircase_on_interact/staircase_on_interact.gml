@@ -34,7 +34,7 @@ function staircase_on_interact(target) {
 		}
 	
 		instance_create_layer(0, 0, "Abstract", obj_fade_out, {
-			on_completed: method({ staircase: id }, function() {
+			on_complete: method({ staircase: id }, function() {
 				static resolve_task = function(staircase) {
 					var task_resolved = obj_player.resolve_task(task_types.go_to_another_floor, obj_control.current_floor)
 					
@@ -120,7 +120,7 @@ function staircase_on_interact(target) {
 				obj_control.current_area = corridor
 				
 				instance_create_layer(0, 0, "Abstract", obj_fade_in, {
-					on_completed: function() {
+					on_complete: function() {
 						obj_player.can_interact = true
 						obj_player.can_look = true
 						obj_player.can_move = true

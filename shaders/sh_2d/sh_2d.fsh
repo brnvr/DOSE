@@ -54,24 +54,25 @@ vec4 get_frag_color(sampler2D texture, vec2 texcoord, float pixel_size) {
 	return texture2D(texture, new_texcoord);	
 }
 
-vec4 set_dithering(vec4 color, vec2 texcoord) {
-	vec2 screensize = vec2(960, 540);
-	vec2 PixelScale = vec2(1, 1);
-	
+vec4 set_dithering(vec4 color) {
+    vec2 screensize = vec2(960, 540); // Replace with actual screen resolution
+    vec2 PixelScale = vec2(2, 2);
+    
+    // Use gl_FragCoord.xy for screen-space coordinates
+    vec2 texcoord = gl_FragCoord.xy / screensize;
     texcoord.x *= screensize.x / 128.0 / PixelScale.x;
     texcoord.y *= screensize.y / 128.0 / PixelScale.y;
     
     float ditherValue = 2.0 * texture2D(dither_map, texcoord).r - 1.0;
-	
-	float gamma = 1.2;
-	float dspread = 20.0;
-    color.rgb = pow(color.rgb, vec3(1.0/gamma));
-    color += ditherValue/dspread;
-    color = clamp(color,0.001,0.999);
-	
-	return color;
+    
+    float gamma = 1.2;
+    float dspread = 20.0;
+    color.rgb = pow(color.rgb, vec3(1.0 / gamma));
+    color += ditherValue / dspread;
+    color = clamp(color, 0.001, 0.999);
+    
+    return color;
 }
-
 vec4 set_palette(vec4 ref_color, vec3 palette[64]) {
     float min_distance = 1e10;
     vec3 closest_color = vec3(0.0);
@@ -93,8 +94,7 @@ void main()
 {	
 	vec4 color = get_frag_color( gm_BaseTexture, v_vTexcoord, pixel_size);
 	
-	color = set_dithering(color, v_vTexcoord);
-	
+	color = set_dithering(color);
 	color = set_palette(color, palette);
 	
 	//if (color_range != 0.0) {

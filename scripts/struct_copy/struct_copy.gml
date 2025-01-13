@@ -1,8 +1,6 @@
 function struct_copy(struct_src, struct_dest, filter = undefined) {
-	var keys, n_keys;
-	
-	keys = variable_struct_get_names(struct_src);
-	n_keys = array_length(keys);
+	var keys = variable_struct_get_names(struct_src);
+	var n_keys = array_length(keys);
 	
 	for (var i = 0; i < n_keys; i++) {
 		var key = keys[i];

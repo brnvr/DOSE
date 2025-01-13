@@ -6,3 +6,7 @@
 	texture = sprite_get_texture(obj_wallclock_control.sprite_index, 0);
 	parent_wall.texture_list[texture_index_in_wall] = texture;
 }*/
+
+angle++
+
+event_inherited()

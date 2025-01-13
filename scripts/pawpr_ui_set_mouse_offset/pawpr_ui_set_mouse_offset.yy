@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"pawpr_ui_set_mouse_offset",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"pawpr_ui_set_mouse_offset",
+  "parent":{
+    "name":"mouse",
+    "path":"folders/Scripts/pawpr/mouse.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -20,3 +20,11 @@ if (is_npc_speaking && (npc_speaking == noone || (npc_speaking != noone && !audi
 		}
 	}
 }
+
+if (npc_options != noone) {
+	with (npc_options) {
+		if (array_length(options_menu) > 0) {
+			pawpr_update(options_menu)	
+		}	
+	}
+}

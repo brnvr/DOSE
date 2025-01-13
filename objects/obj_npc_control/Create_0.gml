@@ -1,4 +1,5 @@
 npc_speaking = noone
+npc_options = noone
 is_npc_speaking = false
 ts_continue_dialogue = time_source_create(
 	time_source_global,

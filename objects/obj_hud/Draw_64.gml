@@ -45,6 +45,8 @@ if (display_inventory && array_length(inventory_temp) > 0) {
 			draw_inventory_item(xpos, ypos + INVENTORY_ITEM_SIZE, index_next, false, .5, obj_control.saturation*.5)
 			draw_inventory_item(xpos, ypos - INVENTORY_ITEM_SIZE, index_previous, false, .5, obj_control.saturation*.5)
 		}
+		
+		shader_set_2d()
 	}	
 }
 
@@ -72,43 +74,42 @@ if (item_picked != noone) {
 	draw_sprite_ext(item_picked.sprite, 0, item_picked.x, item_picked.y, item_picked.scale, item_picked.scale, 0, c_white, 1)
 }
 
-if (caption != "") {
-	draw_set_halign(fa_center);
-	draw_set_valign(fa_top);
+if (display_caption) {
+	if (caption != "") {
+		draw_set_halign(fa_center);
+		draw_set_valign(fa_top);
 	
-	draw_set_color(c_white);
-	draw_set_alpha(1);
-	draw_text_ext_transformed(game_view_center_x, global.screen_height-43, caption, 16, 500, .75, .75, 0);
-} else if (obj_player.can_interact) {
-	if (obj_player.actor_hover != noone && instance_exists(obj_player.actor_hover)) {
-		var msg = ""
-		var action = ""
+		draw_set_color(c_white);
+		draw_set_alpha(1);
+		draw_text_ext_transformed(game_view_center_x, global.screen_height-43, caption, 16, 500, .75, .75, 0);
+		draw_text_transformed(game_view_center_x, global.screen_height-29, subcaption, .5, .5, 0)
+	} else if (obj_player.can_interact) {
+		if (obj_player.actor_hover != noone && instance_exists(obj_player.actor_hover)) {
+			var msg = ""
+			var action = ""
 		
-		if (obj_player.inventory_item_selected != noone) {
-			if (obj_player.inventory_item_selected.can_combine) {
-					if (object_is_ancestor(obj_player.actor_hover.object_index, obj_npc_generic)) {
-					msg = $"give {obj_player.inventory_item_selected.name} to {obj_player.actor_hover.name}"
-				} else {
-					msg = $"use {obj_player.inventory_item_selected.name} with {obj_player.actor_hover.name}"
-				}	
+			if (obj_player.inventory_item_selected != noone) {
+				if (obj_player.inventory_item_selected.can_combine) {
+						if (object_is_ancestor(obj_player.actor_hover.object_index, obj_npc_generic)) {
+						msg = $"give {obj_player.inventory_item_selected.name} to {obj_player.actor_hover.name}"
+					} else {
+						msg = $"use {obj_player.inventory_item_selected.name} with {obj_player.actor_hover.name}"
+					}	
+				}
+			} else {
+				msg = obj_player.actor_hover.name
+				action = obj_player.actor_hover.action_description
 			}
-		} else {
-			msg = obj_player.actor_hover.name
-			action = obj_player.actor_hover.action_description
-		}
 
-		draw_set_halign(fa_center)
-		draw_set_valign(fa_top)
+			draw_set_halign(fa_center)
+			draw_set_valign(fa_top)
 		
-		draw_set_color(c_white)
-		draw_set_alpha(1)
-		draw_text_ext_transformed(game_view_center_x, global.screen_height-43, msg, 16, 500, .75, .75, 0)
-		
-		draw_set_color(c_yellow)
-		draw_set_alpha(.5)
-		draw_text_transformed(game_view_center_x, global.screen_height-29, action, .5, .5, 0)
-		draw_set_alpha(1)
-	}
+			draw_set_color(c_white)
+			draw_set_alpha(1)
+			draw_text_ext_transformed(game_view_center_x, global.screen_height-43, msg, 16, 500, .75, .75, 0)
+			draw_text_transformed(game_view_center_x, global.screen_height-29, action, .5, .5, 0)
+		}
+	}	
 }
 
 for (var i = 0; i < instance_number(obj_hud_message); i++) {

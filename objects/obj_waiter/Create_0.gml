@@ -111,12 +111,10 @@ catch_player = function() {
 }
 
 move_to_door = function(door) {
-	var distance_to_door, time_to_reach_door;
-	
 	is_moving_to_door = true;
 	
-	distance_to_door = point_distance(x, y, door.x, door.y)
-	time_to_reach_door = distance_to_door/(move_speed*2)
+	var distance_to_door = point_distance(x, y, door.x, door.y)
+	var time_to_reach_door = distance_to_door/(move_speed*2)
 	
 	time_source_stop(ts_move_to_door)
 	

@@ -10,10 +10,8 @@ if (passage) {
 			array_push(texture_list, sprite_get_texture(array_choose(obj_control.seed_group[sg.overlays]), 0));
 		}
 		else {
-			var inst, obj;
-			
-			obj = array_choose(obj_control.seed_group[sg.wall_props]);
-			inst = area_add_instance(obj_control.current_area, x, y, obj);
+			var obj = array_choose(obj_control.seed_group[sg.wall_props]);
+			var inst = area_add_instance(obj_control.current_area, x, y, obj);
 			
 			inst.init_from_wall(id);
 		}

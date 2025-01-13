@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"put_cursor_over_panel",
+  "%Name":"npc_hide_options",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"put_cursor_over_panel",
+  "name":"npc_hide_options",
   "parent":{
-    "name":"utils",
-    "path":"folders/Scripts/utils.yy",
+    "name":"npc",
+    "path":"folders/Scripts/npc.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -1,8 +1,15 @@
-//parent_wall = noone;
-//texture = sprite_get_texture(obj_wallclock_control.sprite_index, 0);
+parent_wall = noone
 
 init_from_wall = function(wall) {
-	//array_push(wall.vbuff_list, global.vbuff_wall);
-	//array_push(wall.texture_list, texture);
-	//parent_wall = wall;
+	zrotation = wall.zrotation
+	
+	var zrotation_sin = dsin(zrotation)
+	var zrotation_cos = dcos(zrotation)
+	
+	x = wall.x - zrotation_cos * 1.1 + zrotation_sin * (default_block_size / 2 - xscale)
+	y = wall.y + zrotation_sin * 1.1 + zrotation_cos * (default_block_size / 2 - xscale)
 }
+
+angle = 0
+
+event_inherited()

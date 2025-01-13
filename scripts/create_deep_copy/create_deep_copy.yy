@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"create_deep_copy",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"create_deep_copy",
+  "parent":{
+    "name":"struct",
+    "path":"folders/Scripts/struct.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

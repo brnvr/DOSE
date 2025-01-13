@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"put_cursor_under_hud",
+  "%Name":"shader_set_clock_pointer",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"put_cursor_under_hud",
+  "name":"shader_set_clock_pointer",
   "parent":{
-    "name":"utils",
-    "path":"folders/Scripts/utils.yy",
+    "name":"shader",
+    "path":"folders/Scripts/shader.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

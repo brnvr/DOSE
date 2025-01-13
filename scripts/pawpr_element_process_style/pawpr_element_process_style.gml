@@ -5,7 +5,7 @@ function pawpr_element_process_style(element, custom_properties_to_bypass=[]) {
 	
 	var element_class_list = string_split(element_class, " ", true);
 	var element_n_classes = array_length(element_class_list);
-	var properties_to_bypass = array_concat(custom_properties_to_bypass, [pawpr.selectors, pawpr.background_alpha, pawpr.background_color, pawpr.border_radius, pawpr.direction, pawpr.align, pawpr.min_width, pawpr.min_height, pawpr.xoffset, pawpr.yoffset])
+	var properties_to_bypass = array_concat(custom_properties_to_bypass, [pawpr.selectors, pawpr.background_alpha, pawpr.background_color, pawpr.border_radius, pawpr.direction, pawpr.align, pawpr.min_width, pawpr.min_height, pawpr.xoffset, pawpr.yoffset, pawpr.padding, pawpr.padding_bottom, pawpr.padding_top, pawpr.padding_left, pawpr.padding_right, pawpr.margin, pawpr.margin_bottom, pawpr.margin_top, pawpr.margin_left, pawpr.margin_right])
 	
 	var class_names = variable_struct_get_names(element[pawpr_attr.ui][pawpr_attr.stylesheet]);
 	var n_classes = array_length(class_names);

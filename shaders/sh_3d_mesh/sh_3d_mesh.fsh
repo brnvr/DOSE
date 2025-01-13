@@ -13,7 +13,6 @@ uniform vec3 fog_color;
 uniform bool lighting_enabled;
 uniform bool fog_enabled;
 uniform float alpha;
-uniform float color_levels;
 uniform vec3 shadow_color;
 
 float distance_from_camera(vec3 camera_position) {
@@ -58,20 +57,6 @@ vec4 fog_mix(vec3 camera_position, vec4 color, vec3 fog_color, float fog_start, 
 	return vec4(vec3(vec3(color)*c_mix + fog_color*f_mix), color.a);
 }
 
-vec4 get_nearest_color_range(vec4 color, float n_levels, vec3 shadow_color) {
-	float range, alpha;
-	
-	range = 1.0/n_levels;
-	
-	alpha = color.a > 1.0-range ? 1.0 : color.a - mod(color.a, range);
-	
-	if (shadow_color.r > 0.0 || shadow_color.g > 0.0 || shadow_color.b > 0.0) {
-		return vec4((1.0 - (1.0 - color.rgb) * (1.0 - shadow_color)) - mod(color.rgb, range),  alpha);
-	}
-	
-	return vec4(color.rgb - mod(color.rgb, range), alpha);
-}
-
 void main() {
 	vec4 color, color2;
 	
@@ -83,10 +68,6 @@ void main() {
 	
 	if (fog_enabled) {
 		color = fog_mix(camera_position, color, fog_color, fog_start, fog_end);
-	}
-	
-	if (color_levels > 0.0) {
-		//color = get_nearest_color_range(color, color_levels, shadow_color);
 	}
 	
 	gl_FragColor = color * vec4(1.0, 1.0, 1.0, alpha);

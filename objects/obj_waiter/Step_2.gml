@@ -89,4 +89,6 @@ if (obj_control.current_area.object_index == obj_custom_area) {
 	}
 }
 
+visible = current_area == obj_control.current_area
+
 event_inherited();

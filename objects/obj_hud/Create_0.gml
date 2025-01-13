@@ -10,6 +10,11 @@ display_inventory = true
 display_annotations = false
 annotations_offset = 40
 caption = ""
+subcaption = ""
+display_caption = true
+ts_caption_set_visible = time_source_create(time_source_global, 0.3, time_source_units_seconds, function() {
+	display_caption = !display_caption
+}, [], -1)
 item_picked = noone
 inventory_temp = noone
 inventory_item_selected_scale = 1
@@ -51,13 +56,13 @@ show_caption = function(s, hide_timeout=false, timeout_period=-1) {
 
 draw_inventory_item = function(xpos, ypos, item_index, draw_number=true, scale=1, saturation=1, pixel_size = 0) {
 	var sprite = inventory_temp[item_index].sprite
-	var sh = shader_current()
 	
-	shader_set_2d(pixel_size, sprite)
+	shader_set_2d(1, sprite)
 	draw_sprite_ext(sprite, 0,
 	xpos + sprite_get_draw_center_x(sprite, scale),
 	ypos + sprite_get_draw_center_y(sprite, scale), scale, scale, 0, c_white, 1)	
-	shader_reset();
+	shader_reset()
+	
 	if (draw_number) {
 		var number = inventory_temp[item_index].number
 		
@@ -66,7 +71,6 @@ draw_inventory_item = function(xpos, ypos, item_index, draw_number=true, scale=1
 			draw_text_border_ext_transformed(xpos+29, ypos+17, $"x{number}", 0, -1, 1, 1, c_black)
 		}
 	}
-	shader_set(sh)
 }
 
 inventory_button_up_set_selected = function() {
@@ -108,4 +112,13 @@ show_annotations = function() {
 
 hide_annotations = function() {
 	display_annotations = false
+}
+	
+caption_set_blinking = function(blinking) {
+	if (blinking) {
+		time_source_start(ts_caption_set_visible)		
+	} else {
+		time_source_stop(ts_caption_set_visible)
+		display_caption = true
+	}
 }

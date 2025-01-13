@@ -1,1 +1,2 @@
-time_source_destroy(ts_hide_speech);
+time_source_destroy(ts_hide_speech)
+time_source_destroy(ts_caption_set_visible)

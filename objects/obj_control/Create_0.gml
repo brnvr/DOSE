@@ -20,6 +20,7 @@ wave_amount = 0
 reseting_wave = false
 gameview_xscale = 1
 gameview_yscale = 1
+display_debug_overlay = false
 
 goto_otherside = function() {
 	var darker_color = make_color_rgb(33, 21, 21)
@@ -36,8 +37,6 @@ goto_otherside = function() {
 	areas_destroy_distance(current_area, 0)
 	instance_destroy(obj_npc_generic)
 }
-
-show_debug_overlay(true)
 
 goto_thisside = function(remap=false) {
 	//var darker_color = make_color_rgb(12, 16, 11)
@@ -69,7 +68,7 @@ gpu_set_ztestenable(true)
 gpu_set_zwriteenable(true)
 gpu_set_alphatestenable(true)
 gpu_set_tex_repeat(true)
-instance_create_layer(0, 0, "Abstract", obj_wallclock_control)
+instance_create_layer(0, 0, "Abstract", obj_clock_control)
 instance_create_layer(0, 0, "Abstract", obj_mouse_control)
 instance_create_layer(0, 0, "Abstract", obj_espeak_control)
 instance_create_layer(0, 0, "Abstract", obj_npc_control)

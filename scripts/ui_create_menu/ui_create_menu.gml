@@ -1,11 +1,7 @@
 function ui_create_menu(xpos, ypos, menu_options, stylesheet=global.menu_stylesheet, hor_align=pawpr_align.at_center, vert_align=pawpr_align.at_center) {
-	var ui, menu_content, n_options;
-	
-	ui = pawpr_ui(xpos, ypos, stylesheet, hor_align, vert_align);
-
-	menu_content = [];
-	
-	n_options = array_length(menu_options);
+	var ui = pawpr_ui(xpos, ypos, stylesheet, hor_align, vert_align);
+	var menu_content = [];
+	var n_options = array_length(menu_options);
 
 	for (var i = 0; i < n_options; i++) {
 		var class_name = "";
@@ -45,6 +41,7 @@ function ui_create_menu(xpos, ypos, menu_options, stylesheet=global.menu_stylesh
 	});
 
 	pawpr_build(ui);
+	pawpr_ui_set_mouse_offset(ui, game_view_center_x, game_view_center_y+6)
 	
 	return ui;
 }

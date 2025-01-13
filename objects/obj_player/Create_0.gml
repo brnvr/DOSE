@@ -18,6 +18,7 @@ TASKS_TO_FINISH = 3
 
 actor_hover = noone
 eye_height = EYE_HEIGHT_STANDING
+is_answering = false
 focus = noone
 can_move = true
 can_look = true
@@ -144,32 +145,43 @@ move = function(callback, move_speed) {
 }
 	
 talk_to = function(npc) {
-	resolve_task(task_types.talk_to_someone, npc.name);
-	
-	if (npc.keep_focus) {
-		focus = npc
+	if (array_length(npc.options) > 0) {
+		is_answering = true
+		npc_show_options(npc)
 		can_move = false
-		can_interact = false
-		cursor_set_sprite(noone)
+		can_look = false
+		focus = npc
+		actor_hover = noone
+		cursor_set_sprite(spr_cursor_arrow)
+		instance_deactivate_object(raycaster)
+	} else {
+		resolve_task(task_types.talk_to_someone, npc.name);
+	
+		if (npc.keep_focus) {
+			focus = npc
+			can_move = false
+			can_interact = false
+			cursor_set_sprite(noone)
+		}
+	
+		if (!has_met_npc(npc)) {
+			array_push(npcs_met, npc.object_index)	
+		}
+	
+		if (string_length(npc.dialogue) == 0) {
+			var probability_give_task = 1/6 * npc.helpfulness
+			var give_task = take_chance(probability_give_task)
+	
+			if (give_task) {
+				npc_give_task(npc, array_choose(global.task_types_list))
+				return;
+			} 
+	
+			npc.dialogue = array_choose(global.default_dialogues.miscelaneous)
+		}
+	
+		npc_speak(npc)	
 	}
-	
-	if (!has_met_npc(npc)) {
-		array_push(npcs_met, npc.object_index)	
-	}
-	
-	if (string_length(npc.dialogue) == 0) {
-		var probability_give_task = 1/6 * npc.helpfulness
-		var give_task = take_chance(probability_give_task)
-	
-		if (give_task) {
-			npc_give_task(npc, array_choose(global.task_types_list))
-			return;
-		} 
-	
-		npc.dialogue = array_choose(global.default_dialogues.miscelaneous)
-	}
-	
-	npc_speak(npc)
 }	
 
 receive_task = function(task_type, args) {
@@ -331,8 +343,6 @@ inventory_add_item = function(item, use_animation = true, index = -1) {
 		var spr_h = sprite_get_height(item.sprite_index)
 		var spr_held = sprite_part_copy(item.sprite_held == noone ? item.sprite_index : item.sprite_held, 0, 0, 0, spr_w, spr_h, spr_w*.5, spr_h*.5)
 		
-		
-	
 		if (spr_w == INVENTORY_ITEM_SIZE) {
 			spr = sprite_part_copy(item.sprite_index, 0, 0, 0, spr_w, spr_h, spr_w*.5, spr_h*.5)
 		} else {
@@ -463,26 +473,25 @@ get_tasked_door = function() {
 }
 
 cursor_set_to_item_selected = function(enabled=true, reenable_period=1) {
-	var xoffset, yoffset, sprite, scale, scale_factor;
-	
-	sprite = inventory_item_selected.sprite_held;
-	scale_factor = INVENTORY_ITEM_SIZE / sprite_get_width(sprite)
-	scale = (enabled ? 4 : 1.5) * scale_factor;
-	scale = 0.5;
-	xoffset = sprite_get_draw_center_x(sprite, scale);
-	yoffset = sprite_get_draw_center_y(sprite, scale) + enabled ? 295 : 0;
+	var sprite = inventory_item_selected.sprite_held;
+	var scale_factor = INVENTORY_ITEM_SIZE / sprite_get_width(sprite)
+	//scale = (enabled ? 4 : 1.5) * scale_factor
+	var scale = 0.5
+	var xoffset = sprite_get_draw_center_x(sprite, scale)
+	var yoffset = sprite_get_draw_center_y(sprite, scale) + enabled ? 295 : 0
 		
-	cursor_set_sprite(sprite, scale, 1, enabled, xoffset, yoffset);
+	cursor_set_sprite(sprite, scale, 1, enabled, xoffset, yoffset)
 	
-	if (enabled) inventory_item_selected_enabled = true;
-	else {
+	if (enabled) {
+		inventory_item_selected_enabled = true
+	} else {
 		time_source_reconfigure(ts_item_selected_reenable, reenable_period, time_source_units_frames, function() {
-			obj_cursor.enabled = true;
-			inventory_item_selected_enabled = true;
+			obj_cursor.enabled = true
+			inventory_item_selected_enabled = true
 		})
 		
-		time_source_start(ts_item_selected_reenable);
-		inventory_item_selected_enabled = false;
+		time_source_start(ts_item_selected_reenable)
+		inventory_item_selected_enabled = false
 	}
 }
 

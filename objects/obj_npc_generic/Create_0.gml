@@ -1,3 +1,4 @@
+options_menu = []
 is_disappearing = false
 is_transforming = false
 espeak_buffer = espeak_buffer_create()

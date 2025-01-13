@@ -5,6 +5,7 @@ obj_cursor.visible = true
 obj_player.camera.fov_y = camera_fov_y_original
 
 obj_hud.caption = ""
+obj_hud.caption_set_blinking(false)
 
 camera_3d_update_projection(obj_player.camera)
 cursor_set_sprite(interactable_get_hover_sprite(obj_player.actor_hover))

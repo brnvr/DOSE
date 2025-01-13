@@ -9,7 +9,7 @@ function pawpr_ui(x, y, stylesheet={}, horizontal_align=pawpr_align.at_start, ve
 	ui[pawpr_attr.horizontal_align] = horizontal_align;
 	ui[pawpr_attr.vertical_align] = vertical_align;
 	ui[pawpr_attr.template] = template;
-	ui[pawpr_attr.stylesheet] = stylesheet;
+	ui[pawpr_attr.stylesheet] = create_deep_copy(stylesheet);
 	ui[pawpr_attr.content] = [];
 	ui[pawpr_attr.elements] = [];
 	ui[pawpr_attr.type] = "container";
@@ -17,6 +17,8 @@ function pawpr_ui(x, y, stylesheet={}, horizontal_align=pawpr_align.at_start, ve
 	ui[pawpr_attr.previous] = undefined;
 	ui[pawpr_attr.xoffset] = 0;
 	ui[pawpr_attr.yoffset] = 0;
+	ui[pawpr_attr.mouse_xoffset] = 0;
+	ui[pawpr_attr.mouse_yoffset] = 0;
 	ui[pawpr_attr.class] = undefined;
 	ui[pawpr_attr.style] = pawpr_class();
 	
@@ -83,6 +85,8 @@ enum pawpr_attr {
 	x,
 	y,
 	xoffset,
+	mouse_xoffset,
+	mouse_yoffset,
 	yoffset,
 	width,
 	height,
