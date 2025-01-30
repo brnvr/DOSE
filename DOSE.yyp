@@ -1080,6 +1080,7 @@
     {"id":{"name":"sh_electronic_keyboard","path":"shaders/sh_electronic_keyboard/sh_electronic_keyboard.yy",},},
     {"id":{"name":"sh_overlay","path":"shaders/sh_overlay/sh_overlay.yy",},},
     {"id":{"name":"sh_vhs","path":"shaders/sh_vhs/sh_vhs.yy",},},
+    {"id":{"name":"snd_clock_tick","path":"sounds/snd_clock_tick/snd_clock_tick.yy",},},
     {"id":{"name":"snd_close_door","path":"sounds/snd_close_door/snd_close_door.yy",},},
     {"id":{"name":"snd_frog_croaking","path":"sounds/snd_frog_croaking/snd_frog_croaking.yy",},},
     {"id":{"name":"snd_horror_vacui_rainyskip","path":"sounds/snd_horror_vacui_rainyskip/snd_horror_vacui_rainyskip.yy",},},

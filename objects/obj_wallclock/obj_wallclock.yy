@@ -2,15 +2,16 @@
   "$GMObject":"",
   "%Name":"obj_wallclock",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":2,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":12,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":2,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_wallclock",
   "overriddenProperties":[
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_actor_3d_generic","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"propertyId":{"name":"collidable","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"False",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_actor_3d_generic","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"propertyId":{"name":"vbuff_list","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"[global.vbuff_wall]",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_actor_3d_generic","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"propertyId":{"name":"vbuff_list","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"[global.vbuff_wall_centered]",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_actor_3d_generic","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"propertyId":{"name":"texture_list","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"[sprite_get_texture(spr_wallclock, 0)]",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_actor_3d_generic","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"propertyId":{"name":"cullmode","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"cull_counterclockwise",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_actor_3d_generic","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"propertyId":{"name":"xscale","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"default_block_size / 4",},

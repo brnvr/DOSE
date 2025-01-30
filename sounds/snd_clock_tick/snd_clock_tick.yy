@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_clock_tick",
+  "audioGroupId":{
+    "name":"ag_game_effects",
+    "path":"audiogroups/ag_game_effects",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.448685,
+  "name":"snd_clock_tick",
+  "parent":{
+    "name":"effects",
+    "path":"folders/Sounds/effects.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_clock_tick.ogg",
+  "type":0,
+  "volume":0.37,
+}

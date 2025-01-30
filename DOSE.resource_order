@@ -402,6 +402,7 @@
     {"name":"sh_electronic_keyboard","order":4,"path":"shaders/sh_electronic_keyboard/sh_electronic_keyboard.yy",},
     {"name":"sh_overlay","order":1,"path":"shaders/sh_overlay/sh_overlay.yy",},
     {"name":"sh_vhs","order":3,"path":"shaders/sh_vhs/sh_vhs.yy",},
+    {"name":"snd_clock_tick","order":7,"path":"sounds/snd_clock_tick/snd_clock_tick.yy",},
     {"name":"snd_close_door","order":4,"path":"sounds/snd_close_door/snd_close_door.yy",},
     {"name":"snd_frog_croaking","order":2,"path":"sounds/snd_frog_croaking/snd_frog_croaking.yy",},
     {"name":"snd_open_door","order":3,"path":"sounds/snd_open_door/snd_open_door.yy",},

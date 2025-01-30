@@ -2,6 +2,7 @@ var door_width = (default_block_size-2*wall_passage_width)/default_block_size
 var door_xstart = wall_passage_width/default_block_size
 
 global.vbuff_wall = vb_create_quad([0, 0, -1], [0, 1, -1], [0, 1, 0], [0, 0, 0], -1, 0, 0, c_white, 1, 0, 0, 1, 1, global.vertex_format)
+global.vbuff_wall_centered = vb_create_quad([0, -0.5, -1], [0, 0.5, -1], [0, 0.5, 0], [0, -0.5, 0], -1, 0, 0, c_white, 1, 0, 0, 1, 1, global.vertex_format)
 global.vbuff_plane_distorted = vb_create_quad([0, .2, -1], [0, .8, -1], [0, .8, 0], [0, .2, 0], -1, 0, 0, c_white, 1, 0, 0, 1, 1, global.vertex_format)
 global.vbuff_door = vb_create_quad([0, -.07, -1], [0, door_width+.07, -1], [0, door_width, 0], [0, 0, 0], -1, 0, 0, c_white, 1, door_xstart, 0, door_width, 1, global.vertex_format);
 global.vbuff_door_mirrored = vb_create_quad([0, door_width+.07, -1], [0, -.07, -1], [0, 0, 0], [0, door_width, 0], -1, 0, 0, c_white, 1, door_xstart, 0, door_width, 1, global.vertex_format);
