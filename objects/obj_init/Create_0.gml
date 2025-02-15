@@ -97,7 +97,7 @@
 #macro u_mesh_lighting_enabled shader_get_uniform(sh_3d_mesh, "lighting_enabled")
 #macro u_mesh_fog_enabled shader_get_uniform(sh_3d_mesh, "fog_enabled")
 #macro u_mesh_fog_color shader_get_uniform(sh_3d_mesh, "fog_color")
-#macro u_mesh_color_levels shader_get_uniform(sh_3d_mesh, "color_levels")
+#macro u_mesh_shadow_color shader_get_uniform(sh_3d_mesh, "shadow_color")
 
 enum views {
 	view_3d,

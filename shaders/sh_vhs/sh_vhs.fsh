@@ -89,7 +89,10 @@ void main()
 	color = color + vec4(0.0, tracking_lines_color.r*.1, tracking_lines_color.r*.2, 0.0);
 	
 	color = set_dithering(color, texcoord);
+	color = set_shadow_color(color, shadow_color);
+	color = set_saturation(color, saturation);
 	color = set_palette(color, palette);
+	
 
     gl_FragColor = color;
 }

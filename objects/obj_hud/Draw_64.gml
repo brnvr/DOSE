@@ -119,7 +119,7 @@ for (var i = 0; i < instance_number(obj_hud_message); i++) {
 	draw_set_halign(fa_right)
 	draw_set_valign(fa_top)
 	draw_set_alpha(obj_message.alpha)
-	draw_text_transformed(obj_message.x, obj_message.y + i*13, obj_message.message, .5, .5, 0)
+	draw_text_transformed(obj_message.x, obj_message.y + i*13, obj_message.text, .5, .5, 0)
 	draw_set_alpha(1)
 }
 

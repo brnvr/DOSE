@@ -99,9 +99,9 @@ set_item_picked = function(index, sprite, name) {
 }
 
 add_message = function(msg, color=c_white) {
-	instance_create_depth(global.screen_width-123, 38, 0, obj_hud_message, {
+	instance_create_depth(global.screen_width-119, 32, 0, obj_hud_message, {
 		color: color,
-		message: msg
+		text: msg
 	})
 }
 

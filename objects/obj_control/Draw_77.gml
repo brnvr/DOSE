@@ -12,7 +12,8 @@ shader_set_vhs(
 	gameview_xscale,
 	gameview_yscale,
 	wave_amount,
-	wave_offset
+	wave_offset,
+	saturation, fog_color
 );
 
 draw_surface_ext(application_surface, 0, 0, scale, scale, 0, c_white, 1);

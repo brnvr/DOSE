@@ -21,8 +21,9 @@ reseting_wave = false
 gameview_xscale = 1
 gameview_yscale = 1
 display_debug_overlay = false
+saturation = 0.5
 
-goto_otherside = function() {
+goto_otherside = function(remap=true) {
 	var darker_color = make_color_rgb(33, 21, 21)
 	
 	tracking_error_variation_factor = 4
@@ -33,21 +34,21 @@ goto_otherside = function() {
 	background_set_color(darker_color)
 	obj_fog_overlay.visible = true
 	seed_group = global.seed_groups[realms.otherside]
-	area_remap(current_area, seed_group)
-	areas_destroy_distance(current_area, 0)
-	instance_destroy(obj_npc_generic)
+	
+	if (remap) {
+		area_remap(current_area, seed_group)
+		areas_destroy_distance(current_area, 0)
+		instance_destroy(obj_npc_generic)	
+	}
 }
 
 goto_thisside = function(remap=false) {
-	//var darker_color = make_color_rgb(12, 16, 11)
-	var darker_color = make_color_rgb(3, 5, 2)
+	var darker_color = c_black
 	
 	tracking_error_variation_factor = 1
-	saturation = 0.75
 	global.current_realm = realms.thisside
 	fog_start = 1000
 	fog_end = 2000
-	//fog_end = 50000
 	fog_color = darker_color
 	background_set_color(darker_color)
 	obj_fog_overlay.visible = false

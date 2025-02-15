@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"check_cheat",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"check_cheat",
+  "parent":{
+    "name":"utils",
+    "path":"folders/Scripts/utils.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

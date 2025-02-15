@@ -9,7 +9,7 @@ function shader_set_2d(pixel_size = 0, sprite = undefined, palette = global.ui_p
 	var u_pixel_size = shader_get_uniform(sh_2d, "pixel_size")
 	var u_texture_dimentions = shader_get_uniform(sh_2d, "texture_dimentions")
 	var u_palette = shader_get_uniform(sh_2d, "palette");
-	var dithering_map_texture = sprite_get_texture(spr_DitherPattern, 0)
+	var dithering_map_texture = sprite_get_texture(spr_dither_pattern, 0)
 
 	shader_set_uniform_f(u_pixel_size, pixel_size)
 	

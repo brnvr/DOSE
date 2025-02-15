@@ -57,6 +57,12 @@ vec4 fog_mix(vec3 camera_position, vec4 color, vec3 fog_color, float fog_start, 
 	return vec4(vec3(vec3(color)*c_mix + fog_color*f_mix), color.a);
 }
 
+vec4 set_shadow_color(vec4 color, vec3 shadow_color) {
+	vec4 color1 = vec4(vec3(color) + shadow_color, color.a);
+	
+	return vec4(max(color.r, shadow_color.r), max(color.g, shadow_color.g), max(color.b, shadow_color.b), color.a);
+}
+
 void main() {
 	vec4 color, color2;
 	
@@ -68,6 +74,10 @@ void main() {
 	
 	if (fog_enabled) {
 		color = fog_mix(camera_position, color, fog_color, fog_start, fog_end);
+	}
+	
+	if (shadow_color != vec3(0.0, 0.0, 0.0)) {
+		color = set_shadow_color(color, shadow_color);	
 	}
 	
 	gl_FragColor = color * vec4(1.0, 1.0, 1.0, alpha);
