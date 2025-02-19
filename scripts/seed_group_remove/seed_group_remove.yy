@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"take_chance",
+  "%Name":"seed_group_remove",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"take_chance",
+  "name":"seed_group_remove",
   "parent":{
-    "name":"utils",
-    "path":"folders/Scripts/utils.yy",
+    "name":"seed_groups",
+    "path":"folders/Scripts/seed_groups.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

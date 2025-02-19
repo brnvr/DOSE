@@ -35,6 +35,8 @@ inventory_item_selected = noone
 inventory_item_selected_enabled = true
 bbox_list = [bbox_create(-8, -8, -135, 8, 8, 0)]
 ts_item_selected_reenable = time_source_create(time_source_global, 1, time_source_units_frames, function() {})
+is_moving = false
+is_moving_on_staircase = false
 is_moving_auto = false
 move_auto_coord = -1
 move_auto_speed = WALK_SPEED
@@ -71,18 +73,27 @@ raycaster = instance_create_depth(0, 0, 0, obj_raycaster, {
 	callback: function(inst) { obj_player.actor_hover = inst }
 })
 
-interactions_list = [
-	[obj_antivenom, function() {
-		if (envenoming == 0) {
-			obj_hud.add_message("You don't need it right now.")
+interact_with_antivenom = function() {
+	if (envenoming == 0) {
+		obj_hud.add_message("You don't need it right now.")
 			
-			return
-		}
+		return
+	}
 		
-		take_antivenom()
-		inventory_remove_item(obj_antivenom)
-		obj_hud.add_message("Received antivenom. You'll be fine soon.")
-	}]
+	take_antivenom()
+	inventory_remove_item(obj_antivenom)
+	obj_hud.add_message("Received antivenom. You'll be fine soon.")	
+}
+
+interact_with_currant_syrup = function() {
+	audio_play_sound(snd_sip, false, false)
+	inventory_remove_item(obj_currant_syrup)
+	obj_hud.add_message(choose("Satisfying", "Is this real?"))
+}
+
+interactions_list = [
+	[obj_antivenom, interact_with_antivenom],
+	[obj_currant_syrup, interact_with_currant_syrup]
 ]
 
 take_damage = function() {
@@ -117,29 +128,29 @@ move_to = function(xpos, ypos, spd=WALK_SPEED, callback=undefined) {
 }
 
 move = function(callback, move_speed) {
-	var offset, xoffset, yoffset;
+	var offset = [0, 0]
 	
-	offset = [0, 0];
+	callback(offset, move_speed)
 	
-	callback(offset, move_speed);
-	
-	xoffset = offset[0];
-	yoffset = offset[1];
+	var xoffset = offset[0]
+	var yoffset = offset[1]
 	
 	if (xoffset != 0 || yoffset != 0) {
-		var offset_length, xspeed, yspeed;
+		var offset_length, xspeed, yspeed
+		
+		is_moving = true
 	
-		offset_length = sqrt(sqr(xoffset) + sqr(yoffset));
+		offset_length = sqrt(sqr(xoffset) + sqr(yoffset))
 
-		xspeed = xoffset/offset_length*move_speed;
-		yspeed = yoffset/offset_length*move_speed;
+		xspeed = xoffset/offset_length*move_speed
+		yspeed = yoffset/offset_length*move_speed
 	
 		if (!place_meeting_3d(x + xspeed, y, z, obj_actor_3d_generic)) {
-			x += xspeed;
+			x += xspeed
 		}
 	
 		if (!place_meeting_3d(x, y + yspeed, z, obj_actor_3d_generic)) {
-			y += yspeed;
+			y += yspeed
 		}
 	}
 }
@@ -170,7 +181,7 @@ talk_to = function(npc) {
 	
 		if (string_length(npc.dialogue) == 0) {
 			var probability_give_task = 1/6 * npc.helpfulness
-			var give_task = take_chance(probability_give_task)
+			var give_task = random_event(probability_give_task)
 	
 			if (give_task) {
 				npc_give_task(npc, array_choose(global.task_types_list))

@@ -13,7 +13,7 @@
   "name":"snd_street_ambience",
   "parent":{
     "name":"ambience",
-    "path":"folders/Sounds/ambience.yy",
+    "path":"folders/Sounds/game_effects/ambience.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

@@ -1,3 +1,14 @@
+u_mesh_alpha = shader_get_uniform(shader, "alpha")
+u_mesh_light_direction = shader_get_uniform(shader, "light_direction")
+u_mesh_light_hue = shader_get_uniform(shader, "light_hue")
+u_mesh_fog_start = shader_get_uniform(shader, "fog_start")
+u_mesh_fog_end = shader_get_uniform(shader, "fog_end")
+u_mesh_camera_position = shader_get_uniform(shader, "camera_position")
+u_mesh_lighting_enabled = shader_get_uniform(shader, "lighting_enabled")
+u_mesh_fog_enabled = shader_get_uniform(shader, "fog_enabled")
+u_mesh_fog_color = shader_get_uniform(shader, "fog_color")
+u_mesh_shadow_color = shader_get_uniform(shader, "shadow_color")
+
 if (is_undefined(bbox_list)) {
 	bbox_list = []	
 }

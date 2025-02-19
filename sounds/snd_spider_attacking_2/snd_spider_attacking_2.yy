@@ -13,7 +13,7 @@
   "name":"snd_spider_attacking_2",
   "parent":{
     "name":"spider_attack",
-    "path":"folders/Sounds/effects/spider_attack.yy",
+    "path":"folders/Sounds/game_effects/spider_attack.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

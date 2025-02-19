@@ -45,10 +45,13 @@ function pawpr_build(ui, element=ui) {
 	if (ui == element) {
 		ui[pawpr_attr.mouse_x] = pawpr_mouse_x(ui);
 		ui[pawpr_attr.mouse_y] = pawpr_mouse_y(ui);
-		var buffer_length = array_length(ui[pawpr_attr.elements]);
+		
+		var elements = ui[pawpr_attr.elements] ?? []
+		
+		var buffer_length = array_length(elements);
 	
 		for (var i = 0; i < buffer_length; i++) {
-			var element_current = ui[pawpr_attr.elements][i];
+			var element_current = elements[i];
 			element_current[pawpr_attr.xoffset] = type_template.get_xoffset(element_current);
 			element_current[pawpr_attr.yoffset] = type_template.get_yoffset(element_current);
 		}

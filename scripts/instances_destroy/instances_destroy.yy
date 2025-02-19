@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"instances_destroy",
   "parent":{
-    "name":"instance",
-    "path":"folders/Scripts/instance.yy",
+    "name":"instances",
+    "path":"folders/Scripts/instances.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

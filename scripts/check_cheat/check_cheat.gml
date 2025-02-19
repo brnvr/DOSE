@@ -1,4 +1,6 @@
 function check_cheat(code) {
+	show_debug_message(keyboard_string)
+	
 	var code_length = string_length(code)
 	var ks_length = string_length(keyboard_string)
 	

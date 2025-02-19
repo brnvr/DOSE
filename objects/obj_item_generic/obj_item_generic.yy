@@ -45,8 +45,6 @@
   "physicsStartAwake":true,
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"on_interact","filters":[],"listItems":[],"multiselect":false,"name":"on_interact","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"do_nothing","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"room_position_factor_min","filters":[],"listItems":[],"multiselect":false,"name":"room_position_factor_min","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"room_position_factor_max","filters":[],"listItems":[],"multiselect":false,"name":"room_position_factor_max","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":".5","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"can_combine","filters":[],"listItems":[],"multiselect":false,"name":"can_combine","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"True","varType":3,},
     {"$GMObjectProperty":"v1","%Name":"name_article","filters":[],"listItems":[],"multiselect":false,"name":"name_article","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"a","varType":2,},
     {"$GMObjectProperty":"v1","%Name":"on_select","filters":[],"listItems":[],"multiselect":false,"name":"on_select","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"item_on_select","varType":0,},
@@ -54,6 +52,7 @@
     {"$GMObjectProperty":"v1","%Name":"quantity","filters":[],"listItems":[],"multiselect":false,"name":"quantity","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"on_picked","filters":[],"listItems":[],"multiselect":false,"name":"on_picked","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"do_nothing","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"sprite_held","filters":[],"listItems":[],"multiselect":false,"name":"sprite_held","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"noone","varType":5,},
+    {"$GMObjectProperty":"v1","%Name":"unique","filters":[],"listItems":[],"multiselect":false,"name":"unique","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

@@ -66,7 +66,7 @@ function door_random_on_interact(door) {
 		
 					prob_room = .33
 		
-					if (take_chance(prob_room)) {
+					if (random_event(prob_room)) {
 						dest_area = door_make_room(id, dir)
 					} else {
 						dest_area = door_make_corridor(id, dir)
@@ -182,7 +182,16 @@ function door_random_on_interact(door) {
 		}
 	
 		if (locked) {
-			obj_hud.show_caption("Locked.", true)	
+			if (!audio_is_playing(sound_locked)) {
+				obj_hud.add_message("Locked")
+			
+				var snd_locked = instance_create_layer(x, y, "Abstract", obj_sound_emitter_3d, {
+					z,
+					sound: sound_locked,
+					play_at_creation: true,
+					destroy_after_playing: true
+				})	
+			}
 		} else {
 			if (obj_control.current_area.object_index == obj_custom_area) {
 				var area = obj_control.current_area

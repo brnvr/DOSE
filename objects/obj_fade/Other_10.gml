@@ -1,7 +1,3 @@
 /// @description on complete
 
-on_complete()
-	
-if (auto_destroy) {
-	instance_destroy();
-}
+time_source_start(ts_on_complete)

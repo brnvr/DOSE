@@ -1,3 +1,5 @@
+objects = objects ?? []
+
 __callback__ = function() {
 	if (array_length(objects) > 0) {
 		var obj, period;

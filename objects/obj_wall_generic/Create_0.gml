@@ -1,3 +1,5 @@
+texture_list = texture_list ?? []
+
 if (array_length(texture_list) == 0) {
 	if (passage) {
 		bbox_list = [global.bbox_wall_passage_left, global.bbox_wall_passage_right];

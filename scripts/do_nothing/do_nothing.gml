@@ -1,1 +1,1 @@
-function do_nothing() {}
+function do_nothing(args=undefined) {}

@@ -13,7 +13,6 @@ uniform vec3 fog_color;
 uniform bool lighting_enabled;
 uniform bool fog_enabled;
 uniform float alpha;
-uniform float color_levels;
 uniform vec3 shadow_color;
 uniform float key;
 uniform bool highlight_key;
@@ -227,10 +226,6 @@ void main() {
 	
 	if (fog_enabled) {
 		color = fog_mix(camera_position, color, fog_color, fog_start, fog_end);
-	}
-	
-	if (color_levels > 0.0) {
-		//color = get_nearest_color_range(color, color_levels, shadow_color);
 	}
 	
 	if (highlight_key) {

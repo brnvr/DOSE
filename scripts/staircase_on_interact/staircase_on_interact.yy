@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"staircase_on_interact",
   "parent":{
-    "name":"staircase",
-    "path":"folders/Scripts/staircase.yy",
+    "name":"staircases",
+    "path":"folders/Scripts/staircases.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

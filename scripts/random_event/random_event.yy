@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"random_event",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"random_event",
+  "parent":{
+    "name":"utils",
+    "path":"folders/Scripts/utils.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

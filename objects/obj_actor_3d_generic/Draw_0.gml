@@ -4,7 +4,7 @@ if (view_current == views.view_3d) {
 	shader_set_uniform_f(u_mesh_fog_start, obj_control.fog_start)
 	shader_set_uniform_f(u_mesh_fog_end, obj_control.fog_end)
 	shader_set_uniform_f_array(u_mesh_light_direction, obj_control.light_direction)
-	shader_set_uniform_f_array(u_mesh_light_hue, obj_control.light_hue)
+	shader_set_uniform_f_array(u_mesh_light_hue, [1, 1, 1])
 	shader_set_uniform_f_array(u_mesh_camera_position, camera_3d_get_position())
 	shader_set_uniform_i(u_mesh_lighting_enabled, lighting_enabled)
 	shader_set_uniform_i(u_mesh_fog_enabled, fade_with_distance)

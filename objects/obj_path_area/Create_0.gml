@@ -1,3 +1,5 @@
+grid_size = grid_size ?? 1
+
 collision_grid = ds_grid_create(grid_size, grid_size);
 sp_grid = undefined;
 

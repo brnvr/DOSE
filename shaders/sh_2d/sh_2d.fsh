@@ -5,7 +5,6 @@ uniform float color_range;
 uniform float pixel_size;
 uniform sampler2D dither_map;
 uniform vec2 texture_dimentions;
-uniform vec3 shadow_color;
 uniform vec3 palette[64];
 
 vec4 set_saturation(vec4 color, float value) {
@@ -17,22 +16,6 @@ vec4 set_saturation(vec4 color, float value) {
 	
 	return vec4(grayscale + delta*value, color.a);
 }
-
-vec4 set_shadow_color(vec4 color, vec3 shadow_color) {
-	vec4 color1 = vec4(vec3(color) + shadow_color, color.a);
-	
-	return vec4(max(color1.r, shadow_color.r), max(color1.g, shadow_color.g), max(color1.b, shadow_color.b), 1.0);
-}
-
-vec4 get_nearest_color_range(vec4 color, float n_levels, vec3 shadow_color) {
-	float range, alpha;
-	
-	range = 1.0/n_levels;
-	alpha = color.a > 1.0-range ? 1.0 : color.a - mod(color.a, range);
-	
-	return vec4(color.rgb - mod(color.rgb, range), alpha);
-}
-
 
 vec4 get_frag_color(sampler2D texture, vec2 texcoord, float pixel_size) {
 	if (pixel_size <= 1.0) {
@@ -92,22 +75,15 @@ vec4 set_palette(vec4 ref_color, vec3 palette[64]) {
 
 void main()
 {	
-	vec4 color = get_frag_color( gm_BaseTexture, v_vTexcoord, pixel_size);
+	vec4 color = get_frag_color(gm_BaseTexture, v_vTexcoord, pixel_size);
 	
 	color = set_dithering(color);
+	
+	if (saturation != 1.0) {
+		color = set_saturation(color, saturation);
+	}
+	
 	color = set_palette(color, palette);
-	
-	//if (color_range != 0.0) {
-	//	color = get_nearest_color_range(color, color_range, shadow_color);
-	//}
-	
-	//if (shadow_color != vec3(0.0, 0.0, 0.0)) {
-	//	color = set_shadow_color(color, shadow_color);	
-	//}
-	
-	//if (saturation != 1.0) {
-	//	color = set_saturation(color, saturation);
-	//}
 	
     gl_FragColor = color;
 	if (gl_FragColor.a == 0.0) discard;

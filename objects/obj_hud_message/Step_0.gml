@@ -1,7 +1,11 @@
 if (hide) {
 	if (alpha > 0) {
-		alpha -= 0.03;	
+		alpha -= 0.03
 	} else {
-		instance_destroy();	
+		instance_destroy()
 	}
+}
+
+if (x > xstart) {
+	x--	
 }

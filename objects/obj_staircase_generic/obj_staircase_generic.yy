@@ -13,7 +13,6 @@
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_actor_3d_generic","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"propertyId":{"name":"collidable","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"True",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_interactable_generic","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"propertyId":{"name":"custom_cursor","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"resource":{"name":"spr_cursor_footprint","path":"sprites/spr_cursor_footprint/spr_cursor_footprint.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"spr_cursor_footprint",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_interactable_generic","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"propertyId":{"name":"name","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"staircase\"",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_actor_3d_generic","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"propertyId":{"name":"fade_with_distance","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"False",},
   ],
   "parent":{
     "name":"generic",

@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_locked_door",
+  "audioGroupId":{
+    "name":"ag_game_effects",
+    "path":"audiogroups/ag_game_effects",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.511882,
+  "name":"snd_locked_door",
+  "parent":{
+    "name":"game_effects",
+    "path":"folders/Sounds/game_effects.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_locked_door.ogg",
+  "type":0,
+  "volume":0.79,
+}

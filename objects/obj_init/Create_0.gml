@@ -88,17 +88,6 @@
 #macro c_dark_burgundy make_color_rgb(69, 12, 40)
 #macro c_deep_wine make_color_rgb(45, 0, 46)
 
-#macro u_mesh_alpha shader_get_uniform(sh_3d_mesh, "alpha")
-#macro u_mesh_light_direction shader_get_uniform(sh_3d_mesh, "light_direction")
-#macro u_mesh_light_hue shader_get_uniform(sh_3d_mesh, "light_hue")
-#macro u_mesh_fog_start shader_get_uniform(sh_3d_mesh, "fog_start")
-#macro u_mesh_fog_end shader_get_uniform(sh_3d_mesh, "fog_end")
-#macro u_mesh_camera_position shader_get_uniform(sh_3d_mesh, "camera_position")
-#macro u_mesh_lighting_enabled shader_get_uniform(sh_3d_mesh, "lighting_enabled")
-#macro u_mesh_fog_enabled shader_get_uniform(sh_3d_mesh, "fog_enabled")
-#macro u_mesh_fog_color shader_get_uniform(sh_3d_mesh, "fog_color")
-#macro u_mesh_shadow_color shader_get_uniform(sh_3d_mesh, "shadow_color")
-
 enum views {
 	view_3d,
 	view_2d

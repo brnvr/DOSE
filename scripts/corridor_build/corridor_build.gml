@@ -228,7 +228,7 @@ function corridor_build(corridor, seed_group, block_size, door_passage_side_widt
 			array_push(corridor.doors, area_add_actor_3d(corridor, xpos+block_size, ypos+door_passage_side_width, corridor.z, door, {
 				zrotation: 0,
 				opening_direction: angular.counterclockwise,
-				locked: take_chance(corridor.prob_door_locked),
+				locked: random_event(corridor.prob_door_locked),
 				number_side: cardinal.east,
 				areas: {
 					west: corridor
@@ -240,7 +240,7 @@ function corridor_build(corridor, seed_group, block_size, door_passage_side_widt
 			array_push(corridor.doors, area_add_actor_3d(corridor, xpos, ypos+door_passage_side_width, corridor.z, door, {
 				zrotation: 0,
 				opening_direction: angular.clockwise,
-				locked: take_chance(corridor.prob_door_locked),
+				locked: random_event(corridor.prob_door_locked),
 				number_side: cardinal.west,
 				areas: {
 					east: corridor
@@ -252,7 +252,7 @@ function corridor_build(corridor, seed_group, block_size, door_passage_side_widt
 			array_push(corridor.doors, area_add_actor_3d(corridor, xpos+door_passage_side_width, ypos, corridor.z, door, {
 				zrotation: 90,
 				opening_direction: angular.counterclockwise,
-				locked: take_chance(corridor.prob_door_locked),
+				locked: random_event(corridor.prob_door_locked),
 				number_side: cardinal.north,
 				areas: {
 					south: corridor
@@ -264,7 +264,7 @@ function corridor_build(corridor, seed_group, block_size, door_passage_side_widt
 			array_push(corridor.doors, area_add_actor_3d(corridor, xpos+door_passage_side_width, ypos+block_size, corridor.z, door, {
 				zrotation: 90,
 				opening_direction: angular.clockwise,
-				locked: take_chance(corridor.prob_door_locked),
+				locked: random_event(corridor.prob_door_locked),
 				number_side: cardinal.south,
 				areas: {
 					north: corridor,

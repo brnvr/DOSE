@@ -1,3 +1,5 @@
+is_moving = false
+
 if (can_move)							event_user(player_controls.moving);
 if (can_look)							event_user(player_controls.looking);
 if (can_interact)						event_user(player_controls.interaction);

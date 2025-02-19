@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"item_on_unselect",
   "parent":{
-    "name":"item",
-    "path":"folders/Scripts/item.yy",
+    "name":"items",
+    "path":"folders/Scripts/items.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

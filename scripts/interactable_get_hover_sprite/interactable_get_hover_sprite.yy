@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"interactable_get_hover_sprite",
   "parent":{
-    "name":"interactable",
-    "path":"folders/Scripts/interactable.yy",
+    "name":"interactables",
+    "path":"folders/Scripts/interactables.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

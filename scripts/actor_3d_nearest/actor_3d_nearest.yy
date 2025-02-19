@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"actor_3d_nearest",
   "parent":{
-    "name":"actor_3d",
-    "path":"folders/Scripts/actor_3d.yy",
+    "name":"actors_3d",
+    "path":"folders/Scripts/actors_3d.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

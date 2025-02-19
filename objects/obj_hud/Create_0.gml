@@ -18,7 +18,9 @@ ts_caption_set_visible = time_source_create(time_source_global, 0.3, time_source
 item_picked = noone
 inventory_temp = noone
 inventory_item_selected_scale = 1
-eyes = instance_create_layer(593, 260, "GUI", obj_eyes)
+skull = noone
+eyes = noone
+display_fog = false
 hud_panel = sprite_create_from_assembly(spr_hud_panel, 2)
 inventory_button_up_selected = false
 inventory_button_down_selected = false
@@ -57,7 +59,7 @@ show_caption = function(s, hide_timeout=false, timeout_period=-1) {
 draw_inventory_item = function(xpos, ypos, item_index, draw_number=true, scale=1, saturation=1, pixel_size = 0) {
 	var sprite = inventory_temp[item_index].sprite
 	
-	shader_set_2d(1, sprite)
+	shader_set_2d(0.75, 1, sprite)
 	draw_sprite_ext(sprite, 0,
 	xpos + sprite_get_draw_center_x(sprite, scale),
 	ypos + sprite_get_draw_center_y(sprite, scale), scale, scale, 0, c_white, 1)	
@@ -99,7 +101,7 @@ set_item_picked = function(index, sprite, name) {
 }
 
 add_message = function(msg, color=c_white) {
-	instance_create_depth(global.screen_width-119, 32, 0, obj_hud_message, {
+	instance_create_depth(global.screen_width-117, 27, 0, obj_hud_message, {
 		color: color,
 		text: msg
 	})

@@ -5,7 +5,7 @@ if (!is_blinking) {
 
 	prob_blink = ((max_count-count)/max_count)/4;
 
-	blink = take_chance(prob_blink == 1 ? .999 : prob_blink);
+	blink = random_event(prob_blink == 1 ? .999 : prob_blink);
 
 	if (blink) {
 		npc.sprite_index = npc_other_sprite;

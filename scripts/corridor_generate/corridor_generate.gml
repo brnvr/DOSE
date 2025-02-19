@@ -162,8 +162,8 @@ function corridor_generate(corridor, xstart=-1, ystart=-1, direction=undefined, 
 			array_push(corridor.cells_used, [pos[i][0], pos[i][1]]);
 		}
 		
-		var build_staircase = take_chance(corridor.prob_staircase);
-		var build_door = build_staircase ? false : take_chance(corridor.prob_door_seg);
+		var build_staircase = random_event(corridor.prob_staircase);
+		var build_door = build_staircase ? false : random_event(corridor.prob_door_seg);
 
 		if (direction == cardinal.west || direction == cardinal.east) {
 			corridor.grid[# pos[0][0], pos[0][1]][corridor_cell_prop.wall_north] = 0;
@@ -253,7 +253,7 @@ function corridor_generate(corridor, xstart=-1, ystart=-1, direction=undefined, 
 	}
 	
 	static set_wall_or_passage = function(corridor, xpos, ypos, prob_door, direction) {
-		var is_door = take_chance(prob_door);
+		var is_door = random_event(prob_door);
 		
 		switch (direction) {
 			case cardinal.north:
@@ -328,11 +328,11 @@ function corridor_generate(corridor, xstart=-1, ystart=-1, direction=undefined, 
 	cont = true;
 	follow = true;
 	
-	doors_single_side = take_chance(corridor.prob_doors_single_side);
+	doors_single_side = random_event(corridor.prob_doors_single_side);
 	doors_side = doors_single_side ? choose(1, 2) : 0;
 	
 	while (cont) {
-		cont = take_chance(corridor.prob_cont);
+		cont = random_event(corridor.prob_cont);
 		
 		if (follow) {
 			var end_position = [];
@@ -349,11 +349,11 @@ function corridor_generate(corridor, xstart=-1, ystart=-1, direction=undefined, 
 				yi = end_position[1];
 			}
 			
-			follow = take_chance(corridor.prob_follow);
+			follow = random_event(corridor.prob_follow);
 		} else {
-			var intersect_forward = take_chance(corridor.prob_intersect);
-			var intersect_leftward = take_chance(corridor.prob_intersect);
-			var intersect_rightward = take_chance(corridor.prob_intersect);
+			var intersect_forward = random_event(corridor.prob_intersect);
+			var intersect_leftward = random_event(corridor.prob_intersect);
+			var intersect_rightward = random_event(corridor.prob_intersect);
 			
 			var intersection_data = build_intersection(corridor, xi, yi, direction, intersect_forward, intersect_leftward, intersect_rightward)
 			

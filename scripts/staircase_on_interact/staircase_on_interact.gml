@@ -3,10 +3,11 @@ function staircase_on_interact(target) {
 		obj_player.can_interact = false
 		obj_player.can_look = false
 		obj_player.can_move = false
+		obj_player.is_moving_on_staircase = true
 	
 		var next_song = array_choose(obj_control.seed_group[sg.music])
 	
-		game_set_music_track(next_song, 1, 2000)
+		game_set_music_track(next_song, obj_settings.music_volume, 2000)
 		cursor_set_sprite(noone)
 	
 		with (obj_waiter) {
@@ -34,6 +35,7 @@ function staircase_on_interact(target) {
 		}
 	
 		instance_create_layer(0, 0, "Abstract", obj_fade_out, {
+			delay: 1,
 			on_complete: method({ staircase: id }, function() {
 				static resolve_task = function(staircase) {
 					var task_resolved = obj_player.resolve_task(task_types.go_to_another_floor, obj_control.current_floor)
@@ -124,6 +126,7 @@ function staircase_on_interact(target) {
 						obj_player.can_interact = true
 						obj_player.can_look = true
 						obj_player.can_move = true
+						obj_player.is_moving_on_staircase = false
 						cursor_center()
 						cursor_pause_sync(1)
 					}

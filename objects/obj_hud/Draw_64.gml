@@ -10,7 +10,7 @@ if (display_overlay_0) {
 	draw_overlay()
 }
 
-shader_set_2d()
+shader_set_2d(0.75)
 
 if (display_inventory && array_length(inventory_temp) > 0) {
 	draw_set_font(font_dark_dream)
@@ -46,14 +46,28 @@ if (display_inventory && array_length(inventory_temp) > 0) {
 			draw_inventory_item(xpos, ypos - INVENTORY_ITEM_SIZE, index_previous, false, .5, obj_control.saturation*.5)
 		}
 		
-		shader_set_2d()
+		shader_set_2d(0.75)
 	}	
 }
 
 draw_sprite(hud_panel, 0, 0, 0)
 
-if (instance_exists(obj_eyes)) {
+if (eyes != noone) {
 	draw_sprite_ext(eyes.sprite_index, eyes.image_index, eyes.x, eyes.y, 1, 1, 0, c_white, 1)
+}
+
+if (skull != noone) {
+	draw_sprite_ext(skull.sprite_index, skull.image_index, skull.x, skull.y, 1, 1, 0, c_white, 1)
+}
+
+if (display_fog) {
+	var scissor = gpu_get_scissor()
+	
+	gpu_set_scissor((skull.x-32)*3, (skull.y-48)*3, 64*3, 96*3)
+	gpu_set_blendmode_ext(bm_dest_color, bm_zero)
+	draw_sprite_ext(obj_fog_overlay.sprite_index, obj_fog_overlay.image_index, skull.x - 200, skull.y - 225, 2, 2, 0, c_white, 1)
+	gpu_set_scissor(scissor)
+	gpu_set_blendmode(bm_normal)	
 }
 
 if (display_inventory) {
@@ -112,15 +126,21 @@ if (display_caption) {
 	}	
 }
 
-for (var i = 0; i < instance_number(obj_hud_message); i++) {
+var n_messages = instance_number(obj_hud_message)
+var last_message = n_messages > 0 ? instance_find(obj_hud_message, n_messages-1) : noone
+var messages_yoffset = last_message == noone ? 0 : last_message.x - last_message.xstart
+
+for (var i = 0; i < n_messages; i++) {
 	var obj_message = instance_find(obj_hud_message, i)
+	var yoffset = obj_message == last_message ? 0 : messages_yoffset
+	
 	shader_reset()
 	draw_set_color(obj_message.color)
 	draw_set_halign(fa_right)
 	draw_set_valign(fa_top)
 	draw_set_alpha(obj_message.alpha)
-	draw_text_transformed(obj_message.x, obj_message.y + i*13, obj_message.text, .5, .5, 0)
-	draw_set_alpha(1)
+	draw_text_transformed(obj_message.x, obj_message.y + (n_messages-1-i)*13 - yoffset, obj_message.text, .5, .5, 0)
+	draw_set_alpha(1)	
 }
 
 if (display_overlay_1) {

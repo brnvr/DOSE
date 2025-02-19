@@ -12,8 +12,8 @@
   "duration":7.440272,
   "name":"snd_spider_walking",
   "parent":{
-    "name":"effects",
-    "path":"folders/Sounds/effects.yy",
+    "name":"game_effects",
+    "path":"folders/Sounds/game_effects.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

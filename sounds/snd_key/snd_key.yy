@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_key",
+  "audioGroupId":{
+    "name":"ag_game_effects",
+    "path":"audiogroups/ag_game_effects",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.655828,
+  "name":"snd_key",
+  "parent":{
+    "name":"game_effects",
+    "path":"folders/Sounds/game_effects.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_key.ogg",
+  "type":0,
+  "volume":1.0,
+}

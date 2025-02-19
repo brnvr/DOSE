@@ -12,8 +12,8 @@
   "duration":3.504,
   "name":"snd_puzzle_error",
   "parent":{
-    "name":"effects",
-    "path":"folders/Sounds/effects.yy",
+    "name":"ui_effects",
+    "path":"folders/Sounds/ui_effects.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

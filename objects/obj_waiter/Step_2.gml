@@ -14,7 +14,7 @@ if (obj_control.current_area.object_index == obj_custom_area) {
 			if (array_length(obj_control.current_area.doors) == 0) {
 				go_to_random_door = false;
 			} else {
-				go_to_random_door = take_chance(0.2);	
+				go_to_random_door = random_event(0.2);	
 			}
 	
 			if (go_to_random_door) {
@@ -89,6 +89,8 @@ if (obj_control.current_area.object_index == obj_custom_area) {
 	}
 }
 
-visible = current_area == obj_control.current_area
+if (!is_transforming) {
+	visible = current_area == obj_control.current_area	
+}
 
 event_inherited();

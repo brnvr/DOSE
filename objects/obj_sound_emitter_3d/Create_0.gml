@@ -12,3 +12,7 @@ sound_id = noone
 if (play_at_creation) {
 	sound_emitter_3d_play(id)
 }
+
+if (destroy_after_playing) {
+	alarm[0] = 5
+}

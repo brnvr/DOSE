@@ -12,8 +12,8 @@
   "duration":0.261837,
   "name":"snd_shutter",
   "parent":{
-    "name":"effects",
-    "path":"folders/Sounds/effects.yy",
+    "name":"game_effects",
+    "path":"folders/Sounds/game_effects.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

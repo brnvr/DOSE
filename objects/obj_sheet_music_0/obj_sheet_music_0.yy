@@ -12,6 +12,7 @@
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_actor_3d_generic","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"propertyId":{"name":"yscale","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"default_block_size/5",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_actor_3d_generic","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"propertyId":{"name":"zscale","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"default_block_size/5",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_interactable_generic","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"propertyId":{"name":"name","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"sheet music\"",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_item_generic","path":"objects/obj_item_generic/obj_item_generic.yy",},"propertyId":{"name":"unique","path":"objects/obj_item_generic/obj_item_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"True",},
   ],
   "parent":{
     "name":"items",
@@ -38,7 +39,7 @@
     {"$GMObjectProperty":"v1","%Name":"keyboard","filters":[
         "GMObject",
       ],"listItems":[],"multiselect":false,"name":"keyboard","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"noone","varType":5,},
-    {"$GMObjectProperty":"v1","%Name":"piano_score","filters":[],"listItems":[],"multiselect":false,"name":"piano_score","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"piano_scores[0]","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"piano_score","filters":[],"listItems":[],"multiselect":false,"name":"piano_score","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"global.piano_scores[0]","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"tempo","filters":[],"listItems":[],"multiselect":false,"name":"tempo","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"20","varType":0,},
   ],
   "resourceType":"GMObject",

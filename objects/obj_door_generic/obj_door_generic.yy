@@ -53,6 +53,9 @@
     {"$GMObjectProperty":"v1","%Name":"sound_close","filters":[
         "GMSound",
       ],"listItems":[],"multiselect":false,"name":"sound_close","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"snd_close_door","path":"sounds/snd_close_door/snd_close_door.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"snd_close_door","varType":5,},
+    {"$GMObjectProperty":"v1","%Name":"sound_locked","filters":[
+        "GMSound",
+      ],"listItems":[],"multiselect":false,"name":"sound_locked","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"snd_locked_door","path":"sounds/snd_locked_door/snd_locked_door.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"snd_locked_door","varType":5,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

@@ -5,6 +5,7 @@ xflow = 500
 auto_playing = false
 wrong_key = false
 keys_pressed = array_create(10, -1)
+interactions_list = interactions_list ?? []
 last_key_pressed = -1
 score_index = 0;
 synth = "piano"
@@ -69,6 +70,10 @@ on_interact = function() {
 	obj_player.focus = id
 	obj_player.lock_move = true
 	
+	if (obj_control.music_track != noone) {
+		audio_group_set_gain(ag_music, 0, 2000)
+	}
+	
 	event_user(1)
 }
 
@@ -84,5 +89,5 @@ array_push(interactions_list, [obj_sheet_music_0, function() {
 	obj_player.inventory_remove_item(obj_sheet_music_0)
 }])
 
-event_inherited();
+event_inherited()
 

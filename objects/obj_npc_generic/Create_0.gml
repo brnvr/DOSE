@@ -2,6 +2,8 @@ options_menu = []
 is_disappearing = false
 is_transforming = false
 espeak_buffer = espeak_buffer_create()
+bbox_list = bbox_list ?? []
+interactions_list = interactions_list ?? []
 
 if (height == -1) {
 	var center_x = sprite_get_width(sprite_index)*.5
@@ -13,7 +15,7 @@ if (array_length(bbox_list) == 0) {
 	bbox_list = [bbox_create(-32/xscale, -32/yscale, z-height/zscale, 32/xscale, 32/yscale, z)]
 }
 
-if (take_chance(prob_event)) {
+if (random_event(prob_event)) {
 	var npc_events_in_realm = events_in_realm(global.npc_events, global.current_realm)
 	
 	event = array_choose(npc_events_in_realm)

@@ -181,8 +181,6 @@
         "\"whisperf\"",
         "\"zac\"",
       ],"multiselect":false,"name":"voice_variant","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"\"\"","varType":6,},
-    {"$GMObjectProperty":"v1","%Name":"room_position_factor_min","filters":[],"listItems":[],"multiselect":false,"name":"room_position_factor_min","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"room_position_factor_max","filters":[],"listItems":[],"multiselect":false,"name":"room_position_factor_max","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.2","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"dialogue","filters":[],"listItems":[],"multiselect":false,"name":"dialogue","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":2,},
     {"$GMObjectProperty":"v1","%Name":"quests","filters":[],"listItems":[],"multiselect":false,"name":"quests","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[]","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"helpfulness","filters":[],"listItems":[],"multiselect":false,"name":"helpfulness","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"amount.highest","varType":0,},

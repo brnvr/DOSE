@@ -1,1 +1,1 @@
-time_source_destroy(time_source);
+time_source_destroy(time_source)

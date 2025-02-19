@@ -3,7 +3,16 @@ orientation = cardinal_get_orientation(get_cardinal_direction(zrotation))
 if (is_undefined(on_interact)) {
 	on_interact = function() {
 		if (locked) {
-			obj_hud.show_caption("Locked.", true);
+			if (!audio_is_playing(sound_locked)) {
+				obj_hud.add_message("Locked")
+			
+				var snd_locked = instance_create_layer(x, y, "Abstract", obj_sound_emitter_3d, {
+					z,
+					sound: sound_locked,
+					play_at_creation: true,
+					destroy_after_playing: true
+				})	
+			}
 		}
 	}
 }

@@ -21,15 +21,15 @@ reseting_wave = false
 gameview_xscale = 1
 gameview_yscale = 1
 display_debug_overlay = false
-saturation = 0.5
 
 goto_otherside = function(remap=true) {
 	var darker_color = make_color_rgb(33, 21, 21)
 	
+	saturation = 0.5
 	tracking_error_variation_factor = 4
 	global.current_realm = realms.otherside
 	fog_start = 0
-	fog_end = 1300
+	fog_end = 900
 	fog_color = darker_color
 	background_set_color(darker_color)
 	obj_fog_overlay.visible = true
@@ -40,11 +40,20 @@ goto_otherside = function(remap=true) {
 		areas_destroy_distance(current_area, 0)
 		instance_destroy(obj_npc_generic)	
 	}
+	
+	if (obj_hud.eyes != noone) {
+		instance_destroy(obj_hud.eyes)
+		obj_hud.eyes = noone
+	}
+	
+	obj_hud.display_fog = true
+	obj_hud.skull = instance_create_layer(593, 276, "GUI", obj_skull)
 }
 
 goto_thisside = function(remap=false) {
 	var darker_color = c_black
 	
+	saturation = 0.57
 	tracking_error_variation_factor = 1
 	global.current_realm = realms.thisside
 	fog_start = 1000
@@ -58,6 +67,14 @@ goto_thisside = function(remap=false) {
 		area_remap(current_area, seed_group)
 		areas_destroy_distance(current_area, 0)
 	}
+	
+	if (obj_hud.skull != noone) {
+		instance_destroy(obj_hud.skull)	
+		obj_hud.skull = noone
+	}
+	
+	obj_hud.display_fog = false
+	obj_hud.eyes = instance_create_layer(593, 260, "GUI", obj_eyes)
 }
 
 reset_wave = function() {
@@ -80,4 +97,3 @@ application_resize(aspect_ratio)
 for (var i = 1; i <= 999; i++) {
 	array_push(door_numbers_avaliable, i)
 }
-

@@ -1,17 +1,18 @@
-function shader_set_2d(pixel_size = 0, sprite = undefined, palette = global.ui_palette) {
+function shader_set_2d(saturation = 1, pixel_size = 0, sprite = undefined, palette = global.ui_palette) {
 	if (pixel_size > 1 && is_undefined(sprite)) {
 		throw "\"sprite\" must be defined if \"pixel_size\" is greater than 1."
 	}
 	
 	shader_set(sh_2d)
 	
-	var u_shadow_color = shader_get_uniform(sh_2d, "shadow_color")
+	var u_saturation = shader_get_uniform(sh_2d, "saturation")
 	var u_pixel_size = shader_get_uniform(sh_2d, "pixel_size")
 	var u_texture_dimentions = shader_get_uniform(sh_2d, "texture_dimentions")
 	var u_palette = shader_get_uniform(sh_2d, "palette");
 	var dithering_map_texture = sprite_get_texture(spr_dither_pattern, 0)
 
 	shader_set_uniform_f(u_pixel_size, pixel_size)
+	shader_set_uniform_f(u_saturation, saturation)
 	
 	if (pixel_size > 0) {
 		var width, height

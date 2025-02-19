@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_sip",
+  "audioGroupId":{
+    "name":"ag_game_effects",
+    "path":"audiogroups/ag_game_effects",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":2.164376,
+  "name":"snd_sip",
+  "parent":{
+    "name":"game_effects",
+    "path":"folders/Sounds/game_effects.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_sip.ogg",
+  "type":0,
+  "volume":1.0,
+}

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"interactable_is_in_view",
   "parent":{
-    "name":"interactable",
-    "path":"folders/Scripts/interactable.yy",
+    "name":"interactables",
+    "path":"folders/Scripts/interactables.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

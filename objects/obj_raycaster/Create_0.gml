@@ -1,3 +1,5 @@
+obstacles = obstacles ?? []
+
 __instance_collided__ = noone;
 __iteration__ = 0;
 __is_started__ = false;

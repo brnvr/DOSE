@@ -9,11 +9,11 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.535011,
+  "duration":0.715533,
   "name":"snd_close_door",
   "parent":{
-    "name":"effects",
-    "path":"folders/Sounds/effects.yy",
+    "name":"game_effects",
+    "path":"folders/Sounds/game_effects.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_close_door.ogg",
   "type":0,
-  "volume":0.45,
+  "volume":0.31,
 }
