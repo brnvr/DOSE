@@ -10,12 +10,14 @@ enum player_controls {
 }
 
 WALK_SPEED = 3
-RUN_SPEED = 25
+RUN_SPEED = 6
 SIGHT_RANGE = 175
 EYE_HEIGHT_STANDING = 115
 EYE_HEIGHT_SITTING = 85
 TASKS_TO_FINISH = 3
 
+
+stamina = 1
 actor_hover = noone
 eye_height = EYE_HEIGHT_STANDING
 is_answering = false
@@ -24,6 +26,7 @@ can_move = true
 can_look = true
 can_interact = true
 envenoming = 0
+envenoming_fade = noone
 lock_move = false
 lock_look = false
 lock_interact = false
@@ -82,7 +85,6 @@ interact_with_antivenom = function() {
 		
 	take_antivenom()
 	inventory_remove_item(obj_antivenom)
-	obj_hud.add_message("Received antivenom. You'll be fine soon.")	
 }
 
 interact_with_currant_syrup = function() {
@@ -430,7 +432,6 @@ inventory_remove_item = function(item, unselect = true) {
 	}))
 	
 	if (index == -1) {
-		show_debug_message($"Item of type {obj_item} not found in inventory.")
 		return
 	}
 	
@@ -543,13 +544,45 @@ stand = function() {
 
 get_envenomated = function() {
 	envenoming = min(1, envenoming + 0.25)
+	
+	var envenoming_fade_out = instance_create_layer(0, 0, "Abstract", obj_fade_out, {
+		spd: 0.0007*envenoming,
+		on_complete: game_end
+	})
+	
+	if (instance_exists(envenoming_fade)) {
+		envenoming_fade_out.alpha = envenoming_fade.alpha
+		
+		instance_destroy(envenoming_fade)	
+	}
+	
+	envenoming_fade = envenoming_fade_out
+	
 	take_damage()
 	obj_hud.add_message("Envenomated")
+	vfx_set_filter(vfx_filter_types.envenomation)
+}
+
+heal_from_envenomation = function() {
+	var envenoming_fade_in = instance_create_layer(0, 0, "Abstract", obj_fade_in, {
+		spd: 0.001,
+		alpha: envenoming_fade.alpha,
+		on_complete: method(obj_player, function() {
+			instance_destroy(envenoming_fade)
+			
+			envenoming_fade = noone
+		})
+	})
+	
+	envenoming = 0	
+	instance_destroy(envenoming_fade)
+	envenoming_fade = envenoming_fade_in
+	vfx_reset_filter(vfx_filter_types.envenomation)
 }
 
 take_antivenom = function() {
-	envenoming = 0
-	obj_control.reset_wave()
+	heal_from_envenomation()
+	obj_hud.add_message("Received antivenom. You'll be fine soon.")	
 }
 
 has_met_npc = function(npc) {

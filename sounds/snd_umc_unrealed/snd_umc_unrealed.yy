@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snd_horror_vacui_rainyskip",
+  "%Name":"snd_umc_unrealed",
   "audioGroupId":{
     "name":"ag_music",
     "path":"audiogroups/ag_music",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":239.25551,
-  "name":"snd_horror_vacui_rainyskip",
+  "duration":168.01959,
+  "name":"snd_umc_unrealed",
   "parent":{
     "name":"music",
     "path":"folders/Sounds/music.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_horror_vacui_rainyskip.mp3",
+  "soundFile":"snd_umc_unrealed.mp3",
   "type":0,
   "volume":1.0,
 }

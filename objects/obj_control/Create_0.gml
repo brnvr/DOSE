@@ -15,12 +15,8 @@ tracking_error_distance = 0.1
 depth = -89
 fog_start = 0
 fog_end = 1300
-wave_offset = 0
-wave_amount = 0
-reseting_wave = false
-gameview_xscale = 1
-gameview_yscale = 1
 display_debug_overlay = false
+vfx_filters = []
 
 goto_otherside = function(remap=true) {
 	var darker_color = make_color_rgb(33, 21, 21)
@@ -75,10 +71,6 @@ goto_thisside = function(remap=false) {
 	
 	obj_hud.display_fog = false
 	obj_hud.eyes = instance_create_layer(593, 260, "GUI", obj_eyes)
-}
-
-reset_wave = function() {
-	reseting_wave = true
 }
 
 randomize()

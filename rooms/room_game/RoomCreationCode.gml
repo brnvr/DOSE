@@ -8,6 +8,7 @@ global.camera_2d = instance_create_layer(0, -25, "Abstract", obj_camera_2d_gener
 global.camera_3d = obj_player.camera
 
 instance_create_layer(0, 0, "Abstract", obj_fog_overlay)
+instance_create_layer(0, 0, "Abstract", obj_vignette)
 instance_create_layer(0, 0, "Abstract", obj_cursor)
 instance_create_layer(0, 0, "Abstract", obj_main_menu)
 

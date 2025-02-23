@@ -37,7 +37,7 @@ global.npc_events[ev_npc.transform_into_waiter] = [realms.thisside, function(npc
 				position_2d[1] < game_view_y + game_view_height) {
 			
 				npc_transform_into_another(npc, "obj_waiter", false)
-				game_set_music_track(snd_horror_vacui_rainyskip)
+				game_set_music_track(snd_dtat_rainyskip)
 			}	
 		}
 	}

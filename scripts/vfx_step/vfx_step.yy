@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"vfx_step",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"vfx_step",
+  "parent":{
+    "name":"vfx",
+    "path":"folders/Scripts/vfx.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

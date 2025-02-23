@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Waver",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Waver",
+  "parent":{
+    "name":"interpolation",
+    "path":"folders/Scripts/math/interpolation.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

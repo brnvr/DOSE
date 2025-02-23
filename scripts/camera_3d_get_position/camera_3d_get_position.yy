@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"camera_3d_get_position",
   "parent":{
-    "name":"camera_3d",
-    "path":"folders/Scripts/camera_3d.yy",
+    "name":"cameras_3d",
+    "path":"folders/Scripts/cameras_3d.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

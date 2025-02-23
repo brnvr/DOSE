@@ -13,14 +13,17 @@ uniform sampler2D wave_gradient;
 uniform float wave_amount;
 uniform float wave_offset;
 uniform sampler2D dither_map;
+uniform vec2 screen_size;
+uniform float blur_radius;
+uniform float blur_intensity;
 
-vec4 set_shadow_color(vec4 color, vec3 shadow_color) {
+vec4 apply_shadow_color(vec4 color, vec3 shadow_color) {
 	vec4 color1 = vec4(vec3(color) + shadow_color, color.a);
 	
 	return vec4(max(color1.r, shadow_color.r), max(color1.g, shadow_color.g), max(color1.b, shadow_color.b), 1.0);
 }
 
-vec4 set_saturation(vec4 color, float value) {
+vec4 apply_saturation(vec4 color, float value) {
 	float mean;
 	vec3 grayscale, delta;
 	
@@ -30,7 +33,7 @@ vec4 set_saturation(vec4 color, float value) {
 	return vec4(grayscale + delta*value, color.a);
 }
 
-vec4 set_palette(vec4 ref_color, vec3 palette[64]) {
+vec4 apply_palette(vec4 ref_color, vec3 palette[64]) {
     float min_distance = 1e10;
     vec3 closest_color = vec3(0.0);
 
@@ -46,12 +49,11 @@ vec4 set_palette(vec4 ref_color, vec3 palette[64]) {
     return vec4(closest_color.xyz, ref_color.a);
 }
 
-vec4 set_dithering(vec4 color, vec2 texcoord) {
-	vec2 screensize = vec2(1920, 1080);
-	vec2 PixelScale = vec2(2, 2);
+vec4 apply_dithering(vec4 color, vec2 texcoord, vec2 screen_size) {
+	vec2 pixel_scale = vec2(2, 2);
 	
-    texcoord.x *= screensize.x / 128.0 / PixelScale.x;
-    texcoord.y *= screensize.y / 128.0 / PixelScale.y;
+    texcoord.x *= screen_size.x / 128.0 /  pixel_scale.x;
+    texcoord.y *= screen_size.y / 128.0 /  pixel_scale.y;
     
     float ditherValue = 2.0 * texture2D(dither_map, texcoord).r - 1.0;
 	
@@ -64,6 +66,31 @@ vec4 set_dithering(vec4 color, vec2 texcoord) {
 	return color;
 }
 
+vec4 apply_gaussian_blur(sampler2D base_texture, vec2 texcoord, vec2 tex_size, float blur_radius, float intensity) {
+    vec4 color = texture2D(base_texture, texcoord);
+    
+    float kernel[5];
+	
+    kernel[0] = 0.06136 * intensity;
+    kernel[1] = 0.24477 * intensity;
+    kernel[2] = 0.38774 * intensity;
+    kernel[3] = 0.24477 * intensity;
+    kernel[4] = 0.06136 * intensity;
+	
+    vec2 tex_offset = blur_radius / tex_size;
+
+    vec4 result = color * kernel[2];
+
+    for (int i = 1; i < 3; i++) {
+        result += texture2D(base_texture, texcoord + vec2(tex_offset.x * float(i), 0.0)) * kernel[2 + i];
+        result += texture2D(base_texture, texcoord - vec2(tex_offset.x * float(i), 0.0)) * kernel[2 + i];
+
+        result += texture2D(base_texture, texcoord + vec2(0.0, tex_offset.y * float(i))) * kernel[2 + i];
+        result += texture2D(base_texture, texcoord - vec2(0.0, tex_offset.y * float(i))) * kernel[2 + i];
+    }
+
+    return result;
+}
 
 void main()
 {
@@ -81,18 +108,24 @@ void main()
 	
 	texcoord = (texcoord - 0.5) / scale + 0.5;
 	
-	vec4 color0 = texture2D( gm_BaseTexture, texcoord );
-	vec4 color1 = texture2D( gm_BaseTexture, texcoord * texOffset0 );
-	vec4 color2 = texture2D( gm_BaseTexture, texcoord * texOffset1 );
+	vec4 color0;
+	
+	if (blur_radius > 0.0 && blur_intensity > 0.0) {
+		color0 = apply_gaussian_blur(gm_BaseTexture, texcoord, vec2(512, 512), blur_radius, blur_intensity);	
+	} else {
+		color0 = texture2D(gm_BaseTexture, texcoord);
+	}
+	
+	vec4 color1 = texture2D(gm_BaseTexture, texcoord * texOffset0);
+	vec4 color2 = texture2D(gm_BaseTexture, texcoord * texOffset1);
 	
 	vec4 color = (color0 - (color1 - color2) * tracking_error_alpha) * v_vColour;
 	color = color + vec4(0.0, tracking_lines_color.r*.1, tracking_lines_color.r*.2, 0.0);
 	
-	color = set_dithering(color, texcoord);
-	color = set_shadow_color(color, shadow_color);
-	color = set_saturation(color, saturation);
-	color = set_palette(color, palette);
-	
+	color = apply_dithering(color, texcoord, screen_size);
+	color = apply_shadow_color(color, shadow_color);
+	color = apply_saturation(color, saturation);
+	color = apply_palette(color, palette);
 
     gl_FragColor = color;
 }

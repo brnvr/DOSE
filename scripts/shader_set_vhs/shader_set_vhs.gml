@@ -1,4 +1,20 @@
-function shader_set_vhs(tracking_error_xdistance, tracking_error_ydistance, tracking_error_alpha, tracking_error_variation_factor = 1, xscale = 1, yscale = 1, wave_amount = 0, wave_offset = 0, saturation = 1.0, shadow_color = c_black, palette = global.game_view_palette) {
+function shader_set_vhs(
+	tracking_error_xdistance, 
+	tracking_error_ydistance, 
+	tracking_error_alpha, 
+	tracking_error_variation_factor = 1, 
+	xscale = 1, 
+	yscale = 1, 
+	wave_amount = 0, 
+	wave_offset = 0, 
+	saturation = 1.0, 
+	shadow_color = c_black,
+	blur_radius = 0,
+	blur_intensity = 0,
+	screen_width = 1920,
+	screen_height = 1080,
+	palette = global.game_view_palette
+) {
 	static tracking_lines_image = 0
 	static tracking_error_xvariation = 0
 	static tracking_error_yvariation = 0
@@ -22,6 +38,9 @@ function shader_set_vhs(tracking_error_xdistance, tracking_error_ydistance, trac
 	tracking_lines_image = (tracking_lines_image + .5) mod sprite_get_number(spr_vhs_tracking_lines)
 	
 	shader_set(sh_vhs);
+	shader_set_uniform_f(shader_get_uniform(sh_vhs, "blur_radius"), blur_radius)
+	shader_set_uniform_f(shader_get_uniform(sh_vhs, "blur_intensity"), blur_intensity)
+	shader_set_uniform_f_array(shader_get_uniform(sh_vhs, "screen_size"), [screen_width, screen_height])
 	shader_set_uniform_f(shader_get_uniform(sh_vhs, "tracking_error_alpha"), tracking_error_alpha)
 	shader_set_uniform_f(shader_get_uniform(sh_vhs, "saturation"), saturation)
 	shader_set_uniform_f_array(shader_get_uniform(sh_vhs, "shadow_color"), color_get_normalized(shadow_color))

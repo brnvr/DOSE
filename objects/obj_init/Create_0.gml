@@ -178,13 +178,24 @@ enum ca {
 	entrance_hall,
 	players_room
 }
+
+enum sg {
+	walls,
+	doors,
+	lamps,
+	characters,
+	props,
+	items,
+	overlays,
+	wall_props,
+	music
+}
 			
 for (var i = 0; i < 16; i++) {
 	event_user(i)	
 }
 
 global.photographed_subjects = []
-
 global.spr_spider_ceiling = sprite_create_transformed(spr_spider, 1, -1, 0)
 global.spr_key_0_mirrored = sprite_create_transformed(spr_key_0, -1, -1, 0)
 

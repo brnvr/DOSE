@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snd_uncertain",
+  "%Name":"snd_kevin_hartnell_aurora",
   "audioGroupId":{
     "name":"ag_music",
     "path":"audiogroups/ag_music",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":196.9894,
-  "name":"snd_uncertain",
+  "duration":315.45468,
+  "name":"snd_kevin_hartnell_aurora",
   "parent":{
     "name":"music",
     "path":"folders/Sounds/music.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_uncertain.mp3",
+  "soundFile":"snd_kevin_hartnell_aurora.mp3",
   "type":0,
-  "volume":0.64,
+  "volume":1.0,
 }

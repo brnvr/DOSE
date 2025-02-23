@@ -17,3 +17,13 @@ if (stop_focusing_auto && focus != noone) {
 		can_interact = true
 	}
 }
+
+if (envenoming > 0) {
+	var fatal_envenomation = envenoming > 0.55
+
+	if (!fatal_envenomation) {
+		if (envenoming_fade.alpha > envenoming) {
+			heal_from_envenomation()
+		}
+	}	
+}

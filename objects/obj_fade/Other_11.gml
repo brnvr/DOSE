@@ -2,4 +2,4 @@
 
 draw_set_color(color);
 draw_set_alpha(alpha);
-draw_rectangle(x-500, y-500, x+1000, y+500, false);
+draw_rectangle(x-750, y-750, x+750, y+750, false);
