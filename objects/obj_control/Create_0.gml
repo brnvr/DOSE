@@ -17,6 +17,7 @@ fog_start = 0
 fog_end = 1300
 display_debug_overlay = false
 vfx_filters = []
+vfx_resetting_filter_indexes = []
 
 goto_otherside = function(remap=true) {
 	var darker_color = make_color_rgb(33, 21, 21)

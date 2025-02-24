@@ -16,7 +16,7 @@ ts_caption_set_visible = time_source_create(time_source_global, 0.3, time_source
 	display_caption = !display_caption
 }, [], -1)
 item_picked = noone
-inventory_temp = noone
+inventory_temp = []
 inventory_item_selected_scale = 1
 skull = noone
 eyes = noone
@@ -29,6 +29,7 @@ ts_unselect_inventory_button = time_source_create(time_source_global, 2, time_so
 	inventory_button_down_selected = false
 });
 ts_hide_speech = time_source_create(time_source_global, 1, time_source_units_frames, function() { });
+depth+= 200
 
 show_caption = function(s, hide_timeout=false, timeout_period=-1) {
 	if (is_array(s)) {
@@ -56,10 +57,10 @@ show_caption = function(s, hide_timeout=false, timeout_period=-1) {
 	}
 }
 
-draw_inventory_item = function(xpos, ypos, item_index, draw_number=true, scale=1, saturation=1, pixel_size = 0) {
+draw_inventory_item = function(xpos, ypos, item_index, draw_number=true, scale=1) {
 	var sprite = inventory_temp[item_index].sprite
 	
-	shader_set_2d(0.75, 1, sprite)
+	shader_set_2d(0.75, 1/scale, sprite)
 	draw_sprite_ext(sprite, 0,
 	xpos + sprite_get_draw_center_x(sprite, scale),
 	ypos + sprite_get_draw_center_y(sprite, scale), scale, scale, 0, c_white, 1)	

@@ -96,6 +96,14 @@ reach_door = function(door) {
 }
 
 catch_player = function() {
+	if (obj_player.is_moving_auto) {
+		return	
+	}
+	
+	if (door_destination != noone) {
+		door_destination.is_open = false	
+	}
+	
 	obj_player.can_interact = false
 	obj_player.can_look = false
 	obj_player.can_move = false

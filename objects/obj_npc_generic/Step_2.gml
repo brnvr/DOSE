@@ -1,6 +1,8 @@
-sound_emitter.x = x
-sound_emitter.y = y
-sound_emitter.z = z - height
+if (instance_exists(sound_emitter)) {
+	sound_emitter.x = x
+	sound_emitter.y = y
+	sound_emitter.z = z - height	
+}
 
 if (is_disappearing) {
 	if (alpha > 0) {

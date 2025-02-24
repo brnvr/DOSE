@@ -32,6 +32,7 @@
     {"$GMObjectProperty":"v1","%Name":"get_is_building","filters":[],"listItems":[],"multiselect":false,"name":"get_is_building","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"function () { return false }","varType":4,},
     {"$GMObjectProperty":"v1","%Name":"reset","filters":[],"listItems":[],"multiselect":false,"name":"reset","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"do_nothing","varType":4,},
     {"$GMObjectProperty":"v1","%Name":"prob_event","filters":[],"listItems":[],"multiselect":false,"name":"prob_event","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":".15","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"auto_clean","filters":[],"listItems":[],"multiselect":false,"name":"auto_clean","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"true","varType":3,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

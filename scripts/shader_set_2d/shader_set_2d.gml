@@ -20,6 +20,7 @@ function shader_set_2d(saturation = 1, pixel_size = 0, sprite = undefined, palet
 		width = sprite_get_width(sprite)
 		height = sprite_get_height(sprite)
 		
+		show_debug_message("loooooooooooooooool")
 		shader_set_uniform_f_array(u_texture_dimentions, [width, height])
 	}
 	

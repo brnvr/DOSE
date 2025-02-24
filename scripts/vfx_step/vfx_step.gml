@@ -6,4 +6,23 @@ function vfx_step() {
 			interpolator.step()
 		})
 	})
+	
+	array_foreach(vfx_resetting_filter_indexes, function(item, i) {
+		var index = item[0]
+		var on_reset = item[1]
+		
+		var interpolators = vfx_filters[index][1]
+		var ctx = { has_finished_resetting: true }
+		struct_foreach(interpolators, method(ctx, function(key, interpolator) {
+			if (interpolator.delta > 0 && !interpolator.has_completed()) {
+				has_finished_resetting = false	
+			}
+		}))
+		
+		if (ctx.has_finished_resetting) {
+			on_reset()
+			array_delete(vfx_filters, index, 1)
+			array_delete(vfx_resetting_filter_indexes, i, 1)
+		}
+	})
 }

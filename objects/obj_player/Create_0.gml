@@ -331,8 +331,9 @@ get_tasks_descriptions = function() {
 }
 
 inventory_add_item = function(item, use_animation = true, index = -1) {
-	var spr
+	draw_set_alpha(1)
 	
+	var spr = noone
 	var item_name = object_get_name(item.object_index)
 	var inventory_item = undefined
 	var n_items = array_length(inventory)
@@ -547,7 +548,34 @@ get_envenomated = function() {
 	
 	var envenoming_fade_out = instance_create_layer(0, 0, "Abstract", obj_fade_out, {
 		spd: 0.0007*envenoming,
-		on_complete: game_end
+		on_complete: function() {
+			with (obj_control) {
+				event_user(1)	
+			}
+			
+			with (obj_player) {
+				can_move = false
+				can_look = false
+				can_interact = false
+				obj_cursor.visible = false
+			
+				heal_from_envenomation(false, 90, function() {
+					can_move = true
+					can_look = true
+					can_interact = true
+					obj_cursor.visible = true
+					
+					cursor_center()
+					cursor_pause_sync(1)
+					
+					with (obj_doorman) {
+						on_finish_talking = do_nothing
+						keep_focus = false
+						dialogue = "We're having a problem with spiders, but a professional exterminator is already taking care of the matter."
+					}
+				})
+			}
+		}
 	})
 	
 	if (instance_exists(envenoming_fade)) {
@@ -563,21 +591,29 @@ get_envenomated = function() {
 	vfx_set_filter(vfx_filter_types.envenomation)
 }
 
-heal_from_envenomation = function() {
-	var envenoming_fade_in = instance_create_layer(0, 0, "Abstract", obj_fade_in, {
-		spd: 0.001,
-		alpha: envenoming_fade.alpha,
-		on_complete: method(obj_player, function() {
-			instance_destroy(envenoming_fade)
+heal_from_envenomation = function(fade_in=true, factor=1000, callback=do_nothing) {
+	var envenoming_fade_in = noone
+	
+	if (fade_in) {
+		envenoming_fade_in = instance_create_layer(0, 0, "Abstract", obj_fade_in, {
+			spd: 0.001,
+			alpha: envenoming_fade.alpha,
+			on_complete: method(obj_player, function() {
+				instance_destroy(envenoming_fade)
 			
-			envenoming_fade = noone
-		})
-	})
+				envenoming_fade = noone
+			})
+		})	
+	}
 	
 	envenoming = 0	
 	instance_destroy(envenoming_fade)
-	envenoming_fade = envenoming_fade_in
-	vfx_reset_filter(vfx_filter_types.envenomation)
+	
+	if (fade_in) {
+		envenoming_fade = envenoming_fade_in	
+	}
+	
+	vfx_reset_filter(vfx_filter_types.envenomation, true, factor, callback)
 }
 
 take_antivenom = function() {

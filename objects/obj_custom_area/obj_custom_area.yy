@@ -6,7 +6,9 @@
   ],
   "managed":true,
   "name":"obj_custom_area",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_area","path":"objects/obj_area/obj_area.yy",},"propertyId":{"name":"auto_clean","path":"objects/obj_area/obj_area.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"False",},
+  ],
   "parent":{
     "name":"areas",
     "path":"folders/Objects/areas.yy",

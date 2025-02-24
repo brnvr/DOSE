@@ -1,4 +1,4 @@
-function vfx_reset_filter(filter_type, remove=true, factor=1000) {
+function vfx_reset_filter(filter_type, remove=true, factor=1000, on_reset=do_nothing) {
 	var index = array_find_index(obj_control.vfx_filters, method({ filter_type }, function(item) {
 		return item[0] == filter_type	
 	}))
@@ -12,6 +12,8 @@ function vfx_reset_filter(filter_type, remove=true, factor=1000) {
 		
 		return
 	}
+	
+	array_push(obj_control.vfx_resetting_filter_indexes, [index, on_reset])
 	
 	struct_foreach(filter, method({ filter, index, factor }, function(key, value) {
 		var control_filter = obj_control.vfx_filters[index][1][$ key]

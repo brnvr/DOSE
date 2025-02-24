@@ -7,7 +7,7 @@ uniform sampler2D dither_map;
 uniform vec2 texture_dimentions;
 uniform vec3 palette[64];
 
-vec4 set_saturation(vec4 color, float value) {
+vec4 apply_saturation(vec4 color, float value) {
 	float mean;
 	vec3 grayscale, delta;
 	
@@ -37,7 +37,7 @@ vec4 get_frag_color(sampler2D texture, vec2 texcoord, float pixel_size) {
 	return texture2D(texture, new_texcoord);	
 }
 
-vec4 set_dithering(vec4 color) {
+vec4 apply_dithering(vec4 color) {
     vec2 screensize = vec2(960, 540); // Replace with actual screen resolution
     vec2 PixelScale = vec2(2, 2);
     
@@ -56,7 +56,7 @@ vec4 set_dithering(vec4 color) {
     
     return color;
 }
-vec4 set_palette(vec4 ref_color, vec3 palette[64]) {
+vec4 apply_palette(vec4 ref_color, vec3 palette[64]) {
     float min_distance = 1e10;
     vec3 closest_color = vec3(0.0);
 
@@ -77,13 +77,13 @@ void main()
 {	
 	vec4 color = get_frag_color(gm_BaseTexture, v_vTexcoord, pixel_size);
 	
-	color = set_dithering(color);
+	color = apply_dithering(color);
 	
 	if (saturation != 1.0) {
-		color = set_saturation(color, saturation);
+		color = apply_saturation(color, saturation);
 	}
 	
-	color = set_palette(color, palette);
+	color = apply_palette(color, palette);
 	
     gl_FragColor = color;
 	if (gl_FragColor.a == 0.0) discard;

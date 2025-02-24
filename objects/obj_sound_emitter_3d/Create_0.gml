@@ -1,4 +1,4 @@
-emitter = audio_emitter_create();
+emitter = audio_emitter_create()
 //audio_bus = audio_bus_create()
 //audio_bus.effects[0] = audio_effect_create(AudioEffectType.Reverb1, { mix:0.25, size:0.5} )
 

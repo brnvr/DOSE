@@ -18,32 +18,27 @@ if (display_inventory && array_length(inventory_temp) > 0) {
 	draw_set_alpha(1)
 	draw_set_halign(fa_left)
 	draw_set_valign(fa_top)
-
-	var n_items, index, index_next, index_previous
 	
-	n_items = array_length(inventory_temp)
-	index = obj_player.inventory_item_selected_index
-	index_next = index == n_items-1 ? 0 : index+1
-	index_previous = index == 0 ? n_items-1 : index-1
+	var n_items = array_length(inventory_temp)
+	var index = obj_player.inventory_item_selected_index
+	var index_next = index == n_items-1 ? 0 : index+1
+	var index_previous = index == 0 ? n_items-1 : index-1
 	
 	if (index >= 0) {
-		var xpos, ypos, scale, saturation;
+		var xpos = INVENTORY_CENTER_X
+		var ypos = INVENTORY_CENTER_Y
 		
-		xpos = INVENTORY_CENTER_X
-		ypos = INVENTORY_CENTER_Y
-		
-		scale = inventory_item_selected_scale
-		saturation = obj_player.inventory_item_selected == noone ? obj_control.saturation : obj_control.saturation *.25
+		var scale = inventory_item_selected_scale
 			
-		draw_inventory_item(xpos, ypos, index, true, scale, saturation)
+		draw_inventory_item(xpos, ypos, index, true, scale)
 			
 		if (n_items == 2) {
 			index_previous = index_next
 		}
 		
 		if (n_items >= 2) {
-			draw_inventory_item(xpos, ypos + INVENTORY_ITEM_SIZE, index_next, false, .5, obj_control.saturation*.5)
-			draw_inventory_item(xpos, ypos - INVENTORY_ITEM_SIZE, index_previous, false, .5, obj_control.saturation*.5)
+			draw_inventory_item(xpos, ypos + INVENTORY_ITEM_SIZE, index_next, false, .5)
+			draw_inventory_item(xpos, ypos - INVENTORY_ITEM_SIZE, index_previous, false, .5)
 		}
 		
 		shader_set_2d(0.75)
