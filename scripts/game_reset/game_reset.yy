@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"game_reset",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"game_reset",
+  "parent":{
+    "name":"game",
+    "path":"folders/Scripts/game.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

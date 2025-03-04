@@ -86,9 +86,8 @@ function door_random_on_interact(door) {
 		}
 		
 		static set_current_area = function() {
-			var current_area
-
-			current_area = obj_control.current_area
+			var current_area = obj_control.current_area
+			
 			obj_player.door_passing = id
 
 			if (is_open) {
@@ -183,7 +182,7 @@ function door_random_on_interact(door) {
 	
 		if (locked) {
 			if (!audio_is_playing(sound_locked)) {
-				obj_hud.add_message("Locked")
+				obj_hud.show_notification("Locked")
 			
 				var snd_locked = instance_create_layer(x, y, "Abstract", obj_sound_emitter_3d, {
 					z,

@@ -10,7 +10,7 @@ if (can_interact)						event_user(player_controls.interaction);
 if (use_collision_overflow_correction)	event_user(player_controls.collision_overflow_correction);
 
 if (stop_focusing_auto && focus != noone) {
-	if (camera_3d_is_pointing_at(camera, focus.x, focus.y, focus.z-focus.height+11)) {
+	if (camera_3d_is_pointing_at(camera, focus.x, focus.y, focus.z-focus.height*.75)) {
 		focus = noone
 		can_look = true
 		can_move = true
@@ -26,4 +26,12 @@ if (envenoming > 0) {
 			heal_from_envenomation()
 		}
 	}	
+}
+
+if (is_resetting_stamina) {
+	stamina = min(stamina - stamina/100, 1)
+	
+	if (stamina <= 1) {
+		is_resetting_stamina = false
+	}
 }

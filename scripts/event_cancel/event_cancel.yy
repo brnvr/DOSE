@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"event_cancel",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"event_cancel",
+  "parent":{
+    "name":"events",
+    "path":"folders/Scripts/events.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

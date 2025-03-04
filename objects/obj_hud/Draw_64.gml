@@ -121,20 +121,20 @@ if (display_caption) {
 	}	
 }
 
-var n_messages = instance_number(obj_hud_message)
-var last_message = n_messages > 0 ? instance_find(obj_hud_message, n_messages-1) : noone
-var messages_yoffset = last_message == noone ? 0 : last_message.x - last_message.xstart
+var n_notifications = instance_number(obj_notification)
+var last_notification = n_notifications > 0 ? instance_find(obj_notification, n_notifications-1) : noone
+var notifications_yoffset = last_notification == noone ? 0 : last_notification.x - last_notification.xstart
 
-for (var i = 0; i < n_messages; i++) {
-	var obj_message = instance_find(obj_hud_message, i)
-	var yoffset = obj_message == last_message ? 0 : messages_yoffset
+for (var i = 0; i < n_notifications; i++) {
+	var notification = instance_find(obj_notification, i)
+	var yoffset = notification == last_notification ? 0 : notifications_yoffset
 	
 	shader_reset()
-	draw_set_color(obj_message.color)
+	draw_set_color(notification.color)
 	draw_set_halign(fa_right)
 	draw_set_valign(fa_top)
-	draw_set_alpha(obj_message.alpha)
-	draw_text_transformed(obj_message.x, obj_message.y + (n_messages-1-i)*13 - yoffset, obj_message.text, .5, .5, 0)
+	draw_set_alpha(notification.alpha)
+	pawpr_draw_text_ext_transformed_shadow(notification.x, notification.y + (n_notifications-1-i)*13 - yoffset, notification.text, 0, 1000, .5, .5, 0, c_black, 1, 1, 1)
 	draw_set_alpha(1)	
 }
 

@@ -1,11 +1,11 @@
 /// @description moving
 
-var move_speed = WALK_SPEED
+var move_speed = WALK_SPEED * stamina
 var xoffset = 0
 var yoffset = 0
 
 if (keyboard_check(obj_settings.key_sprint)) {
-	move_speed = RUN_SPEED
+	move_speed = RUN_SPEED * stamina
 }
 
 if (envenoming > 0) {

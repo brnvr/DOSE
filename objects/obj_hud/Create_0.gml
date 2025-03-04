@@ -101,8 +101,8 @@ set_item_picked = function(index, sprite, name) {
 	}
 }
 
-add_message = function(msg, color=c_white) {
-	instance_create_depth(global.screen_width-117, 27, 0, obj_hud_message, {
+show_notification = function(msg, color=c_white) {
+	instance_create_depth(global.screen_width-117, 27, 0, obj_notification, {
 		color: color,
 		text: msg
 	})

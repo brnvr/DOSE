@@ -4,7 +4,7 @@ if (is_undefined(on_interact)) {
 	on_interact = function() {
 		if (locked) {
 			if (!audio_is_playing(sound_locked)) {
-				obj_hud.add_message("Locked")
+				obj_hud.show_notification("Locked")
 			
 				var snd_locked = instance_create_layer(x, y, "Abstract", obj_sound_emitter_3d, {
 					z,

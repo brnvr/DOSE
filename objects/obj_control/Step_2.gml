@@ -11,7 +11,6 @@ if (keyboard_check_pressed(vk_escape)) {
 event_user(0)
 
 if (global.camera_3d != noone) {
-	show_debug_message([obj_player.x, obj_player.y])
 	audio_listener_position(global.camera_3d.x, global.camera_3d.y, global.camera_3d.z);
 
 	audio_listener_orientation(

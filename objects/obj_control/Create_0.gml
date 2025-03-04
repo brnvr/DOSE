@@ -1,4 +1,4 @@
-light_direction = [.81, 1, 3.7]
+light_direction = [.71, .95, 3.7]
 light_hue = [1, 1, 1]
 paused = false
 cursor_previous = -1
@@ -50,7 +50,7 @@ goto_otherside = function(remap=true) {
 goto_thisside = function(remap=false) {
 	var darker_color = c_black
 	
-	saturation = 0.57
+	saturation = 0.5
 	tracking_error_variation_factor = 1
 	global.current_realm = realms.thisside
 	fog_start = 1000
@@ -83,6 +83,8 @@ instance_create_layer(0, 0, "Abstract", obj_clock_control)
 instance_create_layer(0, 0, "Abstract", obj_mouse_control)
 instance_create_layer(0, 0, "Abstract", obj_espeak_control)
 instance_create_layer(0, 0, "Abstract", obj_npc_control)
+instance_create_layer(0, 0, "Abstract", obj_event_scheduler)
+
 application_surface_draw_enable(false)
 audio_falloff_set_model(audio_falloff_exponent_distance)
 application_resize(aspect_ratio)

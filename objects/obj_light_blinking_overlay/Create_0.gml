@@ -1,4 +1,4 @@
-depth = obj_hud.depth-2
+depth = obj_hud.depth
 
 ts_blink = time_source_create(time_source_global, 1, time_source_units_frames, function() { })
 ts_set_visibility = time_source_create(time_source_global, 1, time_source_units_frames, function() {

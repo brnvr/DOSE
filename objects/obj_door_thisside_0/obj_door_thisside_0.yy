@@ -6,8 +6,8 @@
   "name":"obj_door_thisside_0",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"props",
+    "path":"folders/Objects/props.yy",
   },
   "parentObjectId":{
     "name":"obj_door_random_hinged_generic",

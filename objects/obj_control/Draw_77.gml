@@ -2,6 +2,7 @@ var fullscreen = window_get_fullscreen()
 var factor = display_get_height()/540
 var scale = factor*(fullscreen ? 1.5 : 1)
 
+var desaturation = vfx_reduce("desaturation")
 var gameview_xscale = vfx_reduce("gameview_xscale")
 var gameview_yscale = vfx_reduce("gameview_yscale")
 var wave_amount = vfx_reduce("wave_amount")
@@ -18,7 +19,7 @@ shader_set_vhs(
 	gameview_yscale,
 	wave_amount,
 	wave_offset,
-	saturation, 
+	saturation-desaturation, 
 	fog_color,
 	blur_radius,
 	blur_intensity

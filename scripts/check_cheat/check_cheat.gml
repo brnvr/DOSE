@@ -6,7 +6,7 @@ function check_cheat(code) {
 		var found_cheat = string_upper(string_copy(keyboard_string, ks_length-code_length+1, code_length)) == string_upper(code)
 		
 		if (found_cheat) {
-			obj_hud.add_message($"Cheat activated: {string_lower(code)}")	
+			obj_hud.show_notification($"Cheat activated: {string_lower(code)}")	
 		}
 		
 		return found_cheat

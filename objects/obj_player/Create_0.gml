@@ -16,7 +16,6 @@ EYE_HEIGHT_STANDING = 115
 EYE_HEIGHT_SITTING = 85
 TASKS_TO_FINISH = 3
 
-
 stamina = 1
 actor_hover = noone
 eye_height = EYE_HEIGHT_STANDING
@@ -47,6 +46,7 @@ on_move_auto = undefined
 door_passing = noone
 has_finished_tasks = false
 last_door_passed = noone
+is_resetting_stamina = false
 sitting_place = undefined
 is_standing_up = false
 stop_focusing_auto = false
@@ -78,7 +78,7 @@ raycaster = instance_create_depth(0, 0, 0, obj_raycaster, {
 
 interact_with_antivenom = function() {
 	if (envenoming == 0) {
-		obj_hud.add_message("You don't need it right now.")
+		obj_hud.show_notification("You don't need it right now.")
 			
 		return
 	}
@@ -90,8 +90,31 @@ interact_with_antivenom = function() {
 interact_with_currant_syrup = function() {
 	audio_play_sound(snd_sip, false, false)
 	inventory_remove_item(obj_currant_syrup)
-	obj_hud.add_message(choose("Satisfying", "Is this real?"))
+	obj_hud.show_notification(choose("Satisfying", "Is this real?"))
+	stamina = 3
+	event_schedule(20, time_source_units_seconds, function() {
+		obj_player.reset_stamina()
+	})
 }
+
+reset = function() {
+	can_move = true
+	can_look = true
+	can_interact = true
+	lock_move = false
+	lock_look = false
+	lock_interact = false
+	focus = noone
+	is_moving = false
+	is_moving_on_staircase = false
+	is_moving_auto = false
+	is_standing_up = false
+	stop_focusing_auto = false
+}
+
+reset_stamina = function() {
+	is_resetting_stamina = true
+}	
 
 interactions_list = [
 	[obj_antivenom, interact_with_antivenom],
@@ -217,7 +240,7 @@ resolve_task = function(task_type, comparer) {
 		
 		var desc = get_task_description(task_type, task)
 		
-		obj_hud.add_message($"Completed: \"{desc}\"")
+		obj_hud.show_notification($"Completed: \"{desc}\"")
 	}
 	
 	return task
@@ -247,7 +270,7 @@ fail_task = function(task_type, comparer) {
 	
 	if (!is_undefined(task)) {
 		var desc = get_task_description(task_type, task)
-		obj_hud.add_message($"Failed: \"{desc}\"")
+		obj_hud.show_notification($"Failed: \"{desc}\"")
 	}
 	
 	return task
@@ -266,7 +289,7 @@ revert_task = function(task_type, task) {
 	}
 	
 	var desc = get_task_description(task_type, task)
-	obj_hud.add_message($"Revoked: \"{desc}\"")
+	obj_hud.show_notification($"Revoked: \"{desc}\"")
 	obj_player.receive_task(task_type, task)
 	
 	array_delete(completed_tasks, index, 1)
@@ -280,7 +303,7 @@ receive_item = function(item) {
 	var resolved = obj_player.resolve_task(task_types.find_item, item.name)
 		
 	if (is_undefined(resolved)) {
-		obj_hud.add_message(item.name + " has been added to your inventory")
+		obj_hud.show_notification(item.name + " has been added to your inventory")
 	}
 		
 	obj_hud.inventory_temp = inventory
@@ -316,7 +339,7 @@ get_task_description = function(task_type, arg) {
 get_tasks_descriptions = function() {
 	var descriptions = []
 	
-	array_foreach(global.task_types_list, method({ descriptions: descriptions }, function(task_type) {
+	array_foreach(global.task_types_list, method({ descriptions }, function(task_type) {
 		var state = {
 			descriptions: descriptions,
 			task_type: task_type
@@ -328,6 +351,22 @@ get_tasks_descriptions = function() {
 	}))
 	
 	return descriptions
+}
+
+inventory_get_objects = function(repeat_for_number) {
+	var result = []
+	
+	array_foreach(inventory, method({ result, repeat_for_number }, function(item) {
+		if (repeat_for_number) {
+			repeat(item.number) {
+				array_push(result, item.object)		
+			}
+		} else {
+			array_push(result, item.object)	
+		}
+	}))
+	
+	return result;
 }
 
 inventory_add_item = function(item, use_animation = true, index = -1) {
@@ -465,6 +504,8 @@ inventory_remove_item = function(item, unselect = true) {
 		}
 	}
 	
+	obj_hud.inventory_temp = inventory
+	
 	return count
 }
 
@@ -532,6 +573,9 @@ sit = function(place, bbox_index=0) {
 	camera.yaw_min = rot-70
 	camera.yaw_max = rot+70
 	
+	obj_hud.caption = ""
+	obj_hud.subcaption = ""
+	
 	use_collision_overflow_correction = false
 }
 
@@ -549,9 +593,7 @@ get_envenomated = function() {
 	var envenoming_fade_out = instance_create_layer(0, 0, "Abstract", obj_fade_out, {
 		spd: 0.0007*envenoming,
 		on_complete: function() {
-			with (obj_control) {
-				event_user(1)	
-			}
+			game_reset(0.25)
 			
 			with (obj_player) {
 				can_move = false
@@ -587,7 +629,7 @@ get_envenomated = function() {
 	envenoming_fade = envenoming_fade_out
 	
 	take_damage()
-	obj_hud.add_message("Envenomated")
+	obj_hud.show_notification("Envenomated")
 	vfx_set_filter(vfx_filter_types.envenomation)
 }
 
@@ -618,7 +660,7 @@ heal_from_envenomation = function(fade_in=true, factor=1000, callback=do_nothing
 
 take_antivenom = function() {
 	heal_from_envenomation()
-	obj_hud.add_message("Received antivenom. You'll be fine soon.")	
+	obj_hud.show_notification("Received antivenom. You'll be fine soon.")	
 }
 
 has_met_npc = function(npc) {

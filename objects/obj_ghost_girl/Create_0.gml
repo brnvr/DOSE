@@ -7,10 +7,9 @@ ts_disappear = time_source_create(time_source_global, 0, time_source_units_secon
 
 ts_catch_player = time_source_create(time_source_global, 0.4, time_source_units_seconds, function() {
 	instance_destroy()
-	
-	with (obj_control) {
-		event_user(1)	
-	}
+	obj_player.focus = noone
+	game_reset(0.5)
+	cursor_pause_sync(1)
 	
 	obj_control.tracking_error_variation_factor = tracking_error_variation_factor_previous
 	

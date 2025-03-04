@@ -14,7 +14,7 @@ ts_open_shutter = time_source_create(time_source_global, 11, time_source_units_f
 
 ts_stow_camera = time_source_create(time_source_global, 21, time_source_units_frames, function() {
 	instance_destroy()
-	obj_hud.add_message("You're out of film.")
+	obj_hud.show_notification("You're out of film.")
 })
 
 photograph_subject = function() {
@@ -22,7 +22,7 @@ photograph_subject = function() {
 		throw $"Subject is not ancestor of {nameof(obj_camera_subject_generic)}."	
 	}
 	
-	obj_hud.add_message($"{subject_framed.name} photographed!")
+	obj_hud.show_notification($"{subject_framed.name} photographed!")
 	
 	if (array_contains(global.photographed_subjects, subject_framed)) {
 		return	

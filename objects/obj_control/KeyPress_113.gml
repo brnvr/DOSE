@@ -1,1 +1,1 @@
-event_user(1)
+game_reset(1)
