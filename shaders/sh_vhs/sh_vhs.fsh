@@ -110,7 +110,7 @@ void main()
 	
 	vec4 color0;
 	
-	if (blur_radius > 0.0 && blur_intensity > 0.0) {
+	if (blur_radius != 0.0 && blur_intensity != 0.0) {
 		color0 = apply_gaussian_blur(gm_BaseTexture, texcoord, vec2(512, 512), blur_radius, blur_intensity);	
 	} else {
 		color0 = texture2D(gm_BaseTexture, texcoord);

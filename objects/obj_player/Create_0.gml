@@ -90,8 +90,8 @@ interact_with_antivenom = function() {
 interact_with_currant_syrup = function() {
 	audio_play_sound(snd_sip, false, false)
 	inventory_remove_item(obj_currant_syrup)
-	obj_hud.show_notification(choose("Satisfying", "Is this real?"))
-	stamina = 3
+	obj_hud.show_notification(choose("Is this real? (stamina increased)"))
+	stamina = 2
 	event_schedule(20, time_source_units_seconds, function() {
 		obj_player.reset_stamina()
 	})
@@ -512,9 +512,14 @@ inventory_remove_item = function(item, unselect = true) {
 pick_item = function(item) {
 	inventory_add_item(item)
 	item.active = false
-	item.on_picked();
+	item.on_picked()
 	actor_hover = noone
 	raycaster_clear(raycaster)
+	
+	if (item.pickup_sound != noone) {
+		audio_play_sound(item.pickup_sound, false, false)	
+	}
+	
 	instance_destroy(item)
 }
 	

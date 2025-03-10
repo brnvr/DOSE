@@ -757,6 +757,7 @@
     {"id":{"name":"obj_item_generic","path":"objects/obj_item_generic/obj_item_generic.yy",},},
     {"id":{"name":"obj_jibon","path":"objects/obj_jibon/obj_jibon.yy",},},
     {"id":{"name":"obj_key_0","path":"objects/obj_key_0/obj_key_0.yy",},},
+    {"id":{"name":"obj_key_generic","path":"objects/obj_key_generic/obj_key_generic.yy",},},
     {"id":{"name":"obj_lamp_0","path":"objects/obj_lamp_0/obj_lamp_0.yy",},},
     {"id":{"name":"obj_lamp_chandelier","path":"objects/obj_lamp_chandelier/obj_lamp_chandelier.yy",},},
     {"id":{"name":"obj_lamp_generic","path":"objects/obj_lamp_generic/obj_lamp_generic.yy",},},

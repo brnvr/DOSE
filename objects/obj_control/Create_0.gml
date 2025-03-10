@@ -50,7 +50,7 @@ goto_otherside = function(remap=true) {
 goto_thisside = function(remap=false) {
 	var darker_color = c_black
 	
-	saturation = 0.5
+	saturation = 0.55
 	tracking_error_variation_factor = 1
 	global.current_realm = realms.thisside
 	fog_start = 1000

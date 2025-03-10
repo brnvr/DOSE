@@ -53,6 +53,9 @@
     {"$GMObjectProperty":"v1","%Name":"on_picked","filters":[],"listItems":[],"multiselect":false,"name":"on_picked","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"do_nothing","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"sprite_held","filters":[],"listItems":[],"multiselect":false,"name":"sprite_held","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"noone","varType":5,},
     {"$GMObjectProperty":"v1","%Name":"unique","filters":[],"listItems":[],"multiselect":false,"name":"unique","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
+    {"$GMObjectProperty":"v1","%Name":"pickup_sound","filters":[
+        "GMSound",
+      ],"listItems":[],"multiselect":false,"name":"pickup_sound","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":5,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

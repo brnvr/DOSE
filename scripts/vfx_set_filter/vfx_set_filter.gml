@@ -16,5 +16,13 @@ function vfx_set_filter(filter_type) {
 	}))
 	
 	obj_control.vfx_filters[index] = [filter_type, filter]
+	
+	var index_ = array_find_index(obj_control.vfx_resetting_filter_indexes, method({ index }, function(item) {
+		return item[0] == index	
+	}))
+	
+	if (index_ != -1) {
+		array_delete(obj_control.vfx_resetting_filter_indexes, index_, 1)
+	}
 }
 

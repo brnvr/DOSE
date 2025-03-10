@@ -9,7 +9,7 @@ global.vfx_filter_functions = []
 global.vfx_filter_functions[vfx_filter_types.envenomation] = function() {
 	return {
 		blur_radius: new Interpolator(0.5, 10, 0.001),
-		desaturation: new Interpolator(0, 0.5, 0.001),
+		desaturation: new Interpolator(0, 1-obj_control.saturation, 0.001),
 		wave_offset: new Waver(0, 1, 0.001),
 		wave_amount: new Interpolator(0, 0.4*obj_player.envenoming, 0.0001*obj_player.envenoming),
 		gameview_xscale: new Interpolator(1, 1 + 0.8 * obj_player.envenoming, 0.0002)

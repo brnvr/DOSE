@@ -1,9 +1,7 @@
 {
   "$GMObject":"",
   "%Name":"obj_key_0",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "eventList":[],
   "managed":true,
   "name":"obj_key_0",
   "overriddenProperties":[
@@ -15,8 +13,8 @@
     "path":"folders/Objects/items.yy",
   },
   "parentObjectId":{
-    "name":"obj_item_generic",
-    "path":"objects/obj_item_generic/obj_item_generic.yy",
+    "name":"obj_key_generic",
+    "path":"objects/obj_key_generic/obj_key_generic.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

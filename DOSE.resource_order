@@ -121,6 +121,7 @@
     {"name":"obj_item_generic","order":1,"path":"objects/obj_item_generic/obj_item_generic.yy",},
     {"name":"obj_jibon","order":3,"path":"objects/obj_jibon/obj_jibon.yy",},
     {"name":"obj_key_0","order":6,"path":"objects/obj_key_0/obj_key_0.yy",},
+    {"name":"obj_key_generic","order":13,"path":"objects/obj_key_generic/obj_key_generic.yy",},
     {"name":"obj_lamp_0","order":4,"path":"objects/obj_lamp_0/obj_lamp_0.yy",},
     {"name":"obj_lamp_chandelier","order":3,"path":"objects/obj_lamp_chandelier/obj_lamp_chandelier.yy",},
     {"name":"obj_lamp_generic","order":8,"path":"objects/obj_lamp_generic/obj_lamp_generic.yy",},

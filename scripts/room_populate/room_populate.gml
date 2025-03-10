@@ -1,14 +1,18 @@
 function room_populate(room, seed_group, block_size, base_area=4, realm = global.current_realm, area_events = global.area_events) {
 	var area = room.hlength*room.vlength
 
-	var n_characters = 0;
-	var n_props = 0;
-	var n_items = 0;
+	var n_characters = 0
+	var n_props = 0
+	var n_items = 0
 	
 	repeat(floor(area/base_area)) {
-		while (random_event(room.prob_prop)) n_props++;
-		while (random_event(room.prob_item)) n_items++;
-		while (random_event(room.prob_character)) n_characters++;
+		while (random_event(room.prob_prop)) n_props++
+		while (random_event(room.prob_item)) n_items++
+		while (random_event(room.prob_character)) n_characters++
+	}
+	
+	if ((room.hlength mod 2 != 0) && (room.vlength mod 2 != 0)) {
+		room_occupy_cell(room, floor(room.hlength/2), floor(room.vlength/2))	
 	}
 	
 	static create_actors = function(room, block_size, number, arr, allow_repeated=true, check_unique=false) {
