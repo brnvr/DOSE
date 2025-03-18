@@ -24,4 +24,23 @@ interactable_set_interaction(id, obj_currant_syrup, function() {
 	inventory_remove_item(obj_currant_syrup)
 })
 
+if (introductory_dialogue == "") {
+	event_user(0)
+} else {
+	if (instance_exists(obj_player) && !obj_player.has_met_npc(id)) {
+		var _name = name
+	
+		name = name_before_introduction = "" ? name : name_before_introduction
+		dialogue = introductory_dialogue
+		on_finish_talking = method({ npc: id, _name }, function() {
+			if (instance_exists(npc)) {
+				npc.name = _name
+				npc.dialogue = ""	
+			}
+		})
+	} else {
+		event_user(0)
+	}
+}
+
 event_inherited()
