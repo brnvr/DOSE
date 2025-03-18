@@ -3,7 +3,6 @@ is_disappearing = false
 is_transforming = false
 espeak_buffer = espeak_buffer_create()
 bbox_list = bbox_list ?? []
-interactions_list = interactions_list ?? []
 
 if (height == -1) {
 	var center_x = sprite_get_width(sprite_index)*.5
@@ -21,8 +20,8 @@ if (random_event(prob_event)) {
 	event = array_choose(npc_events_in_realm)
 }
 
-array_push(interactions_list, [obj_currant_syrup, function() {
-	obj_player.inventory_remove_item(obj_currant_syrup)
-}])
+interactable_set_interaction(id, obj_currant_syrup, function() {
+	inventory_remove_item(obj_currant_syrup)
+})
 
 event_inherited()

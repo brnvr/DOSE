@@ -11,7 +11,7 @@ player_can_play = false
 is_player_moving_away = true
 
 if (sheet_music != noone) {
-	obj_player.inventory_add_item(sheet_music)
+	inventory_add_item(sheet_music)
 	
 	instance_destroy(sheet_music)
 	sheet_music = noone

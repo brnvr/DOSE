@@ -21,9 +21,6 @@
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_actor_3d_generic","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"propertyId":{"name":"collidable","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"True",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_actor_3d_generic","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"propertyId":{"name":"texture_animated","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"True",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_interactable_generic","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"propertyId":{"name":"action_description","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"talk",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_actor_3d_generic","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"propertyId":{"name":"xscale","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"default_block_size * 1.1",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_actor_3d_generic","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"propertyId":{"name":"yscale","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"default_block_size * 1.1",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_actor_3d_generic","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"propertyId":{"name":"zscale","path":"objects/obj_actor_3d_generic/obj_actor_3d_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"default_block_size * 1.1",},
   ],
   "parent":{
     "name":"generic",
@@ -193,6 +190,7 @@
     {"$GMObjectProperty":"v1","%Name":"on_finish_talking","filters":[],"listItems":[],"multiselect":false,"name":"on_finish_talking","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"do_nothing","varType":4,},
     {"$GMObjectProperty":"v1","%Name":"secondary_dialogue","filters":[],"listItems":[],"multiselect":false,"name":"secondary_dialogue","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"...","varType":2,},
     {"$GMObjectProperty":"v1","%Name":"options","filters":[],"listItems":[],"multiselect":false,"name":"options","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[]","varType":4,},
+    {"$GMObjectProperty":"v1","%Name":"dialogues_source","filters":[],"listItems":[],"multiselect":false,"name":"dialogues_source","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"create_deep_copy(global.default_dialogues)","varType":4,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

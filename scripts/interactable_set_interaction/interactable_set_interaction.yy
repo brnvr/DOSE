@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"interactable_set_interaction",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"interactable_set_interaction",
+  "parent":{
+    "name":"interactables",
+    "path":"folders/Scripts/interactables.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

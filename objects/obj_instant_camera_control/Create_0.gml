@@ -4,8 +4,8 @@ camera_fov_y_original = obj_player.camera.fov_y
 is_shooting = false
 shutter_dir = 0
 shutter_yoffset = MAX_SHUTTER_YOFFSET
-camera = obj_player.inventory_find_item(obj_instant_camera)
-photographs = obj_player.inventory_find_item(obj_instant_photographs)
+camera = inventory_find_item(obj_instant_camera)
+photographs = inventory_find_item(obj_instant_photographs)
 subject_framed = noone
 
 ts_open_shutter = time_source_create(time_source_global, 11, time_source_units_frames, function() {

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"create_deep_copy",
   "parent":{
-    "name":"struct",
-    "path":"folders/Scripts/struct.yy",
+    "name":"utils",
+    "path":"folders/Scripts/utils.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

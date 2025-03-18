@@ -90,7 +90,7 @@ interact_with_antivenom = function() {
 interact_with_currant_syrup = function() {
 	audio_play_sound(snd_sip, false, false)
 	inventory_remove_item(obj_currant_syrup)
-	obj_hud.show_notification(choose("Is this real? (stamina increased)"))
+	obj_hud.show_notification("Is this real? (stamina increased)")
 	stamina = 2
 	event_schedule(20, time_source_units_seconds, function() {
 		obj_player.reset_stamina()
@@ -191,7 +191,7 @@ talk_to = function(npc) {
 		cursor_set_sprite(spr_cursor_arrow)
 		instance_deactivate_object(raycaster)
 	} else {
-		resolve_task(task_types.talk_to_someone, npc.name);
+		resolve_task(task_types.talk_to_someone, npc.name)
 	
 		if (npc.keep_focus) {
 			focus = npc
@@ -206,14 +206,15 @@ talk_to = function(npc) {
 	
 		if (string_length(npc.dialogue) == 0) {
 			var probability_give_task = 1/6 * npc.helpfulness
-			var give_task = random_event(probability_give_task)
+			var should_give_task = random_event(probability_give_task)
 	
-			if (give_task) {
+			if (should_give_task) {
 				npc_give_task(npc, array_choose(global.task_types_list))
-				return;
+				
+				return
 			} 
 	
-			npc.dialogue = array_choose(global.default_dialogues.miscelaneous)
+			npc.dialogue = array_choose(npc.dialogues_source.miscelaneous)[$ obj_settings.language]
 		}
 	
 		npc_speak(npc)	
@@ -351,162 +352,6 @@ get_tasks_descriptions = function() {
 	}))
 	
 	return descriptions
-}
-
-inventory_get_objects = function(repeat_for_number) {
-	var result = []
-	
-	array_foreach(inventory, method({ result, repeat_for_number }, function(item) {
-		if (repeat_for_number) {
-			repeat(item.number) {
-				array_push(result, item.object)		
-			}
-		} else {
-			array_push(result, item.object)	
-		}
-	}))
-	
-	return result;
-}
-
-inventory_add_item = function(item, use_animation = true, index = -1) {
-	draw_set_alpha(1)
-	
-	var spr = noone
-	var item_name = object_get_name(item.object_index)
-	var inventory_item = undefined
-	var n_items = array_length(inventory)
-	
-	for (var i = 0; i < n_items; i++) {
-		if (inventory[i].object_name == item_name) {
-			inventory_item = inventory[i]
-			index = i
-			break
-		}
-	}
-	
-	obj_hud.inventory_temp = []
-		
-	for (var i = 0; i < n_items; i++) {
-		array_push(obj_hud.inventory_temp, struct_duplicate(inventory[i]))
-	}
-	
-	if (is_undefined(inventory_item)) {	
-		var spr_w = sprite_get_width(item.sprite_index)
-		var spr_h = sprite_get_height(item.sprite_index)
-		var spr_held = sprite_part_copy(item.sprite_held == noone ? item.sprite_index : item.sprite_held, 0, 0, 0, spr_w, spr_h, spr_w*.5, spr_h*.5)
-		
-		if (spr_w == INVENTORY_ITEM_SIZE) {
-			spr = sprite_part_copy(item.sprite_index, 0, 0, 0, spr_w, spr_h, spr_w*.5, spr_h*.5)
-		} else {
-			var scale = INVENTORY_ITEM_SIZE/spr_w
-		
-			var spr_scaled = sprite_get_scaled(item.sprite_index, scale, scale)
-		
-			spr = sprite_part_copy(spr_scaled, 0, 0, 0, spr_w * scale, spr_h * scale, spr_w*.5 * scale, spr_h*.5 * scale)
-		}
-		
-		index = index >= 0 ? index : array_length(inventory)
-	
-		inventory_item = {
-			"object_name": item_name,
-			"object": item.object_index,
-			"number": item.quantity,
-			"index": index,
-			"name": item.name,
-			"sprite": spr,
-			"sprite_held": spr_held,
-			"can_combine": item.can_combine,
-			"on_select": item.on_select,
-			"on_unselect": item.on_unselect
-		}
-		
-		array_insert(inventory, index, inventory_item)
-	} else {
-		inventory_item.number += item.quantity
-	}
-	
-	if (use_animation) {
-		obj_hud.set_item_picked(index, inventory_item.sprite, item.name)	
-	} else {
-		obj_hud.inventory_temp = inventory
-	}
-	
-	return inventory_item
-}
-	
-inventory_find_item = function(object) {
-	object = object_get_index(object)
-	
-	var index = array_find_index(inventory, method({ object: object }, function(item) {
-		return item.object == object	
-	}))
-	
-	if (index >= 0) {
-		return inventory[index]	
-	}
-	
-	return noone
-}
-
-inventory_set_item = function(item) {
-	item = object_get_index(item)
-	
-	var inventory_item = inventory_find_item(item)
-	
-	if (inventory_item == noone) {
-		throw "Item not found in inventory"	
-	}
-	
-	inventory_item_selected = inventory_item
-	inventory_item_selected_index = inventory_item.index
-	
-	obj_hud.scale_inventory_item_selected()
-}
-
-inventory_remove_item = function(item, unselect = true) {
-	var obj_item = object_get_index(item)
-	
-	var index = array_find_index(inventory, method({ obj_item: obj_item }, function(inventory_item) {
-		return inventory_item.object == obj_item
-	}))
-	
-	if (index == -1) {
-		return
-	}
-	
-	var count = inventory[index].number - 1
-	var is_selected = inventory_item_selected != noone && inventory_item_selected.object == obj_item
-	
-	if (inventory[index].number > 1) {
-		inventory[index].number--	
-	} else {
-		if (inventory[index].sprite != inventory[index].sprite_held) {
-			sprite_delete(inventory[index].sprite_held)	
-		}
-		
-		sprite_delete(inventory[index].sprite)
-		
-		array_delete(inventory, index, 1)
-		
-		if (is_selected && inventory_item_selected_index > 0) {
-			inventory_item_selected_index--
-			
-		}
-	}
-	
-	if (is_selected) {
-		obj_cursor.sprite_index = noone
-		obj_cursor.draw_as_gui = true
-		
-		if (unselect) {
-			inventory_item_selected = noone
-		}
-	}
-	
-	obj_hud.inventory_temp = inventory
-	
-	return count
 }
 
 pick_item = function(item) {
@@ -676,5 +521,6 @@ array_foreach(global.task_types_list, function(task_type) {
 	array_push(active_tasks, [])		
 })
 
-raycaster_start(raycaster);
-event_inherited();
+raycaster_start(raycaster)
+event_inherited()
+	

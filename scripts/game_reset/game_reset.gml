@@ -39,11 +39,11 @@ function game_reset(prob_drop_item = 0) {
 		)()
 		
 		if (prob_drop_item > 0) {
-			var inventory_objects = obj_player.inventory_get_objects(true)
+			var inventory_objects = inventory_get_objects(true)
 			
 			array_foreach(inventory_objects, method({ prob_drop_item }, function(item) {
 				if (random_event(prob_drop_item)) {
-					obj_player.inventory_remove_item(item)
+					inventory_remove_item(item)
 				}
 			}))
 		}

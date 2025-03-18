@@ -6,8 +6,8 @@ function shader_set_2d(saturation = 1, pixel_size = 0, sprite = undefined, palet
 	shader_set(sh_2d)
 	
 	var u_saturation = shader_get_uniform(sh_2d, "saturation")
-	var u_pixel_size = shader_get_uniform(sh_2d, "pixel_size")
-	var u_texture_dimentions = shader_get_uniform(sh_2d, "texture_dimentions")
+	var u_pixel_size = shader_get_uniform(sh_2d, "pixelSize")
+	var u_texture_dimentions = shader_get_uniform(sh_2d, "textureDimentions")
 	var u_palette = shader_get_uniform(sh_2d, "palette");
 	var dithering_map_texture = sprite_get_texture(spr_dither_pattern, 0)
 
@@ -23,6 +23,6 @@ function shader_set_2d(saturation = 1, pixel_size = 0, sprite = undefined, palet
 		shader_set_uniform_f_array(u_texture_dimentions, [width, height])
 	}
 	
-	texture_set_stage(shader_get_sampler_index(sh_2d, "dither_map"), dithering_map_texture)
+	texture_set_stage(shader_get_sampler_index(sh_2d, "ditherMap"), dithering_map_texture)
 	shader_set_uniform_matrix_array(u_palette, palette);
 }

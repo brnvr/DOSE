@@ -1,5 +1,5 @@
 function npc_give_task(npc, task_type) {
-	static go_to_room_task = function() {
+	static go_to_room_task = function(npc) {
 		var door_number = undefined
 		
 		if (array_length(obj_player.active_tasks[task_types.go_to_room]) == 0) {
@@ -9,13 +9,13 @@ function npc_give_task(npc, task_type) {
 			door_number = obj_player.active_tasks[task_types.go_to_room][0]
 		}
 		
-		var dialogue = array_choose(global.default_dialogues.tasks[task_types.go_to_room])
+		var dialogue = array_choose(npc.dialogues_source.tasks[task_types.go_to_room])[$ obj_settings.language]
 		dialogue = replace_placeholder(dialogue, "door_number", string(door_number))
 		
-		return dialogue;
+		return dialogue
 	}
 	
-	static go_back_one_room_task = function() {
+	static go_back_one_room_task = function(npc) {
 		if (obj_player.last_door_passed == noone) {
 			return "..."	
 		}
@@ -27,7 +27,7 @@ function npc_give_task(npc, task_type) {
 		obj_player.last_door_passed.revert_task = true
 		obj_player.last_door_passed.revert_task_opposite_area = obj_control.current_area
 
-		return array_choose(global.default_dialogues.tasks[task_types.go_back_one_room])
+		return array_choose(npc.dialogues_source.tasks[task_types.go_back_one_room])[$ obj_settings.language]
 	}
 	
 	static talk_to_someone_task = function(npc) {
@@ -69,7 +69,7 @@ function npc_give_task(npc, task_type) {
 			npc_other_pronouns = arr_tasks[0][1]
 		}
 		
-		dialogue = array_choose(global.default_dialogues.tasks[task_types.talk_to_someone])
+		dialogue = array_choose(npc.dialogues_source.tasks[task_types.talk_to_someone])[$ obj_settings.language]
 		dialogue = replace_placeholder(dialogue, "name", string(npc_other_name))
 		dialogue = replace_placeholder(dialogue, "s_pronoun", string(npc_other_pronouns[0]))
 		dialogue = replace_placeholder(dialogue, "o_pronoun", string(npc_other_pronouns[1]))
@@ -77,7 +77,7 @@ function npc_give_task(npc, task_type) {
 		return dialogue
 	}
 		
-	static find_item_task = function() {
+	static find_item_task = function(npc) {
 		var items = obj_control.seed_group[sg.items]
 		var item = array_choose(items)
 		var arr_tasks = obj_player.active_tasks[task_types.find_item]
@@ -105,7 +105,7 @@ function npc_give_task(npc, task_type) {
 
 		obj_player.receive_task(task_types.find_item, [item_name, name_article])
 		
-		var dialogue = array_choose(global.default_dialogues.tasks[task_types.find_item])
+		var dialogue = array_choose(npc.dialogues_source.tasks[task_types.find_item])[$ obj_settings.language]
 		dialogue = replace_placeholder(dialogue, "name", string(item_name))
 		dialogue = replace_placeholder(dialogue, "article", string(name_article))
 		
@@ -145,9 +145,9 @@ function npc_give_task(npc, task_type) {
 		return quest[quest_props.npc_dialogue]
 	}
 	
-	static go_to_another_floor_task = function() {
+	static go_to_another_floor_task = function(npc) {
 		var dir = undefined
-		var dialogue = array_choose(global.default_dialogues.tasks[task_types.go_to_another_floor])	
+		var dialogue = array_choose(npc.dialogues_source.tasks[task_types.go_to_another_floor])[$ obj_settings.language]	
 		var arr_tasks = obj_player.active_tasks[task_types.go_to_another_floor]
 		
 		if (array_length(arr_tasks) == 0) {
@@ -174,15 +174,15 @@ function npc_give_task(npc, task_type) {
 	
 	switch (task_type) {
 		case task_types.find_item:
-			npc.dialogue = find_item_task()
+			npc.dialogue = find_item_task(npc)
 			break
 			
 		case task_types.go_to_room:
-			npc.dialogue = go_to_room_task()
+			npc.dialogue = go_to_room_task(npc)
 			break
 				
 		case task_types.go_back_one_room:
-			npc.dialogue = go_back_one_room_task()	
+			npc.dialogue = go_back_one_room_task(npc)	
 			break
 			
 		case task_types.talk_to_someone:
@@ -190,7 +190,7 @@ function npc_give_task(npc, task_type) {
 			break
 			
 		case task_types.go_to_another_floor:
-			npc.dialogue = go_to_another_floor_task()
+			npc.dialogue = go_to_another_floor_task(npc)
 			break
 			
 		case task_types.complete_quest:

@@ -58,7 +58,7 @@ if (is_shooting) {
 		if (photographs == noone) {
 			var obj_photographs = instance_create_layer(0, 0, "Abstract", obj_instant_photographs)
 			
-			photographs = obj_player.inventory_add_item(obj_photographs, false)
+			photographs = inventory_add_item(obj_photographs, false)
 			
 			instance_destroy(obj_photographs)
 		} else {
@@ -69,7 +69,7 @@ if (is_shooting) {
 			photograph_subject()
 		}
 		
-		var n_shots = obj_player.inventory_remove_item(obj_instant_camera, camera.number == 1)
+		var n_shots = inventory_remove_item(obj_instant_camera, camera.number == 1)
 		
 		if (n_shots <= 0) {
 			time_source_start(ts_stow_camera)

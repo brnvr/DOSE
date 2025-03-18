@@ -5,7 +5,6 @@ xflow = 500
 auto_playing = false
 wrong_key = false
 keys_pressed = array_create(10, -1)
-interactions_list = interactions_list ?? []
 last_key_pressed = -1
 score_index = 0;
 synth = "piano"
@@ -77,7 +76,7 @@ on_interact = function() {
 	event_user(1)
 }
 
-array_push(interactions_list, [obj_sheet_music_0, function() {
+interactable_set_interaction(id, obj_sheet_music_0, function() {
 	sheet_music = area_add_actor_3d(obj_control.current_area, x, y, z-36, obj_sheet_music_0, {
 		keyboard: id	
 	})
@@ -86,8 +85,8 @@ array_push(interactions_list, [obj_sheet_music_0, function() {
 		event_user(0)	
 	}
 	
-	obj_player.inventory_remove_item(obj_sheet_music_0)
-}])
+	inventory_remove_item(obj_sheet_music_0)
+})
 
 event_inherited()
 

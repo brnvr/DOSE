@@ -18,3 +18,7 @@ view_set_camera_object(views.view_2d, global.camera_2d)
 view_set_camera_object(views.view_3d, global.camera_3d)
 
 obj_control.goto_thisside()
+
+with (obj_control) {
+	event_user(0)	
+}

@@ -1,7 +1,7 @@
 update_camera_position()
 
 if (can_move && !can_interact) {
-	cursor_set_sprite(noone);
+	cursor_set_sprite(noone)
 }
 
 if (is_moving_on_staircase) {

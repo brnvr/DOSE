@@ -1,8 +1,6 @@
 function struct_duplicate(struct, filter = undefined) {
-	var new_struct;
+	var new_struct = {}
+	struct_copy(struct, new_struct, filter)
 	
-	new_struct = {};
-	struct_copy(struct, new_struct, filter);
-	
-	return new_struct;
+	return new_struct
 }

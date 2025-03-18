@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"npc_set_dialogues_miscelaneous",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"npc_set_dialogues_miscelaneous",
+  "parent":{
+    "name":"npc",
+    "path":"folders/Scripts/npc.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
