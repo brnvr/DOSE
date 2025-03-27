@@ -10,7 +10,7 @@ on_unselect = function() {
 	}
 }
 
-quantity = global.photo_count
+quantity = obj_instant_camera_control.photo_count
 
 event_inherited();
 

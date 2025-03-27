@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"sound_emitter_3d_pause",
+  "%Name":"sound_emitter_3d_stop",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"sound_emitter_3d_pause",
+  "name":"sound_emitter_3d_stop",
   "parent":{
     "name":"sound_emitter_3d",
     "path":"folders/Scripts/sound_emitter_3d.yy",

@@ -1,7 +1,9 @@
 {
   "$GMObject":"",
   "%Name":"obj_hippollusionist",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":24,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":false,
   "name":"obj_hippollusionist",
   "overriddenProperties":[
@@ -9,8 +11,7 @@
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_npc_generic","path":"objects/obj_npc_generic/obj_npc_generic.yy",},"propertyId":{"name":"voice_pitch","path":"objects/obj_npc_generic/obj_npc_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_npc_generic","path":"objects/obj_npc_generic/obj_npc_generic.yy",},"propertyId":{"name":"voice_range","path":"objects/obj_npc_generic/obj_npc_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"100",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_interactable_generic","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"propertyId":{"name":"wall_offset","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"37",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_interactable_generic","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"propertyId":{"name":"height","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"222",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_interactable_generic","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"propertyId":{"name":"name","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"Mr. Lumpus\"",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_interactable_generic","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"propertyId":{"name":"height","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"212",},
   ],
   "parent":{
     "name":"npcs",

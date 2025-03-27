@@ -3,5 +3,5 @@ options = [
 	["The first one is a rabbit."]
 ]
 
-event_inherited();
+event_inherited()
 

@@ -1,4 +1,4 @@
-function corridor_populate(corridor, seed_group, block_size, realm = global.current_realm, area_events = global.area_events, corridor_events = global.corridor_events) {
+function corridor_populate(corridor, seed_group, block_size, realm, area_events = global.area_events, corridor_events = global.corridor_events) {
 	static create_actors = function(corridor, block_size, number, cells_used, arr, allow_repeated=true) {
 		if (!allow_repeated) {
 			arr = array_create_copy(arr)	

@@ -3,7 +3,7 @@
 if (directory_exists("photographs")) {
 	var filename = file_find_first("photographs/*.png", fa_none)
 	
-	global.photo_count = 0
+	photo_count = 0
 	
 	if (filename == "") {
 		return
@@ -21,7 +21,7 @@ if (directory_exists("photographs")) {
 		array_push(photographs, spr)
 	}
 	
-	global.photo_count++;
+	photo_count++
 } else {
-	global.photo_count = 0
+	photo_count = 0
 }

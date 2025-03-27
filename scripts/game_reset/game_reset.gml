@@ -6,9 +6,14 @@ function game_reset(prob_drop_item = 0) {
 		event_user(0)	
 		
 		array_foreach(current_area.instances, function(instance) {
-			instance_activate_object(instance)
+			try {
+				instance_activate_object(instance)
 			
-			instance.parent_area = current_area	
+				instance.parent_area = current_area	
+			}
+			catch(e) {
+				show_debug_message($"Instance {instance} not found when resetting game.")
+			}
 		})
 	}
 
@@ -33,7 +38,7 @@ function game_reset(prob_drop_item = 0) {
 			},
 		
 			function() {
-				eye_height = EYE_HEIGHT_SITTING
+				eyes_height = EYES_HEIGHT_SITTING
 				sit(obj_couch.id)	
 			}
 		)()

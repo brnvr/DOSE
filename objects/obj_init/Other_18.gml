@@ -1,10 +1,10 @@
 /// @description photo count
 
-if (directory_exists("photographs")) {
+/*if (directory_exists("photographs")) {
 	var filename = file_find_first("photographs/*.png", fa_none)
 	
 	if (filename == "") {
-		global.photo_count = 0
+		global.photo_count_start = 0
 		
 		return
 	}
@@ -23,7 +23,7 @@ if (directory_exists("photographs")) {
 		max_number = max(number, max_number)
 	}
 	
-	global.photo_count = max_number+1
+	global.photo_count_start = max_number+1
 } else {
-	global.photo_count = 0
-}
+	global.photo_count_start = 0
+}*/

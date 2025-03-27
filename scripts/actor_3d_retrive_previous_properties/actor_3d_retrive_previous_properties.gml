@@ -5,7 +5,7 @@ function actor_3d_retrive_previous_properties() {
 	xscaleprevious = xscale;
 	yscaleprevious = yscale;
 	zscaleprevious = zscale;
-	zprevious = z;
+	zprevious = z
 }
 
 function actor_3d_has_transformed() {
@@ -19,7 +19,7 @@ function actor_3d_has_transformed() {
 		xprevious != x ||
 		yprevious != y ||
 		zprevious != z
-	);	
+	)
 }
 
 function actor_3d_update_bbox() {
@@ -33,7 +33,7 @@ function actor_3d_update_bbox() {
 		}
 		
 		me.bbox_transformed_list[i] = bbox_get_transformed(bbox, mat);
-	}, id);
+	}, id)
 }
 
 function actor_3d_update_transformation_matrix() {

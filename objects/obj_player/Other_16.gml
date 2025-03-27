@@ -17,7 +17,7 @@ if (is_standing_up) {
 }	
 
 if (is_undefined(sitting_place) || is_standing_up) {
-	eye_height = linear_interpolation(eye_height, EYE_HEIGHT_STANDING, 2)	
+	eyes_height = linear_interpolation(eyes_height, EYES_HEIGHT_STANDING, 2)	
 } else {
-	eye_height = linear_interpolation(eye_height, EYE_HEIGHT_SITTING, 2)		
+	eyes_height = linear_interpolation(eyes_height, EYES_HEIGHT_SITTING, 2)		
 }

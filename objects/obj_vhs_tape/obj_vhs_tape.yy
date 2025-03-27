@@ -1,12 +1,12 @@
 {
   "$GMObject":"",
   "%Name":"obj_vhs_tape",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":24,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_vhs_tape",
-  "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_interactable_generic","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"propertyId":{"name":"name","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"VHS tape\"",},
-  ],
+  "overriddenProperties":[],
   "parent":{
     "name":"items",
     "path":"folders/Objects/items.yy",

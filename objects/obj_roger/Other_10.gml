@@ -1,4 +1,4 @@
-/// @description Set dialogues
+/// @description Set custom dialogues
 
 npc_set_dialogues_task(id, task_types.talk_to_someone, [
 	{

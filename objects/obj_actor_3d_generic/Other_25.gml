@@ -1,1 +1,1 @@
-/// @description def custom shader uniforms
+/// @description Def custom shader uniforms

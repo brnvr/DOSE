@@ -23,11 +23,10 @@ vec4 getFragColor(sampler2D texture, vec2 texcoord, float pixelSize) {
         return texture2D(texture, texcoord);    
     }
     
-    float xpixel, ypixel;
     vec2 newPixcoord, newTexcoord;
     
-    xpixel = floor(textureDimensions.x * texcoord.x);
-    ypixel = floor(textureDimensions.y * texcoord.y);
+    float xpixel = floor(textureDimensions.x * texcoord.x);
+    float ypixel = floor(textureDimensions.y * texcoord.y);
     
     newPixcoord.x = xpixel - mod(xpixel, pixelSize);
     newPixcoord.y = ypixel - mod(ypixel, pixelSize);

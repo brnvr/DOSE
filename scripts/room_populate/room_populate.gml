@@ -1,4 +1,4 @@
-function room_populate(room, seed_group, block_size, base_area=4, realm = global.current_realm, area_events = global.area_events) {
+function room_populate(room, seed_group, block_size, base_area, realm, area_events = global.area_events) {
 	var area = room.hlength*room.vlength
 
 	var n_characters = 0

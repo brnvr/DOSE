@@ -6,6 +6,7 @@ door_numbers_passed = []
 door_numbers_avaliable = []
 door_number_destination = 319
 current_area = noone
+current_realm = realms.thisside
 current_floor = 0
 music_track = -1
 music_track_previous = -1
@@ -19,12 +20,12 @@ display_debug_overlay = false
 vfx_filters = []
 vfx_resetting_filter_indexes = []
 
-goto_otherside = function(remap=true) {
+goto_otherside = function(remap=true, set_music=true) {
 	var darker_color = make_color_rgb(33, 21, 21)
 	
 	saturation = 0.5
 	tracking_error_variation_factor = 4
-	global.current_realm = realms.otherside
+	current_realm = realms.otherside
 	fog_start = 0
 	fog_end = 900
 	fog_color = darker_color
@@ -45,14 +46,20 @@ goto_otherside = function(remap=true) {
 	
 	obj_hud.display_fog = true
 	obj_hud.skull = instance_create_layer(593, 276, "GUI", obj_skull)
+	
+	if (set_music) {
+		var next_song = array_choose(global.seed_groups[realms.otherside][sg.music])
+	
+		game_set_music_track(next_song)	
+	}
 }
 
-goto_thisside = function(remap=false) {
+goto_thisside = function(remap=false, set_music=true) {
 	var darker_color = c_black
 	
 	saturation = 0.55
 	tracking_error_variation_factor = 1
-	global.current_realm = realms.thisside
+	current_realm = realms.thisside
 	fog_start = 1000
 	fog_end = 2000
 	fog_color = darker_color
@@ -72,6 +79,12 @@ goto_thisside = function(remap=false) {
 	
 	obj_hud.display_fog = false
 	obj_hud.eyes = instance_create_layer(593, 260, "GUI", obj_eyes)
+	
+	if (set_music) {
+		var next_song = array_choose(global.seed_groups[realms.thisside][sg.music])
+	
+		game_set_music_track(next_song)	
+	}
 }
 
 randomize()

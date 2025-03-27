@@ -1,7 +1,5 @@
 function variable_struct_get_ext(struct, name, default_value) {
-	var attribute;
+	var attribute = variable_struct_get(struct, name)
 	
-	attribute = variable_struct_get(struct, name);
-	
-	return (!is_undefined(attribute)) ? attribute : default_value;
+	return (!is_undefined(attribute)) ? attribute : default_value
 }

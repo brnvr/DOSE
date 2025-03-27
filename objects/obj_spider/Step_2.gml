@@ -42,7 +42,7 @@ if (obj_control.current_area == area) {
 		sound_emitter_3d_play(sound_emitter)	
 	}
 } else {
-	sound_emitter_3d_pause(sound_emitter)
+	sound_emitter_3d_stop(sound_emitter)
 	instance_deactivate_object(id)
 }
 

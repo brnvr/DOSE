@@ -7,6 +7,7 @@ shutter_yoffset = MAX_SHUTTER_YOFFSET
 camera = inventory_find_item(obj_instant_camera)
 photographs = inventory_find_item(obj_instant_photographs)
 subject_framed = noone
+photographed_subjects = []
 
 ts_open_shutter = time_source_create(time_source_global, 11, time_source_units_frames, function() {
 	shutter_dir = 1	
@@ -22,13 +23,13 @@ photograph_subject = function() {
 		throw $"Subject is not ancestor of {nameof(obj_camera_subject_generic)}."	
 	}
 	
-	obj_hud.show_notification($"{subject_framed.name} photographed!")
+	obj_hud.show_notification($"{subject_framed.display_name} photographed!")
 	
-	if (array_contains(global.photographed_subjects, subject_framed)) {
+	if (array_contains(photographed_subjects, subject_framed)) {
 		return	
 	}
 	
-	array_push(global.photographed_subjects, subject_framed)
+	array_push(photographed_subjects, subject_framed)
 }
 
 obj_cursor.visible = false

@@ -3,7 +3,7 @@ function door_make_room(door, dir) {
 		var opposite_dir = cardinal_opposite(dir)
 		var dest_area = actor_3d_create(0, 0, 0, obj_room, {
 			on_build: function(room) {
-				room_populate(room, obj_control.seed_group, default_block_size)
+				room_populate(room, obj_control.seed_group, default_block_size, 4, obj_control.current_realm)
 			}
 		});
 	

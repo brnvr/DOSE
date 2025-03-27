@@ -28,7 +28,7 @@ ts_unselect_inventory_button = time_source_create(time_source_global, 2, time_so
 	inventory_button_up_selected = false
 	inventory_button_down_selected = false
 });
-ts_hide_speech = time_source_create(time_source_global, 1, time_source_units_frames, function() { });
+ts_hide_speech = time_source_create(time_source_global, 1, time_source_units_frames, do_nothing)
 depth+= 200
 
 show_caption = function(s, hide_timeout=false, timeout_period=-1) {

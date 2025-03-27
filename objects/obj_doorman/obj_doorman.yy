@@ -1,13 +1,14 @@
 {
   "$GMObject":"",
   "%Name":"obj_doorman",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":24,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_doorman",
   "overriddenProperties":[
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_interactable_generic","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"propertyId":{"name":"height","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"160",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_npc_generic","path":"objects/obj_npc_generic/obj_npc_generic.yy",},"propertyId":{"name":"voice_source","path":"objects/obj_npc_generic/obj_npc_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"mb-en1\"",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_interactable_generic","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"propertyId":{"name":"name","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"The Doorman",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_npc_generic","path":"objects/obj_npc_generic/obj_npc_generic.yy",},"propertyId":{"name":"secondary_dialogue","path":"objects/obj_npc_generic/obj_npc_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Please proceed to your quarters, sir.",},
   ],
   "parent":{

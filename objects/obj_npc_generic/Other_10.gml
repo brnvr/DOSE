@@ -1,1 +1,1 @@
-/// @description Set dialogues
+/// @description Set custom dialogues

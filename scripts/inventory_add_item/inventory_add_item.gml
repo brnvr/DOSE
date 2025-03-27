@@ -43,7 +43,7 @@ function inventory_add_item(item, use_animation = true, index = -1) {
 				"object": item.object_index,
 				"number": item.quantity,
 				"index": index,
-				"name": item.name,
+				"name": item.display_name,
 				"sprite": spr,
 				"sprite_held": spr_held,
 				"can_combine": item.can_combine,
@@ -57,7 +57,7 @@ function inventory_add_item(item, use_animation = true, index = -1) {
 		}
 	
 		if (use_animation) {
-			obj_hud.set_item_picked(index, inventory_item.sprite, item.name)	
+			obj_hud.set_item_picked(index, inventory_item.sprite, item.display_name)	
 		} else {
 			obj_hud.inventory_temp = inventory
 		}

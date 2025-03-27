@@ -88,9 +88,17 @@
 #macro c_dark_burgundy make_color_rgb(69, 12, 40)
 #macro c_deep_wine make_color_rgb(45, 0, 46)
 
+#macro pron_masculine ["he", "him"]
+#macro pron_feminine ["she", "her"]
+
 enum views {
 	view_3d,
 	view_2d
+}
+
+enum pronoun_type {
+	subject,
+	object
 }
 
 enum axis {
@@ -190,12 +198,7 @@ enum sg {
 	wall_props,
 	music
 }
-			
-for (var i = 0; i < 16; i++) {
-	event_user(i)	
-}
 
-global.photographed_subjects = []
 global.spr_spider_ceiling = sprite_create_transformed(spr_spider, 1, -1, 0)
 global.spr_key_0_mirrored = sprite_create_transformed(spr_key_0, -1, -1, 0)
 
@@ -214,3 +217,7 @@ global.progressive_task_types = [
 	task_types.go_back_one_room,
 	task_types.go_to_another_floor
 ]
+
+for (var i = 0; i < 16; i++) {
+	event_user(i)	
+}

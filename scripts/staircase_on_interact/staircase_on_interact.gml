@@ -62,7 +62,7 @@ function staircase_on_interact(target) {
 				var corridor = passage_get_next_area(staircase, method({ staircase: staircase, resolve_task: resolve_task }, function() {
 					return actor_3d_create(obj_player.x, obj_player.y, 0, obj_corridor, {
 						on_build: method(self, function(corridor) {
-							corridor_populate(corridor, obj_control.seed_group, default_block_size)
+							corridor_populate(corridor, obj_control.seed_group, default_block_size, obj_control.current_realm)
 							resolve_task(staircase)
 						}),
 					});

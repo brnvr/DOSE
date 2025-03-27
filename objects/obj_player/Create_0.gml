@@ -1,4 +1,4 @@
-enum player_controls {
+enum player_events {
 	moving,
 	looking,
 	interaction,
@@ -12,13 +12,14 @@ enum player_controls {
 WALK_SPEED = 3
 RUN_SPEED = 6
 SIGHT_RANGE = 175
-EYE_HEIGHT_STANDING = 115
-EYE_HEIGHT_SITTING = 85
+EYES_HEIGHT_STANDING = 115
+EYES_HEIGHT_SITTING = 85
 TASKS_TO_FINISH = 3
+MAX_NON_LETHAL_ENVENOMING = .55
 
 stamina = 1
 actor_hover = noone
-eye_height = EYE_HEIGHT_STANDING
+eyes_height = EYES_HEIGHT_STANDING
 is_answering = false
 focus = noone
 can_move = true
@@ -36,7 +37,7 @@ inventory_item_selected_index = 0
 inventory_item_selected = noone
 inventory_item_selected_enabled = true
 bbox_list = [bbox_create(-8, -8, -135, 8, 8, 0)]
-ts_item_selected_reenable = time_source_create(time_source_global, 1, time_source_units_frames, function() {})
+ts_item_selected_reenable = time_source_create(time_source_global, 1, time_source_units_frames, do_nothing)
 is_moving = false
 is_moving_on_staircase = false
 is_moving_auto = false
@@ -53,11 +54,11 @@ stop_focusing_auto = false
 use_collision_overflow_correction = true
 npcs_met = []
 
-camera = actor_3d_create(x, y, z-eye_height, obj_camera_3d_generic, {
-	limit_pitch: true,
+camera = actor_3d_create(x, y, z-eyes_height, obj_camera_3d_generic, {
 	pitch_min: -80,
 	pitch_max: 80,
-	fov_y: 85
+	fov_y: 85,
+	limit_pitch: true
 })
 
 cursor_wave = instance_create_depth(0, 0, 0, obj_wave, {
@@ -181,6 +182,21 @@ move = function(callback, move_speed) {
 }
 	
 talk_to = function(npc) {
+	if (has_met_npc(npc) || npc.introductory_dialogue == "") {
+		var should_give_quest = random_event(npc.prob_give_quest)
+	
+		if (should_give_quest) {
+			npc.options = [
+				["Yes"],
+				["No"]
+			]
+			
+			npc.dialogue = npc.quest_dialogue
+			
+			npc_speak(npc, true, true)
+		}	
+	}
+	
 	if (array_length(npc.options) > 0) {
 		is_answering = true
 		npc_show_options(npc)
@@ -191,7 +207,7 @@ talk_to = function(npc) {
 		cursor_set_sprite(spr_cursor_arrow)
 		instance_deactivate_object(raycaster)
 	} else {
-		resolve_task(task_types.talk_to_someone, npc.name)
+		resolve_task(task_types.talk_to_someone, variable_static_get(npc.object_index, "name"))
 	
 		if (npc.keep_focus) {
 			focus = npc
@@ -201,7 +217,7 @@ talk_to = function(npc) {
 		}
 	
 		if (!has_met_npc(npc)) {
-			array_push(npcs_met, npc.object_index)	
+			meet_npc(npc)
 		}
 	
 		if (string_length(npc.dialogue) == 0) {
@@ -248,19 +264,17 @@ resolve_task = function(task_type, comparer) {
 }
 
 remove_task = function(task_type, comparer) {
-	var tasks, index, task
+	var tasks = active_tasks[task_type]
 	
-	tasks = active_tasks[task_type]
-	
-	index = array_find_index(tasks, method({ comparer: comparer }, function(item) {
+	var index = array_find_index(tasks, method({ comparer: comparer }, function(item) {
 		return is_array(item) ? item[0] == comparer : item == comparer
-	}));
+	}))
 	
 	if (index == -1) {
 		return undefined
 	}
 	
-	task = tasks[index]
+	var task = tasks[index]
 	array_delete(tasks, index, 1)
 
 	return task
@@ -283,7 +297,7 @@ revert_task = function(task_type, task) {
 	
 	var index = array_find_index(completed_tasks, method({ task_formatted: task_formatted }, function(item) {
 		return item == task_formatted
-	}));
+	}))
 	
 	if (index == -1) {
 		return undefined
@@ -313,9 +327,9 @@ receive_item = function(item) {
 }
 	
 update_camera_position = function() {
-	camera.x = x;
-	camera.y = y;
-	camera.z = z-eye_height;
+	camera.x = x
+	camera.y = y
+	camera.z = z-eyes_height
 }
 
 get_task_description = function(task_type, arg) {
@@ -429,7 +443,7 @@ sit = function(place, bbox_index=0) {
 	use_collision_overflow_correction = false
 }
 
-stand = function() {
+stand_up = function() {
 	is_standing_up = true
 	
 	camera.limit_yaw = false
@@ -511,6 +525,10 @@ heal_from_envenomation = function(fade_in=true, factor=1000, callback=do_nothing
 take_antivenom = function() {
 	heal_from_envenomation()
 	obj_hud.show_notification("Received antivenom. You'll be fine soon.")	
+}
+
+meet_npc = function(npc) {
+	array_push(npcs_met, npc.object_index)	
 }
 
 has_met_npc = function(npc) {

@@ -3,11 +3,11 @@
   "%Name":"obj_instant_camera",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":24,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_instant_camera",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_interactable_generic","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"propertyId":{"name":"name","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"camera\"",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_item_generic","path":"objects/obj_item_generic/obj_item_generic.yy",},"propertyId":{"name":"can_combine","path":"objects/obj_item_generic/obj_item_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"False",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_item_generic","path":"objects/obj_item_generic/obj_item_generic.yy",},"propertyId":{"name":"quantity","path":"objects/obj_item_generic/obj_item_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"10",},
   ],

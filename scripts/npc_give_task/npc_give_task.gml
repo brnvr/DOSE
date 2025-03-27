@@ -59,8 +59,8 @@ function npc_give_task(npc, task_type) {
 				throw "No characters avaliable in the seed group."		
 			}
 		
-			npc_other_name = global.names[npc_other_obj][0]
-			npc_other_pronouns = global.names[npc_other_obj][1]
+			npc_other_name = variable_static_get(npc_other_obj, "name")
+			npc_other_pronouns = variable_static_get(npc_other_obj, "pronouns")
 			
 			obj_player.receive_task(task_types.talk_to_someone, [npc_other_name, npc_other_pronouns])
 		}
@@ -71,8 +71,8 @@ function npc_give_task(npc, task_type) {
 		
 		dialogue = array_choose(npc.dialogues_source.tasks[task_types.talk_to_someone])[$ obj_settings.language]
 		dialogue = replace_placeholder(dialogue, "name", string(npc_other_name))
-		dialogue = replace_placeholder(dialogue, "s_pronoun", string(npc_other_pronouns[0]))
-		dialogue = replace_placeholder(dialogue, "o_pronoun", string(npc_other_pronouns[1]))
+		dialogue = replace_placeholder(dialogue, "s_pronoun", string(npc_other_pronouns[pronoun_type.subject]))
+		dialogue = replace_placeholder(dialogue, "o_pronoun", string(npc_other_pronouns[pronoun_type.object]))
 		
 		return dialogue
 	}
@@ -83,7 +83,7 @@ function npc_give_task(npc, task_type) {
 		var arr_tasks = obj_player.active_tasks[task_types.find_item]
 		var n_tasks = array_length(arr_tasks)
 		var inventory_length = array_length(obj_player.inventory)
-		var item_name = global.names[item][0]
+		var item_name = variable_static_get(item, "name")
 		
 		for (var i = 0; i < inventory_length; i++) {
 			var inventory_item = obj_player.inventory[i]
@@ -101,7 +101,7 @@ function npc_give_task(npc, task_type) {
 			}
 		}
 
-		var name_article = global.names[item][1]
+		var name_article = variable_static_get(item, "article")
 
 		obj_player.receive_task(task_types.find_item, [item_name, name_article])
 		

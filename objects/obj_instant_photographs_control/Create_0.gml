@@ -1,6 +1,7 @@
 yoffset = 130
 photographs = []
-photo_index = 0;
+photo_count = 0
+photo_index = 0
 obj_player.can_move = false
 obj_player.can_look = false
 cursor_set_sprite(spr_cursor_arrow)

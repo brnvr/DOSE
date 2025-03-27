@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"variable_static_end",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"variable_static_end",
+  "parent":{
+    "name":"static_properties",
+    "path":"folders/Scripts/static_properties.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

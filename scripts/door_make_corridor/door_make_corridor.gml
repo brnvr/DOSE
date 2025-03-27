@@ -4,7 +4,7 @@ function door_make_corridor(door, dir) {
 	
 		var dest_area = actor_3d_create(0, 0, 0, obj_corridor, {
 			on_build: function(corridor) {
-				corridor_populate(corridor, obj_control.seed_group, default_block_size);
+				corridor_populate(corridor, obj_control.seed_group, default_block_size, obj_control.current_realm);
 			}
 		})
 	

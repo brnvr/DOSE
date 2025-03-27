@@ -3,6 +3,7 @@
   "%Name":"obj_djinn",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":24,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":false,
   "name":"obj_djinn",
@@ -12,7 +13,6 @@
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_npc_generic","path":"objects/obj_npc_generic/obj_npc_generic.yy",},"propertyId":{"name":"voice_range","path":"objects/obj_npc_generic/obj_npc_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"100",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_interactable_generic","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"propertyId":{"name":"wall_offset","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"37",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_interactable_generic","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"propertyId":{"name":"height","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"222",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_interactable_generic","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"propertyId":{"name":"name","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"Djinn\"",},
   ],
   "parent":{
     "name":"npcs",

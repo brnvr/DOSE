@@ -17,7 +17,7 @@ view_set_visible(views.view_3d, true)
 view_set_camera_object(views.view_2d, global.camera_2d)
 view_set_camera_object(views.view_3d, global.camera_3d)
 
-obj_control.goto_thisside()
+obj_control.goto_thisside(false, false)
 
 with (obj_control) {
 	event_user(0)	

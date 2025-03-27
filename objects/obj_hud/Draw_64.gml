@@ -100,13 +100,13 @@ if (display_caption) {
 			if (obj_player.inventory_item_selected != noone) {
 				if (obj_player.inventory_item_selected.can_combine) {
 						if (object_is_ancestor(obj_player.actor_hover.object_index, obj_npc_generic)) {
-						msg = $"give {obj_player.inventory_item_selected.name} to {obj_player.actor_hover.name}"
+						msg = $"give {obj_player.inventory_item_selected.name} to {obj_player.actor_hover.display_name}"
 					} else {
-						msg = $"use {obj_player.inventory_item_selected.name} with {obj_player.actor_hover.name}"
+						msg = $"use {obj_player.inventory_item_selected.name} with {obj_player.actor_hover.display_name}"
 					}	
 				}
 			} else {
-				msg = obj_player.actor_hover.name
+				msg = obj_player.actor_hover.display_name
 				action = obj_player.actor_hover.action_description
 			}
 

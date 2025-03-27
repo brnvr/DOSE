@@ -26,7 +26,7 @@ global.menu_stylesheet = pawpr_stylesheet({
 		"color": c_gray,
 		"shadow_alpha": 1
 	}
-});
+})
 
 global.npc_options_stylesheet = pawpr_stylesheet({
 	"menu": {
@@ -54,4 +54,4 @@ global.npc_options_stylesheet = pawpr_stylesheet({
 		"min_width": 200,
 		"color": c_gray,
 	}
-});
+})

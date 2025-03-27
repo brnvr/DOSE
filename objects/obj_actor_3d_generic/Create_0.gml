@@ -9,17 +9,9 @@ u_mesh_fog_enabled = shader_get_uniform(shader, "fogEnabled")
 u_mesh_fog_color = shader_get_uniform(shader, "fogColor")
 u_mesh_shadow_color = shader_get_uniform(shader, "shadowColor")
 
-if (is_undefined(bbox_list)) {
-	bbox_list = []	
-}
-
-if (is_undefined(vbuff_list)) {
-	vbuff_list = []	
-}
-
-if (is_undefined(texture_list)) {
-	texture_list = []	
-}
+bbox_list = bbox_list ?? []	
+vbuff_list = vbuff_list ?? []	
+texture_list = texture_list ?? []	
 
 if (array_length(texture_list) == 0 && sprite_index >= 0) {
 	texture_list = [sprite_get_texture(sprite_index, image_index)]

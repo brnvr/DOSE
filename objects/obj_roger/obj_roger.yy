@@ -4,15 +4,17 @@
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":10,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":24,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_roger",
   "overriddenProperties":[
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_interactable_generic","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"propertyId":{"name":"height","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"160",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_npc_generic","path":"objects/obj_npc_generic/obj_npc_generic.yy",},"propertyId":{"name":"voice_source","path":"objects/obj_npc_generic/obj_npc_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"mb-en1\"",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_interactable_generic","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"propertyId":{"name":"name","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Roger",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_npc_generic","path":"objects/obj_npc_generic/obj_npc_generic.yy",},"propertyId":{"name":"name_before_introduction","path":"objects/obj_npc_generic/obj_npc_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Bearded man in glasses",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_npc_generic","path":"objects/obj_npc_generic/obj_npc_generic.yy",},"propertyId":{"name":"introductory_dialogue","path":"objects/obj_npc_generic/obj_npc_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Batatinha quando nasce",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_npc_generic","path":"objects/obj_npc_generic/obj_npc_generic.yy",},"propertyId":{"name":"prob_give_quest","path":"objects/obj_npc_generic/obj_npc_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_npc_generic","path":"objects/obj_npc_generic/obj_npc_generic.yy",},"propertyId":{"name":"quest_dialogue","path":"objects/obj_npc_generic/obj_npc_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"So, do you wanna do it or not?",},
   ],
   "parent":{
     "name":"npcs",

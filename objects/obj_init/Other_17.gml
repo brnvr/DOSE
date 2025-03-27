@@ -4,13 +4,13 @@ var walls = []
 
 var push_walls = function(walls, prefix, ev_chance) {
 	for (var i = 0; true; i++) {
-		var wall = asset_get_index($"{prefix}_{i}");
+		var wall = asset_get_index($"{prefix}_{i}")
 	
 		if (wall == -1) {
-			break;	
+			break
 		}
 	
-		repeat(ev_chance) array_push(walls, wall);
+		repeat(ev_chance) array_push(walls, wall)
 	}	
 }
 
@@ -40,25 +40,6 @@ global.seed_groups[realms.otherside][sg.items]		 = [obj_sheet_music_0, obj_curra
 global.seed_groups[realms.otherside][sg.overlays]	 = [spr_painting_0, spr_air_vent]
 global.seed_groups[realms.otherside][sg.wall_props]	 = [obj_wallclock]
 global.seed_groups[realms.otherside][sg.music]		 = [snd_umc_uncertain]
-
-global.names = []
-
-var populate_names = function(arr, complement_property_name) {
-	array_foreach(arr, method({ complement_property_name: complement_property_name }, function(obj) {
-		var inst = instance_create_depth(0, 0, 0, obj, { prob_event: 0 })
-		
-		complement_property_name = complement_property_name ?? ""
-		
-		global.names[obj] = [inst.name, variable_instance_get(inst, complement_property_name)]
-		instance_destroy(inst)
-	}))
-}
-
-populate_names(global.seed_groups[realms.thisside][sg.characters], "pronouns")
-populate_names(global.seed_groups[realms.otherside][sg.characters], "pronouns")
-populate_names(global.seed_groups[realms.thisside][sg.items], "name_article")
-populate_names(global.seed_groups[realms.otherside][sg.items], "name_article")
-
 
 /*global.seed_groups = {
 	thisside: {

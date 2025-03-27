@@ -1,11 +1,12 @@
 {
   "$GMObject":"",
   "%Name":"obj_key_0",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":24,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_key_0",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_interactable_generic","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"propertyId":{"name":"name","path":"objects/obj_interactable_generic/obj_interactable_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"key to hallways\"",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_item_generic","path":"objects/obj_item_generic/obj_item_generic.yy",},"propertyId":{"name":"sprite_held","path":"objects/obj_item_generic/obj_item_generic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"global.spr_key_0_mirrored",},
   ],
   "parent":{
