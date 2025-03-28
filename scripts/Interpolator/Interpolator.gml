@@ -1,24 +1,11 @@
-function Interpolator(_value = 0, _destination = 0, _delta = 0, _active = true) constructor {
-	value = _value
+function Interpolator(_initial_value = 0, _final_value = 0, _delta = 0, _active = true) : BaseInterpolator(_initial_value, _final_value, _active) constructor {
 	delta = _delta
-	active = _active
-	destination = _destination
 	
 	step = function() {
 		if (active) {
-			value = linear_interpolation(value, destination, delta)		
+			value = linear_interpolation(value, final_value, delta)		
 		}
-	}
-	
-	has_completed = function() {
-		return value == destination	
-	}
-	
-	start = function() {
-		active = true	
-	}
-	
-	stop = function() {
-		active = false	
+		
+		return value
 	}
 }

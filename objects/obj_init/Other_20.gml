@@ -1,18 +1,20 @@
-/// @description vfx filters
+/// @description fx filters
 
-enum vfx_filter_types {
-	envenomation	
+enum fx_filter_types {
+	losing_consciousness
 }
 
 global.vfx_filter_functions = []
+global.sfx_filter_functions = []
 
-global.vfx_filter_functions[vfx_filter_types.envenomation] = function() {
+global.vfx_filter_functions[fx_filter_types.losing_consciousness] = function() {
+	var time = 30/obj_player.envenoming
 	return {
-		blur_radius: new Interpolator(0.5, 10, 0.001),
-		desaturation: new Interpolator(0, 1-obj_control.saturation, 0.001),
+		blur_radius: new TimedInterpolator(0.5, 10, time),
+		desaturation: new TimedInterpolator(0, 1-obj_game_control.saturation, time),
 		wave_offset: new Waver(0, 1, 0.001),
-		wave_amount: new Interpolator(0, 0.4*obj_player.envenoming, 0.0001*obj_player.envenoming),
-		gameview_xscale: new Interpolator(1, 1 + 0.8 * obj_player.envenoming, 0.0002)
+		wave_amount: new TimedInterpolator(0, 0.4*obj_player.envenoming, time),
+		gameview_xscale: new TimedInterpolator(1, 1 + 0.6 * obj_player.envenoming, time),
 	}
 }
 
@@ -24,4 +26,10 @@ global.vfx_default_values = {
 	wave_offset: 0,
 	gameview_xscale: 1,
 	gameview_yscale: 1
-}	
+}
+
+global.sfx_filter_functions[fx_filter_types.losing_consciousness] = function() {
+	return {
+			
+	}
+}

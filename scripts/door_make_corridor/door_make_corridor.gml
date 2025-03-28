@@ -4,7 +4,7 @@ function door_make_corridor(door, dir) {
 	
 		var dest_area = actor_3d_create(0, 0, 0, obj_corridor, {
 			on_build: function(corridor) {
-				corridor_populate(corridor, obj_control.seed_group, default_block_size, obj_control.current_realm);
+				corridor_populate(corridor, obj_game_control.seed_group, default_block_size, obj_game_control.current_realm);
 			}
 		})
 	
@@ -64,7 +64,7 @@ function door_make_corridor(door, dir) {
 			door_generate_number(id, cardinal_opposite(dir))
 		}
 	
-		corridor_build(dest_area, obj_control.seed_group, default_block_size, wall_passage_width)
+		corridor_build(dest_area, obj_game_control.seed_group, default_block_size, wall_passage_width)
 
 		return dest_area
 	}

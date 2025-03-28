@@ -494,7 +494,7 @@ get_envenomated = function() {
 	
 	take_damage()
 	obj_hud.show_notification("Envenomated")
-	vfx_set_filter(vfx_filter_types.envenomation)
+	vfx_set_filter(fx_filter_types.losing_consciousness)
 }
 
 heal_from_envenomation = function(fade_in=true, factor=1000, callback=do_nothing) {
@@ -519,7 +519,7 @@ heal_from_envenomation = function(fade_in=true, factor=1000, callback=do_nothing
 		envenoming_fade = envenoming_fade_in	
 	}
 	
-	vfx_reset_filter(vfx_filter_types.envenomation, true, factor, callback)
+	vfx_reset_filter(fx_filter_types.losing_consciousness, true, factor, callback)
 }
 
 take_antivenom = function() {

@@ -8,7 +8,7 @@ function door_random_on_interact(door) {
 			}
 		
 			if (revert_task) {
-				if (obj_control.current_area != revert_task_opposite_area) {
+				if (obj_game_control.current_area != revert_task_opposite_area) {
 					obj_player.revert_task(task_types.go_back_one_room, id)
 				}	
 			}	
@@ -86,7 +86,7 @@ function door_random_on_interact(door) {
 		}
 		
 		static set_current_area = function() {
-			var current_area = obj_control.current_area
+			var current_area = obj_game_control.current_area
 			
 			obj_player.door_passing = id
 
@@ -148,7 +148,7 @@ function door_random_on_interact(door) {
 				}
 			}	
 		
-			obj_control.current_area = parent_area
+			obj_game_control.current_area = parent_area
 		}
 	
 		static player_pass_through = function(door) {
@@ -192,15 +192,15 @@ function door_random_on_interact(door) {
 				})	
 			}
 		} else {
-			if (obj_control.current_area.object_index == obj_custom_area) {
-				var area = obj_control.current_area
+			if (obj_game_control.current_area.object_index == obj_custom_area) {
+				var area = obj_game_control.current_area
 			
 				if (area.other_end_area >= 0) {
 					var invert_dir = area.other_end_direction == cardinal.north || area.other_end_direction == cardinal.west
 				
 					player_move_to_door(area.main_door, area.other_end_door, invert_dir)
 				
-					obj_control.current_area = area.other_end_area
+					obj_game_control.current_area = area.other_end_area
 					area.other_end_door.opening_direction = !area.other_end_door.opening_direction
 				
 					player_enter(area.other_end_door, player_pass_through)
@@ -224,9 +224,9 @@ function door_random_on_interact(door) {
 					
 					player_move_to_custom_area(id, custom_area)
 			
-					custom_area.other_end_area = obj_control.current_area
+					custom_area.other_end_area = obj_game_control.current_area
 					custom_area.other_end_door = id
-					obj_control.current_area = custom_area
+					obj_game_control.current_area = custom_area
 					
 					player_enter(door_area, player_pass_through)
 			

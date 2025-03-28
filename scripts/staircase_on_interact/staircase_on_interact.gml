@@ -5,7 +5,7 @@ function staircase_on_interact(target) {
 		obj_player.can_move = false
 		obj_player.is_moving_on_staircase = true
 	
-		var next_song = array_choose(obj_control.seed_group[sg.music])
+		var next_song = array_choose(obj_game_control.seed_group[sg.music])
 	
 		game_set_music_track(next_song, obj_settings.music_volume, 2000)
 		cursor_set_sprite(noone)
@@ -19,17 +19,17 @@ function staircase_on_interact(target) {
 		}
 	
 		if (revert_task) {
-			var arr_task = [obj_control.current_floor, 1-dir]
+			var arr_task = [obj_game_control.current_floor, 1-dir]
 		
 			obj_player.revert_task(task_types.go_to_another_floor, arr_task)
 		}
 	
-		obj_control.current_floor += (dir == stairs_directions.up) ? 1 : -1
+		obj_game_control.current_floor += (dir == stairs_directions.up) ? 1 : -1
 	
 		if (array_length(obj_player.active_tasks[task_types.go_to_another_floor]) > 0) {
 			var task_floor = obj_player.active_tasks[task_types.go_to_another_floor][0][0]
 		
-			if (abs(obj_control.current_floor - task_floor) > 2) {
+			if (abs(obj_game_control.current_floor - task_floor) > 2) {
 				obj_player.fail_task(task_types.go_to_another_floor, task_floor)
 			}
 		}
@@ -38,7 +38,7 @@ function staircase_on_interact(target) {
 			delay: 1,
 			on_complete: method({ staircase: id }, function() {
 				static resolve_task = function(staircase) {
-					var task_resolved = obj_player.resolve_task(task_types.go_to_another_floor, obj_control.current_floor)
+					var task_resolved = obj_player.resolve_task(task_types.go_to_another_floor, obj_game_control.current_floor)
 					
 					if (!is_undefined(task_resolved)) {
 						staircase.other_end.revert_task = true
@@ -62,7 +62,7 @@ function staircase_on_interact(target) {
 				var corridor = passage_get_next_area(staircase, method({ staircase: staircase, resolve_task: resolve_task }, function() {
 					return actor_3d_create(obj_player.x, obj_player.y, 0, obj_corridor, {
 						on_build: method(self, function(corridor) {
-							corridor_populate(corridor, obj_control.seed_group, default_block_size, obj_control.current_realm)
+							corridor_populate(corridor, obj_game_control.seed_group, default_block_size, obj_game_control.current_realm)
 							resolve_task(staircase)
 						}),
 					});
@@ -80,7 +80,7 @@ function staircase_on_interact(target) {
 				
 					corridor.grid[# staircase_coords[0], staircase_coords[1]][corridor_cell_prop.other_ends][new_staircase_direction] = staircase
 				
-					corridor_build(corridor, obj_control.seed_group, default_block_size, wall_passage_width)
+					corridor_build(corridor, obj_game_control.seed_group, default_block_size, wall_passage_width)
 				
 					obj_player.x = corridor.x + default_block_size*(staircase_coords[0]+.5)
 					obj_player.y = corridor.y + default_block_size*(staircase_coords[1]+.5)
@@ -119,7 +119,7 @@ function staircase_on_interact(target) {
 			
 				global.camera_3d.yaw = staircase.zrotation
 			
-				obj_control.current_area = corridor
+				obj_game_control.current_area = corridor
 				
 				instance_create_layer(0, 0, "Abstract", obj_fade_in, {
 					on_complete: function() {

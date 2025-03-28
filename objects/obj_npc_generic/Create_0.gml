@@ -15,7 +15,7 @@ if (array_length(bbox_list) == 0) {
 }
 
 if (room != room_init && random_event(prob_event)) {
-	var npc_events_in_realm = events_in_realm(global.npc_events, obj_control.current_realm)
+	var npc_events_in_realm = events_in_realm(global.npc_events, obj_game_control.current_realm)
 	
 	event = array_choose(npc_events_in_realm)
 }

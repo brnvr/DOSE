@@ -10,7 +10,7 @@ dialogue = [
 ]
 		
 on_finish_talking = function() {
-	var key = area_add_actor_3d(obj_control.current_area, 0, 0, 0, obj_key_0)
+	var key = area_add_actor_3d(obj_game_control.current_area, 0, 0, 0, obj_key_0)
 	
 	obj_player.pick_item(key)
 }

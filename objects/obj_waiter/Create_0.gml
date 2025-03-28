@@ -1,4 +1,4 @@
-current_area = obj_control.current_area
+current_area = obj_game_control.current_area
 image_speed = 0.25
 has_teleported = false
 is_moving = false
@@ -20,7 +20,7 @@ ts_speak = time_source_create(time_source_global, 181, time_source_units_frames,
 }, [], -1)
 
 ts_send_to_otherside = time_source_create(time_source_global, 35, time_source_units_frames, function() {
-	obj_control.goto_otherside()
+	obj_game_control.goto_otherside()
 
 	cursor_center()
 	cursor_pause_sync(1)
@@ -29,7 +29,7 @@ ts_send_to_otherside = time_source_create(time_source_global, 35, time_source_un
 	obj_player.can_move = true
 	obj_player.can_look = true
 	
-	area_destroy_instance(obj_control.current_area, id)
+	area_destroy_instance(obj_game_control.current_area, id)
 })
 
 ts_move_to_door = time_source_create(time_source_global, 1, time_source_units_frames, function() {})
@@ -43,7 +43,7 @@ ts_process_events = time_source_create(time_source_global, 31, time_source_units
 reach_door = function(door) {
 	is_moving_to_door = false
 	
-	if (obj_control.current_area == current_area) {
+	if (obj_game_control.current_area == current_area) {
 		return
 	}
 	
@@ -54,7 +54,7 @@ reach_door = function(door) {
 	door.being_used = true
 	door.opening_direction = angular_opposite(door.opening_direction)
 	
-	current_area = obj_control.current_area
+	current_area = obj_game_control.current_area
 	
 	switch (door.orientation) {
 		case alignment.vertical:
@@ -108,7 +108,7 @@ catch_player = function() {
 	obj_player.can_look = false
 	obj_player.can_move = false
 	obj_player.camera.pitch = 0
-	obj_control.tracking_error_variation_factor = 800
+	obj_game_control.tracking_error_variation_factor = 800
 	catched_player = true
 	
 	time_source_start(ts_send_to_otherside)

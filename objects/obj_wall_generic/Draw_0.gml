@@ -7,7 +7,7 @@ if (view_current == views.view_3d) {
 		shader_set_uniform_f_array(u_mesh_camera_position, camera_3d_get_position());
 		shader_set_uniform_i(u_mesh_lighting_enabled, false);
 		shader_set_uniform_i(u_mesh_fog_enabled, true);
-		shader_set_uniform_f_array(u_mesh_fog_color, color_get_normalized(obj_control.fog_color));
+		shader_set_uniform_f_array(u_mesh_fog_color, color_get_normalized(obj_game_control.fog_color));
 	
 		matrix_set(matrix_world, transformation_matrix);
 		gpu_set_cullmode(cullmode == cull_clockwise ? cull_counterclockwise : cull_clockwise);

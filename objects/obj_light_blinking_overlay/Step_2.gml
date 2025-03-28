@@ -1,3 +1,3 @@
-if (parent_area != obj_control.current_area) {
+if (parent_area != obj_game_control.current_area) {
 	instance_deactivate_object(id);
 }

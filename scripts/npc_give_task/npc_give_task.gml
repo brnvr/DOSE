@@ -3,14 +3,14 @@ function npc_give_task(npc, task_type) {
 		var door_number = undefined
 		
 		if (array_length(obj_player.active_tasks[task_types.go_to_room]) == 0) {
-			door_number = array_choose(obj_control.door_numbers_avaliable)
+			door_number = array_choose(obj_game_control.door_numbers_avaliable)
 			obj_player.receive_task(task_types.go_to_room, door_number)
 		} else {
 			door_number = obj_player.active_tasks[task_types.go_to_room][0]
 		}
 		
 		var dialogue = array_choose(npc.dialogues_source.tasks[task_types.go_to_room])[$ obj_settings.language]
-		dialogue = replace_placeholder(dialogue, "door_number", string(door_number))
+		dialogue = string_replace_placeholder(dialogue, "door_number", string(door_number))
 		
 		return dialogue
 	}
@@ -25,7 +25,7 @@ function npc_give_task(npc, task_type) {
 		}
 		
 		obj_player.last_door_passed.revert_task = true
-		obj_player.last_door_passed.revert_task_opposite_area = obj_control.current_area
+		obj_player.last_door_passed.revert_task_opposite_area = obj_game_control.current_area
 
 		return array_choose(npc.dialogues_source.tasks[task_types.go_back_one_room])[$ obj_settings.language]
 	}
@@ -39,7 +39,7 @@ function npc_give_task(npc, task_type) {
 		
 		if (array_length(arr_tasks) == 0) {
 			var npc_other_obj = noone
-			var characters = obj_control.seed_group[sg.characters]
+			var characters = obj_game_control.seed_group[sg.characters]
 			var n_characters = array_length(characters)
 
 			if (n_characters > 2) {
@@ -70,15 +70,15 @@ function npc_give_task(npc, task_type) {
 		}
 		
 		dialogue = array_choose(npc.dialogues_source.tasks[task_types.talk_to_someone])[$ obj_settings.language]
-		dialogue = replace_placeholder(dialogue, "name", string(npc_other_name))
-		dialogue = replace_placeholder(dialogue, "s_pronoun", string(npc_other_pronouns[pronoun_type.subject]))
-		dialogue = replace_placeholder(dialogue, "o_pronoun", string(npc_other_pronouns[pronoun_type.object]))
+		dialogue = string_replace_placeholder(dialogue, "name", string(npc_other_name))
+		dialogue = string_replace_placeholder(dialogue, "s_pronoun", string(npc_other_pronouns[pronoun_types.subject]))
+		dialogue = string_replace_placeholder(dialogue, "o_pronoun", string(npc_other_pronouns[pronoun_types.object]))
 		
 		return dialogue
 	}
 		
 	static find_item_task = function(npc) {
-		var items = obj_control.seed_group[sg.items]
+		var items = obj_game_control.seed_group[sg.items]
 		var item = array_choose(items)
 		var arr_tasks = obj_player.active_tasks[task_types.find_item]
 		var n_tasks = array_length(arr_tasks)
@@ -106,8 +106,8 @@ function npc_give_task(npc, task_type) {
 		obj_player.receive_task(task_types.find_item, [item_name, name_article])
 		
 		var dialogue = array_choose(npc.dialogues_source.tasks[task_types.find_item])[$ obj_settings.language]
-		dialogue = replace_placeholder(dialogue, "name", string(item_name))
-		dialogue = replace_placeholder(dialogue, "article", string(name_article))
+		dialogue = string_replace_placeholder(dialogue, "name", string(item_name))
+		dialogue = string_replace_placeholder(dialogue, "article", string(name_article))
 		
 		return dialogue
 	}
@@ -153,7 +153,7 @@ function npc_give_task(npc, task_type) {
 		if (array_length(arr_tasks) == 0) {
 			dir = choose(stairs_directions.up, stairs_directions.down)
 			
-			var floor_destination = obj_control.current_floor + (dir == stairs_directions.up ? 1 : -1)
+			var floor_destination = obj_game_control.current_floor + (dir == stairs_directions.up ? 1 : -1)
 			
 			obj_player.receive_task(task_types.go_to_another_floor, [floor_destination, dir]);
 		} else {
@@ -162,10 +162,10 @@ function npc_give_task(npc, task_type) {
 	
 		switch(dir) {
 			case stairs_directions.up:
-				return replace_placeholder(dialogue, "direction", "up")
+				return string_replace_placeholder(dialogue, "direction", "up")
 				
 			case stairs_directions.down:
-				return replace_placeholder(dialogue, "direction", "down")
+				return string_replace_placeholder(dialogue, "direction", "down")
 				
 			default:
 				throw "Invalid direction"

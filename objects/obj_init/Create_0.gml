@@ -96,7 +96,7 @@ enum views {
 	view_2d
 }
 
-enum pronoun_type {
+enum pronoun_types {
 	subject,
 	object
 }
@@ -199,6 +199,10 @@ enum sg {
 	music
 }
 
+enum audio_effects {
+		
+}
+
 global.spr_spider_ceiling = sprite_create_transformed(spr_spider, 1, -1, 0)
 global.spr_key_0_mirrored = sprite_create_transformed(spr_key_0, -1, -1, 0)
 
@@ -221,3 +225,5 @@ global.progressive_task_types = [
 for (var i = 0; i < 16; i++) {
 	event_user(i)	
 }
+
+variable_static_init("Abstract", ev_user14)

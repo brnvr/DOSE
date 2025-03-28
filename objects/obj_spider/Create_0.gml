@@ -1,4 +1,4 @@
-area = obj_control.current_area
+area = obj_game_control.current_area
 moving_away = false
 on_ceiling = choose(true, false)
 
@@ -7,9 +7,9 @@ if (on_ceiling) {
 	z += default_block_size
 }
 
-if (object_is_ancestor(obj_control.current_area.object_index, obj_path_area)) {
-	obj_control.current_area.begin_pathfinding()
-	path = sp_path_create(obj_control.current_area.sp_grid)
+if (object_is_ancestor(obj_game_control.current_area.object_index, obj_path_area)) {
+	obj_game_control.current_area.begin_pathfinding()
+	path = sp_path_create(obj_game_control.current_area.sp_grid)
 } else {
 	path = undefined	
 }

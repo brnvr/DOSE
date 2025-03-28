@@ -1,5 +1,5 @@
 function game_reset(prob_drop_item = 0) {
-	with (obj_control) {
+	with (obj_game_control) {
 		goto_thisside()
 		current_area = global.custom_areas[ca.entrance_hall]
 		current_area.neighbors = []

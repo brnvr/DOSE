@@ -10,7 +10,7 @@ npc.is_transforming = true
 npc_sprite = npc.sprite_index
 
 if (create_in_current_area) {
-	npc_other = area_add_actor_3d(obj_control.current_area, npc.x, npc.y, npc.z, obj_npc_other, properties)
+	npc_other = area_add_actor_3d(obj_game_control.current_area, npc.x, npc.y, npc.z, obj_npc_other, properties)
 } else {
 	npc_other = actor_3d_create(npc.x, npc.y, npc.z, obj_npc_other, properties)
 }

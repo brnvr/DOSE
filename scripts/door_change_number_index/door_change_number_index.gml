@@ -3,9 +3,9 @@ function door_change_number_index(door, number_index) {
 	
 	if (number_index == door.door_number) return;
 	
-	array_push(obj_control.door_numbers_avaliable, door.door_number)
-	door.door_number = obj_control.door_numbers_avaliable[number_index]
-	array_delete(obj_control.door_numbers_avaliable, number_index, 1)
+	array_push(obj_game_control.door_numbers_avaliable, door.door_number)
+	door.door_number = obj_game_control.door_numbers_avaliable[number_index]
+	array_delete(obj_game_control.door_numbers_avaliable, number_index, 1)
 	
 	if (door.number_side == cardinal.north || door.number_side == cardinal.east) {
 		spr_door_number = global.spr_door_numbers[door.door_number];	

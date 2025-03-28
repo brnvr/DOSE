@@ -69,7 +69,7 @@ on_interact = function() {
 	obj_player.focus = id
 	obj_player.lock_move = true
 	
-	if (obj_control.music_track != noone) {
+	if (obj_game_control.music_track != noone) {
 		audio_group_set_gain(ag_music, 0, 2000)
 	}
 	
@@ -77,7 +77,7 @@ on_interact = function() {
 }
 
 interactable_set_interaction(id, obj_sheet_music_0, function() {
-	sheet_music = area_add_actor_3d(obj_control.current_area, x, y, z-36, obj_sheet_music_0, {
+	sheet_music = area_add_actor_3d(obj_game_control.current_area, x, y, z-36, obj_sheet_music_0, {
 		keyboard: id	
 	})
 	

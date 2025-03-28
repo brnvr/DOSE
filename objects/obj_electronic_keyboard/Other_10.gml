@@ -1,6 +1,6 @@
 /// @description player get out
 
-if (obj_control.music_track != noone) {
+if (obj_game_control.music_track != noone) {
 		audio_group_set_gain(ag_music, obj_settings.music_volume, 2000)
 	}
 

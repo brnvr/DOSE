@@ -1,7 +1,7 @@
 function door_update_cullmode(door) {
 	with (door) {
 		if (cullmode != cull_noculling) {
-			var current_area = obj_control.current_area;
+			var current_area = obj_game_control.current_area;
 
 			switch (orientation) {
 				case alignment.vertical:

@@ -1,5 +1,5 @@
 if (instance_exists(obj_wallclock)) {
-	if (obj_control.current_realm == realms.thisside) {
+	if (obj_game_control.current_realm == realms.thisside) {
 		var new_seconds_angle = pi / 30 * current_second
 		seconds_changed = new_seconds_angle != seconds_angle
 

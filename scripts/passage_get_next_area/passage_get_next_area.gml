@@ -11,14 +11,14 @@ function passage_get_next_area(passage, on_area_created) {
 	}
 	
 	if (n_defined_areas == 0) {
-		passage.areas[0] = obj_control.current_area;
+		passage.areas[0] = obj_game_control.current_area;
 		passage.areas[1] = on_area_created();
 		
 		update_neighbors(passage);
 		
 		return passage.areas[1];
 	} else if (n_defined_areas == 1) {
-		if (passage.areas[0] == obj_control.current_area) {
+		if (passage.areas[0] == obj_game_control.current_area) {
 			passage.areas[1] = on_area_created();	
 			
 			update_neighbors(passage);
@@ -26,14 +26,14 @@ function passage_get_next_area(passage, on_area_created) {
 			return passage.areas[1];
 		}
 		
-		passage.areas[1] = obj_control.current_area;	
+		passage.areas[1] = obj_game_control.current_area;	
 		
 		update_neighbors(passage);
 		
 		return passage.areas[0];
 	}
 	
-	if (passage.areas[0] == obj_control.current_area) {
+	if (passage.areas[0] == obj_game_control.current_area) {
 		return passage.areas[1];	
 	}
 	

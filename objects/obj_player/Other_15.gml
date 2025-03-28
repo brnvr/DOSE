@@ -58,5 +58,5 @@ if (is_moving_auto) {
 if (door_passing != noone && !is_moving_auto) {	
 	door_passing.is_open = false;
 	door_passing = noone;
-	//obj_control.door_selected = noone;
+	//obj_game_control.door_selected = noone;
 }

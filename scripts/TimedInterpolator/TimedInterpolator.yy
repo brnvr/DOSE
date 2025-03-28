@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"replace_placeholder",
+  "%Name":"TimedInterpolator",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"replace_placeholder",
+  "name":"TimedInterpolator",
   "parent":{
-    "name":"utils",
-    "path":"folders/Scripts/utils.yy",
+    "name":"interpolation",
+    "path":"folders/Scripts/math/interpolation.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

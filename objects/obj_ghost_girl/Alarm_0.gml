@@ -1,1 +1,1 @@
-array_remove(obj_control.current_area.instances, id)
+array_remove(obj_game_control.current_area.instances, id)

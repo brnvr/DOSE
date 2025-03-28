@@ -7,7 +7,7 @@ on_interact = function() {
 texture_list = [sprite_get_texture(sprite_index, 0)]
 
 on_hover = function() {
-	if (obj_control.current_area.object_index == obj_corridor) {
+	if (obj_game_control.current_area.object_index == obj_corridor) {
 		if (door_number > 0) {
 			display_name = $"door {door_number}"
 		}

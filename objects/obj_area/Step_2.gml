@@ -7,7 +7,7 @@ if (!get_is_building() && started_building) {
 		finished_building = true
 	}
 	
-	with (obj_control) {
+	with (obj_game_control) {
 		event_user(0)	
 	}
 }

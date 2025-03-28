@@ -37,7 +37,7 @@ if (moving_away) {
 	}	
 }
 
-if (obj_control.current_area == area) {
+if (obj_game_control.current_area == area) {
 	if (!sound_emitter_3d_is_playing(sound_emitter)) {
 		sound_emitter_3d_play(sound_emitter)	
 	}

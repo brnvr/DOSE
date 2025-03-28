@@ -294,13 +294,13 @@ function corridor_build(corridor, seed_group, block_size, door_passage_side_widt
 		use_destination = obj_player.has_finished_tasks && array_length(corridor.doors) > 1
 		
 		if (use_destination) {
-			preferred_number = obj_control.door_number_destination
+			preferred_number = obj_game_control.door_number_destination
 		} else {
 			preferred_number = obj_player.get_tasked_door()
 		}
 
 		if (!is_undefined(preferred_number)) {
-			var index = array_find(obj_control.door_numbers_avaliable, preferred_number)
+			var index = array_find(obj_game_control.door_numbers_avaliable, preferred_number)
 		
 			if (index != -1 && array_length(corridor.doors) > 0) {
 				var door_sel = array_choose(corridor.doors)
@@ -312,7 +312,7 @@ function corridor_build(corridor, seed_group, block_size, door_passage_side_widt
 				instance_activate_object(obj_door_random_generic)
 			
 				with (obj_door_random_generic) {
-					locked =	door_number != obj_control.door_number_destination &&
+					locked =	door_number != obj_game_control.door_number_destination &&
 								door_number != obj_player.last_door_passed.door_number
 				}	
 			}

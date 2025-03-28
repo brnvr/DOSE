@@ -1,7 +1,7 @@
 function game_pause() {
 	var screen = sprite_create_from_screen();
 	
-	with (obj_control) {
+	with (obj_game_control) {
 		paused = true;
 		cursor_previous = obj_cursor.sprite_index;
 		instance_deactivate_all(true);

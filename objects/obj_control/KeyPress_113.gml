@@ -1,1 +1,0 @@
-game_reset(1)
