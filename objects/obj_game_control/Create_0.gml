@@ -18,11 +18,12 @@ fog_start = 0
 fog_end = 1300
 display_debug_overlay = false
 vfx_filters = []
+sfx_filters = []
 vfx_resetting_filter_indexes = []
 audio_listener_orientation_offset = 0
 
-//audio_bus_main.effects[0] = audio_effect_create(AudioEffectType.LPF2, { cutoff: 1200 })
-//audio_bus_main.effects[1] = audio_effect_create(AudioEffectType.Reverb1, { mix: 0 })
+//audio_bus_main.effects[AudioEffectType.LPF2] = audio_effect_create(AudioEffectType.LPF2, { cutoff: 1200 })
+//audio_bus_main.effects[AudioEffectType.Reverb1] = audio_effect_create(AudioEffectType.Reverb1, { mix: 0 })
 
 interp = new TimedInterpolator(20, 5000, 20)
 

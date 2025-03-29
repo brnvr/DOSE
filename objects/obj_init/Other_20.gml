@@ -29,7 +29,30 @@ global.vfx_default_values = {
 }
 
 global.sfx_filter_functions[fx_filter_types.losing_consciousness] = function() {
+	var time = 30/obj_player.envenoming
+	
 	return {
-			
+		reverb: {
+			mix: new TimedInterpolator(0, 1, time)	
+		},
+		
+		low_pass: {
+			cutoff: new TimedInterpolator(1200, 300, time)	
+		}
 	}
+}
+
+global.sfx_filter_effect_mapping = {
+	bitcrusher: AudioEffectType.Bitcrusher,
+	compressor: AudioEffectType.Compressor,
+	delay: AudioEffectType.Delay,
+	eq: AudioEffectType.EQ,
+	gain: AudioEffectType.Gain,
+	high_pass: AudioEffectType.HPF2,
+	high_shelf: AudioEffectType.HiShelf,
+	low_pass: AudioEffectType.LPF2,
+	low_shelf: AudioEffectType.LoShelf,
+	peak_eq: AudioEffectType.PeakEQ,
+	reverb: AudioEffectType.Reverb1,
+	tremolo: AudioEffectType.Tremolo,
 }

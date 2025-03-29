@@ -51,6 +51,8 @@ function game_reset(prob_drop_item = 0) {
 					inventory_remove_item(item)
 				}
 			}))
+			
+			obj_player.inventory_item_selected_index = 0
 		}
 	}
 }

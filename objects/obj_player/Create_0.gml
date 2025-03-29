@@ -412,7 +412,7 @@ cursor_set_to_item_selected = function(enabled=true, reenable_period=1) {
 		inventory_item_selected_enabled = false
 	}
 }
-
+sfx_set_filter(fx_filter_types.losing_consciousness)
 sit = function(place, bbox_index=0) {
 	var bbox = place.bbox_list[bbox_index]
 	var center = bbox_get_center(bbox, place.transformation_matrix)
@@ -465,7 +465,7 @@ get_envenomated = function() {
 				can_interact = false
 				obj_cursor.visible = false
 			
-				heal_from_envenomation(false, 90, function() {
+				heal_from_envenomation(false, 3, function() {
 					can_move = true
 					can_look = true
 					can_interact = true
@@ -497,7 +497,7 @@ get_envenomated = function() {
 	vfx_set_filter(fx_filter_types.losing_consciousness)
 }
 
-heal_from_envenomation = function(fade_in=true, factor=1000, callback=do_nothing) {
+heal_from_envenomation = function(fade_in=true, total_time_seconds=15, callback=do_nothing) {
 	var envenoming_fade_in = noone
 	
 	if (fade_in) {
@@ -519,7 +519,7 @@ heal_from_envenomation = function(fade_in=true, factor=1000, callback=do_nothing
 		envenoming_fade = envenoming_fade_in	
 	}
 	
-	vfx_reset_filter(fx_filter_types.losing_consciousness, true, factor, callback)
+	vfx_reset_filter(fx_filter_types.losing_consciousness, true, total_time_seconds, callback)
 }
 
 take_antivenom = function() {

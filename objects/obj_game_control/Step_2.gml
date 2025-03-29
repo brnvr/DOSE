@@ -21,7 +21,7 @@ if (global.camera_3d != noone) {
 	)
 }
 
-//audio_bus_main.effects[0].cutoff -= 0.5
-//audio_bus_main.effects[1].mix += 0.0005
+//audio_bus_main.effects[AudioEffectType.LPF2].cutoff -= 0.5
+//audio_bus_main.effects[AudioEffectType.Reverb1].mix += 0.0005
 
 vfx_step()

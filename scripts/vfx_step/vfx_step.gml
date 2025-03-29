@@ -14,7 +14,7 @@ function vfx_step() {
 		var interpolators = vfx_filters[index][1]
 		var ctx = { has_finished_resetting: true }
 		struct_foreach(interpolators, method(ctx, function(key, interpolator) {
-			if (interpolator.delta > 0 && !interpolator.has_completed()) {
+			if (interpolator.total_time_seconds > 0 && !interpolator.has_completed()) {
 				has_finished_resetting = false	
 			}
 		}))
@@ -24,5 +24,15 @@ function vfx_step() {
 			array_delete(vfx_filters, index, 1)
 			array_delete(vfx_resetting_filter_indexes, i, 1)
 		}
+	})
+	
+	array_foreach(sfx_filters, function(item) {
+		var effects = item[1]
+		
+		struct_foreach(effects, function(key, effect) {
+			struct_foreach(effect, function(key, interpolator) {
+				interpolator.step()
+			})
+		})
 	})
 }
