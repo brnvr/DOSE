@@ -8,7 +8,7 @@ ts_goto_game = time_source_create(time_source_global, 1, time_source_units_frame
 	instance_create_layer(0, 0, "Abstract", obj_mesh_repo)
 	instance_create_layer(0, 0, "Abstract", obj_game_control)
 	instance_create_layer(0, 0, "Abstract", obj_hud)
-	room_goto(room_game)	
+	room_goto(rm_game)	
 	
 	time_source_destroy(ts_goto_game)
 })

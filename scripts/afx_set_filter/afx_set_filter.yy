@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"afx_set_filter",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"afx_set_filter",
+  "parent":{
+    "name":"afx",
+    "path":"folders/Scripts/afx.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

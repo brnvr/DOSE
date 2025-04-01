@@ -1,4 +1,4 @@
-function vfx_reset_filter(filter_type, remove=true, total_time_seconds=3, on_reset=do_nothing) {
+function vfx_reset_filter(filter_type, total_time_seconds=3, on_reset=do_nothing) {
 	var index = array_find_index(obj_game_control.vfx_filters, method({ filter_type }, function(item) {
 		return item[0] == filter_type	
 	}))

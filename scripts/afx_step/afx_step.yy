@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"afx_step",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"afx_step",
+  "parent":{
+    "name":"afx",
+    "path":"folders/Scripts/afx.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

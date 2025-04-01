@@ -1,4 +1,4 @@
-function set_static(object, key, value) {
+function variable_static_set(object, key, value) {
 	var object_name = object_get_name(object)
 	
 	if (is_undefined(obj_static.variables[$ object_name])) {

@@ -17,7 +17,7 @@ function variable_static_init(layer_id_or_name, ev_user) {
 				var names = variable_instance_get_names(id)
 			
 				array_foreach(names, method({ id, object }, function(name) {
-					set_static(object, name, variable_instance_get(id, name))
+					variable_static_set(object, name, variable_instance_get(id, name))
 				}))
 			
 				instance_destroy()

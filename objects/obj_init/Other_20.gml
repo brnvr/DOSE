@@ -5,18 +5,7 @@ enum fx_filter_types {
 }
 
 global.vfx_filter_functions = []
-global.sfx_filter_functions = []
-
-global.vfx_filter_functions[fx_filter_types.losing_consciousness] = function() {
-	var time = 30/obj_player.envenoming
-	return {
-		blur_radius: new TimedInterpolator(0.5, 10, time),
-		desaturation: new TimedInterpolator(0, 1-obj_game_control.saturation, time),
-		wave_offset: new Waver(0, 1, 0.001),
-		wave_amount: new TimedInterpolator(0, 0.4*obj_player.envenoming, time),
-		gameview_xscale: new TimedInterpolator(1, 1 + 0.6 * obj_player.envenoming, time),
-	}
-}
+global.afx_filter_functions = []
 
 global.vfx_default_values = {
 	desaturation:  0,
@@ -28,21 +17,17 @@ global.vfx_default_values = {
 	gameview_yscale: 1
 }
 
-global.sfx_filter_functions[fx_filter_types.losing_consciousness] = function() {
-	var time = 30/obj_player.envenoming
-	
-	return {
-		reverb: {
-			mix: new TimedInterpolator(0, 1, time)	
-		},
+global.afx_default_values = {
+	reverb: {
+		mix: 0
+	},
 		
-		low_pass: {
-			cutoff: new TimedInterpolator(1200, 300, time)	
-		}
+	low_pass: {
+		cutoff: 19845
 	}
 }
 
-global.sfx_filter_effect_mapping = {
+global.afx_filter_effects_mapping = {
 	bitcrusher: AudioEffectType.Bitcrusher,
 	compressor: AudioEffectType.Compressor,
 	delay: AudioEffectType.Delay,
@@ -55,4 +40,34 @@ global.sfx_filter_effect_mapping = {
 	peak_eq: AudioEffectType.PeakEQ,
 	reverb: AudioEffectType.Reverb1,
 	tremolo: AudioEffectType.Tremolo,
+}
+
+
+global.vfx_filter_functions[fx_filter_types.losing_consciousness] = function(factor_func) {
+	var factor = factor_func()
+	var time = 30/factor
+	return {
+		blur_radius: new TimedInterpolator(0.5, 10, time),
+		desaturation: new TimedInterpolator(0, 1-obj_game_control.saturation, time),
+		wave_offset: new Waver(0, 1, 0.001),
+		wave_amount: new TimedInterpolator(0, 0.4*factor, time),
+		gameview_xscale: new TimedInterpolator(1, 1 + 0.6 *factor, time),
+	}
+}
+
+
+
+global.afx_filter_functions[fx_filter_types.losing_consciousness] = function(factor_func) {
+	var factor = factor_func()
+	var time = 30/factor
+	
+	return {
+		reverb: {
+			mix: new TimedInterpolator(0, 1, time)	
+		},
+		
+		low_pass: {
+			cutoff: new TimedInterpolator(1200, 300, time)	
+		}
+	}
 }

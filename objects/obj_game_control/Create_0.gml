@@ -8,8 +8,8 @@ door_number_destination = 319
 current_area = noone
 current_realm = realms.thisside
 current_floor = 0
-music_track = -1
-music_track_previous = -1
+music_track = noone
+music_track_previous = noone
 ts_stop_music_track = time_source_create(time_source_global, 1, time_source_units_frames, do_nothing)
 tracking_error_alpha = 0.2
 tracking_error_distance = 0.1
@@ -18,12 +18,13 @@ fog_start = 0
 fog_end = 1300
 display_debug_overlay = false
 vfx_filters = []
-sfx_filters = []
+afx_filters = []
 vfx_resetting_filter_indexes = []
+afx_resetting_filter_indexes = []
 audio_listener_orientation_offset = 0
 
-//audio_bus_main.effects[AudioEffectType.LPF2] = audio_effect_create(AudioEffectType.LPF2, { cutoff: 1200 })
-//audio_bus_main.effects[AudioEffectType.Reverb1] = audio_effect_create(AudioEffectType.Reverb1, { mix: 0 })
+audio_bus_main.effects[AudioEffectType.Reverb1] = audio_effect_create(AudioEffectType.Reverb1, { mix: 0 })
+audio_bus_main.effects[AudioEffectType.LPF2] = audio_effect_create(AudioEffectType.LPF2, { cutoff: 19845 })
 
 interp = new TimedInterpolator(20, 5000, 20)
 

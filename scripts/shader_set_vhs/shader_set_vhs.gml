@@ -45,7 +45,7 @@ function shader_set_vhs(
 	shader_set_uniform_f(shader_get_uniform(sh_vhs, "saturation"), saturation)
 	shader_set_uniform_f_array(shader_get_uniform(sh_vhs, "shadowColor"), color_get_normalized(shadow_color))
 	texture_set_stage(shader_get_sampler_index(sh_vhs, "trackingLines"), tracking_lines_texture)
-	texture_set_stage(shader_get_sampler_index(sh_vhs, "wavGradient"), wave_gradient_texture)
+	texture_set_stage(shader_get_sampler_index(sh_vhs, "waveGradient"), wave_gradient_texture)
 	shader_set_uniform_f(shader_get_uniform(sh_vhs, "waveAmount"), wave_amount)
 	shader_set_uniform_f(shader_get_uniform(sh_vhs, "waveOffset"), wave_offset)
 	shader_set_uniform_f_array(shader_get_uniform(sh_vhs, "scale"), scale)

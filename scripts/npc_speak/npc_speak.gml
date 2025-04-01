@@ -1,6 +1,4 @@
 function npc_speak(npc, display_caption=true, interrupt_current_dialogue=false) {
-	
-	show_debug_message(npc.dialogue)
 	if (audio_is_playing(npc.sound_emitter.sound)) {
 		if (interrupt_current_dialogue) {
 			sound_emitter_3d_stop(npc.sound_emitter)	
@@ -8,7 +6,6 @@ function npc_speak(npc, display_caption=true, interrupt_current_dialogue=false) 
 			return false
 		}
 	}
-	show_debug_message(npc.dialogue)
 	
 	if (obj_npc_control.is_npc_speaking && obj_npc_control.npc_speaking != noone) {
 		audio_stop_sound(obj_npc_control.npc_speaking.sound_emitter.sound)

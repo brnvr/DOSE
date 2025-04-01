@@ -1,6 +1,7 @@
 function game_reset(prob_drop_item = 0) {
 	with (obj_game_control) {
-		goto_thisside()
+		goto_thisside(false, false)
+		game_set_music_track(noone)
 		current_area = global.custom_areas[ca.entrance_hall]
 		current_area.neighbors = []
 		event_user(0)	

@@ -14,7 +14,7 @@ if (array_length(bbox_list) == 0) {
 	bbox_list = [bbox_create(-32/xscale, -32/yscale, z-height/zscale, 32/xscale, 32/yscale, z)]
 }
 
-if (room != room_init && random_event(prob_event)) {
+if (room != rm_init && random_event(prob_event)) {
 	var npc_events_in_realm = events_in_realm(global.npc_events, obj_game_control.current_realm)
 	
 	event = array_choose(npc_events_in_realm)

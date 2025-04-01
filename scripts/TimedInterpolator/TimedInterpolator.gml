@@ -20,8 +20,6 @@ function TimedInterpolator(_initial_value, _final_value, _total_time_seconds, _a
 			}	
 		}
 		
-		show_debug_message([initial_value, final_value, value, total_time_seconds, active])
-		
 		return value
 	}
 }

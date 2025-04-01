@@ -21,7 +21,8 @@ if (global.camera_3d != noone) {
 	)
 }
 
-//audio_bus_main.effects[AudioEffectType.LPF2].cutoff -= 0.5
-//audio_bus_main.effects[AudioEffectType.Reverb1].mix += 0.0005
+audio_bus_main.effects[AudioEffectType.Reverb1].mix = afx_reduce("reverb", "mix")
+audio_bus_main.effects[AudioEffectType.LPF2].cutoff = afx_reduce("low_pass", "cutoff")
 
 vfx_step()
+afx_step()

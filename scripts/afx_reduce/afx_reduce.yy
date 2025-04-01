@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"afx_reduce",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"afx_reduce",
+  "parent":{
+    "name":"afx",
+    "path":"folders/Scripts/afx.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

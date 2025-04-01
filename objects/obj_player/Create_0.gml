@@ -412,7 +412,7 @@ cursor_set_to_item_selected = function(enabled=true, reenable_period=1) {
 		inventory_item_selected_enabled = false
 	}
 }
-sfx_set_filter(fx_filter_types.losing_consciousness)
+
 sit = function(place, bbox_index=0) {
 	var bbox = place.bbox_list[bbox_index]
 	var center = bbox_get_center(bbox, place.transformation_matrix)
@@ -494,7 +494,11 @@ get_envenomated = function() {
 	
 	take_damage()
 	obj_hud.show_notification("Envenomated")
-	vfx_set_filter(fx_filter_types.losing_consciousness)
+	
+	var get_envenoming = function() { return obj_player.envenoming }
+	
+	vfx_set_filter(fx_filter_types.losing_consciousness, get_envenoming)
+	afx_set_filter(fx_filter_types.losing_consciousness, get_envenoming)
 }
 
 heal_from_envenomation = function(fade_in=true, total_time_seconds=15, callback=do_nothing) {
@@ -519,7 +523,8 @@ heal_from_envenomation = function(fade_in=true, total_time_seconds=15, callback=
 		envenoming_fade = envenoming_fade_in	
 	}
 	
-	vfx_reset_filter(fx_filter_types.losing_consciousness, true, total_time_seconds, callback)
+	vfx_reset_filter(fx_filter_types.losing_consciousness, total_time_seconds, callback)
+	afx_reset_filter(fx_filter_types.losing_consciousness, total_time_seconds)
 }
 
 take_antivenom = function() {
